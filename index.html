@@ -1,13 +1,37 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#101a20"><title>Brasil Super Soccer 2026</title>
   <link rel="icon" href="assets/ui/ball.svg" type="image/svg+xml"><link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="topbar"><a href="#" id="brand"><span class="brand-icon">✦</span> BRASIL <b>SUPER SOCCER</b><span class="year">2026</span></a><div class="top-right"><span class="status-dot"></span> EDIÇÃO ARCADE <button id="sound-toggle" aria-label="Ativar ou desativar som">SOM OFF</button></div></header>
-  <main id="app"><section class="game-shell"><canvas id="game" width="480" height="270" tabindex="0" aria-label="Campo de futebol. Use setas para mover, Z para passar e X para chutar."></canvas><div id="screen"></div><div id="toast" role="status"></div></section></main>
+  <main id="app"><section class="game-shell"><canvas id="game" width="480" height="270" tabindex="0" aria-label="Campo de futebol. Use setas para mover, Z para passar e X para chutar."></canvas><div id="screen"></div><div id="toast" role="status"></div></section>
+  <aside id="touch-controls" class="touch-controls" aria-label="Controle de jogo por toque">
+   <div class="touch-left">
+    <div id="touch-dpad" class="touch-dpad" role="group" aria-label="Direcional: deslize em qualquer direção, inclusive diagonal">
+     <span class="dpad-arrow dpad-up" data-dir="up" aria-label="Cima">▲</span>
+     <span class="dpad-arrow dpad-left" data-dir="left" aria-label="Esquerda">◀</span>
+     <span class="dpad-center" aria-hidden="true"></span>
+     <span class="dpad-arrow dpad-right" data-dir="right" aria-label="Direita">▶</span>
+     <span class="dpad-arrow dpad-down" data-dir="down" aria-label="Baixo">▼</span>
+    </div>
+   </div>
+   <div class="touch-right">
+    <button class="touch-pause" data-touch-action="pause" aria-label="Pausar partida">Ⅱ <span>PAUSA</span></button>
+    <div class="touch-actions" role="group" aria-label="Botões de ação">
+     <button class="touch-btn auxiliary" data-touch-action="switch" aria-label="Trocar jogador"><b>L</b><small>TROCAR</small></button>
+     <button class="touch-btn auxiliary" data-touch-action="long" aria-label="Lançamento forte"><b>C</b><small>LANÇAR</small></button>
+     <button class="touch-btn auxiliary" data-touch-action="context" aria-label="Drible ou ação contextual"><b>Y</b><small>DRIBLE</small></button>
+     <button class="touch-btn sprint" data-touch-action="sprint" aria-label="Correr: segure"><b>R</b><small>CORRER</small></button>
+     <button class="touch-btn pass" data-touch-action="pass" aria-label="Passe: segure para carregar"><b>A</b><small>PASSE</small></button>
+     <button class="touch-btn shoot" data-touch-action="shoot" aria-label="Chute: segure para carregar"><b>B</b><small>CHUTE</small></button>
+    </div>
+   </div>
+   <p class="touch-tip">DIRECIONE E SEGURE OS BOTÕES PARA CARREGAR · GIRE O CELULAR PARA AMPLIAR O CAMPO</p>
+  </aside>
+  </main>
   <footer><span>FEITO PARA QUEM VIVE O JOGO.</span><span>11 × 11 <i>•</i> PIXEL FOOTBALL <i>•</i> TEMPORADA 2026</span><button id="help">CONTROLES ↗</button></footer>
-  <script src="data/bundle.js"></script><script src="js/engine.js"></script><script src="js/formations.js"></script><script src="js/data-loader.js"></script><script src="js/input.js"></script><script src="js/audio.js"></script><script src="js/physics.js"></script><script src="js/player.js"></script><script src="js/ball.js"></script><script src="js/team.js"></script><script src="js/camera.js"></script><script src="js/ai.js"></script><script src="js/penalty.js"></script><script src="js/match.js"></script><script src="js/competition.js"></script><script src="js/renderer.js"></script><script src="js/ball-renderer.js"></script><script src="js/penalty-renderer.js"></script><script src="js/ui.js"></script><script src="js/penalty-ui.js"></script><script src="js/game.js"></script><script src="js/main.js"></script>
+  <script src="data/bundle.js"></script><script src="js/engine.js"></script><script src="js/formations.js"></script><script src="js/data-loader.js"></script><script src="js/input.js"></script><script src="js/touch-controls.js"></script><script src="js/audio.js"></script><script src="js/physics.js"></script><script src="js/player.js"></script><script src="js/ball.js"></script><script src="js/team.js"></script><script src="js/camera.js"></script><script src="js/ai.js"></script><script src="js/penalty.js"></script><script src="js/match.js"></script><script src="js/competition.js"></script><script src="js/renderer.js"></script><script src="js/ball-renderer.js"></script><script src="js/penalty-renderer.js"></script><script src="js/ui.js"></script><script src="js/penalty-ui.js"></script><script src="js/game.js"></script><script src="js/main.js"></script>
 </body></html>

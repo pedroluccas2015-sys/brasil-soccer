@@ -6,3 +6,62 @@ body.playing{height:100dvh;overflow:hidden}
 body.playing .topbar,body.playing footer{display:none}
 body.playing main{padding:0;margin:0;max-width:none;width:100%;height:100dvh;display:grid;place-items:center}
 body.playing .game-shell{width:min(100vw,calc(100dvh * 16 / 9));min-height:0;aspect-ratio:16/9;border:0;box-shadow:none}
+
+/* Native-resolution 480×270 pixel art scales uniformly; on touch devices
+   every game command is independently available to multiple fingers. */
+.touch-controls{display:none}
+body.touch-capable.playing:not(.ui-open) .touch-controls{display:flex}
+.touch-controls,.touch-controls *{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;touch-action:none}
+.touch-controls{z-index:7;align-items:center;justify-content:space-between;gap:8px}
+.touch-left,.touch-right{position:relative;flex-shrink:0;pointer-events:none}
+.touch-left>*,.touch-right>*{pointer-events:auto}
+.touch-dpad{--pad-size:154px;position:relative;width:var(--pad-size);height:var(--pad-size);border-radius:50%;border:2px solid #acc5b55b;background:radial-gradient(circle,#1d3337bc 0 20%,#152a30cc 21% 65%,#263a3fbd 66%);box-shadow:0 2px 14px #0009,inset 0 0 12px #a9c9ac2c;cursor:pointer}
+.dpad-arrow,.dpad-center{position:absolute;display:grid;place-items:center;pointer-events:none;text-shadow:0 1px 4px #000;}
+.dpad-arrow{width:35%;height:35%;font-size:22px;color:#f1f6e3;border-radius:30%;background:#c0dac018}
+.dpad-up{top:2%;left:32.5%}.dpad-down{bottom:2%;left:32.5%}.dpad-left{left:2%;top:32.5%}.dpad-right{right:2%;top:32.5%}
+.dpad-center{left:38%;top:38%;width:24%;height:24%;background:#45605b88;border-radius:50%;box-shadow:inset 0 1px 4px #0008}
+.dpad-arrow.is-pressed{background:#efeb83a3;color:#172825;box-shadow:inset 0 0 10px #f4ea9c}
+.touch-actions{--action-size:57px;display:grid;grid-template-columns:repeat(3,var(--action-size));gap:7px;align-items:center;justify-content:center}
+.touch-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;width:var(--action-size);height:var(--action-size);min-width:0;min-height:0;border-radius:50%;padding:2px;line-height:1;letter-spacing:0;border:2px solid #c5d5bf80;box-shadow:0 3px 10px #000a,inset 0 1px 8px #fff2;background:#355048d9;color:#f7f5dc}
+.touch-btn b{font:900 17px/1 Arial,sans-serif}.touch-btn small{font:700 8px/1.15 Arial,sans-serif;letter-spacing:.15px}
+.touch-btn.pass{background:#416c3cdd;border-color:#c0e99b}.touch-btn.shoot{background:#a95132e6;border-color:#ffd091}.touch-btn.sprint{background:#5a4985df;border-color:#d1b6f5}
+.touch-btn.is-pressed,.touch-pause.is-pressed{filter:brightness(1.45);transform:scale(.92);box-shadow:0 0 17px #f0e55a80,inset 0 1px 8px #fff6}
+.touch-pause{display:flex;align-items:center;justify-content:center;gap:5px;min-width:0;min-height:0;border-radius:100px;background:#152c36e6;border-color:#fff8;padding:8px 12px;color:#fff;font:bold 18px/1 Arial;letter-spacing:0}
+.touch-pause span{font:bold 10px/1 Arial;letter-spacing:.7px}
+.touch-tip{display:none;pointer-events:none;text-align:center;color:#b5c6b7;font:9px/1.45 monospace;letter-spacing:.15px}
+@media (any-pointer:coarse){
+ body.playing{overscroll-behavior:none;-webkit-overflow-scrolling:auto}
+ body.playing main{overflow:hidden}
+ body.touch-capable.playing:not(.ui-open) #game{touch-action:none}
+}
+@media (any-pointer:coarse) and (orientation:portrait){
+ body.touch-capable.playing main{display:flex;flex-direction:column;justify-content:flex-start;align-items:center;height:100dvh;min-height:0;padding-top:max(env(safe-area-inset-top),3dvh)}
+ body.touch-capable.playing .game-shell{flex:none;width:min(100vw,calc((100dvh - 240px) * 16 / 9));max-width:100vw;height:auto;min-height:0;aspect-ratio:16/9}
+ body.touch-capable.playing:not(.ui-open) .touch-controls{position:relative;flex:1 1 auto;min-height:0;width:100%;padding:max(12px,env(safe-area-inset-top)) max(10px,env(safe-area-inset-right)) max(24px,env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left));align-items:center;justify-content:space-between}
+ body.touch-capable.playing .touch-dpad{--pad-size:clamp(112px,39vw,172px)}
+ body.touch-capable.playing .touch-actions{--action-size:clamp(43px,14vw,62px);gap:5px}
+ body.touch-capable.playing .touch-pause{position:absolute;right:0;top:-52px}
+ body.touch-capable.playing .touch-tip{display:block;position:absolute;bottom:max(6px,env(safe-area-inset-bottom));left:10px;right:10px;margin:0}
+}
+@media (any-pointer:coarse) and (orientation:landscape){
+ body.touch-capable.playing:not(.ui-open) .touch-controls{position:fixed;inset:0;pointer-events:none;padding:0;align-items:flex-end;justify-content:space-between}
+ body.touch-capable.playing .touch-left{margin:0 0 max(9px,env(safe-area-inset-bottom)) max(9px,env(safe-area-inset-left))}
+ body.touch-capable.playing .touch-right{margin:0 max(9px,env(safe-area-inset-right)) max(9px,env(safe-area-inset-bottom)) 0}
+ body.touch-capable.playing .touch-dpad{--pad-size:clamp(102px,34dvh,164px)}
+ body.touch-capable.playing .touch-actions{--action-size:clamp(39px,13dvh,63px);gap:5px}
+ body.touch-capable.playing .touch-pause{position:absolute;right:0;bottom:calc(100% + 12px)}
+ body.touch-capable.playing #screen:not(:empty){z-index:8}
+}
+@media (any-pointer:coarse) and (max-height:340px) and (orientation:landscape){
+ body.touch-capable.playing .touch-dpad{--pad-size:clamp(94px,32dvh,120px)}
+ body.touch-capable.playing .touch-actions{--action-size:clamp(34px,12dvh,48px);gap:3px}
+ .touch-btn b{font-size:14px}.touch-btn small{font-size:7px}
+}
+@media(max-width:400px){.topbar{margin:0 3%;font-size:9px}.topbar a{gap:4px}.brand-icon{font-size:24px}body:not(.playing) #screen{padding:18px 15px}body:not(.playing) h1{font-size:clamp(39px,13vw,52px)}body:not(.playing) .game-shell{min-height:max(570px,calc(100dvh - 135px))}}
+/* Paused matches show full-height, scrollable menus in portrait rather than
+   squeezing substitutions and settings inside a 16:9 letterbox. */
+@media (any-pointer:coarse) and (orientation:portrait){
+ body.touch-capable.playing.ui-open main{padding-top:env(safe-area-inset-top)}
+ body.touch-capable.playing.ui-open .game-shell{width:100%;height:auto;min-height:0;flex:1 1 auto;aspect-ratio:auto}
+ body.touch-capable.playing.ui-open #screen{height:100%;overflow-y:auto;overscroll-behavior:contain}
+}

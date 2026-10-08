@@ -158,3 +158,30 @@ Os controles, as regras essenciais e os modos são funcionais. O nível de acaba
 
 ## Pênaltis no estilo Soccer Shootout
 Câmera atrás do gol e comandos PK também nas faltas da partida. No teclado clássico: Z fraco, X médio, C forte; D + direção faz a finta. Defenda com direção + X ou C. Veja [controles, referência e limites de fidelidade](docs/penaltis.md).
+
+
+## Controles mobile (touchscreen)
+
+O jogo identifica telas com toque e mostra controles durante as partidas,
+sem alterar a experiência de teclado/gamepad no desktop. O direcional
+aceita diagonais e gesto de arrastar. A interface aceita vários dedos
+pressionados simultaneamente (ex.: mover + correr + chutar).
+
+- **A / PASSE**: passe curto ou carrinho; segure para carregar, solte para executar.
+- **B / CHUTE**: chute ou bote; segure e solte para regular a força.
+- **C / LANÇAR**: lançamento longo; segure e solte para regular a força.
+- **R / CORRER**: mantenha pressionado para correr. Dois toques rápidos na direção acionam a arrancada.
+- **L / TROCAR**: muda o jogador controlado.
+- **Y / DRIBLE**: drible/ação contextual, finta ou defesa conforme a posse.
+- **Ⅱ / PAUSA**: pausa a partida. Use os botões da interface para escalação, reinício ou saída.
+- **DIRECIONAL**: arraste sobre a cruz para as oito direções.
+
+Nas penalidades: direcional mira e escolhe a altura; A é fraco, B é médio,
+C é forte, Y + direcional é finta, e B ou C + direcional aciona o goleiro.
+
+O canvas preserva os 480×270 pixels originais (16:9), sem distorção.
+Em retrato o controle aparece abaixo do campo; em paisagem, sem cobrir
+o placar principal, os comandos ficam sobrepostos nas bordas do campo.
+O HTML continua estático e pode ser aberto offline pelo `index.html`.
+
+Para conferir a lógica: `npm test` executa também `tests/touch.test.js`.
