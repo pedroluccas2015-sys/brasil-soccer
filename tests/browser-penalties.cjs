@@ -1,0 +1,45 @@
+'use strict';
+module.exports=async function(page,assert){
+ await page.evaluate(()=>BSS.app.ui.home());
+ await page.click('#mode-penalties');await page.click('#next');
+ assert.equal(await page.locator('[data-penalty-order]').count(),9);
+ const selected=await page.locator('#penalty-order-8').inputValue();
+ await page.selectOption('#penalty-order-0',selected);
+ const order=await page.evaluate(()=>BSS.app.ui.setup.penaltyOrder);
+ assert.equal(new Set(order).size,9);
+ await page.click('#start');
+ assert.equal(await page.evaluate(()=>BSS.app.match.penalty.taker.id),selected);
+ await page.keyboard.down('ArrowLeft');await page.keyboard.down('d');await page.waitForTimeout(80);
+ assert.ok(await page.evaluate(()=>BSS.app.match.penalty.fake>0));
+ assert.equal(await page.evaluate(()=>BSS.app.match.penalty.phase),'aim');
+ await page.keyboard.up('d');await page.keyboard.up('ArrowLeft');
+ await page.keyboard.down('ArrowRight');await page.keyboard.down('ArrowUp');await page.keyboard.press('c');
+ await page.waitForTimeout(60);
+ assert.equal(await page.evaluate(()=>BSS.app.match.penalty.power),1);
+ await page.keyboard.up('ArrowRight');await page.keyboard.up('ArrowUp');
+ await page.keyboard.press('Escape');
+ const frozen=await page.evaluate(()=>BSS.app.match.penalty.time);
+ await page.waitForTimeout(200);assert.equal(await page.evaluate(()=>BSS.app.match.penalty.time),frozen);
+ await page.click('#resume');await page.waitForTimeout(1100);
+ assert.equal(await page.evaluate(()=>BSS.app.match.penalties.kicks[0].length),1);
+ await page.evaluate(()=>{const a=BSS.app;a.match.setupPenalty(1,true);a.input.clear();});
+ await page.keyboard.down('ArrowDown');await page.keyboard.press('x');await page.waitForTimeout(60);
+ assert.equal(await page.evaluate(()=>BSS.app.match.penalty.dive.height),.08);
+ await page.keyboard.up('ArrowDown');
+ await page.screenshot({path:'tests/penalty-defense.png'});
+ const pad=await page.evaluate(()=>{
+  const input=BSS.app.input,original=navigator.getGamepads,buttons=Array.from({length:16},()=>({pressed:false,value:0}));
+  Object.defineProperty(navigator,'getGamepads',{configurable:true,value:()=>[{id:'Standard PK test',mapping:'standard',axes:[0,0],buttons}]});
+  const checks=[];for(const [button,action] of [[0,'shoot'],[1,'long'],[2,'pass'],[3,'context']]){buttons.forEach(b=>b.pressed=false);input.clear();buttons[button].pressed=true;input.poll(1/60);checks.push(input.pressed[action]);}
+  Object.defineProperty(navigator,'getGamepads',{configurable:true,value:original});input.clear();return checks.every(Boolean);
+ });assert.ok(pad);
+ await page.evaluate(()=>{const a=BSS.app;a.start(a.data.teams[0].id,a.data.teams[1].id,{mode:'quick'});const m=a.match;m.resumeHalf();m.clock=4000;m.setupPenalty(0,false);});
+ await page.waitForTimeout(60);await page.screenshot({path:'tests/penalty-in-match.png'});
+ await page.keyboard.down('ArrowLeft');await page.keyboard.press('z');await page.keyboard.up('ArrowLeft');
+ await page.waitForTimeout(60);assert.equal(await page.evaluate(()=>BSS.app.match.penalty.power),.25);
+ await page.waitForTimeout(2900);
+ assert.notEqual(await page.evaluate(()=>BSS.app.match.state),'penalty');
+ assert.deepEqual(await page.evaluate(()=>BSS.app.match.teams.map(t=>t.dir)),[-1,1]);
+ assert.equal(await page.evaluate(()=>BSS.app.match.penalties),null);
+ console.log('PK browser PASS: seleção, finta, forças, pausa, defesa, layout SNES do gamepad e retorno ao segundo tempo.');
+};

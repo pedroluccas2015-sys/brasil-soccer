@@ -1,0 +1,10 @@
+{
+  "team": "Nome do clube ou id de teams.json",
+  "season": 2026,
+  "source": "URL pública da fonte consultada",
+  "checkedAt": "2026-09-30",
+  "instructions": "Preencha com 11 a 60 atletas reais e ao menos um GK. Posições: GK, DF, MF, FW. Use null quando não souber um campo. Este modelo vazio deve ser preenchido antes de importar.",
+  "players": [
+    {"name":"","shirtNumber":null,"position":"GK","birthDate":null,"height":null,"preferredFoot":null}
+  ]
+}

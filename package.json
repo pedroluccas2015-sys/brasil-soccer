@@ -1,0 +1,1 @@
+{"name":"brasil-super-soccer-2026","version":"1.0.0","private":true,"description":"Futebol arcade 16-bit original, estático e offline","scripts":{"start":"node tools/serve.js","build:data":"node tools/build-data.js","test":"node --test tests/core.test.js","test:browser":"node tests/browser.cjs"}}

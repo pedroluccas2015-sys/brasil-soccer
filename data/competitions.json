@@ -1,0 +1,38 @@
+{
+  "season": 2026,
+  "league": {
+    "name": "Brasileirão Arcade",
+    "teams": [
+      "flamengo",
+      "palmeiras",
+      "corinthians",
+      "sao-paulo",
+      "santos",
+      "fluminense",
+      "botafogo",
+      "vasco",
+      "gremio",
+      "internacional",
+      "cruzeiro",
+      "atletico-mg",
+      "bahia",
+      "vitoria",
+      "athletico",
+      "coritiba",
+      "bragantino",
+      "mirassol",
+      "chapecoense",
+      "remo"
+    ],
+    "rounds": 38,
+    "win": 3,
+    "draw": 1,
+    "loss": 0
+  },
+  "cup": {
+    "name": "Copa Brasil Arcade",
+    "size": 8,
+    "extraTime": true,
+    "penalties": true
+  }
+}
