@@ -3,7 +3,7 @@ const test=require('node:test'),assert=require('node:assert/strict'),fs=require(
 const storage=new Map();global.window=global;global.localStorage={getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)};
 const root=path.resolve(__dirname,'..');
 for(const f of ['data/bundle.js',...['engine','formations','physics','data-loader','player','ball','team','ai','penalty','free-kick','match','competition'].map(n=>'js/'+n+'.js')])vm.runInThisContext(fs.readFileSync(path.join(root,f),'utf8'),{filename:f});
-const d=new BSS.DataManager();d.raw=BSS_DATA;d.hydrate();const B=BSS,make=(opts={})=>new B.Match(d.teams[0],d.teams[1],{seed:26,...opts});
+const d=new BSS.DataManager();d.raw=BSS_DATA;d.hydrate();const B=BSS,F=B.FIELD,make=(opts={})=>new B.Match(d.teams[0],d.teams[1],{seed:26,...opts});
 const pkInput=(x=0,y=0,pressed={},state={})=>({axis:{x,y},pressed,state,released:{}});
 test('bola: giro acompanha deslocamento, repouso não gira e impacto amortece',()=>{
  const b=new B.Ball();b.update(1/60);assert.equal(b.roll,0);b.vx=300;b.vz=65;
@@ -12,10 +12,10 @@ test('bola: giro acompanha deslocamento, repouso não gira e impacto amortece',(
  for(let i=0;i<600;i++)b.update(1/60);const angle=b.roll;b.update(1/60);assert.equal(b.roll,angle);assert.equal(b.trail.length,0);
 });
 test('gol normal: bola continua, bate na rede e repousa sem duplicar placar',()=>{
- const m=make();m.state='play';Object.assign(m.ball,{x:1052,px:1047,y:340,py:340,z:14,pz:14,vx:350,vz:5});m.boundaries();
+ const m=make();m.state='play';Object.assign(m.ball,{x:(F.w+2),px:(F.w-3),y:(F.cy),py:(F.cy),z:14,pz:14,vx:350,vz:5});m.boundaries();
  assert.equal(m.state,'goal');const x=m.ball.x;for(let i=0;i<30;i++)m.update(1/60);
- assert.notEqual(m.ball.x,x);assert.equal(m.teams[0].score,1);assert.ok(m.ball.net);assert.ok(m.ball.x>=1050&&m.ball.x<=1073);
- const b=new B.Ball();b.reset(-2,340);b.vx=-400;b.vz=55;b.enterNet(0);for(let i=0;i<240;i++)b.update(1/60);assert.ok(b.x>=-23&&b.x<=-1);assert.equal(b.z,0);
+ assert.notEqual(m.ball.x,x);assert.equal(m.teams[0].score,1);assert.ok(m.ball.net);assert.ok(m.ball.x>=(F.w)&&m.ball.x<=(F.w+23));
+ const b=new B.Ball();b.reset(-2,(F.cy));b.vx=-400;b.vz=55;b.enterNet(0,F);for(let i=0;i<240;i++)b.update(1/60);assert.ok(b.x>=-23&&b.x<=-1);assert.equal(b.z,0);
 });
 test('PK: gol e espalmada mantêm a bola física durante o resultado',()=>{
  for(const save of [false,true]){const m=make({human:1});m.setupPenalty(0,false);const p=m.penalty;p.aim=.88;p.height=.88;m.kickPenalty(.6);
@@ -38,8 +38,8 @@ test('PK: defender exige acertar canto, altura e momento',()=>{
 });
 test('PK: faltas nos dois tempos usam o mesmo motor e preservam relógio e lados',()=>{
  for(const period of [1,2])for(const side of [0,1])for(const goal of [false,true]){
-  const m=make();if(period===2)m.resumeHalf();m.state='play';m.clock=period===1?1300:4000;const clock=m.clock,dirs=m.teams.map(t=>t.dir),def=m.teams[1-side],offender=def.players[1],victim=m.teams[side].players[9],gx=def.dir>0?0:1050;
-  offender.x=gx===0?105:925;offender.y=340;offender.vx=100;victim.x=offender.x+18;victim.y=340;victim.facing={x:1,y:0};m.ball.reset(700,500);m.tackle(offender,true);
+  const m=make();if(period===2)m.resumeHalf();m.state='play';m.clock=period===1?1300:4000;const clock=m.clock,dirs=m.teams.map(t=>t.dir),def=m.teams[1-side],offender=def.players[1],victim=m.teams[side].players[9],gx=def.dir>0?0:(F.w);
+  offender.x=gx===0?105:(F.w-125);offender.y=(F.cy);offender.vx=100;victim.x=offender.x+18;victim.y=(F.cy);victim.facing={x:1,y:0};m.ball.reset(700,500);m.tackle(offender,true);
   assert.equal(m.state,'penalty');assert.ok(m.penalty instanceof B.Penalty);assert.equal(m.penalty.side,side);m.update(.5,pkInput());assert.equal(m.clock,clock);m.penaltyResult(goal,'teste');m.resolvePenalty();assert.equal(m.teams[side].score,goal?1:0);assert.deepEqual(m.teams.map(t=>t.dir),dirs);assert.equal(m.restart.team,1-side);assert.equal(m.restart.type,goal?'SAÍDA DE BOLA':'TIRO DE META');assert.equal(m.penalties,null);
  }
 });
@@ -56,7 +56,7 @@ test('copa conclui quartas, semifinal e final com vencedor',()=>{const c=new B.C
 test('física independente: atrito, parábola, quique e repouso',()=>{const b=new B.Ball();b.vx=300;b.vz=100;for(let i=0;i<30;i++)b.update(1/60);assert.ok(b.x>525);assert.ok(b.z>0);assert.ok(b.vx<300);let bounce=false;for(let i=0;i<600;i++){const v=b.vz;b.update(1/60);if(v<0&&b.vz>0)bounce=true;assert.ok(b.z>=0);}assert.ok(bounce);assert.equal(b.z,0);assert.ok(Math.abs(b.vx)<1);});
 test('colisões separam jogadores sobrepostos',()=>{const a={x:0,y:0,radius:7},b={x:0,y:0,radius:7};for(let i=0;i<10;i++)B.Physics.players([a,b]);assert.ok(B.dist(a,b)>13);});
 test('impedimento considera bola, meio-campo e penúltimo defensor',()=>{const defenders=[{x:1020},{x:900},{x:850}],ball={x:830};const line=B.Physics.offsideLine(defenders,1);assert.equal(line,900);assert.ok(B.Physics.isOffside({x:940},ball,line,1));assert.ok(!B.Physics.isOffside({x:899},ball,line,1));assert.ok(!B.Physics.isOffside({x:940},{x:960},line,1));assert.ok(!B.Physics.isOffside({x:450},{x:400},430,1));assert.ok(B.Physics.isOffside({x:100},{x:200},150,-1));});
-test('gol, trave, lateral, escanteio e tiro de meta',()=>{let m=make();m.state='play';Object.assign(m.ball,{px:1048,x:1055,py:340,y:340,z:0,pz:0,lastTouch:m.teams[0].players[9]});m.boundaries();assert.equal(m.teams[0].score,1);assert.equal(m.state,'goal');m=make();m.state='play';Object.assign(m.ball,{px:1048,x:1055,py:281,y:281,z:0,pz:0,vx:200});m.boundaries();assert.ok(m.ball.vx<0);assert.equal(m.teams[0].score,0);m=make();m.state='play';Object.assign(m.ball,{x:500,y:-3,lastTouch:m.teams[0].players[9]});m.boundaries();assert.equal(m.restart.type,'LATERAL');assert.equal(m.restart.team,1);m.state='play';Object.assign(m.ball,{x:1055,px:1048,y:100,py:100,lastTouch:m.teams[1].players[3]});m.boundaries();assert.equal(m.restart.type,'ESCANTEIO');m.state='play';Object.assign(m.ball,{x:1055,px:1048,y:100,py:100,lastTouch:m.teams[0].players[3]});m.boundaries();assert.equal(m.restart.type,'TIRO DE META');});
+test('gol, trave, lateral, escanteio e tiro de meta',()=>{let m=make();m.state='play';Object.assign(m.ball,{px:(F.w-2),x:(F.w+5),py:(F.cy),y:(F.cy),z:0,pz:0,lastTouch:m.teams[0].players[9]});m.boundaries();assert.equal(m.teams[0].score,1);assert.equal(m.state,'goal');m=make();m.state='play';Object.assign(m.ball,{px:(F.w-2),x:(F.w+5),py:(F.goalTop),y:(F.goalTop),z:0,pz:0,vx:200});m.boundaries();assert.ok(m.ball.vx<0);assert.equal(m.teams[0].score,0);m=make();m.state='play';Object.assign(m.ball,{x:500,y:-3,lastTouch:m.teams[0].players[9]});m.boundaries();assert.equal(m.restart.type,'LATERAL');assert.equal(m.restart.team,1);m.state='play';Object.assign(m.ball,{x:(F.w+5),px:(F.w-2),y:100,py:100,lastTouch:m.teams[1].players[3]});m.boundaries();assert.equal(m.restart.type,'ESCANTEIO');m.state='play';Object.assign(m.ball,{x:(F.w+5),px:(F.w-2),y:100,py:100,lastTouch:m.teams[0].players[3]});m.boundaries();assert.equal(m.restart.type,'TIRO DE META');});
 test('cronômetro, intervalo e fim de jogo',()=>{const m=make();m.state='play';m.clock=2759;m.advanceClock(1);assert.equal(m.state,'half');m.resumeHalf();assert.equal(m.period,2);assert.equal(m.clock,2700);assert.equal(m.teams[0].dir,-1);m.state='play';m.clock=5459;m.advanceClock(1);assert.equal(m.finished,true);});
 test('carrinho sem bola gera falta e cartão; cinco substituições',()=>{const m=make(),p=m.teams[0].players[1],q=m.teams[1].players[1];m.state='play';p.x=500;p.y=300;p.vx=120;q.x=520;q.y=300;q.facing={x:1,y:0};m.ball.x=600;m.ball.y=500;m.tackle(p,true);assert.equal(m.teams[0].stats.fouls,1);assert.equal(m.restart.type,'FALTA');assert.ok(p.yellow);for(let i=0;i<5;i++)assert.ok(m.teams[0].substitute(2,0));assert.equal(m.teams[0].substitute(2,0),false);});
 test('elenco selecionado aplicado ao visitante controlado',()=>{const lineup=[...d.teams[1].players];[lineup[9],lineup[10]]=[lineup[10],lineup[9]];const m=make({human:1,lineup,formation:'3-5-2'});assert.equal(m.teams[1].players[9].name,lineup[9].name);assert.equal(m.teams[1].formation,'3-5-2');assert.equal(m.teams[0].players[0].team.data.id,'flamengo');});

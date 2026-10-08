@@ -2,11 +2,11 @@
 
 ## Quando aparece
 
-Somente reposições do tipo FALTA no último quarto do campo em direção ao gol adversário. Em coordenadas do campo de 1050 × 680:
+Somente reposições do tipo FALTA em todo o campo de ataque do time. Em coordenadas do campo ampliado de 1260 × 816:
 
-- Ataque para a direita: x ≥ 787,5.
-- Ataque para a esquerda: x ≤ 262,5.
-- O limite é incluído. A regra acompanha o time e a troca de lado no intervalo.
+- Ataque para a direita: x ≥ 630.
+- Ataque para a esquerda: x ≤ 630.
+- A linha central é incluída. A regra acompanha o time e a troca de lado no intervalo.
 - Pênaltis continuam usando o mecanismo anterior. Laterais, escanteios, impedimentos, tiros de meta e faltas fora dessa faixa não entram na nova cena.
 
 ## Como cobrar
@@ -25,11 +25,11 @@ O adversário usa o mesmo mecanismo, com decisões automáticas e variação de 
 
 Inspirado na sequência de direção, força e efeito descrita na [página de Roby Baggio — Magical Kicks](https://www.joguix.com/jogo/roby-baggio-magical-kicks/). A página informa que o jogo Flash não está mais disponível. A implementação é original; não foram copiados código nem assets do Flash.
 
-Os módulos js/free-kick.js e js/free-kick-renderer.js concentram a nova simulação e sua apresentação. A curvatura usa o giro da bola e um ajuste de queda exclusivo da cobrança especial até o primeiro toque ou quique. A física compartilhada, a movimentação dos jogadores, os controles e os módulos de pênaltis não foram editados nesta revisão.
+Os módulos js/free-kick.js e js/free-kick-renderer.js concentram a nova simulação e sua apresentação. A curvatura usa o giro da bola e um ajuste de queda exclusivo da cobrança especial até o primeiro toque ou quique. O campo normal usa uma definição central de dimensões para posições, limites, impedimentos, gols, IA e radar. A velocidade dos jogadores e os controles foram preservados. Os pênaltis mantêm a geometria própria e a física anterior.
 
 ## Verificação
 
-- 49 testes automatizados passaram, incluindo 12 novos cenários de falta.
+- 55 testes automatizados passaram, incluindo 16 cenários de falta.
 - Limites da região, dois times e dois tempos; outras reposições preservadas.
 - Faltas reais resultando na cena especial e faltas dentro da área mantendo pênaltis.
 - Mira, três confirmações, botão segurado, toque rápido, pausa e passe curto.
@@ -42,3 +42,9 @@ Os módulos js/free-kick.js e js/free-kick-renderer.js concentram a nova simula�
 Execute npm test para os testes de lógica. Com npm start ativo, npm run test:browser executa a suíte visual (requer Playwright e navegador instalado).
 
 Esta entrega atualiza o pacote local. Não publica alterações no GitHub.
+
+## Campo ampliado e simetria
+
+Comprimento e largura aumentaram 20% (área 44% maior). A câmera normal ficou mais aberta, e os sprites acompanham o zoom. Formações, alteração tática, laterais, gols e goleiros usam as novas dimensões. As cobranças longas ajustam velocidade, arco e duração do voo conforme a distância, igualmente para usuário e máquina. O teste de paridade compara as velocidades e o giro de chutes com os mesmos parâmetros, e faltas reais são verificadas para os dois times nos dois tempos, nos campos de ataque e defesa.
+
+Uma comparação adicional de 16 disputas de pênaltis com a base original confirmou amostras de quadros e resultados idênticos.

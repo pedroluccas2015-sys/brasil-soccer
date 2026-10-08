@@ -45,7 +45,7 @@ test('IA: recebedor tem prioridade sobre perseguição da bola',()=>{
 });
 test('IA: goleiro não toma a bola de um companheiro e possui reação por dificuldade',()=>{
  for(const difficulty of [0,3]){const m=make({difficulty}),p=m.teams[1].players[0],mate=m.teams[1].players[1];mate.x=p.x;mate.y=p.y;m.ball.reset(p.x,p.y);m.ball.owner=mate;m.ai.keeper(p,1/60);assert.equal(m.ball.owner,mate);}
- const diveAt=difficulty=>{const m=make({difficulty}),p=m.teams[1].players[0];m.ball.reset(910,350);m.ball.vx=250;for(let i=1;i<40;i++){m.ai.keeper(p,1/60);if(p.state==='DIVE')return i;}return 40;};assert.ok(diveAt(3)<diveAt(0));
+ const diveAt=difficulty=>{const m=make({difficulty}),p=m.teams[1].players[0];m.ball.reset(B.FIELD.w-140,B.FIELD.cy+10);m.ball.vx=250;for(let i=1;i<40;i++){m.ai.keeper(p,1/60);if(p.state==='DIVE')return i;}return 40;};assert.ok(diveAt(3)<diveAt(0));
 });
 test('quatro dificuldades completam partidas, com ataques e coordenadas finitas',()=>{
  for(let difficulty=0;difficulty<4;difficulty++){
@@ -53,4 +53,19 @@ test('quatro dificuldades completam partidas, com ataques e coordenadas finitas'
   for(let i=0;i<30000&&!m.finished;i++){if(m.state==='half')m.resumeHalf();m.update(1/60);if(i%600===0)for(const p of [...m.players,m.ball])assert.ok(Number.isFinite(p.x)&&Number.isFinite(p.y));}
   assert.ok(m.finished);assert.ok(m.teams.reduce((n,t)=>n+t.stats.shots,0)>0);assert.ok(m.teams.every(t=>t.stats.passes>0));
  }
+});
+
+test('campo ampliado: posições, limites de movimento e laterais usam a nova geometria',()=>{
+ const F=B.FIELD,m=make(),p=m.controlled;assert.equal(F.w,1260);assert.equal(F.h,816);
+ assert.equal(m.ball.x,F.cx);assert.equal(m.ball.y,F.cy);
+ for(const t of m.teams)for(const q of t.players){assert.ok(q.home.x>=0&&q.home.x<=F.w);assert.ok(q.home.y>=0&&q.home.y<=F.h);}
+ p.x=F.w-10;p.y=F.h-10;for(let i=0;i<30;i++)p.move(1,1,false,1/60);
+ assert.ok(p.x>1050&&p.x<=F.w-3);assert.ok(p.y>680&&p.y<=F.h-3);
+ m.state='play';m.ball.reset(F.cx,F.h+1);m.ball.lastTouch=p;m.boundaries();assert.equal(m.restart.type,'LATERAL');assert.equal(m.restart.y,F.h-5);
+});
+test('campo ampliado: impedimento acompanha a nova linha central',()=>{
+ const F=B.FIELD;assert.equal(B.Physics.isOffside({x:F.cx-1},{x:F.cx-20},F.cx-10,1),false);
+ assert.equal(B.Physics.isOffside({x:F.cx+20},{x:F.cx-20},F.cx+10,1),true);
+ assert.equal(B.Physics.isOffside({x:F.cx+1},{x:F.cx+20},F.cx+10,-1),false);
+ assert.equal(B.Physics.isOffside({x:F.cx-20},{x:F.cx+20},F.cx-10,-1),true);
 });

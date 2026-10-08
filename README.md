@@ -186,6 +186,8 @@ O HTML continua estático e pode ser aberto offline pelo `index.html`.
 
 Para conferir a lógica: `npm test` executa também `tests/touch.test.js`.
 
-## Faltas próximas ao gol
+## Faltas no campo de ataque
 
-As faltas no último quarto do campo de ataque usam uma câmera atrás do cobrador, barreira e três etapas de direção, força e efeito. O botão de chute confirma cada etapa; o passe continua disponível para cobrança curta. Veja [como cobrar e o escopo da alteração](docs/faltas-magical-kicks.md).
+As faltas em todo o campo de ataque usam uma câmera atrás do cobrador, barreira e três etapas de direção, força e efeito. O botão de chute confirma cada etapa; o passe continua disponível para cobrança curta. Veja [como cobrar e o escopo da alteração](docs/faltas-magical-kicks.md).
+
+O campo da partida normal foi ampliado de 1050 × 680 para 1260 × 816 unidades (20% em cada dimensão), com câmera mais aberta e posições de jogadores ajustadas. A regra da cobrança especial vale igualmente para usuário e CPU; no campo de defesa a reposição continua no formato anterior.

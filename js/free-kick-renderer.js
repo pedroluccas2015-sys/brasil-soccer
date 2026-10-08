@@ -1,6 +1,6 @@
 'use strict';
 (() => {
- const B=window.BSS,R=B.Renderer.prototype;
+ const B=window.BSS,F=B.FIELD,R=B.Renderer.prototype;
  R.freeKickScene=function(m){
   const f=m.freeKick,g=this.ctx,o=f.origin,fw=f.forward,rt=f.right;
   const project=(x,y,z=0)=>{
@@ -14,10 +14,10 @@
   this.rect(-48,43,480,212,'#367e4a');
   for(let depth=0;depth<600;depth+=45){const a=project(o.x+fw.x*depth-rt.x*600,o.y+fw.y*depth-rt.y*600),b=project(o.x+fw.x*(depth+22)-rt.x*600,o.y+fw.y*(depth+22)-rt.y*600),c=project(o.x+fw.x*(depth+22)+rt.x*600,o.y+fw.y*(depth+22)+rt.y*600),d=project(o.x+fw.x*depth+rt.x*600,o.y+fw.y*depth+rt.y*600);this.poly([a,b,c,d],'#39874e');}
   const gx=f.goal.x,dir=f.dir;
-  line(project(gx,0),project(gx,680));
-  for(const y of [140,540])line(project(gx,y),project(gx-dir*165,y));line(project(gx-dir*165,140),project(gx-dir*165,540));
-  for(const y of [245,435])line(project(gx,y),project(gx-dir*55,y));line(project(gx-dir*55,245),project(gx-dir*55,435));
-  const a=project(gx,281,40),b=project(gx,399,40),c=project(gx,399),d=project(gx,281),back1=project(gx+dir*23,281),back2=project(gx+dir*23,399);
+  line(project(gx,0),project(gx,(F.h)));
+  for(const y of [(F.cy-200),(F.cy+200)])line(project(gx,y),project(gx-dir*165,y));line(project(gx-dir*165,(F.cy-200)),project(gx-dir*165,(F.cy+200)));
+  for(const y of [(F.cy-95),(F.cy+95)])line(project(gx,y),project(gx-dir*55,y));line(project(gx-dir*55,(F.cy-95)),project(gx-dir*55,(F.cy+95)));
+  const a=project(gx,(F.goalTop),40),b=project(gx,(F.goalBottom),40),c=project(gx,(F.goalBottom)),d=project(gx,(F.goalTop)),back1=project(gx+dir*23,(F.goalTop)),back2=project(gx+dir*23,(F.goalBottom));
   this.poly([a,b,back2,back1],'#ccdcca25');
   for(let i=0;i<=8;i++){const t=i/8;line({x:B.lerp(a.x,b.x,t),y:B.lerp(a.y,b.y,t)},{x:B.lerp(back1.x,back2.x,t),y:B.lerp(back1.y,back2.y,t)},'#b6c6a670');}
   for(let i=1;i<=4;i++){const t=i/4;line({x:B.lerp(a.x,back1.x,t),y:B.lerp(a.y,back1.y,t)},{x:B.lerp(b.x,back2.x,t),y:B.lerp(b.y,back2.y,t)},'#b6c6a670');}
@@ -33,8 +33,8 @@
   if(['aim','power','curve'].includes(f.phase)){
    // Short initial trajectory conveys bend without promising an automatic goal.
    const shot=f.trajectory(),ghost={x:o.x,y:o.y,z:1,...shot};
-   for(let i=0;i<15;i++){B.Physics.ball(ghost,.025);ghost.z-=237.5*.025*.025;ghost.vz-=475*.025;if(i%2===0){const pt=project(ghost.x,ghost.y,ghost.z);this.rect(pt.x-1,pt.y-1,2,2,'#e8d97d');}}
-   const aim=project(gx,340+f.aim*65*dir,3+f.height*29);g.strokeStyle='#fff0a1';g.lineWidth=1;g.beginPath();g.arc(aim.x,aim.y,5,0,Math.PI*2);g.stroke();line({x:aim.x-8,y:aim.y},{x:aim.x+8,y:aim.y},'#fff0a1');line({x:aim.x,y:aim.y-8},{x:aim.x,y:aim.y+8},'#fff0a1');
+   for(let i=0;i<15;i++){B.Physics.ball(ghost,.025);ghost.z-=(shot.gravity-175)*.5*.025*.025;ghost.vz-=(shot.gravity-175)*.025;if(i%2===0){const pt=project(ghost.x,ghost.y,ghost.z);this.rect(pt.x-1,pt.y-1,2,2,'#e8d97d');}}
+   const aim=project(gx,(F.cy)+f.aim*65*dir,3+f.height*38);g.strokeStyle='#fff0a1';g.lineWidth=1;g.beginPath();g.arc(aim.x,aim.y,5,0,Math.PI*2);g.stroke();line({x:aim.x-8,y:aim.y},{x:aim.x+8,y:aim.y},'#fff0a1');line({x:aim.x,y:aim.y-8},{x:aim.x,y:aim.y+8},'#fff0a1');
   }
   const ball=m.ball,bp=project(ball.x,ball.y,ball.z),ground=project(ball.x,ball.y),size=B.clamp(bp.scale*6,4,14);
   g.fillStyle='#183a3870';g.beginPath();g.ellipse(ground.x,ground.y,size*.55,size*.2,0,0,Math.PI*2);g.fill();g.drawImage(this.ballFrame(ball.roll),Math.round(bp.x-size/2),Math.round(bp.y-size),Math.round(size),Math.round(size));

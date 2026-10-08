@@ -1,6 +1,6 @@
 'use strict';
 module.exports=async(page,assert)=>{
- await page.evaluate(()=>{const app=BSS.app;app.start(app.data.teams[0].id,app.data.teams[1].id,{mode:'quick'});app.match.setRestart('FALTA',0,820,340);});
+ await page.evaluate(()=>{const app=BSS.app;app.start(app.data.teams[0].id,app.data.teams[1].id,{mode:'quick'});app.match.setRestart('FALTA',0,BSS.FIELD.cx+30,BSS.FIELD.cy);});
  await page.waitForTimeout(650);assert.equal(await page.evaluate(()=>BSS.app.match.state),'freeKick');
  const aim=await page.evaluate(()=>BSS.app.match.freeKick.aim);await page.keyboard.down('ArrowRight');await page.waitForTimeout(200);await page.keyboard.up('ArrowRight');assert.ok(await page.evaluate(()=>BSS.app.match.freeKick.aim)>aim);
  await page.screenshot({path:'tests/free-kick-aim.png'});
@@ -9,13 +9,13 @@ module.exports=async(page,assert)=>{
  await page.keyboard.press('x');await page.waitForTimeout(70);assert.equal(await page.evaluate(()=>BSS.app.match.freeKick.phase),'curve');await page.waitForTimeout(180);await page.keyboard.press('x');
  await page.waitForTimeout(500);assert.equal(await page.evaluate(()=>BSS.app.match.teams[0].stats.shots),1);assert.notEqual(await page.evaluate(()=>BSS.app.match.state),'freeKick');
  await page.setViewportSize({width:844,height:390});
- await page.evaluate(()=>{const a=BSS.app;a.match=new BSS.Match(a.data.teams[0],a.data.teams[1],{human:1,seed:5});a.match.setRestart('FALTA',1,230,180);a.paused=false;a.input.clear();});
+ await page.evaluate(()=>{const a=BSS.app;a.match=new BSS.Match(a.data.teams[0],a.data.teams[1],{human:1,seed:5});a.match.setRestart('FALTA',1,BSS.FIELD.cx-30,BSS.FIELD.cy-100);a.paused=false;a.input.clear();});
  await page.waitForTimeout(600);await page.screenshot({path:'tests/free-kick-mobile.png'});
  await page.locator('[data-touch-action="shoot"]').click();await page.waitForTimeout(50);assert.equal(await page.evaluate(()=>BSS.app.match.freeKick.phase),'power');
  await page.locator('[data-touch-action="shoot"]').click();await page.waitForTimeout(50);assert.equal(await page.evaluate(()=>BSS.app.match.freeKick.phase),'curve');
  await page.locator('[data-touch-action="shoot"]').click();await page.waitForTimeout(500);assert.equal(await page.evaluate(()=>BSS.app.match.teams[1].stats.shots),1);
  await page.setViewportSize({width:1366,height:1000});
- await page.evaluate(()=>{const a=BSS.app;a.match=new BSS.Match(a.data.teams[0],a.data.teams[1],{seed:5});a.match.setRestart('FALTA',0,700,320);});
+ await page.evaluate(()=>{const a=BSS.app;a.match=new BSS.Match(a.data.teams[0],a.data.teams[1],{seed:5});a.match.setRestart('FALTA',0,BSS.FIELD.cx-50,BSS.FIELD.cy);});
  assert.equal(await page.evaluate(()=>BSS.app.match.state),'restart');
- console.log('Free kicks browser PASS: mira, três etapas, pausa, toque, visitante e faltas distantes preservadas.');
+ console.log('Free kicks browser PASS: mira, três etapas, pausa, toque, visitante e faltas de defesa preservadas.');
 };
