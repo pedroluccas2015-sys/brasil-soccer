@@ -12,14 +12,10 @@
    this.padActions=new Set();
    this.actionPointers=new Map();
    this.currentActions=new Map();
-   const coarse=()=>matchMedia('(any-pointer: coarse)').matches||navigator.maxTouchPoints>0;
-   const refresh=()=>document.body.classList.toggle('touch-capable',coarse());
-   refresh();
-   try{matchMedia('(any-pointer: coarse)').addEventListener('change',refresh);}catch{}
    this.pad.addEventListener('pointerdown',e=>{
     if(this.padPointer!==null||!this.available())return;
     e.preventDefault();this.padPointer=e.pointerId;
-    this.pad.setPointerCapture(e.pointerId);
+    try{this.pad.setPointerCapture?.(e.pointerId);}catch{}
     this.movePad(e);
    });
    this.pad.addEventListener('pointermove',e=>{
@@ -36,7 +32,7 @@
      if(!this.available())return;
      e.preventDefault();
      if(this.actionPointers.has(e.pointerId))return;
-     button.setPointerCapture(e.pointerId);
+     try{button.setPointerCapture?.(e.pointerId);}catch{}
      this.actionPointers.set(e.pointerId,{button,action});
      this.activate(action,e.pointerId,button);
     });
