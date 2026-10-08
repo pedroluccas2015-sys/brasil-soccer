@@ -1,0 +1,25 @@
+BRASIL SUPER SOCCER 2026 — ATUALIZAÇÃO DE DESARMES DA CPU
+
+Esta versão inclui todo o jogo original, com controles de desktop e mobile,
+modos de jogo, elencos, imagens, áudios e demais arquivos preservados.
+
+O que mudou:
+- A CPU continua tentando primeiro os desarmes normais, quando possível.
+- Defensores próximos do atacante podem se antecipar ou errar o tempo do
+  desarme, causando uma falta comum ou um pênalti dentro da própria área.
+- Faltas podem acontecer em disputas normais pela bola e para conter avanços.
+- O risco é um pouco maior nos lances perigosos, mas não é automático.
+- Há um intervalo entre desarmes arriscados, ampliado após uma falta, para
+  evitar excesso de interrupções; carrinhos violentos por trás são evitados.
+- O sistema original de falta, cartão, vantagem, pênalti e cobrança é usado.
+- Os jogadores controlados pelo usuário e os controles não foram alterados.
+
+COMO ABRIR O JOGO
+1. Extraia este ZIP.
+2. Abra index.html no navegador para jogar (inclusive offline).
+3. Como alternativa, com Node.js instalado, execute npm start na pasta do jogo
+   e acesse o endereço local indicado no terminal.
+
+TESTES
+Execute npm test na pasta para rodar a suíte completa, incluindo novos testes
+para faltas, pênaltis e limites da agressividade da CPU.

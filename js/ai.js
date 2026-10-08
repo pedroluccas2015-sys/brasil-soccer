@@ -9,7 +9,7 @@
   {reaction:.13,decision:.30,anticipation:.58,press:65,mark:.82,tackle:1.5,precision:.68,vision:400,keeper:.55}
  ].map(Object.freeze));
  B.AIController=class {
-  constructor(match){this.m=match;this.plans=new Map();}
+  constructor(match){this.m=match;this.plans=new Map();this.nextRiskAt=[6,6];this.riskyRandom=B.rng(B.hash('foul:'+String(match.options.seed??Date.now())));}
   profile(team){return B.MATCH_DIFFICULTIES[team.side===this.m.human?1:B.clamp(Math.round(this.m.difficulty)||0,0,3)];}
   intercept(p,profile){const b=this.m.ball,t=B.clamp(B.dist(p,b)/150,0,profile.anticipation);return {x:B.clamp(b.x+b.vx*t,8,(F.w-8)),y:B.clamp(b.y+b.vy*t,8,(F.h-8))};}
   plan(team,dt){
@@ -91,10 +91,43 @@
        if(opponent){tx=B.lerp(tx,opponent.x-dir*22,cfg.mark);ty=B.lerp(ty,opponent.y,cfg.mark);}
       }
      }
+     if(b.owner&&b.owner.team!==team&&near<41&&p.actionCooldown===0&&
+        (p===plan.chaser||near<29))this.tryRiskyTackle(p,b.owner,near,dt);
+     if(m.state!=='play')return;
      if(m.mode==='training'&&team.side!==m.human){tx=p.home.x;ty=p.home.y;p.state='FORMATION';}
      this.moveTo(p,B.clamp(tx,12,(F.w-12)),B.clamp(ty,12,(F.h-12)),sprint,dt);
     }
    }
+  }
+  tryRiskyTackle(p,carrier,ballDistance,dt){
+   const m=this.m,b=m.ball;
+   if(!carrier||carrier.role==='GK'||b.z>=10||m.mode==='training'||(!m.autoplay&&p.team.side===m.human))return;
+   const toward=B.norm(carrier.x-p.x,carrier.y-p.y);
+   const facing=p.facing.x*toward.x+p.facing.y*toward.y;
+   // A slightly late challenge can occasionally cause contact (or a penalty in the box).
+   // Unlike the normal tackle, this is intentionally shared across nearby defenders.
+   if(m.elapsed<this.nextRiskAt[p.team.side]||facing<.1)return;
+   const gap=B.dist(p,carrier),cleanReach=14+p.attributes.tackling*.06;
+   if(gap>30||gap<10||ballDistance<=cleanReach+1||ballDistance>40)return;
+   const goalX=p.team.dir>0?0:F.w,goalDistance=Math.abs(goalX-carrier.x);
+   const attacking=carrier.vx*carrier.team.dir>35;
+   if(!attacking&&goalDistance>F.w*.37)return;
+   const dangerous=goalDistance<F.w*.36,insideBox=goalDistance<165&&Math.abs(carrier.y-F.cy)<200;
+   const rate=(dangerous?.75:.48)*(insideBox?1.15:1)*(m.difficulty===0?.55:1);
+   const slideReach=19+p.attributes.tackling*.06;
+   const fromBehind=toward.x*carrier.facing.x+toward.y*carrier.facing.y>.5;
+   const tooFastFromBehind=fromBehind&&Math.hypot(p.vx,p.vy)>95;
+   // Beyond standing-tackle reach, only an actual sliding challenge can contact the carrier.
+   if(gap>=23&&(tooFastFromBehind||ballDistance<=slideReach+1))return;
+   if(this.riskyRandom()>=1-Math.exp(-dt*rate))return;
+   // Slides are uncommon, and never reckless high-speed tackles from behind.
+   const slide=gap>=23||ballDistance>slideReach+1&&!tooFastFromBehind&&this.riskyRandom()<.30;
+   this.nextRiskAt[p.team.side]=m.elapsed+12;
+   m.tackle(p,slide);
+  }
+  onFoul(p){
+   // The next risky challenge must be spaced out, even after a legal advantage.
+   this.nextRiskAt[p.team.side]=Math.max(this.nextRiskAt[p.team.side],this.m.elapsed+20);
   }
   keeper(p,dt){
    const m=this.m,b=m.ball,t=p.team,cfg=this.profile(t),dir=t.dir,gx=dir>0?18:(F.w-18),danger=Math.abs(b.x-gx)<235;
