@@ -1,6 +1,6 @@
 # Pênaltis — referência Soccer Shootout
 
-O mesmo motor (`js/penalty.js`) e a mesma câmera atrás do gol (`js/penalty-renderer.js`) são usados no modo Pênaltis, nas decisões da Copa e nas faltas dentro da área. Durante a cobrança, o relógio da partida fica parado. Depois, placar e lados de ataque são preservados e o jogo retorna à saída de bola ou ao tiro de meta.
+O mesmo motor (`js/penalty.js`) e a mesma câmera atrás do gol (`js/penalty-renderer.js`) são usados no modo Pênaltis, nas decisões da Copa e nas faltas dentro da área. Durante a cobrança, o relógio da partida fica parado. Nas cobranças durante a partida, uma **espalmada** ou bola na **trave** produz rebote com a bola viva e jogadores disputando o lance; uma **defesa segura** dá posse ao goleiro. Gol gera saída de bola e chute para fora resulta em tiro de meta. Apenas no modo disputa por pênaltis cada cobrança se encerra automaticamente, sem rebotes.
 
 ## Comandos
 
@@ -32,3 +32,11 @@ A ROM local foi identificada pelo cabeçalho `CAPCOM'S SOCCER SHOOT`, tamanho 1.
 
 ## Bola e animações
 A bola usa um modelo procedural original em pixel art, com 32 quadros de rotação calculados pela distância percorrida, sombra por altura, rastro curto e deformação nos impactos. A trajetória das cobranças usa velocidade e gravidade do motor físico. O resultado continua animando espalmadas, bolas seguras, rebotes na trave e amortecimento com ondulação da rede; o gol da partida normal também mantém a bola física durante a comemoração. Não foram extraídos gráficos da ROM.
+
+## Rebotes em pênaltis durante partidas
+
+- Defesa espalmada: o goleiro desvia a bola de acordo com a física existente e a jogada continua no campo, com atacantes e defensores próximos para disputar o rebote. Se o desvio sair pela linha de fundo, o último toque do goleiro permite escanteio.
+- Defesa segura: o goleiro recebe a posse e pode repor a bola normalmente.
+- Bola na trave: o ricochete continua em jogo.
+- Bola realmente para fora: tiro de meta. Gol: saída de bola.
+- O relógio volta a correr quando a bola permanece em jogo. O lado do campo, o placar e as estatísticas não são reiniciados. Cobranças decisivas (disputa por pênaltis) não têm rebote.

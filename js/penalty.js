@@ -102,14 +102,19 @@
       this.caught=this.power<.4&&Math.abs(y)<18;
       if(this.caught)b.vx=b.vy=b.vz=0;
       else {b.vx=-Math.abs(b.vx)*.42;b.vy=(y<0?-1:1)*(75+this.power*65);b.vz=30+this.power*25;b.spin=(y<0?-1:1)*2;}
-      match.sound.play('save');match.penaltyResult(false,this.caught?'SEGUROU!':'ESPALMOU!');return;
+      match.sound.play('save');
+      if(!this.shootout){match.resumePenaltyPlay(this,this.caught?'caught':'parry');return;}
+      match.penaltyResult(false,this.caught?'SEGUROU!':'ESPALMOU!');return;
      }
     }
     if(b.x>=1050){
      const r=B.clamp((1050-b.px)/(b.x-b.px||1),0,1),y=B.lerp(b.py,b.y,r)-340,z=B.lerp(b.pz,b.z,r);
      const post=Math.abs(Math.abs(y)-59)<2.2&&z<42||Math.abs(z-40)<2&&Math.abs(y)<61;
      const goal=!post&&Math.abs(y)<59&&z<40;
-     if(post){b.x=1048;b.vx=-Math.abs(b.vx)*.65;b.vy*=.6;b.vz=Math.abs(b.vz)*.5+15;b.impact('post');match.sound.play('post');}
+     if(post){
+      b.x=1048;b.vx=-Math.abs(b.vx)*.65;b.vy*=.6;b.vz=Math.abs(b.vz)*.5+15;b.impact('post');match.sound.play('post');
+      if(!this.shootout){match.resumePenaltyPlay(this,'post');return;}
+     }
      if(goal)b.enterNet(1050);
      match.penaltyResult(goal,goal?'GOOOL!':post?'NA TRAVE!':'PARA FORA!');
     }

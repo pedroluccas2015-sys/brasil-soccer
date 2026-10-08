@@ -85,6 +85,50 @@
    }else if(b.y<0||b.y>(F.h)){this.setRestart('LATERAL',1-(b.lastTouch?.team.side??0),B.clamp(b.x,12,(F.w-12)),b.y<0?5:(F.h-5));}
   }
   setRestart(type,side,x,y){this.freeKick=null;this.ai.plans.clear();this.sound.play('whistle');this.stoppages++;this.added=Math.min(240,this.added+3);this.pendingOffside=[];this.advantage=null;this.charges={};this.ball.reset(x,y);const t=this.teams[side];let candidates=t.players.filter(p=>!p.red&&p.role!=='GK');if(type==='TIRO DE META')candidates=t.players.filter(p=>p.role==='GK'&&!p.red);const p=candidates.sort((a,b)=>B.dist(a,{x,y})-B.dist(b,{x,y}))[0];for(const q of this.players)if(q!==p&&B.dist(q,{x,y})<65){q.x=B.clamp(x-q.team.dir*70,12,(F.w-12));q.y=B.clamp(y+(q.index%2?65:-65),15,(F.h-15));}p.x=B.clamp(x-t.dir*9,4,(F.w-4));p.y=y;p.vx=p.vy=0;p.facing={x:t.dir,y:0};p.touchDelay=0;this.ball.owner=p;this.ball.lastTouch=p;this.restart={type,team:side,taker:p,x,y,exempt:['LATERAL','ESCANTEIO','TIRO DE META'].includes(type)};this.timer=.8;this.state='restart';if(side===this.human)this.controlled=p;this.message(type,1.8);this.event('restart',{kind:type});if(type==='ESCANTEIO'||type==='FALTA'&&B.FreeKick.eligible(t,x)){this.freeKick=new B.FreeKick(this,this.restart);this.state='freeKick';}}
+  resumePenaltyPlay(p,outcome){
+   // Penalties inside a match are live after a parry, a post hit or a clean catch.
+   // The penalty mini-scene uses goal x=1050 and center y=340: convert the ball
+   // and the two featured players back to the regular pitch before resuming AI.
+   if(p.shootout||this.state!=='penalty')return;
+   const b=this.ball,attacking=this.teams[p.side],defending=this.teams[1-p.side];
+   const dir=attacking.dir,goalX=dir>0?F.w:0;
+   const put=(player,depth,lateral)=>{
+    player.x=B.clamp(goalX-dir*depth,8,F.w-8);
+    player.y=B.clamp(F.cy+lateral,12,F.h-12);
+    player.px=player.x;player.py=player.y;player.vx=0;player.vy=0;
+    player.facing={x:player.team.dir,y:0};
+   };
+   put(p.taker,135,0);
+   put(p.keeper,17,p.keeperOffset);
+   // Place nearby outfield players at the edge of the area so both sides can
+   // chase the same *physical* rebound rather than teleporting to a restart.
+   const edge={x:goalX-dir*180,y:F.cy};
+   const spots=[{d:172,y:-82},{d:180,y:70},{d:200,y:-142},{d:218,y:138}];
+   for(const team of [attacking,defending]){
+    const runners=team.players.filter(q=>!q.red&&q.role!=='GK'&&q!==p.taker)
+     .sort((a,c)=>B.dist(a,edge)-B.dist(c,edge)).slice(0,4);
+    runners.forEach((q,i)=>put(q,spots[i].d+(team===defending?10:0),spots[i].y+(team===defending?15:0)));
+   }
+   if(outcome==='caught'){
+    b.reset(p.keeper.x,p.keeper.y);b.owner=p.keeper;b.lastTouch=p.keeper;
+    p.keeper.heldTime=0;p.keeper.anim='catch';p.keeper.animTime=.4;
+    b.lock=.2;
+   }else{
+    const oldX=b.x,oldY=b.y;
+    b.x=B.clamp(goalX+dir*(oldX-1050),5,F.w-5);
+    b.y=B.clamp(F.cy+oldY-340,8,F.h-8);
+    b.px=b.x;b.py=b.y;b.pz=b.z;
+    b.vx*=dir;b.owner=null;b.lastTouch=outcome==='parry'?p.keeper:p.taker;
+    b.net=null;b.pass=null;b.shot=null;b.lock=.22;
+   }
+   p.goal=false;p.phase='rebound';p.resolved=true;
+   this.penalty=null;this.state='play';this.restart=null;this.freeKick=null;
+   this.pendingOffside=[];this.advantage=null;this.bufferedShot=null;this.charges={};
+   this.ai.plans.clear();
+   const selectable=this.teams[this.human].players.filter(q=>!q.red&&q.role!=='GK');
+   this.controlled=selectable.sort((a,c)=>B.dist(a,b)-B.dist(c,b))[0]||p.keeper;
+   this.message(outcome==='caught'?'GOLEIRO SEGUROU!':outcome==='post'?'NA TRAVE!':'ESPALMOU! SEGUE O JOGO!',1.3);
+  }
   startShootout(){this.penalties={scores:[0,0],kicks:[[],[]],turn:0,winner:null};this.setupPenalty(0,true);}
   setupPenalty(side,shootout){
    this.state='penalty';this.pendingOffside=[];this.advantage=null;this.charges={};

@@ -1,0 +1,12 @@
+BRASIL SUPER SOCCER 2026 — REBOTES EM PÊNALTIS
+
+Versão corrigida do ZIP completo com sistema de escanteios.
+
+Durante uma partida, defesa espalmada e bola na trave mantêm a bola viva, voltando
+ao campo e à física normal para a disputa do rebote. Defesa segura mantém o
+goleiro com a posse. Tiro de meta apenas se o chute sair diretamente para fora
+ou após a bola cruzar a linha de fundo com último toque do ataque.
+
+O modo de disputa por pênaltis não foi alterado: as cobranças terminam sem rebote.
+
+Para jogar, extraia tudo e abra index.html.

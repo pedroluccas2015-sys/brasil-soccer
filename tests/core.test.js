@@ -17,10 +17,11 @@ test('gol normal: bola continua, bate na rede e repousa sem duplicar placar',()=
  assert.notEqual(m.ball.x,x);assert.equal(m.teams[0].score,1);assert.ok(m.ball.net);assert.ok(m.ball.x>=(F.w)&&m.ball.x<=(F.w+23));
  const b=new B.Ball();b.reset(-2,(F.cy));b.vx=-400;b.vz=55;b.enterNet(0,F);for(let i=0;i<240;i++)b.update(1/60);assert.ok(b.x>=-23&&b.x<=-1);assert.equal(b.z,0);
 });
-test('PK: gol e espalmada mantêm a bola física durante o resultado',()=>{
+test('PK: gol mantém animação e espalmada na partida gera rebote vivo',()=>{
  for(const save of [false,true]){const m=make({human:1});m.setupPenalty(0,false);const p=m.penalty;p.aim=.88;p.height=.88;m.kickPenalty(.6);
   for(let i=0;i<100&&p.phase!=='result';i++){if(save&&p.phase==='flight'&&p.time>.05&&!p.dive)p.startDive(1,.88);m.update(1/60,pkInput());}
-  assert.equal(p.goal,!save);const {x,y,z}=m.ball;for(let i=0;i<15;i++)m.update(1/60,pkInput());assert.ok(Math.hypot(m.ball.x-x,m.ball.y-y,m.ball.z-z)>2);assert.equal(m.teams[0].score,save?0:1);if(save)assert.ok(m.ball.vx<0);else assert.ok(m.ball.net);
+  assert.equal(p.goal,!save);if(save){assert.equal(m.state,'play');assert.equal(m.penalty,null);assert.equal(m.restart,null);}else assert.equal(p.phase,'result');
+  const {x,y,z}=m.ball;for(let i=0;i<15;i++)m.update(1/60,pkInput());assert.ok(Math.hypot(m.ball.x-x,m.ball.y-y,m.ball.z-z)>2);assert.equal(m.teams[0].score,save?0:1);if(save)assert.ok(m.ball.vx<0);else assert.ok(m.ball.net);
  }
 });
 test('PK: três botões disparam imediatamente com velocidades distintas',()=>{
