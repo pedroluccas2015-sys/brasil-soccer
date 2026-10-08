@@ -161,3 +161,8 @@ body.show-touch-controls.playing:not(.ui-open) .touch-tip {display:none;}
 @media (orientation:portrait) and (max-width:340px) {
  body.show-touch-controls.playing:not(.ui-open) .touch-pause {bottom:max(2px,env(safe-area-inset-bottom));}
 }
+/* During cinematics keep choice, skip and pause controls; remove unrelated overlays. */
+body.cinematic-active #touch-controls [data-touch-action="switch"],
+body.cinematic-active #touch-controls [data-touch-action="sprint"],
+body.cinematic-active #touch-controls [data-touch-action="context"] {visibility:hidden;pointer-events:none}
+

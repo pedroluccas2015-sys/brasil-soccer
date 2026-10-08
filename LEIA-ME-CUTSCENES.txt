@@ -1,0 +1,49 @@
+BRASIL SUPER SOCCER — CUTSCENES DE PARTIDA
+
+COMO JOGAR
+Extraia o ZIP inteiro e abra index.html. Os dados e as animações funcionam offline.
+Alternativa com Node.js: npm start; acesse http://localhost:8000.
+
+NOVIDADES
+- Cara ou coroa com os capitães, árbitro e moeda animada. Direita/esquerda escolhem;
+  passe ou chute confirmam. Quem vence escolhe saída de bola ou troca de lado.
+  A saída do segundo tempo respeita o sorteio. Sem entrada, há escolha automática.
+- Replay automático do gol e da infração que originou o pênalti: até 7 segundos
+  reais da jogada, a 0,75x. Também há replay de gols em cobranças durante a partida.
+- Árbitro apita, aponta a falta/pênalti e mostra cartão quando a regra do jogo o aplica.
+- Comemoração do gol, sequência extra na virada e três bolas no hat-trick.
+  Gols contra não contam para o hat-trick; cobranças da disputa final também não.
+- Cena de substituição ao voltar do menu de escalação, com saída, entrada e placa.
+- Final com festa do vencedor e confetes; empate tem cena própria, sem vencedor.
+  O vencedor da disputa de pênaltis é reconhecido na comemoração final.
+
+CONTROLES
+Use os botões de PASSE ou CHUTE para pular cada cena. No teclado padrão, Z / X.
+No sorteio, use esquerda/direita e PASSE ou CHUTE para confirmar cada escolha.
+Toque e controle usam as mesmas ações. ESC continua pausando.
+Relógio, física e energia ficam congelados nas cenas e no replay.
+As cenas não aparecem no treino ou na prévia do menu.
+Para integração por código, a opção cutscenes:false desativa as sequências.
+Substituições ficam bloqueadas durante cenas, gols e cobranças especiais.
+
+REFERÊNCIA E ESCOPO
+Recriação original em pixel art inspirada na apresentação do ISS Deluxe do SNES.
+Não é uma reprodução exata dos sprites, enquadramentos e tempos da ROM.
+O cabeçalho da ROM enviada identifica SUPERSTAR SOCCER 2; a ROM não foi executada
+nem incluída neste pacote. A referência visual e de eventos foi complementada por:
+https://www.mobygames.com/game/14131/international-superstar-soccer-deluxe/screenshots/
+https://www.videogamemanual.com/snes/International%20Superstar%20Soccer%20Deluxe%20%28USA%29.pdf
+
+VERIFICAÇÃO
+75 testes existentes e 7 novos testes automatizados: 82 testes aprovados.
+Cenas de sorteio, replay, gol, virada, hat-trick, árbitro, substituição e final
+renderizadas no Microsoft Edge headless, sem erros JavaScript.
+Teste de navegador: npm run test:browser:cinematics (com servidor rodando).
+Requer Playwright disponível e Edge, Chromium do Playwright ou BSS_BROWSER.
+
+ARQUIVOS PRINCIPAIS
+js/cinematics.js: diretor de cenas, buffer de replay, integração de eventos e arte.
+js/game.js: criação do diretor a cada nova partida.
+js/ui.js: cena de substituição e bloqueio durante cobranças/cenas.
+index.html / css/style.css: carregamento e controles durante as cenas.
+tests/cinematics.test.js e tests/browser-cinematics.cjs: verificação adicional.
