@@ -1,0 +1,22 @@
+BRASIL SUPER SOCCER 2026 — ESCANTEIOS ATUALIZADOS
+
+Novidade: os escanteios agora utilizam o mesmo painel de três etapas das faltas.
+
+1. MIRA: use o direcional para escolher a zona da área e a altura.
+   Pressione CHUTE (X no teclado clássico / botão B na tela) para confirmar.
+   Pressione PASSE (Z / botão A) nesta etapa para um escanteio curto.
+2. FORÇA: observe o medidor e pressione CHUTE para fixar a força.
+3. EFEITO: observe o medidor de curva e pressione CHUTE para executar.
+
+Dentro da grande área ficam cinco atacantes e cinco defensores, além do goleiro.
+Um jogador adicional oferece uma opção de passe curto perto da bandeirinha.
+Os cruzamentos são físicos: podem resultar em cabeceios, cortes, defesas,
+rebotes, gols ou bola para fora; não são pré-determinados.
+
+O time controlado pela CPU executa as três etapas automaticamente.
+Na cobrança do jogador, o controle passa para um atacante na área após o chute.
+As faltas, os pênaltis, as equipes e os controles para celular foram preservados.
+
+COMO ABRIR
+Extraia todos os arquivos e abra index.html no navegador.
+Para executar a suíte lógica: npm test (Node.js instalado).

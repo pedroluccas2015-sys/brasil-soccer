@@ -10,7 +10,7 @@ test('faltas: limite do campo de ataque, ambos os times, controle humano e dois 
   const m=make({human});if(half===2)m.resumeHalf();const dir=m.teams[side].dir,x=F.cx+dir*delta;m.setRestart('FALTA',side,x,50);
   assert.equal(m.state,delta<0?'restart':'freeKick');assert.equal(!!m.freeKick,delta>=0);
  }
- for(const type of ['LATERAL','ESCANTEIO','IMPEDIMENTO','TIRO DE META']){const m=make();m.setRestart(type,0,900,60);assert.equal(m.state,'restart');assert.equal(m.freeKick,null);}
+ for(const type of ['LATERAL','IMPEDIMENTO','TIRO DE META']){const m=make();m.setRestart(type,0,900,60);assert.equal(m.state,'restart');assert.equal(m.freeKick,null);}
 });
 test('faltas: fora da faixa mantém cobrança normal por passe',()=>{
  for(const x of [100,F.cx-1,F.cx-100,F.cx-.01]){const m=make();m.setRestart('FALTA',0,x,340);m.timer=0;m.pass(m.restart.taker,'pass',.5,{x:1,y:0});assert.equal(m.state,'play');assert.ok(m.ball.pass);}

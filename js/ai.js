@@ -50,6 +50,12 @@
     for(const p of team.players){
      if(m.state!=='play')return;
      if(p.red||p===m.controlled&&!m.autoplay||m.freeKick?.holdsWall(p))continue;
+     const corner=m.freeKick;
+     if(corner?.corner&&corner.phase==='flight'&&corner.flightTime<1.55&&corner.cornerPositions?.has(p)){
+      const spot=corner.cornerPositions.get(p),target=corner.cornerTarget();
+      p.state='BOX_RUN';this.moveTo(p,B.lerp(spot.x,target.x,.13),B.lerp(spot.y,target.y,.16),false,dt);
+      continue;
+     }
      if(p.role==='GK'){this.keeper(p,dt);continue;}
      let tx=p.home.x,ty=p.home.y,sprint=false;const near=B.dist(p,b);
      if(b.owner===p){

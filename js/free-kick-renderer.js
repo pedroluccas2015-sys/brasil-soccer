@@ -34,11 +34,11 @@
    // Short initial trajectory conveys bend without promising an automatic goal.
    const shot=f.trajectory(),ghost={x:o.x,y:o.y,z:1,...shot};
    for(let i=0;i<15;i++){B.Physics.ball(ghost,.025);ghost.z-=(shot.gravity-175)*.5*.025*.025;ghost.vz-=(shot.gravity-175)*.025;if(i%2===0){const pt=project(ghost.x,ghost.y,ghost.z);this.rect(pt.x-1,pt.y-1,2,2,'#e8d97d');}}
-   const aim=project(gx,(F.cy)+f.aim*65*dir,3+f.height*38);g.strokeStyle='#fff0a1';g.lineWidth=1;g.beginPath();g.arc(aim.x,aim.y,5,0,Math.PI*2);g.stroke();line({x:aim.x-8,y:aim.y},{x:aim.x+8,y:aim.y},'#fff0a1');line({x:aim.x,y:aim.y-8},{x:aim.x,y:aim.y+8},'#fff0a1');
+   const aim=f.corner?project(f.cornerTarget().x,f.cornerTarget().y,9+f.height*25):project(gx,(F.cy)+f.aim*65*dir,3+f.height*38);g.strokeStyle='#fff0a1';g.lineWidth=1;g.beginPath();g.arc(aim.x,aim.y,5,0,Math.PI*2);g.stroke();line({x:aim.x-8,y:aim.y},{x:aim.x+8,y:aim.y},'#fff0a1');line({x:aim.x,y:aim.y-8},{x:aim.x,y:aim.y+8},'#fff0a1');
   }
   const ball=m.ball,bp=project(ball.x,ball.y,ball.z),ground=project(ball.x,ball.y),size=B.clamp(bp.scale*6,4,14);
   g.fillStyle='#183a3870';g.beginPath();g.ellipse(ground.x,ground.y,size*.55,size*.2,0,0,Math.PI*2);g.fill();g.drawImage(this.ballFrame(ball.roll),Math.round(bp.x-size/2),Math.round(bp.y-size),Math.round(size),Math.round(size));
-  this.rect(-36,-7,456,22,'#10272aee');this.text('FALTA DIRETA',-27,7,'#f2dd83',9);this.text(m.teams[0].data.shortName+' '+m.teams[0].score+' : '+m.teams[1].score+' '+m.teams[1].data.shortName,192,7,'#f2efd8',8,'center');this.text(Math.round(f.distance/10)+' m  |  ESC',409,7,'#cad9b8',7,'right');
+  this.rect(-36,-7,456,22,'#10272aee');this.text(f.corner?'ESCANTEIO':'FALTA DIRETA',-27,7,'#f2dd83',9);this.text(m.teams[0].data.shortName+' '+m.teams[0].score+' : '+m.teams[1].score+' '+m.teams[1].data.shortName,192,7,'#f2efd8',8,'center');this.text(f.corner?'5 x 5 NA ÁREA':Math.round(f.distance/10)+' m  |  ESC',409,7,'#cad9b8',7,'right');
   const compact=this.canvas.getBoundingClientRect().height<500,start=compact?84:-20,gap=compact?74:145,width=compact?62:129;
   this.rect(compact?76:-30,196,compact?232:444,52,'#10272af5');
   const labels=['1 MIRA','2 FORÇA '+Math.round(f.power*100)+'%','3 EFEITO'],active=['aim','power','curve'].indexOf(f.phase);
