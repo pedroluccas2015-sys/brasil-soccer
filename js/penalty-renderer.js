@@ -1,7 +1,33 @@
 'use strict';
 (() => {
  const B=window.BSS,R=B.Renderer.prototype;
- R.penaltyPoint=function(x,y,z=0){const depth=(x-940)/110;return {x:192+(y-340)*(1.15+.55*depth),y:83+depth*78-z*1.7};};
+ // Keep the close, behind-the-net view; compress the distant turf above the spot.
+ R.penaltyPoint=function(x,y,z=0){const depth=(x-940)/110;return {x:192+(y-340)*(1.15+.55*depth),y:83+depth*(depth<0?40:80)-z*1.7};};
+ R.penaltyField=function(){
+  const g=this.ctx,point=this.penaltyPoint.bind(this),line='#d3dfb4';
+  this.rect(-48,-15,480,270,'#1c543d');
+  for(let x=800,i=0;x<1190;x+=25,i++){
+   const top=point(x,340).y,bottom=point(x+25,340).y;
+   this.rect(-48,top,480,bottom-top+1,i%2?'#32874b':'#2d7e46');
+  }
+  // PK uses its own arcade coordinates: goal x=1050, spot x=940 (11 m).
+  // Both boxes end on the goal line; the spot is outside the six-yard box.
+  for(const [front,halfWidth] of [[885,200],[995,105]]){
+   this.poly([point(front,340-halfWidth),point(front,340+halfWidth),
+    point(1050,340+halfWidth),point(1050,340-halfWidth)],null,line);
+  }
+  const left=point(1050,0),right=point(1050,680);
+  g.strokeStyle=line;g.lineWidth=1;g.beginPath();g.moveTo(left.x,left.y);g.lineTo(right.x,right.y);g.stroke();
+  // Only the part of the 9.15 m arc outside the penalty area is marked.
+  const angle=Math.acos(55/91.5);
+  g.beginPath();
+  for(let i=0;i<=40;i++){
+   const a=-angle+2*angle*i/40,q=point(940-91.5*Math.cos(a),340+91.5*Math.sin(a));
+   if(i===0)g.moveTo(q.x,q.y);else g.lineTo(q.x,q.y);
+  }
+  g.stroke();
+  const spot=point(940,340);g.fillStyle='#e8e7c2';g.beginPath();g.ellipse(spot.x,spot.y,2,1,0,0,Math.PI*2);g.fill();
+ };
  R.penaltyPerson=function(player,x,y,scale,rear=false,lean=0,arms=0){
   const g=this.ctx,kit=player.role==='GK'?player.team.data.kit.goalkeeper:player.team.kit;
   const skin=['#edbc8c','#ca8b5e','#935c3d','#603d2f'][B.hash(player.id)%4];
@@ -22,12 +48,7 @@
  };
  R.penaltyScene=function(m){
   const p=m.penalty,g=this.ctx,shooting=p.side===m.human;
-  this.rect(-48,-15,480,270,'#1c543d');
-  for(let i=0;i<9;i++)this.rect(-48,38+i*20,480,20,i%2?'#32874b':'#2d7e46');
-  this.poly([{x:91,y:46},{x:293,y:46},{x:370,y:205},{x:14,y:205}],null,'#b2cf8e');
-  this.poly([{x:130,y:44},{x:254,y:44},{x:301,y:163},{x:83,y:163}],null,'#b2cf8e');
-  g.strokeStyle='#b2cf8e';g.beginPath();g.ellipse(192,49,46,10,0,0,Math.PI);g.stroke();
-  this.rect(190,82,4,2,'#e8e7c2');
+  this.penaltyField();
   // Fixed camera behind the net, as in PK mode, shared by every penalty.
   const kicker=this.penaltyPoint(p.taker.x,p.taker.y);
   this.penaltyPerson(p.taker,kicker.x+(p.fake>0?p.fakeDirection*3:0),kicker.y,.65,false,p.fake>0?p.fakeDirection*.14:0,p.fake>0?1:0);
