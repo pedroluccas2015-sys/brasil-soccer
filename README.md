@@ -185,3 +185,7 @@ o placar principal, os comandos ficam sobrepostos nas bordas do campo.
 O HTML continua estático e pode ser aberto offline pelo `index.html`.
 
 Para conferir a lógica: `npm test` executa também `tests/touch.test.js`.
+
+## Faltas próximas ao gol
+
+As faltas no último quarto do campo de ataque usam uma câmera atrás do cobrador, barreira e três etapas de direção, força e efeito. O botão de chute confirma cada etapa; o passe continua disponível para cobrança curta. Veja [como cobrar e o escopo da alteração](docs/faltas-magical-kicks.md).

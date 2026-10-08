@@ -61,6 +61,8 @@ catch { pw=require(path.join(process.env.USERPROFILE||'', '.cache/codex-runtimes
   await require('./browser-penalties.cjs')(page,assert);
   await require('./browser-layout.cjs')(page,assert);
   await require('./browser-ball.cjs')(page,assert);
+  await require('./browser-gameplay.cjs')(page,assert);
+  await require('./browser-free-kicks.cjs')(page,assert);
   await require('./browser-scenarios.cjs')(page,assert);
   await page.goto('file:///'+path.resolve('index.html').replaceAll('\\','/'));
   await page.waitForSelector('#mode-quick');

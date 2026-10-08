@@ -2,7 +2,7 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
 const storage=new Map();global.window=global;global.localStorage={getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)};
 const root=path.resolve(__dirname,'..');
-for(const f of ['data/bundle.js',...['engine','formations','physics','data-loader','player','ball','team','ai','penalty','match','competition'].map(n=>'js/'+n+'.js')])vm.runInThisContext(fs.readFileSync(path.join(root,f),'utf8'),{filename:f});
+for(const f of ['data/bundle.js',...['engine','formations','physics','data-loader','player','ball','team','ai','penalty','free-kick','match','competition'].map(n=>'js/'+n+'.js')])vm.runInThisContext(fs.readFileSync(path.join(root,f),'utf8'),{filename:f});
 const d=new BSS.DataManager();d.raw=BSS_DATA;d.hydrate();const B=BSS,make=(opts={})=>new B.Match(d.teams[0],d.teams[1],{seed:26,...opts});
 const pkInput=(x=0,y=0,pressed={},state={})=>({axis:{x,y},pressed,state,released:{}});
 test('bola: giro acompanha deslocamento, repouso não gira e impacto amortece',()=>{
