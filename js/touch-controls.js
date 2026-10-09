@@ -24,6 +24,7 @@
    const endPad=e=>{
     if(e.pointerId!==this.padPointer)return;
     e.preventDefault();this.padPointer=null;this.setPadDirections(new Set());
+    this.pad.style?.setProperty('--stick-x','0%');this.pad.style?.setProperty('--stick-y','0%');
    };
    for(const event of ['pointerup','pointercancel','lostpointercapture'])this.pad.addEventListener(event,endPad);
    for(const button of this.root.querySelectorAll('[data-touch-action]')){
@@ -70,6 +71,10 @@
     if(y<-.24)active.add('up');else if(y>.24)active.add('down');
     if(x<-.24)active.add('left');else if(x>.24)active.add('right');
    }
+   // The knob moves inside its bezel, without preventing 8-way multitouch control.
+   const length=Math.hypot(x,y),scale=length?Math.min(length,1)*.21/length:0;
+   this.pad.style?.setProperty('--stick-x',`${Math.round(x*scale*100)}%`);
+   this.pad.style?.setProperty('--stick-y',`${Math.round(y*scale*100)}%`);
    this.setPadDirections(active);
   }
   setPadDirections(next){
@@ -85,6 +90,7 @@
   }
   reset(){
    this.padPointer=null;
+   this.pad.style?.setProperty('--stick-x','0%');this.pad.style?.setProperty('--stick-y','0%');
    this.padActions.clear();this.actionPointers.clear();this.currentActions.clear();
    for(const button of this.root.querySelectorAll('.is-pressed')){button.classList.remove('is-pressed');button.setAttribute('aria-pressed','false');}
    this.input.clearVirtual();

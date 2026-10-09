@@ -166,3 +166,128 @@ body.cinematic-active #touch-controls [data-touch-action="switch"],
 body.cinematic-active #touch-controls [data-touch-action="sprint"],
 body.cinematic-active #touch-controls [data-touch-action="context"] {visibility:hidden;pointer-events:none}
 
+
+/* FIFA 14-inspired mobile HUD: thumb-friendly sprint and switch at the lower
+   right, three attacking actions above them, and a free-moving left stick.
+   Touch surfaces use percentage-safe sizing so nothing is clipped on phones. */
+body.show-touch-controls.playing:not(.ui-open) .touch-controls {
+ --edge: max(10px,env(safe-area-inset-right));
+ --main: clamp(72px,22dvh,98px);
+ --secondary: clamp(68px,20dvh,90px);
+ --attack: clamp(55px,17dvh,74px);
+ --small-attack: clamp(50px,15dvh,64px);
+ position:fixed;inset:0;width:100%;height:100dvh;display:block;
+ z-index:60;pointer-events:none;overflow:visible;
+ font-family:Arial,Helvetica,sans-serif;
+}
+body.show-touch-controls.playing:not(.ui-open) .touch-left {
+ position:absolute;left:max(10px,env(safe-area-inset-left));
+ bottom:max(14px,env(safe-area-inset-bottom));margin:0;
+ pointer-events:auto;
+}
+body.show-touch-controls.playing:not(.ui-open) .touch-dpad {
+ --pad-size:clamp(128px,42dvh,188px);
+ --stick-x:0%;--stick-y:0%;
+ width:var(--pad-size);height:var(--pad-size);border-radius:50%;
+ border:2px solid #dfefc2b5;
+ background:radial-gradient(circle at 50% 45%,#b0c9982b 0 36%,#19452588 38% 60%,#b4d29b65 61% 68%,#092e2099 72% 100%);
+ box-shadow:0 2px 12px #071b16aa,inset 0 0 0 5px #d9e9c241,inset 0 0 0 12px #143c2885;
+ position:relative;overflow:visible;
+}
+.touch-pad-ring {position:absolute;inset:15%;border:2px solid #d5eac699;border-radius:50%;box-shadow:inset 0 4px 15px #0c301790,0 0 5px #fff3;pointer-events:none}
+.touch-pad-knob {
+ position:absolute;left:50%;top:50%;width:44%;height:44%;border-radius:50%;
+ transform:translate(calc(-50% + var(--stick-x)),calc(-50% + var(--stick-y)));
+ background:radial-gradient(circle at 38% 30%,#557e40 0%,#305d32 42%,#153e20 72%,#102c16 100%);
+ border:3px solid #dcebc5;
+ box-shadow:0 3px 6px #092317c9,inset 0 0 0 5px #abc68b33,inset 0 0 0 9px #0a2b19bb;
+ pointer-events:none;
+}
+/* Keep the underlying directional elements for the existing 8-way input logic. */
+body.show-touch-controls.playing:not(.ui-open) .dpad-arrow{opacity:0;border:0;background:none;box-shadow:none;pointer-events:none}
+body.show-touch-controls.playing:not(.ui-open) .touch-right {
+ position:absolute;right:max(10px,env(safe-area-inset-right));
+ bottom:max(12px,env(safe-area-inset-bottom));width:0;height:0;margin:0;
+ pointer-events:none;
+}
+body.show-touch-controls.playing:not(.ui-open) .touch-right .touch-btn {
+ position:absolute;display:flex;flex-direction:column;justify-content:center;align-items:center;
+ width:var(--attack);height:var(--attack);min-width:0;min-height:0;
+ border:2px solid #d9e6cab8;border-radius:50%;padding:2px;
+ background:radial-gradient(circle at 37% 25%,#6b914997,#2e6628d9 54%,#0a351cda 100%);
+ box-shadow:0 3px 9px #001e0bb3,inset 0 0 0 4px #e0f3d022,inset 0 2px 10px #cee6b634;
+ color:#f5ffea;text-shadow:0 1px 3px #00240b;font-family:Arial,sans-serif;
+ letter-spacing:0;line-height:1.1;pointer-events:auto;
+}
+.touch-right .touch-btn b {font:800 clamp(17px,5dvh,28px)/1 Arial,sans-serif}
+.touch-right .touch-btn small {font:800 clamp(8px,2.4dvh,11px)/1.1 Arial,sans-serif;letter-spacing:-.15px;white-space:nowrap}
+.touch-right .touch-btn .defense-label {display:none}
+body.touch-defending .touch-btn .attack-label {display:none}
+body.touch-defending .touch-btn .defense-label {display:block}
+body.show-touch-controls.playing:not(.ui-open) .touch-sprint {
+ width:var(--main)!important;height:var(--main)!important;right:0;bottom:0;
+ background:radial-gradient(circle at 38% 22%,#86a960c4,#4b7c39db 52%,#183a21ee 100%)!important;
+ border-width:3px!important;
+}
+body.show-touch-controls.playing:not(.ui-open) .touch-switch {
+ width:var(--secondary)!important;height:var(--secondary)!important;
+ right:calc(var(--main) + 12px);left:auto!important;bottom:1px;
+ clip-path:none;
+}
+body.show-touch-controls.playing:not(.ui-open) .touch-shoot {
+ right:10px;bottom:calc(var(--main) + 30px);
+ background:radial-gradient(circle at 38% 25%,#90aa59a8,#476a2adf 58%,#1b3522ee 100%);
+}
+body.show-touch-controls.playing:not(.ui-open) .touch-pass {
+ right:calc(var(--attack) + 21px);bottom:calc(var(--main) + 13px);
+}
+body.show-touch-controls.playing:not(.ui-open) .touch-long {
+ width:var(--small-attack);height:var(--small-attack);
+ right:calc(var(--attack)*2 + 31px);bottom:calc(var(--main) + 60px);
+}
+body.show-touch-controls.playing:not(.ui-open) .touch-context {
+ width:var(--small-attack);height:var(--small-attack);
+ right:12px;bottom:calc(var(--main) + var(--attack) + 49px);
+}
+body.show-touch-controls.playing:not(.ui-open) .touch-right .touch-btn.is-pressed {
+ filter:brightness(1.35);transform:scale(.93);
+ box-shadow:0 0 15px #e0fbcbaa,inset 0 0 16px #fff7;
+}
+body.show-touch-controls.playing:not(.ui-open) .touch-pause {
+ position:absolute;right:max(10px,env(safe-area-inset-right));left:auto;
+ top:max(9px,env(safe-area-inset-top));bottom:auto;
+ width:44px;height:44px;display:grid;place-items:center;
+ transform:none;border-radius:8px;border:1px solid #d2e3d39b;
+ font:900 24px/1 Arial,sans-serif;background:#183728ba;color:#eef9e6;
+ box-shadow:0 2px 6px #0019;pointer-events:auto;
+}
+body.show-touch-controls.playing:not(.ui-open) .touch-pause::before{display:none}
+body.show-touch-controls.playing:not(.ui-open) .touch-pause.is-pressed{transform:scale(.93)}
+body.show-touch-controls.playing:not(.ui-open) .touch-tip{display:none}
+@media (orientation:landscape) and (max-height:350px){
+ body.show-touch-controls.playing:not(.ui-open) .touch-controls {
+  --main:clamp(64px,22dvh,75px);--secondary:clamp(62px,21dvh,73px);
+  --attack:clamp(48px,17dvh,58px);--small-attack:clamp(46px,15dvh,52px);
+ }
+ body.show-touch-controls.playing:not(.ui-open) .touch-dpad {--pad-size:clamp(106px,38dvh,134px)}
+ body.show-touch-controls.playing:not(.ui-open) .touch-shoot {bottom:calc(var(--main) + 22px)}
+ body.show-touch-controls.playing:not(.ui-open) .touch-pass {bottom:calc(var(--main) + 10px)}
+ body.show-touch-controls.playing:not(.ui-open) .touch-long {bottom:calc(var(--main) + 40px)}
+ body.show-touch-controls.playing:not(.ui-open) .touch-context {bottom:calc(var(--main) + var(--attack) + 24px)}
+}
+@media (orientation:portrait){
+ body.show-touch-controls.playing:not(.ui-open) .touch-controls {
+  --main:clamp(68px,19vw,86px);--secondary:clamp(65px,18vw,82px);
+  --attack:clamp(50px,14vw,64px);--small-attack:clamp(47px,13vw,56px);
+ }
+ body.show-touch-controls.playing:not(.ui-open) .touch-dpad{--pad-size:clamp(118px,38vw,164px)}
+ body.show-touch-controls.playing:not(.ui-open) .touch-long {
+  right:calc(var(--attack)*2 + 20px);bottom:calc(var(--main) + 54px);
+ }
+ body.show-touch-controls.playing:not(.ui-open) .touch-context {
+  right:7px;bottom:calc(var(--main) + var(--attack) + 34px);
+ }
+ body.show-touch-controls.playing:not(.ui-open) .touch-pass {right:calc(var(--attack) + 16px)}
+ body.show-touch-controls.playing:not(.ui-open) .touch-switch {right:calc(var(--main) + 7px)}
+ body.show-touch-controls.playing:not(.ui-open) .touch-pause {width:43px;height:43px}
+}

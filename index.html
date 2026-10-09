@@ -8,27 +8,26 @@
 <body>
   <header class="topbar"><a href="#" id="brand"><span class="brand-icon">✦</span> BRASIL <b>SUPER SOCCER</b><span class="year">2026</span></a><div class="top-right"><span class="status-dot"></span> EDIÇÃO ARCADE <button id="sound-toggle" aria-label="Ativar ou desativar som">SOM OFF</button></div></header>
   <main id="app"><section class="game-shell"><canvas id="game" width="480" height="270" tabindex="0" aria-label="Campo de futebol. Use setas para mover, Z para passar e X para chutar."></canvas><div id="screen"></div><div id="toast" role="status"></div></section>
-  <aside id="touch-controls" class="touch-controls" aria-label="Controle de jogo por toque">
-   <button class="touch-shoulder touch-switch" data-touch-action="switch" aria-label="Trocar atleta"><b>L</b><span>TROCAR ATLETA</span></button>
-   <button class="touch-shoulder touch-sprint" data-touch-action="sprint" aria-label="Correr: segure"><span>CORRER</span><b>R</b></button>
-   <button class="touch-pause" data-touch-action="pause" aria-label="Pausar partida">Ⅱ <span>PAUSA</span></button>
+  <aside id="touch-controls" class="touch-controls" aria-label="Controles touch estilo FIFA 14">
+   <button class="touch-pause" data-touch-action="pause" aria-label="Pausar partida">Ⅱ</button>
    <div class="touch-left">
-    <div id="touch-dpad" class="touch-dpad" role="group" aria-label="Direcional: deslize em qualquer direção, inclusive diagonal">
-     <span class="dpad-arrow dpad-up" data-dir="up" aria-label="Cima">▲</span>
-     <span class="dpad-arrow dpad-left" data-dir="left" aria-label="Esquerda">◀</span>
-     <span class="dpad-arrow dpad-right" data-dir="right" aria-label="Direita">▶</span>
-     <span class="dpad-arrow dpad-down" data-dir="down" aria-label="Baixo">▼</span>
+    <div id="touch-dpad" class="touch-dpad" role="group" aria-label="Analógico virtual: arraste para mover seu jogador em oito direções">
+     <span class="touch-pad-ring" aria-hidden="true"></span>
+     <span class="touch-pad-knob" aria-hidden="true"></span>
+     <span class="dpad-arrow dpad-up" data-dir="up" aria-hidden="true"></span>
+     <span class="dpad-arrow dpad-down" data-dir="down" aria-hidden="true"></span>
+     <span class="dpad-arrow dpad-left" data-dir="left" aria-hidden="true"></span>
+     <span class="dpad-arrow dpad-right" data-dir="right" aria-hidden="true"></span>
     </div>
    </div>
-   <div class="touch-right">
-    <div class="touch-actions" role="group" aria-label="Botões de ação">
-     <button class="touch-btn auxiliary" data-touch-action="long" aria-label="Lançamento forte"><b>C</b><small>LANÇAR</small></button>
-     <button class="touch-btn auxiliary" data-touch-action="context" aria-label="Drible ou ação contextual"><b>Y</b><small>DRIBLE</small></button>
-     <button class="touch-btn pass" data-touch-action="pass" aria-label="Passe: segure para carregar"><b>A</b><small>PASSE</small></button>
-     <button class="touch-btn shoot" data-touch-action="shoot" aria-label="Chute: segure para carregar"><b>B</b><small>CHUTE</small></button>
-    </div>
+   <div class="touch-right" role="group" aria-label="Ações de ataque e defesa">
+    <button class="touch-btn touch-long" data-touch-action="long" aria-label="Lançamento no ataque, chamar segundo defensor na defesa"><b>↗</b><small class="attack-label">LANÇAR</small><small class="defense-label">2º DEF</small></button>
+    <button class="touch-btn touch-context" data-touch-action="context" aria-label="Driblar com a bola, dar bote sem a bola"><b>✦</b><small class="attack-label">DRIBLE</small><small class="defense-label">DESARME</small></button>
+    <button class="touch-btn touch-shoot" data-touch-action="shoot" aria-label="Chutar com a bola, desarmar sem a bola"><b>●</b><small class="attack-label">CHUTE</small><small class="defense-label">BOTE</small></button>
+    <button class="touch-btn touch-pass" data-touch-action="pass" aria-label="Passe com a bola, carrinho sem a bola"><b>➜</b><small class="attack-label">PASSE</small><small class="defense-label">CARRINHO</small></button>
+    <button class="touch-btn touch-switch" data-touch-action="switch" aria-label="Trocar atleta"><b>⇆</b><small>TROCAR</small></button>
+    <button class="touch-btn touch-sprint" data-touch-action="sprint" aria-label="Correr: mantenha pressionado"><b>»</b><small>CORRER</small></button>
    </div>
-   <p class="touch-tip">DIRECIONE E SEGURE OS BOTÕES PARA CARREGAR · GIRE O CELULAR PARA AMPLIAR O CAMPO</p>
   </aside>
   </main>
   <footer><span>FEITO PARA QUEM VIVE O JOGO.</span><span>11 × 11 <i>•</i> PIXEL FOOTBALL <i>•</i> TEMPORADA 2026</span><button id="help">CONTROLES ↗</button></footer>

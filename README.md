@@ -152,7 +152,7 @@ Esta é uma implementação arcade original, não uma reprodução fiel de um mo
 
 As reposições são organizadas automaticamente e têm limite de espera. Todos os tiros livres são diretos. Pênaltis marcados durante a partida encerram o lance sem disputa de rebote: após erro/defesa há tiro de meta. A vantagem usa uma janela curta baseada em posse; não há VAR, lesões, mão na bola, punição por recuo ao goleiro ou revisão completa das leis oficiais. Impedimento considera recepção, não todas as formas de interferência sem toque.
 
-A IA usa heurísticas por zona. As outras partidas de campeonato e copa são simuladas, não executadas pelo motor completo. Não há suspensões acumuladas entre rodadas nem fadiga persistente entre partidas. Copa tem chave de oito clubes e sorteio simplificado. Série B pode ser adicionada nos dados, mas não tem modo próprio. Não há multiplayer, modo online ou botões touch para celular.
+A IA usa heurísticas por zona. As outras partidas de campeonato e copa são simuladas, não executadas pelo motor completo. Não há suspensões acumuladas entre rodadas nem fadiga persistente entre partidas. Copa tem chave de oito clubes e sorteio simplificado. Série B pode ser adicionada nos dados, mas não tem modo próprio. Não há multiplayer nem modo online. Há controles touch para celular e gerenciamento automático do cursor e goleiro.
 
 Os controles, as regras essenciais e os modos são funcionais. O nível de acabamento visual e a variedade de comportamentos ainda são menores que os de um jogo comercial de referência.
 
@@ -162,29 +162,19 @@ Câmera atrás do gol e comandos PK também nas faltas da partida. No teclado cl
 
 ## Controles mobile (touchscreen)
 
-O jogo identifica telas com toque e mostra controles durante as partidas,
-sem alterar a experiência de teclado/gamepad no desktop. O direcional
-aceita diagonais e gesto de arrastar. A interface aceita vários dedos
-pressionados simultaneamente (ex.: mover + correr + chutar).
+O jogo oferece layout touch **inspirado no FIFA 14**: analógico circular à esquerda, corrida e troca de atleta em botões **ampliados no canto inferior direito**, e chute, passe, lançamento e drible distribuídos logo acima. Os rótulos dos botões acompanham as ações de ataque e defesa. Os controles multitoque aceitam direcional + corrida + ação simultaneamente.
 
-- **A / PASSE**: passe curto ou carrinho; segure para carregar, solte para executar.
-- **B / CHUTE**: chute ou bote; segure e solte para regular a força.
-- **C / LANÇAR**: lançamento longo; segure e solte para regular a força.
-- **R / CORRER**: mantenha pressionado para correr. Dois toques rápidos na direção acionam a arrancada.
-- **L / TROCAR**: muda o jogador controlado.
-- **Y / DRIBLE**: drible/ação contextual, finta ou defesa conforme a posse.
-- **Ⅱ / PAUSA**: pausa a partida. Use os botões da interface para escalação, reinício ou saída.
-- **DIRECIONAL**: arraste sobre a cruz para as oito direções.
+- **CORRER**: segure, botão inferior direito, ou duplo toque no analógico para arrancar.
+- **TROCAR**: botão grande à esquerda de CORRER; troca manual temporariamente prioritária.
+- **CHUTE**: chute ou bote defensivo; segure/solte para ajustar força.
+- **PASSE**: passe ou carrinho; segure/solte para ajustar força.
+- **LANÇAR / 2º DEF**: lançamento longo com posse; sem posse, segure para pressionar com um segundo defensor.
+- **DRIBLE / DESARME**: drible contextual com bola ou desarme sem bola.
+- **PAUSA**: superior direito.
 
-Nas penalidades: direcional mira e escolhe a altura; A é fraco, B é médio,
-C é forte, Y + direcional é finta, e B ou C + direcional aciona o goleiro.
+**Seleção assistida:** na partida, o cursor segue automaticamente o atleta de linha mais próximo da bola, com estabilidade para não mudar a cada frame; em posse de seu time, acompanha o dono da bola. O goleiro defende por IA, sem cursor, exceto para reposição no tiro de meta ou após agarrar a bola; nesse caso, ainda é capaz de distribuir automaticamente.
 
-O canvas preserva os 480×270 pixels originais (16:9), sem distorção.
-Em retrato o controle aparece abaixo do campo; em paisagem, sem cobrir
-o placar principal, os comandos ficam sobrepostos nas bordas do campo.
-O HTML continua estático e pode ser aberto offline pelo `index.html`.
-
-Para conferir a lógica: `npm test` executa também `tests/touch.test.js`.
+Leia [`docs/MOBILE.md`](docs/MOBILE.md) para instruções sobre tela cheia, cenas e cobranças de falta e pênalti. Execute `npm test` para validar todo o motor, incluindo `tests/mobile-selection.test.js`.
 
 ## Faltas no campo de ataque
 
