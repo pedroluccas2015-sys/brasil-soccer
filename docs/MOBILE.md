@@ -1,29 +1,23 @@
-# Mobile — controles inspirados no FIFA 14 (2026)
+# Brasil Super Soccer 2026 — Tela cheia e controles mobile
 
-Abra **index.html** no celular e ative **⛶ TELA CHEIA** no menu. Se possível, vire a tela para o modo paisagem. O jogo tenta a API de tela cheia e bloqueio de orientação quando o navegador permite; no iOS há fallback imersivo sem cortar os menus. A resolução lógica da partida permanece **480 × 270 (16:9)**, preservando a proporção da imagem. A opção **🎮 CONTROLES: ON/OFF** mantém sua preferência local e os controles ficam visíveis por padrão.
+Abra **index.html** no navegador de um celular. No menu principal (e nos demais menus) pressione **⛶ TELA CHEIA**. O jogo tenta entrar na tela cheia do navegador e bloquear a orientação em paisagem quando o aparelho permitir. Em navegadores que não autorizam tela cheia de páginas HTML, como certas versões do Safari no iPhone, a página passa ao modo de exibição imersiva ocupando a área disponível, sem esconder ou recortar opções. Gire o celular para jogar em widescreen.
 
-## Novo layout
+O botão **🎮 CONTROLES: ON/OFF** do menu permite mostrar ou esconder controles na tela. Eles ficam **ligados por padrão**, mesmo em navegadores que não detectem corretamente a presença de touchscreen. A preferência fica salva no navegador. Durante a partida, o direcional e os botões aparecem automaticamente (os controles são ocultados temporariamente ao abrir menus, inclusive pausa). Todos os botões aceitam pressionamentos simultâneos.
 
-- **Analógico inferior esquerdo:** arraste o polegar para qualquer uma das oito direções, mantendo o dedo apoiado; o centro acompanha visualmente o movimento.
-- **CORRER:** botão verde grande no extremo inferior direito. Mantenha pressionado junto com o analógico. Dois toques rápidos numa direção também iniciam arrancada.
-- **TROCAR:** botão grande imediatamente à esquerda de CORRER. Seleciona manualmente outro jogador de linha próximo da bola.
-- **CHUTE e PASSE:** botões arredondados acima dos botões grandes. Segure para carregar a potência; solte para finalizar a ação.
-- **LANÇAR:** logo à esquerda e acima dos demais, para passes longos. **Sem posse:** segure para chamar o segundo defensor à pressão (`2º DEF`).
-- **DRIBLE:** mais acima, perto da lateral direita; sem a bola executa desarme.
-- **PAUSA:** canto superior direito.
+- Direcional: mover, com diagonais.
+- A: passe/carrinho; B: chute/bote; C: lançamento.
+- R: correr (segurar); L: trocar jogador; Y: drible/ação contextual.
+- PAUSA: abrir menu para continuar, substituir jogadores ou sair.
+- Pênaltis: direcional + A/B/C para diferentes forças; Y com direcional para finta; B/C na defesa.
 
-Quando o adversário está com a bola, os rótulos mudam automaticamente para **BOTE**, **CARRINHO**, **2º DEF** e **DESARME**, aproveitando os mesmos botões. Os toques funcionam juntos: é possível conduzir o analógico, correr e apertar chute sem tirar os outros dedos.
+A resolução interna do jogo permanece **480 × 270 (16:9)** e a imagem é ampliada mantendo as proporções. O menu pode usar a largura total do aparelho em modo widescreen, mas o campo nunca é esticado ou recortado. Em telas verticais, as setas e os botões de ação ficam nos cantos inferiores; os botões L e R permanecem na parte superior.
 
-## Seleção automatizada
+## Layout dos controles
 
-O jogador de linha mais próximo da bola é selecionado automaticamente sempre que houver vantagem clara na distância. Há um pequeno tempo de estabilidade para impedir o cursor de ficar pulando entre jogadores. Com posse do time humano, o dono da bola recebe o cursor imediatamente. A troca manual permanece ativa e tem prioridade por 0,9 s.
+- Inferior esquerdo: apenas as quatro setas, sem disco ou analógico. Diagonais e arrasto continuam funcionando.
+- Inferior direito: quatro ações em losango (Y no topo, B à esquerda, C à direita e A embaixo).
+- Superior esquerdo: L — trocar atleta.
+- Superior direito: R — correr enquanto estiver pressionado.
+- Centro inferior: botão pequeno de pausa, com área de toque ampliada.
 
-O goleiro **sempre se movimenta, reage e defende sob controle da IA**, mesmo quando segura a bola. O cursor não seleciona o goleiro numa jogada normal. As exceções são **tiro de meta** e **bola agarrada pelo goleiro**, permitindo uma reposição manual, com reposição automática após pouco tempo se o usuário não agir. Em cobranças de pênaltis a atuação do goleiro continua obedecendo às regras específicas desse modo.
-
-## Cobranças de falta e pênaltis
-
-Nas faltas especiais, CHUTE confirma as etapas da cobrança e PASSE permite a alternativa curta. Nos pênaltis, direcional + PASSE/CHUTE/LANÇAR regulam as forças; DRIBLE + direcional finta e CHUTE/LANÇAR + direcional comandam a defesa conforme o modo. A pausa e os controles são ocultados/mostrados em conformidade com os menus e cenas.
-
-## Testes
-
-Execute `npm test` para verificar controles, seleção, IA do goleiro, segundo defensor, faltas, rebotes e demais regras.
+Visual azul translúcido inspirado na referência fornecida. As funções dos botões, faltas especiais e pênaltis permanecem iguais. Layout verificado no navegador em 844 × 390, 390 × 844, 320 × 568 e 568 × 320.

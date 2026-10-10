@@ -1,36 +1,241 @@
-# Fontes e limites dos dados
+# Fontes e limites
 
-Consulta realizada em **30 de setembro de 2026**. A data representa a consulta, não a garantia de atualização das páginas. São recortes de 24 a 31 jogadores reais por clube, suficientes para titulares e banco; não são registros federativos completos. Nomes e grupos de posição foram transcritos de páginas públicas. Não foram usados ratings, imagens, endpoints privados ou credenciais do SofaScore.
+Elencos e cores coletados em 09/10/2026; revisão final do programa em 10/10/2026. São 208 clubes e 5931 registros de atletas. A data de consulta não garante a atualização editorial da fonte nem a inscrição oficial no torneio.
 
-Participantes: [CBF — clubes da Série A 2026](https://www.cbf.com.br/futebol-brasileiro/times/campeonato-brasileiro/serie-a/2026). O calendário e a classificação do jogo são fictícios, gerados localmente.
+## Competições
 
-| Clube | Fonte do elenco |
-|---|---|
-| Flamengo | https://www.sofascore.com/football/team/flamengo/5981 |
-| Palmeiras | https://www.palmeiras.com.br/elenco/ |
-| Corinthians | https://www.sofascore.com/football/team/corinthians/1957 |
-| São Paulo | https://www.sofascore.com/football/team/sao-paulo/1981 |
-| Santos | https://www.sofascore.com/football/team/santos/1968 |
-| Fluminense | https://www.sofascore.com/football/team/fluminense/1961 |
-| Botafogo | https://www.sofascore.com/football/team/botafogo/1958 |
-| Vasco | https://www.sofascore.com/football/team/vasco-da-gama/1974 |
-| Grêmio | https://www.sofascore.com/football/team/gremio/5926 |
-| Internacional | https://www.sofascore.com/football/team/internacional/1966 |
-| Cruzeiro | https://www.sofascore.com/football/team/cruzeiro/1954 |
-| Atlético-MG | https://www.sofascore.com/football/team/atletico-mineiro/1977 |
-| Bahia | https://www.sofascore.com/football/team/bahia/1955 |
-| Vitória | https://www.sofascore.com/football/team/vitoria/1962 |
-| Athletico-PR | https://www.sofascore.com/football/team/athletico/1967 |
-| Coritiba | https://www.sofascore.com/football/team/coritiba/1982 |
-| Red Bull Bragantino | https://www.sofascore.com/football/team/red-bull-bragantino/1999 |
-| Mirassol | https://www.sofascore.com/football/team/mirassol/21982 |
-| Chapecoense | https://www.sofascore.com/football/team/chapecoense/21845 |
-| Remo | https://www.sofascore.com/football/team/remo/2012 |
+- [Série A — regulamento](https://stcbfsiteprdimgbrs.blob.core.windows.net/img-site/cdn/REC_Brasileiro_SA_rie_A_2026_v15_12_2025_final_02692c1077.pdf)
+- [Série B — regulamento](https://stcbfsiteprdimgbrs.blob.core.windows.net/img-site/cdn/REC_Brasileiro_Serie_B_2026_85d55b9f72.pdf)
+- [Série C — regulamento](https://stcbfsiteprdimgbrs.blob.core.windows.net/img-site/cdn/REC_Brasileiro_Serie_C_2026_d2552ddc00.pdf)
+- [Série D — regulamento](https://stcbfsiteprdimgbrs.blob.core.windows.net/img-site/cdn/REC_Brasileiro_Serie_D_2026_2def4ff8f2.pdf)
+- [Copa do Brasil — regulamento](https://stcbfsiteprdimgbrs.blob.core.windows.net/img-site/cdn/REC_Copa_do_Brasil_2026_66989a5426.pdf)
+- [Copa do Brasil — terceira fase](https://stcbfsiteprdimgbrs.blob.core.windows.net/img-site/cdn/Tabela_Detalhada_Copa_do_Brasil_2026_13_03_fdd487abba.pdf)
+- [Ranking CBF 2026](https://stcbfsiteprdimgbrs.blob.core.windows.net/img-site/cdn/RNC_Ranking_Nacional_dos_Clubes_2026_27e24418e7.pdf)
+- [Libertadores — grupos](https://gol.conmebol.com/libertadores/pt-br/news/rumo-gloria-eterna-este-sao-os-grupos-da-conmebol-libertadores-2026)
+- [Sul-Americana — grupos](https://gol.conmebol.com/sudamericana/es/news/por-la-gran-conquista-estos-son-los-grupos-de-la-conmebol-sudamericana-2026)
+- [Critérios de desempate continentais](https://www.afa.com.ar/4705/posts/los-criterios-de-desempate-para-definir-la-fase-de-grupos)
+- [Libertadores — manual](https://cdn.conmebol.com/wp-content/uploads/2025/12/CL-2026-Manual-de-Clubes-ESP-Feb26.pdf)
+- [Sul-Americana — manual](https://cdn.conmebol.com/wp-content/uploads/2025/12/CS-2026-Manual-de-Clubes-ESP-Feb26.pdf)
 
-Números do Palmeiras: página oficial acima. Números do São Paulo: [elenco oficial](https://www.saopaulofc.net/esporte/futebol-masculino-profissional/). Rossi: [perfil oficial do Flamengo](https://www.flamengo.com.br/futebol/atleta/rossi), número 1, 193 cm e pé direito. As posições são categorias amplas da fonte (GK/DF/MF/FW), não posições táticas verificadas individualmente. A escalação inicial é uma organização automática para jogar, não a escalação oficial.
+## Elencos e uniformes
 
-Nascimento, altura, pé e números não conferidos ficam `null`. A interface mostra “—” para números desconhecidos; a marcação em campo usa o índice da posição como identificação de gameplay. Não foram inventados nomes para completar os times. Importações permitem completar os campos e corrigir transferências.
+As páginas públicas do Transfermarkt fornecem a maioria dos nomes, posições e números. ESPN e oGol complementam listas insuficientes. SofaScore não permitiu a coleta nesta sessão. Não houve inclusão de atletas fictícios para completar os times.
 
-Os atributos são perfis por posição com variação determinística de ±6, limitados a 1–99. Não representam uma avaliação factual da habilidade dos atletas. Cor da pele e aparência dos sprites também são estilizações procedurais, não retratos. Uniformes usam cores e padrões gerais; não reproduzem texturas, patrocínios ou modelos oficiais de 2026.
+**Listas de temporada com vínculos atuais não integralmente confirmados:** ABECAT Ouvidorense, Castanhal EC, Clube Recreativo e Atlético Catalano (GO), EC São Luiz, Guarany de Bagé FC, Portuguesa.
 
-O `robots.txt` público do SofaScore foi consultado; as páginas de clubes usadas não constavam nas rotas proibidas. O projeto não distribui um scraper nem faz chamadas para fontes externas ao executar. Atualizações são importações manuais de dados que o usuário tenha autorização para utilizar.
+**Uniformes:** cores institucionais consultadas nas páginas de dados dos clubes, com modelos arcade simples. As camisas de 2026, calções, meias e kits de goleiros NÃO foram verificados individualmente. Não são réplicas oficiais.
+
+Não são importadas avaliações comerciais: atributos são estimativas determinísticas do jogo. Não se presume que o elenco publicado seja a lista completa de inscritos.
+
+## Rastreabilidade por clube
+
+| Clube | Elenco | Cores | Situação |
+|---|---|---|---|
+| Flamengo | [Fonte](https://www.transfermarkt.com/flamengo-rio-de-janeiro/kader/verein/614) | [Fonte](https://www.transfermarkt.com/flamengo-rio-de-janeiro/datenfakten/verein/614) | Lista publicada na coleta |
+| Palmeiras | [Fonte](https://www.transfermarkt.com/se-palmeiras-sao-paulo/kader/verein/1023) | [Fonte](https://www.transfermarkt.com/se-palmeiras-sao-paulo/datenfakten/verein/1023) | Lista publicada na coleta |
+| Corinthians | [Fonte](https://www.transfermarkt.com/corinthians-sao-paulo/kader/verein/199) | [Fonte](https://www.transfermarkt.com/corinthians-sao-paulo/datenfakten/verein/199) | Lista publicada na coleta |
+| São Paulo | [Fonte](https://www.transfermarkt.com/fc-sao-paulo/kader/verein/585) | [Fonte](https://www.transfermarkt.com/fc-sao-paulo/datenfakten/verein/585) | Lista publicada na coleta |
+| Santos | [Fonte](https://www.transfermarkt.com/fc-santos/kader/verein/221) | [Fonte](https://www.transfermarkt.com/fc-santos/datenfakten/verein/221) | Lista publicada na coleta |
+| Fluminense | [Fonte](https://www.transfermarkt.com/fluminense-rio-de-janeiro/kader/verein/2462) | [Fonte](https://www.transfermarkt.com/fluminense-rio-de-janeiro/datenfakten/verein/2462) | Lista publicada na coleta |
+| Botafogo | [Fonte](https://www.transfermarkt.com/botafogo-rio-de-janeiro/kader/verein/537) | [Fonte](https://www.transfermarkt.com/botafogo-rio-de-janeiro/datenfakten/verein/537) | Lista publicada na coleta |
+| Vasco da Gama | [Fonte](https://www.transfermarkt.com/vasco-da-gama-rio-de-janeiro/kader/verein/978) | [Fonte](https://www.transfermarkt.com/vasco-da-gama-rio-de-janeiro/datenfakten/verein/978) | Lista publicada na coleta |
+| Grêmio | [Fonte](https://www.transfermarkt.com/gremio-porto-alegre/kader/verein/210) | [Fonte](https://www.transfermarkt.com/gremio-porto-alegre/datenfakten/verein/210) | Lista publicada na coleta |
+| Internacional | [Fonte](https://www.transfermarkt.com/sc-internacional-porto-alegre/kader/verein/6600) | [Fonte](https://www.transfermarkt.com/sc-internacional-porto-alegre/datenfakten/verein/6600) | Lista publicada na coleta |
+| Cruzeiro | [Fonte](https://www.transfermarkt.com/ec-cruzeiro-belo-horizonte/kader/verein/609) | [Fonte](https://www.transfermarkt.com/ec-cruzeiro-belo-horizonte/datenfakten/verein/609) | Lista publicada na coleta |
+| Atlético-MG | [Fonte](https://www.transfermarkt.com/clube-atletico-mineiro/kader/verein/330) | [Fonte](https://www.transfermarkt.com/clube-atletico-mineiro/datenfakten/verein/330) | Lista publicada na coleta |
+| Bahia | [Fonte](https://www.transfermarkt.com/esporte-clube-bahia/kader/verein/10010) | [Fonte](https://www.transfermarkt.com/esporte-clube-bahia/datenfakten/verein/10010) | Lista publicada na coleta |
+| Vitória | [Fonte](https://www.transfermarkt.com/esporte-clube-vitoria/kader/verein/2125) | [Fonte](https://www.transfermarkt.com/esporte-clube-vitoria/datenfakten/verein/2125) | Lista publicada na coleta |
+| Athletico-PR | [Fonte](https://www.transfermarkt.com/club-athletico-paranaense/kader/verein/679) | [Fonte](https://www.transfermarkt.com/club-athletico-paranaense/datenfakten/verein/679) | Lista publicada na coleta |
+| Coritiba | [Fonte](https://www.transfermarkt.com/coritiba-fc/kader/verein/776) | [Fonte](https://www.transfermarkt.com/coritiba-fc/datenfakten/verein/776) | Lista publicada na coleta |
+| Red Bull Bragantino | [Fonte](https://www.transfermarkt.com/red-bull-bragantino/kader/verein/8793) | [Fonte](https://www.transfermarkt.com/red-bull-bragantino/datenfakten/verein/8793) | Lista publicada na coleta |
+| Mirassol | [Fonte](https://www.transfermarkt.com/mirassol-futebol-clube-sp-/kader/verein/3876) | [Fonte](https://www.transfermarkt.com/mirassol-futebol-clube-sp-/datenfakten/verein/3876) | Lista publicada na coleta |
+| Chapecoense | [Fonte](https://www.transfermarkt.com/chapecoense/kader/verein/17776) | [Fonte](https://www.transfermarkt.com/chapecoense/datenfakten/verein/17776) | Lista publicada na coleta |
+| Remo | [Fonte](https://www.transfermarkt.com/clube-do-remo-pa-/kader/verein/10997) | [Fonte](https://www.transfermarkt.com/clube-do-remo-pa-/datenfakten/verein/10997) | Lista publicada na coleta |
+| AA Altos | [Fonte](https://www.transfermarkt.com/associacao-atletica-de-altos-pi-/kader/verein/62794) | [Fonte](https://www.transfermarkt.com/associacao-atletica-de-altos-pi-/datenfakten/verein/62794) | Lista publicada na coleta |
+| AA Aparecidense | [Fonte](https://www.transfermarkt.com/aa-aparecidense-go-/kader/verein/25209) | [Fonte](https://www.transfermarkt.com/aa-aparecidense-go-/datenfakten/verein/25209) | Lista publicada na coleta |
+| AA Internacional de Limeira | [Fonte](https://www.transfermarkt.com/aa-internacional-limeira/kader/verein/308) | [Fonte](https://www.transfermarkt.com/aa-internacional-limeira/datenfakten/verein/308) | Lista publicada na coleta |
+| AA Maguary | [Fonte](https://www.transfermarkt.com/associacao-atletica-maguary/kader/verein/103697) | [Fonte](https://www.transfermarkt.com/associacao-atletica-maguary/datenfakten/verein/103697) | Lista publicada na coleta |
+| AA Portuguesa | [Fonte](https://www.transfermarkt.com/aa-portuguesa-rj-/kader/verein/52517) | [Fonte](https://www.transfermarkt.com/aa-portuguesa-rj-/datenfakten/verein/52517) | Lista publicada na coleta |
+| ABC Futebol Clube (RN) | [Fonte](https://www.transfermarkt.com/abc-futebol-clube-rn-/kader/verein/7209) | [Fonte](https://www.transfermarkt.com/abc-futebol-clube-rn-/datenfakten/verein/7209) | Lista publicada na coleta |
+| ABECAT Ouvidorense | [Fonte](https://www.ogol.com.br/equipe/abecat-ouvidorense/215573) | [Fonte](https://www.transfermarkt.com/abecat-ouvidorense/datenfakten/verein/115027) | Lista da temporada |
+| Academia Puerto Cabello | [Fonte](https://www.transfermarkt.com/academia-puerto-cabello/kader/verein/45193) | [Fonte](https://www.transfermarkt.com/academia-puerto-cabello/datenfakten/verein/45193) | Lista publicada na coleta |
+| AD Confiança | [Fonte](https://www.transfermarkt.com/associacao-desportiva-confianca-se-/kader/verein/3280) | [Fonte](https://www.transfermarkt.com/associacao-desportiva-confianca-se-/datenfakten/verein/3280) | Lista publicada na coleta |
+| AD Iguatu | [Fonte](https://www.transfermarkt.com/associacao-desportiva-iguatu-ce-/kader/verein/39555) | [Fonte](https://www.transfermarkt.com/associacao-desportiva-iguatu-ce-/datenfakten/verein/39555) | Lista publicada na coleta |
+| AE Velo Clube Rioclarense (SP) | [Fonte](https://www.transfermarkt.com/associacao-esportiva-velo-clube-rioclare/kader/verein/32037) | [Fonte](https://www.transfermarkt.com/associacao-esportiva-velo-clube-rioclare/datenfakten/verein/32037) | Lista publicada na coleta |
+| Agremiação Sportiva Arapiraquense (AL) | [Fonte](https://www.transfermarkt.com/asa-de-arapiraca/kader/verein/20092) | [Fonte](https://www.transfermarkt.com/asa-de-arapiraca/datenfakten/verein/20092) | Lista publicada na coleta |
+| Águia de Marabá FC | [Fonte](https://www.transfermarkt.com/aguia-de-maraba-futebol-clube-pa-/kader/verein/27642) | [Fonte](https://www.transfermarkt.com/aguia-de-maraba-futebol-clube-pa-/datenfakten/verein/27642) | Lista publicada na coleta |
+| Alagoinhas AC | [Fonte](https://www.transfermarkt.com/alagoinhas-atletico-clube-ba-/kader/verein/25229) | [Fonte](https://www.transfermarkt.com/alagoinhas-atletico-clube-ba-/datenfakten/verein/25229) | Lista publicada na coleta |
+| Alianza Atlético Sullana | [Fonte](https://www.transfermarkt.com/alianza-atletico-sullana/kader/verein/17479) | [Fonte](https://www.transfermarkt.com/alianza-atletico-sullana/datenfakten/verein/17479) | Lista publicada na coleta |
+| Amazonas FC | [Fonte](https://www.transfermarkt.com/amazonas-fc/kader/verein/87727) | [Fonte](https://www.transfermarkt.com/amazonas-fc/datenfakten/verein/87727) | Lista publicada na coleta |
+| América FC | [Fonte](https://www.transfermarkt.com/america-futebol-clube-rn-/kader/verein/1751) | [Fonte](https://www.transfermarkt.com/america-futebol-clube-rn-/datenfakten/verein/1751) | Lista publicada na coleta |
+| América Football Club (RJ) | [Fonte](https://www.transfermarkt.com/america-football-club-rj-/kader/verein/9138) | [Fonte](https://www.transfermarkt.com/america-football-club-rj-/datenfakten/verein/9138) | Lista publicada na coleta |
+| América Futebol Clube (MG) | [Fonte](https://www.transfermarkt.com/america-futebol-clube-mg-/kader/verein/2863) | [Fonte](https://www.transfermarkt.com/america-futebol-clube-mg-/datenfakten/verein/2863) | Lista publicada na coleta |
+| Anápolis FC | [Fonte](https://www.transfermarkt.com/anapolis-futebol-clube-go-/kader/verein/17568) | [Fonte](https://www.transfermarkt.com/anapolis-futebol-clube-go-/datenfakten/verein/17568) | Lista publicada na coleta |
+| Araguaína FR | [Fonte](https://www.transfermarkt.com/araguaina-futebol-e-regatas-to-/kader/verein/32639) | [Fonte](https://www.transfermarkt.com/araguaina-futebol-e-regatas-to-/datenfakten/verein/32639) | Lista publicada na coleta |
+| Associação Atlética Ponte Preta | [Fonte](https://www.transfermarkt.com/aa-ponte-preta/kader/verein/1134) | [Fonte](https://www.transfermarkt.com/aa-ponte-preta/datenfakten/verein/1134) | Lista publicada na coleta |
+| Associação Olímpica de Itabaiana (SE) | [Fonte](https://www.transfermarkt.com/associacao-olimpica-de-itabaiana-se-/kader/verein/8547) | [Fonte](https://www.transfermarkt.com/associacao-olimpica-de-itabaiana-se-/datenfakten/verein/8547) | Lista publicada na coleta |
+| Athletic Club | [Fonte](https://www.transfermarkt.com/athletic-club-mg-/kader/verein/64918) | [Fonte](https://www.transfermarkt.com/athletic-club-mg-/datenfakten/verein/64918) | Lista publicada na coleta |
+| Atlético Clube Goianiense | [Fonte](https://www.transfermarkt.com/atletico-clube-goianiense/kader/verein/15172) | [Fonte](https://www.transfermarkt.com/atletico-clube-goianiense/datenfakten/verein/15172) | Lista publicada na coleta |
+| Audax Italiano | [Fonte](https://www.transfermarkt.com/audax-italiano/kader/verein/6363) | [Fonte](https://www.transfermarkt.com/audax-italiano/datenfakten/verein/6363) | Lista publicada na coleta |
+| Avaí FC | [Fonte](https://www.transfermarkt.com/avai-fc-sc-/kader/verein/2035) | [Fonte](https://www.transfermarkt.com/avai-fc-sc-/datenfakten/verein/2035) | Lista publicada na coleta |
+| Azuriz FC | [Fonte](https://www.transfermarkt.com/azuriz-futebol-clube-pr-/kader/verein/85931) | [Fonte](https://www.transfermarkt.com/azuriz-futebol-clube-pr-/datenfakten/verein/85931) | Lista publicada na coleta |
+| Barcelona SC Guayaquil | [Fonte](https://www.transfermarkt.com/barcelona-sc-guayaquil/kader/verein/3523) | [Fonte](https://www.transfermarkt.com/barcelona-sc-guayaquil/datenfakten/verein/3523) | Lista publicada na coleta |
+| Barra FC | [Fonte](https://www.transfermarkt.com/barra-futebol-clube-sc-/kader/verein/52519) | [Fonte](https://www.transfermarkt.com/barra-futebol-clube-sc-/datenfakten/verein/52519) | Lista publicada na coleta |
+| Betim Futebol | [Fonte](https://www.transfermarkt.com/betim-futebol/kader/verein/98702) | [Fonte](https://www.transfermarkt.com/betim-futebol/datenfakten/verein/98702) | Lista publicada na coleta |
+| Blooming Santa Cruz | [Fonte](https://www.transfermarkt.com/blooming-santa-cruz/kader/verein/8056) | [Fonte](https://www.transfermarkt.com/blooming-santa-cruz/datenfakten/verein/8056) | Lista publicada na coleta |
+| Blumenau Esporte Clube (SC) | [Fonte](https://www.transfermarkt.com/blumenau-esporte-clube-sc-/kader/verein/66492) | [Fonte](https://www.transfermarkt.com/blumenau-esporte-clube-sc-/datenfakten/verein/66492) | Lista publicada na coleta |
+| Bolívar La Paz | [Fonte](https://www.transfermarkt.com/bolivar-la-paz/kader/verein/6878) | [Fonte](https://www.transfermarkt.com/bolivar-la-paz/datenfakten/verein/6878) | Lista publicada na coleta |
+| Botafogo FC | [Fonte](https://www.transfermarkt.com/botafogo-futebol-clube-sp-/kader/verein/9030) | [Fonte](https://www.transfermarkt.com/botafogo-futebol-clube-sp-/datenfakten/verein/9030) | Lista publicada na coleta |
+| Botafogo FC | [Fonte](https://www.transfermarkt.com/botafogo-futebol-clube-pb-/kader/verein/17964) | [Fonte](https://www.transfermarkt.com/botafogo-futebol-clube-pb-/datenfakten/verein/17964) | Lista publicada na coleta |
+| Brasiliense FC (DF) | [Fonte](https://www.transfermarkt.com/brasiliense-futebol-clube-df-/kader/verein/3973) | [Fonte](https://www.transfermarkt.com/brasiliense-futebol-clube-df-/datenfakten/verein/3973) | Lista publicada na coleta |
+| Brusque Futebol Clube (SC) | [Fonte](https://www.transfermarkt.com/brusque-futebol-clube-sc-/kader/verein/14390) | [Fonte](https://www.transfermarkt.com/brusque-futebol-clube-sc-/datenfakten/verein/14390) | Lista publicada na coleta |
+| CA Barracas Central | [Fonte](https://www.transfermarkt.com/club-atletico-barracas-central/kader/verein/25184) | [Fonte](https://www.transfermarkt.com/club-atletico-barracas-central/datenfakten/verein/25184) | Lista publicada na coleta |
+| CA Boca Juniors | [Fonte](https://www.transfermarkt.com/club-atletico-boca-juniors/kader/verein/189) | [Fonte](https://www.transfermarkt.com/club-atletico-boca-juniors/datenfakten/verein/189) | Lista publicada na coleta |
+| CA Boston River | [Fonte](https://www.transfermarkt.com/ca-boston-river/kader/verein/18074) | [Fonte](https://www.transfermarkt.com/ca-boston-river/datenfakten/verein/18074) | Lista publicada na coleta |
+| CA Juventud | [Fonte](https://www.transfermarkt.com/juventud-de-las-piedras/kader/verein/17428) | [Fonte](https://www.transfermarkt.com/juventud-de-las-piedras/datenfakten/verein/17428) | Lista publicada na coleta |
+| CA Lanús | [Fonte](https://www.transfermarkt.com/club-atletico-lanus/kader/verein/333) | [Fonte](https://www.transfermarkt.com/club-atletico-lanus/datenfakten/verein/333) | Lista publicada na coleta |
+| CA Peñarol | [Fonte](https://www.transfermarkt.com/ca-penarol/kader/verein/861) | [Fonte](https://www.transfermarkt.com/ca-penarol/datenfakten/verein/861) | Lista publicada na coleta |
+| CA River Plate | [Fonte](https://www.transfermarkt.com/club-atletico-river-plate/kader/verein/209) | [Fonte](https://www.transfermarkt.com/club-atletico-river-plate/datenfakten/verein/209) | Lista publicada na coleta |
+| CA Rosario Central | [Fonte](https://www.transfermarkt.com/club-atletico-rosario-central/kader/verein/1418) | [Fonte](https://www.transfermarkt.com/club-atletico-rosario-central/datenfakten/verein/1418) | Lista publicada na coleta |
+| CA San Lorenzo de Almagro | [Fonte](https://www.transfermarkt.com/club-atletico-san-lorenzo-de-almagro/kader/verein/1775) | [Fonte](https://www.transfermarkt.com/club-atletico-san-lorenzo-de-almagro/datenfakten/verein/1775) | Lista publicada na coleta |
+| Capital CF | [Fonte](https://www.transfermarkt.com/capital-clube-de-futebol-df-/kader/verein/38023) | [Fonte](https://www.transfermarkt.com/capital-clube-de-futebol-df-/datenfakten/verein/38023) | Lista publicada na coleta |
+| Carabobo FC | [Fonte](https://www.transfermarkt.com/carabobo-fc/kader/verein/14682) | [Fonte](https://www.transfermarkt.com/carabobo-fc/datenfakten/verein/14682) | Lista publicada na coleta |
+| Caracas FC | [Fonte](https://www.transfermarkt.com/caracas-fc/kader/verein/531) | [Fonte](https://www.transfermarkt.com/caracas-fc/datenfakten/verein/531) | Lista publicada na coleta |
+| Castanhal EC | [Fonte](https://www.transfermarkt.com/castanhal-esporte-clube-pa-/kader/verein/20799/saison_id/2025) | [Fonte](https://www.transfermarkt.com/castanhal-esporte-clube-pa-/datenfakten/verein/20799) | Lista da temporada |
+| CD América de Cali | [Fonte](https://www.transfermarkt.com/cd-america-de-cali/kader/verein/2352) | [Fonte](https://www.transfermarkt.com/cd-america-de-cali/datenfakten/verein/2352) | Lista publicada na coleta |
+| CD Macará | [Fonte](https://www.transfermarkt.com/cd-macara/kader/verein/17426) | [Fonte](https://www.transfermarkt.com/cd-macara/datenfakten/verein/17426) | Lista publicada na coleta |
+| CD O'Higgins | [Fonte](https://www.transfermarkt.com/cd-ohiggins/kader/verein/11470) | [Fonte](https://www.transfermarkt.com/cd-ohiggins/datenfakten/verein/11470) | Lista publicada na coleta |
+| CD Palestino | [Fonte](https://www.transfermarkt.com/cd-palestino/kader/verein/6536) | [Fonte](https://www.transfermarkt.com/cd-palestino/datenfakten/verein/6536) | Lista publicada na coleta |
+| CD Universidad Católica | [Fonte](https://www.transfermarkt.com/cd-universidad-catolica/kader/verein/3277) | [Fonte](https://www.transfermarkt.com/cd-universidad-catolica/datenfakten/verein/3277) | Lista publicada na coleta |
+| CE Operário Várzea-Grandense | [Fonte](https://www.transfermarkt.com/ce-operario-varzea-grandense-mt-/kader/verein/60520) | [Fonte](https://www.transfermarkt.com/ce-operario-varzea-grandense-mt-/datenfakten/verein/60520) | Lista publicada na coleta |
+| Ceará Sporting Club | [Fonte](https://www.transfermarkt.com/ceara-sporting-club/kader/verein/2029) | [Fonte](https://www.transfermarkt.com/ceara-sporting-club/datenfakten/verein/2029) | Lista publicada na coleta |
+| CEFAT Tirol | [Fonte](https://www.transfermarkt.com/gremio-pague-menos/kader/verein/94170) | [Fonte](https://www.transfermarkt.com/gremio-pague-menos/datenfakten/verein/94170) | Lista publicada na coleta |
+| Ceilândia EC | [Fonte](https://www.transfermarkt.com/ceilandia-esporte-clube-df-/kader/verein/12279) | [Fonte](https://www.transfermarkt.com/ceilandia-esporte-clube-df-/datenfakten/verein/12279) | Lista publicada na coleta |
+| Central SC | [Fonte](https://www.transfermarkt.com/central-sport-club-pe-/kader/verein/21409) | [Fonte](https://www.transfermarkt.com/central-sport-club-pe-/datenfakten/verein/21409) | Lista publicada na coleta |
+| Centro Sportivo Alagoano (AL) | [Fonte](https://www.transfermarkt.com/centro-sportivo-alagoano-al-/kader/verein/18545) | [Fonte](https://www.transfermarkt.com/centro-sportivo-alagoano-al-/datenfakten/verein/18545) | Lista publicada na coleta |
+| Cianorte Futebol Clube (PR) | [Fonte](https://www.transfermarkt.com/cianorte-futebol-clube-pr-/kader/verein/16837) | [Fonte](https://www.transfermarkt.com/cianorte-futebol-clube-pr-/datenfakten/verein/16837) | Lista publicada na coleta |
+| Club Always Ready | [Fonte](https://www.transfermarkt.com/club-always-ready/kader/verein/42208) | [Fonte](https://www.transfermarkt.com/club-always-ready/datenfakten/verein/42208) | Lista publicada na coleta |
+| Club Atlético Platense | [Fonte](https://www.transfermarkt.com/club-atletico-platense/kader/verein/928) | [Fonte](https://www.transfermarkt.com/club-atletico-platense/datenfakten/verein/928) | Lista publicada na coleta |
+| Club Atlético Tigre | [Fonte](https://www.transfermarkt.com/club-atletico-tigre/kader/verein/11831) | [Fonte](https://www.transfermarkt.com/club-atletico-tigre/datenfakten/verein/11831) | Lista publicada na coleta |
+| Club Cerro Porteño | [Fonte](https://www.transfermarkt.com/club-cerro-porteno/kader/verein/1214) | [Fonte](https://www.transfermarkt.com/club-cerro-porteno/datenfakten/verein/1214) | Lista publicada na coleta |
+| Club Cienciano | [Fonte](https://www.transfermarkt.com/club-cienciano/kader/verein/2729) | [Fonte](https://www.transfermarkt.com/club-cienciano/datenfakten/verein/2729) | Lista publicada na coleta |
+| Club Deportivo Riestra | [Fonte](https://www.transfermarkt.com/cd-riestra/kader/verein/19775) | [Fonte](https://www.transfermarkt.com/cd-riestra/datenfakten/verein/19775) | Lista publicada na coleta |
+| Club Estudiantes de La Plata | [Fonte](https://www.transfermarkt.com/club-estudiantes-de-la-plata/kader/verein/288) | [Fonte](https://www.transfermarkt.com/club-estudiantes-de-la-plata/datenfakten/verein/288) | Lista publicada na coleta |
+| Club Independiente Petrolero | [Fonte](https://www.transfermarkt.com/club-independiente-petrolero/kader/verein/30854) | [Fonte](https://www.transfermarkt.com/club-independiente-petrolero/datenfakten/verein/30854) | Lista publicada na coleta |
+| Club Libertad Asunción | [Fonte](https://www.transfermarkt.com/club-libertad-asuncion/kader/verein/9875) | [Fonte](https://www.transfermarkt.com/club-libertad-asuncion/datenfakten/verein/9875) | Lista publicada na coleta |
+| Club Nacional | [Fonte](https://www.transfermarkt.com/club-nacional/kader/verein/866) | [Fonte](https://www.transfermarkt.com/club-nacional/datenfakten/verein/866) | Lista publicada na coleta |
+| Club Olimpia | [Fonte](https://www.transfermarkt.com/olimpia-asuncion/kader/verein/629) | [Fonte](https://www.transfermarkt.com/olimpia-asuncion/datenfakten/verein/629) | Lista publicada na coleta |
+| Club Sporting Cristal | [Fonte](https://www.transfermarkt.com/club-sporting-cristal/kader/verein/1450) | [Fonte](https://www.transfermarkt.com/club-sporting-cristal/datenfakten/verein/1450) | Lista publicada na coleta |
+| Clube de Regatas Brasil (AL) | [Fonte](https://www.transfermarkt.com/clube-de-regatas-brasil-al-/kader/verein/11449) | [Fonte](https://www.transfermarkt.com/clube-de-regatas-brasil-al-/datenfakten/verein/11449) | Lista publicada na coleta |
+| Clube Laguna (RN) | [Fonte](https://www.transfermarkt.com/clube-laguna/kader/verein/108000) | [Fonte](https://www.transfermarkt.com/clube-laguna/datenfakten/verein/108000) | Lista publicada na coleta |
+| Clube Náutico Capibaribe | [Fonte](https://www.transfermarkt.com/clube-nautico-capibaribe/kader/verein/2646) | [Fonte](https://www.transfermarkt.com/clube-nautico-capibaribe/datenfakten/verein/2646) | Lista publicada na coleta |
+| Clube Náutico Marcílio Dias (SC) | [Fonte](https://www.transfermarkt.com/clube-nautico-marcilio-dias-sc-/kader/verein/4759) | [Fonte](https://www.transfermarkt.com/clube-nautico-marcilio-dias-sc-/datenfakten/verein/4759) | Lista publicada na coleta |
+| Clube Recreativo e Atlético Catalano (GO) | [Fonte](https://www.ogol.com.br/equipe/crac/3211?edicao_id=212952) | [Fonte](https://www.transfermarkt.com/clube-recreativo-e-atletico-catalano-go-/datenfakten/verein/12602) | Lista da temporada |
+| Clube Sociedade Esportiva (AL) | [Fonte](https://www.transfermarkt.com/clube-sociedade-esportiva-al-/kader/verein/52513) | [Fonte](https://www.transfermarkt.com/clube-sociedade-esportiva-al-/datenfakten/verein/52513) | Lista publicada na coleta |
+| Coquimbo Unido | [Fonte](https://www.transfermarkt.com/coquimbo-unido/kader/verein/11004) | [Fonte](https://www.transfermarkt.com/coquimbo-unido/datenfakten/verein/11004) | Lista publicada na coleta |
+| Criciúma EC | [Fonte](https://www.transfermarkt.com/criciuma-esporte-clube/kader/verein/7178) | [Fonte](https://www.transfermarkt.com/criciuma-esporte-clube/datenfakten/verein/7178) | Lista publicada na coleta |
+| CS Independiente Rivadavia | [Fonte](https://www.transfermarkt.com/independiente-rivadavia/kader/verein/12179) | [Fonte](https://www.transfermarkt.com/independiente-rivadavia/datenfakten/verein/12179) | Lista publicada na coleta |
+| CS Sergipe | [Fonte](https://www.transfermarkt.com/club-sportivo-sergipe-se-/kader/verein/7816) | [Fonte](https://www.transfermarkt.com/club-sportivo-sergipe-se-/datenfakten/verein/7816) | Lista publicada na coleta |
+| Cuiabá Esporte Clube (MT) | [Fonte](https://www.transfermarkt.com/cuiaba-ec-mt-/kader/verein/28022) | [Fonte](https://www.transfermarkt.com/cuiaba-ec-mt-/datenfakten/verein/28022) | Lista publicada na coleta |
+| Cusco FC | [Fonte](https://www.transfermarkt.com/cusco-fc/kader/verein/28999) | [Fonte](https://www.transfermarkt.com/cusco-fc/datenfakten/verein/28999) | Lista publicada na coleta |
+| Deportes Tolima | [Fonte](https://www.transfermarkt.com/deportes-tolima/kader/verein/10503) | [Fonte](https://www.transfermarkt.com/deportes-tolima/datenfakten/verein/10503) | Lista publicada na coleta |
+| Deportivo Cuenca | [Fonte](https://www.transfermarkt.com/deportivo-cuenca/kader/verein/8781) | [Fonte](https://www.transfermarkt.com/deportivo-cuenca/datenfakten/verein/8781) | Lista publicada na coleta |
+| Deportivo La Guaira | [Fonte](https://www.transfermarkt.com/deportivo-la-guaira/kader/verein/26468) | [Fonte](https://www.transfermarkt.com/deportivo-la-guaira/datenfakten/verein/26468) | Lista publicada na coleta |
+| EC Água Santa (SP) | [Fonte](https://www.transfermarkt.com/esporte-clube-agua-santa-sp-/kader/verein/45176) | [Fonte](https://www.transfermarkt.com/esporte-clube-agua-santa-sp-/datenfakten/verein/45176) | Lista publicada na coleta |
+| EC Democrata | [Fonte](https://www.transfermarkt.com/ec-democrata-mg-/kader/verein/3364) | [Fonte](https://www.transfermarkt.com/ec-democrata-mg-/datenfakten/verein/3364) | Lista publicada na coleta |
+| EC São Luiz | [Fonte](https://www.transfermarkt.com/ec-sao-luiz/kader/verein/27355/saison_id/2025) | [Fonte](https://www.transfermarkt.com/esporte-clube-sao-luiz-rs-/datenfakten/verein/27355) | Lista da temporada |
+| EC XV de Piracicaba | [Fonte](https://www.transfermarkt.com/xv-de-piracicaba/kader/verein/55335) | [Fonte](https://www.transfermarkt.com/xv-de-piracicaba/datenfakten/verein/55335) | Lista publicada na coleta |
+| Esporte Clube Jacuipense (BA) | [Fonte](https://www.transfermarkt.com/ec-jacuipense-ba-/kader/verein/33050) | [Fonte](https://www.transfermarkt.com/ec-jacuipense-ba-/datenfakten/verein/33050) | Lista publicada na coleta |
+| Esporte Clube Juventude | [Fonte](https://www.transfermarkt.com/esporte-clube-juventude/kader/verein/10492) | [Fonte](https://www.transfermarkt.com/esporte-clube-juventude/datenfakten/verein/10492) | Lista publicada na coleta |
+| Esporte Clube Noroeste (SP) | [Fonte](https://www.transfermarkt.com/esporte-clube-noroeste-sp-/kader/verein/15047) | [Fonte](https://www.transfermarkt.com/esporte-clube-noroeste-sp-/datenfakten/verein/15047) | Lista publicada na coleta |
+| Esporte Clube São José (RS) | [Fonte](https://www.transfermarkt.com/esporte-clube-sao-jose-rs-/kader/verein/7535) | [Fonte](https://www.transfermarkt.com/esporte-clube-sao-jose-rs-/datenfakten/verein/7535) | Lista publicada na coleta |
+| FC Atlético Cearense | [Fonte](https://www.transfermarkt.com/fc-atletico-cearense/kader/verein/27837) | [Fonte](https://www.transfermarkt.com/fc-atletico-cearense/datenfakten/verein/27837) | Lista publicada na coleta |
+| FC Cascavel (PR) | [Fonte](https://www.transfermarkt.com/futebol-clube-cascavel-pr-/kader/verein/28621) | [Fonte](https://www.transfermarkt.com/futebol-clube-cascavel-pr-/datenfakten/verein/28621) | Lista publicada na coleta |
+| Ferroviária | [Fonte](https://www.transfermarkt.com/associacao-ferroviaria-de-esportes-sp-/kader/verein/15882) | [Fonte](https://www.transfermarkt.com/associacao-ferroviaria-de-esportes-sp-/datenfakten/verein/15882) | Lista publicada na coleta |
+| Ferroviário AC | [Fonte](https://www.transfermarkt.com/ferroviario-atletico-clube-ce-/kader/verein/11931) | [Fonte](https://www.transfermarkt.com/ferroviario-atletico-clube-ce-/datenfakten/verein/11931) | Lista publicada na coleta |
+| Figueirense Futebol Clube | [Fonte](https://www.transfermarkt.com/figueirense-fc/kader/verein/4064) | [Fonte](https://www.transfermarkt.com/figueirense-fc/datenfakten/verein/4064) | Lista publicada na coleta |
+| Floresta Esporte Clube (CE) | [Fonte](https://www.transfermarkt.com/floresta-esporte-clube-ce-/kader/verein/65477) | [Fonte](https://www.transfermarkt.com/floresta-esporte-clube-ce-/datenfakten/verein/65477) | Lista publicada na coleta |
+| Fluminense EC | [Fonte](https://www.transfermarkt.com/fluminense-ec-pi-/kader/verein/87817) | [Fonte](https://www.transfermarkt.com/fluminense-ec-pi-/datenfakten/verein/87817) | Lista publicada na coleta |
+| Fortaleza Esporte Clube | [Fonte](https://www.transfermarkt.com/fortaleza-esporte-clube/kader/verein/10870) | [Fonte](https://www.transfermarkt.com/fortaleza-esporte-clube/datenfakten/verein/10870) | Lista publicada na coleta |
+| GA Sampaio (RR) | [Fonte](https://www.transfermarkt.com/ga-sampaio/kader/verein/87822) | [Fonte](https://www.transfermarkt.com/ga-sampaio/datenfakten/verein/87822) | Lista publicada na coleta |
+| Galvez EC | [Fonte](https://www.transfermarkt.com/galvez-esporte-clube/kader/verein/69424) | [Fonte](https://www.transfermarkt.com/galvez-esporte-clube/datenfakten/verein/69424) | Lista publicada na coleta |
+| Goiás EC | [Fonte](https://www.transfermarkt.com/goias-ec/kader/verein/3197) | [Fonte](https://www.transfermarkt.com/goias-ec/datenfakten/verein/3197) | Lista publicada na coleta |
+| Goiatuba EC | [Fonte](https://www.transfermarkt.com/goiatuba-esporte-clube-go-/kader/verein/8567) | [Fonte](https://www.transfermarkt.com/goiatuba-esporte-clube-go-/datenfakten/verein/8567) | Lista publicada na coleta |
+| Grêmio Esportivo Brasil (RS) | [Fonte](https://www.transfermarkt.com/gremio-esportivo-brasil-rs-/kader/verein/10560) | [Fonte](https://www.transfermarkt.com/gremio-esportivo-brasil-rs-/datenfakten/verein/10560) | Lista publicada na coleta |
+| Grêmio Novorizontino | [Fonte](https://www.transfermarkt.com/gremio-novorizontino-sp-/kader/verein/37474) | [Fonte](https://www.transfermarkt.com/gremio-novorizontino-sp-/datenfakten/verein/37474) | Lista publicada na coleta |
+| Guaporé FC | [Fonte](https://www.transfermarkt.com/guapore-fc/kader/verein/87821) | [Fonte](https://www.transfermarkt.com/guapore-fc/datenfakten/verein/87821) | Lista publicada na coleta |
+| Guarani Futebol Clube (SP) | [Fonte](https://www.transfermarkt.com/guarani-fc-sp-/kader/verein/1755) | [Fonte](https://www.transfermarkt.com/guarani-fc-sp-/datenfakten/verein/1755) | Lista publicada na coleta |
+| Guarany de Bagé FC | [Fonte](https://www.espn.com.br/futebol/time/elenco/_/id/21369/guarany_de_bage) | [Fonte](https://www.transfermarkt.com/guarany-bage-futebol-clube/datenfakten/verein/24903) | Lista da temporada |
+| IAPE FC | [Fonte](https://www.transfermarkt.com/iape-futebol-clube/kader/verein/87160) | [Fonte](https://www.transfermarkt.com/iape-futebol-clube/datenfakten/verein/87160) | Lista publicada na coleta |
+| IF São Joseense | [Fonte](https://www.transfermarkt.com/independente-futebol-sao-joseense-pr-/kader/verein/80647) | [Fonte](https://www.transfermarkt.com/independente-futebol-sao-joseense-pr-/datenfakten/verein/80647) | Lista publicada na coleta |
+| Independência FC | [Fonte](https://www.transfermarkt.com/independencia-futebol-clube-ac-/kader/verein/32612) | [Fonte](https://www.transfermarkt.com/independencia-futebol-clube-ac-/datenfakten/verein/32612) | Lista publicada na coleta |
+| Independiente del Valle | [Fonte](https://www.transfermarkt.com/independiente-del-valle/kader/verein/19309) | [Fonte](https://www.transfermarkt.com/independiente-del-valle/datenfakten/verein/19309) | Lista publicada na coleta |
+| Independiente Medellín | [Fonte](https://www.transfermarkt.com/independiente-medellin/kader/verein/10093) | [Fonte](https://www.transfermarkt.com/independiente-medellin/datenfakten/verein/10093) | Lista publicada na coleta |
+| Independiente Santa Fe | [Fonte](https://www.transfermarkt.com/independiente-santa-fe/kader/verein/11648) | [Fonte](https://www.transfermarkt.com/independiente-santa-fe/datenfakten/verein/11648) | Lista publicada na coleta |
+| Inhumas EC | [Fonte](https://www.transfermarkt.com/inhumas-esporte-clube-go-/kader/verein/25296) | [Fonte](https://www.transfermarkt.com/inhumas-esporte-clube-go-/datenfakten/verein/25296) | Lista publicada na coleta |
+| Ituano Futebol Clube (SP) | [Fonte](https://www.transfermarkt.com/ituano-futebol-clube-sp-/kader/verein/4773) | [Fonte](https://www.transfermarkt.com/ituano-futebol-clube-sp-/datenfakten/verein/4773) | Lista publicada na coleta |
+| Ivinhema FC | [Fonte](https://www.transfermarkt.com/ivinhema-futebol-clube-ms-/kader/verein/36962) | [Fonte](https://www.transfermarkt.com/ivinhema-futebol-clube-ms-/datenfakten/verein/36962) | Lista publicada na coleta |
+| Joinville Esporte Clube (SC) | [Fonte](https://www.transfermarkt.com/joinville-ec-sc-/kader/verein/3330) | [Fonte](https://www.transfermarkt.com/joinville-ec-sc-/datenfakten/verein/3330) | Lista publicada na coleta |
+| Junior FC | [Fonte](https://www.transfermarkt.com/junior-fc/kader/verein/11854) | [Fonte](https://www.transfermarkt.com/junior-fc/datenfakten/verein/11854) | Lista publicada na coleta |
+| Lagarto FC | [Fonte](https://www.transfermarkt.com/lagarto-futebol-clube-se-/kader/verein/56341) | [Fonte](https://www.transfermarkt.com/lagarto-futebol-clube-se-/datenfakten/verein/56341) | Lista publicada na coleta |
+| LDU Quito | [Fonte](https://www.transfermarkt.com/ldu-quito/kader/verein/9855) | [Fonte](https://www.transfermarkt.com/ldu-quito/datenfakten/verein/9855) | Lista publicada na coleta |
+| Londrina Esporte Clube (PR) | [Fonte](https://www.transfermarkt.com/londrina-esporte-clube-pr-/kader/verein/1693) | [Fonte](https://www.transfermarkt.com/londrina-esporte-clube-pr-/datenfakten/verein/1693) | Lista publicada na coleta |
+| Luverdense EC (MT) | [Fonte](https://www.transfermarkt.com/luverdense-esporte-clube-mt-/kader/verein/21599) | [Fonte](https://www.transfermarkt.com/luverdense-esporte-clube-mt-/datenfakten/verein/21599) | Lista publicada na coleta |
+| Madureira EC | [Fonte](https://www.transfermarkt.com/madureira-esporte-clube-rj-/kader/verein/4907) | [Fonte](https://www.transfermarkt.com/madureira-esporte-clube-rj-/datenfakten/verein/4907) | Lista publicada na coleta |
+| Manauara EC | [Fonte](https://www.transfermarkt.com/manauara-ec/kader/verein/94182) | [Fonte](https://www.transfermarkt.com/manauara-ec/datenfakten/verein/94182) | Lista publicada na coleta |
+| Manaus Futebol Clube | [Fonte](https://www.transfermarkt.com/manaus-futebol-clube/kader/verein/46022) | [Fonte](https://www.transfermarkt.com/manaus-futebol-clube/datenfakten/verein/46022) | Lista publicada na coleta |
+| Maracanã EC | [Fonte](https://www.transfermarkt.com/maracana-esporte-clube-ce-/kader/verein/22352) | [Fonte](https://www.transfermarkt.com/maracana-esporte-clube-ce-/datenfakten/verein/22352) | Lista publicada na coleta |
+| Maranhão AC | [Fonte](https://www.transfermarkt.com/maranhao-atletico-clube-ma-/kader/verein/34293) | [Fonte](https://www.transfermarkt.com/maranhao-atletico-clube-ma-/datenfakten/verein/34293) | Lista publicada na coleta |
+| Maricá Futebol Clube | [Fonte](https://www.transfermarkt.com/marica-futebol-clube/kader/verein/63296) | [Fonte](https://www.transfermarkt.com/marica-futebol-clube/datenfakten/verein/63296) | Lista publicada na coleta |
+| Maringá FC | [Fonte](https://www.transfermarkt.com/maringa-futebol-clube-pr-/kader/verein/33003) | [Fonte](https://www.transfermarkt.com/maringa-futebol-clube-pr-/datenfakten/verein/33003) | Lista publicada na coleta |
+| Millonarios FC | [Fonte](https://www.transfermarkt.com/millonarios-fc/kader/verein/2350) | [Fonte](https://www.transfermarkt.com/millonarios-fc/datenfakten/verein/2350) | Lista publicada na coleta |
+| Mixto EC (MT) | [Fonte](https://www.transfermarkt.com/mixto-esporte-clube-mt-/kader/verein/11900) | [Fonte](https://www.transfermarkt.com/mixto-esporte-clube-mt-/datenfakten/verein/11900) | Lista publicada na coleta |
+| Monte Roraima FC | [Fonte](https://www.transfermarkt.com/monte-roraima-fc/kader/verein/119625) | [Fonte](https://www.transfermarkt.com/monte-roraima-fc/datenfakten/verein/119625) | Lista publicada na coleta |
+| Montevideo City Torque | [Fonte](https://www.transfermarkt.com/montevideo-city-torque/kader/verein/37535) | [Fonte](https://www.transfermarkt.com/montevideo-city-torque/datenfakten/verein/37535) | Lista publicada na coleta |
+| Moto Club (MA) | [Fonte](https://www.transfermarkt.com/moto-club-de-sao-luis-ma-/kader/verein/12009) | [Fonte](https://www.transfermarkt.com/moto-club-de-sao-luis-ma-/datenfakten/verein/12009) | Lista publicada na coleta |
+| Nacional FC | [Fonte](https://www.transfermarkt.com/nacional-futebol-clube-am-/kader/verein/22782) | [Fonte](https://www.transfermarkt.com/nacional-futebol-clube-am-/datenfakten/verein/22782) | Lista publicada na coleta |
+| Nova Iguaçu FC (RJ) | [Fonte](https://www.transfermarkt.com/nova-iguacu-futebol-clube-rj-/kader/verein/16108) | [Fonte](https://www.transfermarkt.com/nova-iguacu-futebol-clube-rj-/datenfakten/verein/16108) | Lista publicada na coleta |
+| Operário FC | [Fonte](https://www.transfermarkt.com/operario-futebol-clube-ms-/kader/verein/32386) | [Fonte](https://www.transfermarkt.com/operario-futebol-clube-ms-/datenfakten/verein/32386) | Lista publicada na coleta |
+| Operário Ferroviário Esporte Clube (PR) | [Fonte](https://www.transfermarkt.com/operario-ferroviario-ec-pr-/kader/verein/27214) | [Fonte](https://www.transfermarkt.com/operario-ferroviario-ec-pr-/datenfakten/verein/27214) | Lista publicada na coleta |
+| Oratório RC | [Fonte](https://www.transfermarkt.com/oratorio-recreativo-clube-ap-/kader/verein/53471) | [Fonte](https://www.transfermarkt.com/oratorio-recreativo-clube-ap-/datenfakten/verein/53471) | Lista publicada na coleta |
+| Parnahyba SC | [Fonte](https://www.transfermarkt.com/parnahyba-sport-club-pi-/kader/verein/41872) | [Fonte](https://www.transfermarkt.com/parnahyba-sport-club-pi-/datenfakten/verein/41872) | Lista publicada na coleta |
+| Paysandu SC | [Fonte](https://www.transfermarkt.com/paysandu-sport-club-pa-/kader/verein/6347) | [Fonte](https://www.transfermarkt.com/paysandu-sport-club-pa-/datenfakten/verein/6347) | Lista publicada na coleta |
+| Piauí EC (PI) | [Fonte](https://www.transfermarkt.com/piaui-esporte-clube-pi-/kader/verein/64925) | [Fonte](https://www.transfermarkt.com/piaui-esporte-clube-pi-/datenfakten/verein/64925) | Lista publicada na coleta |
+| Porto SC | [Fonte](https://www.transfermarkt.com/porto-sc/kader/verein/121518) | [Fonte](https://www.transfermarkt.com/porto-sc/datenfakten/verein/121518) | Lista publicada na coleta |
+| Porto Velho EC | [Fonte](https://www.transfermarkt.com/porto-velho-esporte-clube-ro-/kader/verein/72477) | [Fonte](https://www.transfermarkt.com/porto-velho-esporte-clube-ro-/datenfakten/verein/72477) | Lista publicada na coleta |
+| Portuguesa | [Fonte](https://www.transfermarkt.com/portuguesa-sao-paulo/kader/verein/10247/saison_id/2025) | [Fonte](https://www.transfermarkt.com/portuguesa-sao-paulo/datenfakten/verein/10247) | Lista da temporada |
+| Pouso Alegre FC | [Fonte](https://www.transfermarkt.com/pouso-alegre-fc/kader/verein/73407) | [Fonte](https://www.transfermarkt.com/pouso-alegre-fc/datenfakten/verein/73407) | Lista publicada na coleta |
+| Primavera AC | [Fonte](https://www.transfermarkt.com/primavera-atletico-clube-mt-/kader/verein/98845) | [Fonte](https://www.transfermarkt.com/primavera-atletico-clube-mt-/datenfakten/verein/98845) | Lista publicada na coleta |
+| Racing Club | [Fonte](https://www.transfermarkt.com/racing-club/kader/verein/1444) | [Fonte](https://www.transfermarkt.com/racing-club/datenfakten/verein/1444) | Lista publicada na coleta |
+| Real Noroeste CFC | [Fonte](https://www.transfermarkt.com/real-noroeste-capixaba-futebol-clube-es-/kader/verein/36478) | [Fonte](https://www.transfermarkt.com/real-noroeste-capixaba-futebol-clube-es-/datenfakten/verein/36478) | Lista publicada na coleta |
+| Recoleta FC | [Fonte](https://www.transfermarkt.com/club-deportivo-recoleta/kader/verein/14545) | [Fonte](https://www.transfermarkt.com/club-deportivo-recoleta/datenfakten/verein/14545) | Lista publicada na coleta |
+| Retrô FC Brasil | [Fonte](https://www.transfermarkt.com/retro-futebol-clube-brasil/kader/verein/76156) | [Fonte](https://www.transfermarkt.com/retro-futebol-clube-brasil/datenfakten/verein/76156) | Lista publicada na coleta |
+| Rio Branco AC | [Fonte](https://www.transfermarkt.com/rio-branco-atletico-clube-es-/kader/verein/30489) | [Fonte](https://www.transfermarkt.com/rio-branco-atletico-clube-es-/datenfakten/verein/30489) | Lista publicada na coleta |
+| Sampaio Corrêa FC (MA) | [Fonte](https://www.transfermarkt.com/sampaio-correa-fc-ma-/kader/verein/3319) | [Fonte](https://www.transfermarkt.com/sampaio-correa-fc-ma-/datenfakten/verein/3319) | Lista publicada na coleta |
+| Sampaio Corrêa Futebol e Esporte (RJ) | [Fonte](https://www.transfermarkt.com/sampaio-correa-futebol-e-esporte-rj-/kader/verein/40120) | [Fonte](https://www.transfermarkt.com/sampaio-correa-futebol-e-esporte-rj-/datenfakten/verein/40120) | Lista publicada na coleta |
+| Santa Catarina Clube (SC) | [Fonte](https://www.transfermarkt.com/santa-catarina-clube-sc-/kader/verein/36963) | [Fonte](https://www.transfermarkt.com/santa-catarina-clube-sc-/datenfakten/verein/36963) | Lista publicada na coleta |
+| Santa Cruz FC (PE) | [Fonte](https://www.transfermarkt.com/santa-cruz-futebol-clube-pe-/kader/verein/1785) | [Fonte](https://www.transfermarkt.com/santa-cruz-futebol-clube-pe-/datenfakten/verein/1785) | Lista publicada na coleta |
+| São Bernardo FC | [Fonte](https://www.transfermarkt.com/sao-bernardo-futebol-clube-sp-/kader/verein/16439) | [Fonte](https://www.transfermarkt.com/sao-bernardo-futebol-clube-sp-/datenfakten/verein/16439) | Lista publicada na coleta |
+| São Raimundo EC | [Fonte](https://www.transfermarkt.com/sao-raimundo-esporte-clube-rr-/kader/verein/73574) | [Fonte](https://www.transfermarkt.com/sao-raimundo-esporte-clube-rr-/datenfakten/verein/73574) | Lista publicada na coleta |
+| SC Humaitá | [Fonte](https://www.transfermarkt.com/sport-clube-humaita-ac-/kader/verein/60741) | [Fonte](https://www.transfermarkt.com/sport-clube-humaita-ac-/datenfakten/verein/60741) | Lista publicada na coleta |
+| SD Juazeirense (BA) | [Fonte](https://www.transfermarkt.com/sociedade-desportiva-juazeirense-ba-/kader/verein/32991) | [Fonte](https://www.transfermarkt.com/sociedade-desportiva-juazeirense-ba-/datenfakten/verein/32991) | Lista publicada na coleta |
+| SE Decisão Futebol Clube | [Fonte](https://www.transfermarkt.com/se-decisao-futebol-clube/kader/verein/76155) | [Fonte](https://www.transfermarkt.com/se-decisao-futebol-clube/datenfakten/verein/76155) | Lista publicada na coleta |
+| SER Caxias do Sul (RS) | [Fonte](https://www.transfermarkt.com/ser-caxias-do-sul-rs-/kader/verein/9141) | [Fonte](https://www.transfermarkt.com/ser-caxias-do-sul-rs-/datenfakten/verein/9141) | Lista publicada na coleta |
+| Serra Branca EC | [Fonte](https://www.transfermarkt.com/paraiba-esporte-clube-pb-/kader/verein/65479) | [Fonte](https://www.transfermarkt.com/paraiba-esporte-clube-pb-/datenfakten/verein/65479) | Lista publicada na coleta |
+| Sociedade Esportiva do Gama (DF) | [Fonte](https://www.transfermarkt.com/sociedade-esportiva-do-gama-df-/kader/verein/7014) | [Fonte](https://www.transfermarkt.com/sociedade-esportiva-do-gama-df-/datenfakten/verein/7014) | Lista publicada na coleta |
+| Sociedade Imperatriz de Desportos (MA) | [Fonte](https://www.transfermarkt.com/sociedade-imperatriz-de-desportos-ma-/kader/verein/23778) | [Fonte](https://www.transfermarkt.com/sociedade-imperatriz-de-desportos-ma-/datenfakten/verein/23778) | Lista publicada na coleta |
+| Sousa EC | [Fonte](https://www.transfermarkt.com/sousa-esporte-clube-pb-/kader/verein/18236) | [Fonte](https://www.transfermarkt.com/sousa-esporte-clube-pb-/datenfakten/verein/18236) | Lista publicada na coleta |
+| Sport Club do Recife | [Fonte](https://www.transfermarkt.com/sport-club-do-recife/kader/verein/8718) | [Fonte](https://www.transfermarkt.com/sport-club-do-recife/datenfakten/verein/8718) | Lista publicada na coleta |
+| Tocantinópolis EC | [Fonte](https://www.transfermarkt.com/tocantinopolis-esporte-clube-to-/kader/verein/27242) | [Fonte](https://www.transfermarkt.com/tocantinopolis-esporte-clube-to-/datenfakten/verein/27242) | Lista publicada na coleta |
+| Tombense Futebol Clube (MG) | [Fonte](https://www.transfermarkt.com/tombense-futebol-clube-mg-/kader/verein/3234) | [Fonte](https://www.transfermarkt.com/tombense-futebol-clube-mg-/datenfakten/verein/3234) | Lista publicada na coleta |
+| Trem DC | [Fonte](https://www.transfermarkt.com/trem-desportivo-clube-ap-/kader/verein/36012) | [Fonte](https://www.transfermarkt.com/trem-desportivo-clube-ap-/datenfakten/verein/36012) | Lista publicada na coleta |
+| Treze FC | [Fonte](https://www.transfermarkt.com/treze-futebol-clube-pb-/kader/verein/11086) | [Fonte](https://www.transfermarkt.com/treze-futebol-clube-pb-/datenfakten/verein/11086) | Lista publicada na coleta |
+| Tuna Luso Brasileira | [Fonte](https://www.transfermarkt.com/tuna-luso-brasileira-pa-/kader/verein/20803) | [Fonte](https://www.transfermarkt.com/tuna-luso-brasileira-pa-/datenfakten/verein/20803) | Lista publicada na coleta |
+| Uberlândia EC | [Fonte](https://www.transfermarkt.com/uberlandia-esporte-clube-mg-/kader/verein/8825) | [Fonte](https://www.transfermarkt.com/uberlandia-esporte-clube-mg-/datenfakten/verein/8825) | Lista publicada na coleta |
+| União Rondonópolis EC (MT) | [Fonte](https://www.transfermarkt.com/uniao-esporte-clube-mt-/kader/verein/28199) | [Fonte](https://www.transfermarkt.com/uniao-esporte-clube-mt-/datenfakten/verein/28199) | Lista publicada na coleta |
+| Universidad Central de Venezuela | [Fonte](https://www.transfermarkt.com/universidad-central-de-venezuela/kader/verein/43146) | [Fonte](https://www.transfermarkt.com/universidad-central-de-venezuela/datenfakten/verein/43146) | Lista publicada na coleta |
+| Universitario de Deportes | [Fonte](https://www.transfermarkt.com/universitario-de-deportes/kader/verein/6593) | [Fonte](https://www.transfermarkt.com/universitario-de-deportes/datenfakten/verein/6593) | Lista publicada na coleta |
+| Vila Nova Futebol Clube (GO) | [Fonte](https://www.transfermarkt.com/vila-nova-futebol-clube-go-/kader/verein/5677) | [Fonte](https://www.transfermarkt.com/vila-nova-futebol-clube-go-/datenfakten/verein/5677) | Lista publicada na coleta |
+| Vitória FC | [Fonte](https://www.transfermarkt.com/vitoria-futebol-clube-es-/kader/verein/32934) | [Fonte](https://www.transfermarkt.com/vitoria-futebol-clube-es-/datenfakten/verein/32934) | Lista publicada na coleta |
+| Volta Redonda Futebol Clube (RJ) | [Fonte](https://www.transfermarkt.com/volta-redonda-futebol-clube-rj-/kader/verein/4176) | [Fonte](https://www.transfermarkt.com/volta-redonda-futebol-clube-rj-/datenfakten/verein/4176) | Lista publicada na coleta |
+| Ypiranga FC | [Fonte](https://www.transfermarkt.com/ypiranga-futebol-clube-rs-/kader/verein/16869) | [Fonte](https://www.transfermarkt.com/ypiranga-futebol-clube-rs-/datenfakten/verein/16869) | Lista publicada na coleta |

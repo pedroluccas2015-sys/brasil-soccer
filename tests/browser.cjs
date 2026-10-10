@@ -14,7 +14,7 @@ catch { pw=require(path.join(process.env.USERPROFILE||'', '.cache/codex-runtimes
   await page.waitForSelector('#mode-quick');
   await page.screenshot({path:'tests/menu.png'});
   await page.click('#mode-quick');
-  assert.equal(await page.locator('#home-team option').count(),20);
+  assert.equal(await page.locator('#home-team option').count(),208);
   await page.click('#next');
   await page.selectOption('#formation','4-3-3');
   await page.click('#start');
@@ -44,14 +44,14 @@ catch { pw=require(path.join(process.env.USERPROFILE||'', '.cache/codex-runtimes
   await page.click('#rematch');
   assert.equal(await page.evaluate(()=>BSS.app.match.teams[0].score),0);
   await page.keyboard.press('Escape');await page.waitForSelector('#exit');await page.click('#exit');await page.click('#exit-confirm');
-  await page.click('#mode-league');await page.click('#next');await page.click('#start');
+  await page.click('#mode-league');await page.click('#next');
   assert.equal(await page.locator('tbody tr').count(),20);
   await page.click('#play-fixture');await page.click('#start');
   await page.evaluate(()=>{const m=BSS.app.match;m.state='play';m.period=2;m.clock=5400+m.added;});
   await page.waitForSelector('#result-next');await page.click('#result-next');
-  assert.ok((await page.locator('.notice').textContent()).includes('RODADA 2'));
+  assert.ok((await page.locator('.notice').first().textContent()).includes('Rodada 2'));
   await page.reload();await page.waitForSelector('#mode-league');await page.click('#mode-league');
-  assert.ok((await page.locator('.notice').textContent()).includes('RODADA 2'));
+  assert.ok((await page.locator('.notice').first().textContent()).includes('Rodada 2'));
   await page.screenshot({path:'tests/league.png'});
   await page.click('#back');await page.click('#mode-penalties');await page.click('#next');await page.click('#start');
   await page.keyboard.down('ArrowRight');await page.keyboard.down('x');await page.waitForTimeout(450);
@@ -66,7 +66,7 @@ catch { pw=require(path.join(process.env.USERPROFILE||'', '.cache/codex-runtimes
   await require('./browser-scenarios.cjs')(page,assert);
   await page.goto('file:///'+path.resolve('index.html').replaceAll('\\','/'));
   await page.waitForSelector('#mode-quick');
-  assert.equal(await page.evaluate(()=>BSS.app.data.teams.length),20);
+  assert.equal(await page.evaluate(()=>BSS.app.data.teams.length),208);
   await page.click('#mode-options');await page.selectOption('#preset','wasd');
   assert.equal(await page.evaluate(()=>BSS.app.input.bindings.left),'KeyA');
   await page.click('[data-bind="shoot"]');await page.keyboard.press('u');

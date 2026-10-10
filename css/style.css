@@ -166,6 +166,17 @@ body.cinematic-active #touch-controls [data-touch-action="switch"],
 body.cinematic-active #touch-controls [data-touch-action="sprint"],
 body.cinematic-active #touch-controls [data-touch-action="context"] {visibility:hidden;pointer-events:none}
 
+.panels.competition-panels {grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}
+.competition-panels .panel {min-width:0}
+#club-search {width:100%;padding:12px;margin:8px 0;color:var(--ink,#fff);background:#142238;border:1px solid #687c93;border-radius:5px;font:inherit}
+.competition-panels details {margin:14px 0}
+.competition-panels summary {cursor:pointer;line-height:1.5;color:#f5d778}
+.competition-panels a {color:#acd9ff;text-decoration:underline}
+@media(min-width:900px) and (min-height:650px) {
+ .home-layout {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:center}
+}
+@media(max-width:700px) {.panels.competition-panels {grid-template-columns:minmax(0,1fr)}}
+
 
 /* FIFA 14-inspired mobile HUD: thumb-friendly sprint and switch at the lower
    right, three attacking actions above them, and a free-moving left stick.

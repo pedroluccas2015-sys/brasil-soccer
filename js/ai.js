@@ -49,7 +49,7 @@
     const rivals=m.teams[1-team.side].players.filter(p=>!p.red),line=B.Physics.offsideLine(rivals,dir);
     for(const p of team.players){
      if(m.state!=='play')return;
-     if(p.red||p===m.controlled&&!m.autoplay&&p.role!=='GK'||m.freeKick?.holdsWall(p))continue;
+     if(p.red||p===m.controlled&&!m.autoplay||m.freeKick?.holdsWall(p))continue;
      const corner=m.freeKick;
      if(corner?.corner&&corner.phase==='flight'&&corner.flightTime<1.55&&corner.cornerPositions?.has(p)){
       const spot=corner.cornerPositions.get(p),target=corner.cornerTarget();
@@ -79,12 +79,6 @@
        const toward=B.norm(b.x-p.x,b.y-p.y),facing=p.facing.x*toward.x+p.facing.y*toward.y;
        if(facing>.25&&m.random()<1-Math.exp(-dt*cfg.tackle))m.tackle(p,false);
       }
-     }else if(m.secondPress&&team.side===m.human&&!own&&p===plan.cover){
-      // Hold LANÇAR / 2º DEF to send a second nearby outfield defender.
-      p.state='SECOND_PRESS';const target=this.intercept(p,cfg);
-      tx=target.x;ty=target.y;sprint=near>24;
-      if(b.owner&&b.owner.team!==team&&near<23&&p.actionCooldown===0&&
-        m.random()<1-Math.exp(-dt*cfg.tackle*.65))m.tackle(p,false);
      }else if(p===plan.cover&&!own&&(team.tactics.pressure==='Alta'||cfg.mark>.6)){
       p.state='COVER';tx=b.x-dir*55;ty=b.y+(p.home.y>(F.cy)?48:-48);
      }else{
@@ -143,7 +137,7 @@
   }
   keeper(p,dt){
    const m=this.m,b=m.ball,t=p.team,cfg=this.profile(t),dir=t.dir,gx=dir>0?18:(F.w-18),danger=Math.abs(b.x-gx)<235;
-   if(b.owner===p){p.state='CATCH';p.heldTime+=dt;p.move(0,0,false,dt);if(p.heldTime>(t.side===m.human&&!m.autoplay?2.2:1.1)){const pass=this.bestPass(p);p.state=pass&&!pass.blocked?'THROW':'KICK';m.pass(p,p.state==='THROW'?'pass':'long',.75,{x:dir,y:0},pass?.player);p.heldTime=0;}return;}
+   if(b.owner===p){p.state='CATCH';p.heldTime+=dt;p.move(0,0,false,dt);if(p.heldTime>1.1){const pass=this.bestPass(p);p.state=pass&&!pass.blocked?'THROW':'KICK';m.pass(p,p.state==='THROW'?'pass':'long',.75,{x:dir,y:0},pass?.player);p.heldTime=0;}return;}
    let tx=gx+dir*B.clamp(Math.abs(b.x-gx)*.055,0,35),ty=B.clamp((F.cy)+(b.y-(F.cy))*.27,(F.cy-54),(F.cy+54));p.state=danger?'TRACK_BALL':'POSITION';
    const incoming=!b.owner&&b.vx*dir< -60&&Math.abs(b.x-gx)<220;
    if(danger&&!b.owner&&!incoming&&b.z<24&&Math.abs(b.x-gx)<100&&Math.abs(b.y-(F.cy))<140){p.state='COME_OUT';tx=b.x;ty=b.y;}
@@ -155,7 +149,7 @@
    if(b.owner&&b.owner.team===t)return;
    if(near<(p.state==='DIVE'?15+p.attributes.reflexes*.11:15)&&b.z<38&&b.lock<.08&&Math.abs(p.x-gx)<175&&Math.abs(p.y-(F.cy))<200){
     b.shot=null;const speed=Math.hypot(b.vx,b.vy);
-    if(b.z<22&&speed<235+p.attributes.goalkeeping){b.owner=p;b.lastTouch=p;b.vx*=.12;b.vy*=.12;b.z=0;b.vz=0;p.state='CATCH';p.anim='catch';p.animTime=.45;b.impact('save');p.heldTime=0;b.pass=null;if(t.side===m.human&&!m.autoplay)m.setControlled(p);}
+    if(b.z<22&&speed<235+p.attributes.goalkeeping){b.owner=p;b.lastTouch=p;b.vx*=.12;b.vy*=.12;b.z=0;b.vz=0;p.state='CATCH';p.anim='catch';p.animTime=.45;b.impact('save');p.heldTime=0;b.pass=null;}
     else{b.vx=dir*(90+m.random()*110);b.vy=(b.y>p.y?1:-1)*(110+m.random()*160);b.vz=30;b.owner=null;b.lastTouch=p;b.pass=null;b.lock=.3;p.state='PARRY';p.anim='dive';p.animTime=.6;b.spin=(b.vy>0?1:-1)*2;b.impact('save');}
     m.sound.play('save');
    }

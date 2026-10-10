@@ -1,0 +1,35 @@
+BRASIL SUPER SOCCER — EXPANSÃO 2026
+Versão 2.0.0 — 10/10/2026
+
+COMO JOGAR
+Extraia o ZIP inteiro e abra index.html no navegador.
+Não abra index.html de dentro do ZIP.
+
+NOVOS MODOS E PARTICIPANTES
+- Brasileirão: escolha Série A, B, C ou D.
+- Copa: Libertadores, Sul-Americana ou Copa do Brasil.
+- Copa de Pênaltis: as mesmas três copas, somente com disputas de pênaltis.
+- Libertadores e Sul-Americana: todos os 32 clubes dos grupos de cada competição.
+- Copa do Brasil: todas as 48 equipes da terceira fase e os 20 clubes que entram na quinta.
+- Base compartilhada: 208 clubes e 5.931 atletas; também disponíveis na partida rápida.
+
+PROGRESSO
+O resultado de cada confronto salva a competição neste navegador.
+Existe um slot: iniciar outra competição substitui a campanha anterior.
+Use sempre o mesmo arquivo/endereço para continuar.
+Acesso e descenso aparecem ao concluir a divisão. Não há carreira automática em 2027.
+As temporadas são simuladas desde o início, sem importar os resultados reais já ocorridos.
+
+DADOS E LIMITES
+Elencos e cores consultados em 09/10/2026. A data de consulta não garante que a fonte
+contenha todas as transferências e inscrições mais recentes.
+ABECAT, Castanhal, CRAC, São Luiz, Guarany de Bagé e Portuguesa usam listas da temporada,
+indicadas no jogo; os vínculos atuais não foram integralmente confirmados.
+Uniformes são versões arcade das cores dos clubes. Os modelos oficiais de 2026,
+calções, meias e uniformes de goleiro não foram verificados individualmente.
+Fontes por clube: data/sources.md e links no seletor de competição.
+
+VERIFICAÇÃO
+97 testes de lógica aprovados, além dos percursos de navegador das quatro divisões,
+três copas e três copas de pênaltis, save/reload, abertura offline e recálculo de vagas.
+Detalhes e controles: README.md.

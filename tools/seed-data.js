@@ -1,4 +1,5 @@
 'use strict';
+throw new Error('Seed legado de 20 clubes desativado. Edite data/*.json e execute npm run build:data.');
 // Curated factual names and position groups from the public sources in data/sources.md.
 // This script is only the initial seed. Edit data/*.json thereafter; build-data preserves edits.
 const fs=require('node:fs'),path=require('node:path');

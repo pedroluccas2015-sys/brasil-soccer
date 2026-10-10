@@ -54,9 +54,10 @@ Em **Opções & controles**, escolha o esquema ou clique em uma tecla para redef
 - IA por função e estado: formação, apoio, marcação, pressão, interceptação, recepção, condução, passe e chute; goleiro posiciona, sai, mergulha, encaixa, espalma e repõe.
 - Sete formações: 4-4-2, 4-3-3, 4-2-3-1, 4-1-4-1, 3-5-2, 3-4-3 e 5-3-2. Mentalidade, pressão, linha e estilo de ataque ajustáveis.
 - Laterais, escanteios, tiros de meta, faltas, vantagem simplificada, pênaltis, amarelos, expulsões e impedimento no instante do passe, com marcação no envolvimento do receptor.
-- Intervalo, troca de lados, acréscimos e cinco substituições. Copa empatada tem prorrogação de dois tempos e disputa de pênaltis, incluindo alternadas.
-- Brasileirão com 20 clubes, 38 rodadas, 380 jogos, classificação e desempates por pontos, vitórias, saldo e gols.
-- Copa de oito clubes, partida rápida, pênaltis e treino livre sem cronômetro final.
+- Intervalo, troca de lados, acréscimos e cinco substituições. Mata-mata respeita agregado, vantagem da Série B e decisões por pênaltis. Prorrogação apenas nas finais continentais.
+- Brasileirão com seletor de Séries A, B, C e D, classificação, acessos, rebaixamentos, quadrangulares e playoffs de 2026.
+- Copa: Libertadores e Sul-Americana desde os grupos; Copa do Brasil desde a terceira fase (48 equipes, mais as 20 da Série A na quinta).
+- COPA DE PÊNALTIS com as mesmas três competições. Partida rápida, disputa isolada de pênaltis e treino continuam disponíveis.
 - Estatísticas de posse, passes, acertos, chutes, chutes no gol, faltas, escanteios e impedimentos.
 - Save de competição, resultados recentes, preferências, controles e elencos importados.
 - Áudio sintetizado: passe, chute, defesa, apito, trave, gol, torcida e música original no menu.
@@ -64,13 +65,25 @@ Em **Opções & controles**, escolha o esquema ou clique em uma tecla para redef
 
 ## Clubes e elencos
 
-**20 clubes / 540 atletas reais cadastrados**: Athletico-PR, Atlético-MG, Bahia, Botafogo, Chapecoense, Corinthians, Coritiba, Cruzeiro, Flamengo, Fluminense, Grêmio, Internacional, Mirassol, Palmeiras, Red Bull Bragantino, Remo, Santos, São Paulo, Vasco da Gama e Vitória.
+**208 clubes / 5.931 atletas cadastrados**. Todos os clubes das Séries A–D, dos grupos da Libertadores e Sul-Americana, e da terceira fase da Copa do Brasil 2026 estão disponíveis.
 
-Consulta: **30/09/2026**. Participantes conferidos na CBF. Elencos consultados em páginas públicas do SofaScore e nos sites oficiais de Palmeiras, São Paulo e Flamengo. A relação detalhada de fontes e limitações está em [data/sources.md](data/sources.md); cada registro também carrega fonte e data.
+Coleta de elencos e cores: **09/10/2026**; revisão do programa: **10/10/2026**. Cada clube possui links de fonte no seletor. As listas publicadas pelo Transfermarkt foram complementadas por ESPN e oGol quando insuficientes. ABECAT Ouvidorense, Castanhal EC, Clube Recreativo e Atlético Catalano (GO), EC São Luiz, Guarany de Bagé FC, Portuguesa usam listas da temporada sinalizadas na interface; seus vínculos atuais não foram integralmente confirmados. Não há garantia de todos os inscritos ou das transferências até hoje.
 
-Os elencos são recortes jogáveis dos grupos consultados, não listas completas de todos os inscritos. Campos não verificados ficam `null`, inclusive a maioria dos números, todas as datas de nascimento e quase todas as alturas e preferências de pé. A numeração auxiliar em campo identifica a posição de gameplay e não pretende ser o número oficial. Nenhum nome foi inventado para completar times.
+Os uniformes são representações arcade das cores pesquisadas, e não reproduções verificadas dos modelos oficiais de 2026. Ratings são estimativas do jogo; a escalação inicial é automática. Campos pessoais desconhecidos permanecem nulos. Consulte [fontes e limites](data/sources.md).
 
-Os ratings são estimativas internas por posição com variação determinística, não notas licenciadas nem avaliações oficiais. Os perfis não usam estatísticas individuais de desempenho. A escalação inicial é automática, não a escalação real do clube.
+## Competições
+
+- Série A: 38 rodadas e quatro descensos. Ao concluir, informe os resultados das copas e os quatro promovidos da Série B no painel para recalcular vagas continentais.
+- Série B: 38 rodadas, dois acessos diretos e dois via playoffs (3º × 6º e 4º × 5º); quatro descensos.
+- Série C: turno único, dois quadrangulares, quatro acessos, final em ida e volta e dois descensos.
+- Série D: 16 grupos de seis, quatro classificados por grupo, mata-mata e seis acessos (quatro semifinalistas e dois vencedores dos playoffs).
+- Libertadores: oito grupos de quatro, dois classificados; terceiros vão aos playoffs da Sul-Americana.
+- Sul-Americana: líderes nas oitavas; segundos enfrentam terceiros da Libertadores. O torneio paralelo é simulado ao encerrar os grupos.
+- Copa do Brasil: 48 clubes na terceira fase, terceira/quarta em jogo único; 20 entram na quinta. Ida e volta até as semifinais e final única.
+
+As temporadas começam do zero, com participantes e grupos de 2026. Rodadas e sorteios posteriores são gerados pelo jogo. Os acessos e descensos são apresentados ao concluir; não há carreira automática em 2027.
+
+Na Copa de Pênaltis, cada partida vira uma disputa: vitória vale três pontos nos grupos; o placar das cobranças conta para saldo e agregado. Agregado igual gera disputa extra. Essa pontuação é uma adaptação do jogo, pois as competições oficiais têm partidas de futebol.
 
 ## Editar e importar
 
@@ -92,7 +105,7 @@ node tools/build-data.js
 node tools/import-roster.js caminho/novo-elenco.json
 ```
 
-Essa ferramenta valida, atualiza os JSON e gera o bundle offline automaticamente. Ela não coleta dados da internet. `tools/seed-data.js` documenta a carga inicial e sobrescreve os dados: não o execute depois de personalizar o pacote.
+Essa ferramenta valida, atualiza os JSON e gera o bundle offline automaticamente. Ela não coleta dados da internet. O seed legado de 20 clubes está desativado para preservar a base ampliada.
 
 ## Save
 
@@ -136,10 +149,10 @@ Node.js moderno:
 npm test
 ```
 
-Testes de navegador exigem Playwright disponível e Chromium/Edge. Com o servidor iniciado:
+Testes de navegador exigem Playwright disponível e Chromium/Edge. Com o servidor iniciado na porta 8016 (ou configurado via BSS_URL):
 
 ```sh
-node tests/browser.cjs
+node tests/browser-competitions.cjs
 ```
 
 `BSS_BROWSER` pode indicar o executável; `BSS_URL` pode indicar outro servidor. O script usa Playwright instalado no projeto ou o runtime local do Codex quando disponível. Essas ferramentas são necessárias apenas para testes, não para jogar. As capturas são gravadas em `tests/`.
@@ -152,7 +165,7 @@ Esta é uma implementação arcade original, não uma reprodução fiel de um mo
 
 As reposições são organizadas automaticamente e têm limite de espera. Todos os tiros livres são diretos. Pênaltis marcados durante a partida encerram o lance sem disputa de rebote: após erro/defesa há tiro de meta. A vantagem usa uma janela curta baseada em posse; não há VAR, lesões, mão na bola, punição por recuo ao goleiro ou revisão completa das leis oficiais. Impedimento considera recepção, não todas as formas de interferência sem toque.
 
-A IA usa heurísticas por zona. As outras partidas de campeonato e copa são simuladas, não executadas pelo motor completo. Não há suspensões acumuladas entre rodadas nem fadiga persistente entre partidas. Copa tem chave de oito clubes e sorteio simplificado. Série B pode ser adicionada nos dados, mas não tem modo próprio. Não há multiplayer nem modo online. Há controles touch para celular e gerenciamento automático do cursor e goleiro.
+A IA usa heurísticas por zona. As outras partidas de campeonato e copa são simuladas, não executadas pelo motor completo. Não há suspensões acumuladas entre rodadas nem fadiga persistente entre partidas. Não há multiplayer nem modo online. Os controles touch estão disponíveis.
 
 Os controles, as regras essenciais e os modos são funcionais. O nível de acabamento visual e a variedade de comportamentos ainda são menores que os de um jogo comercial de referência.
 
@@ -162,19 +175,29 @@ Câmera atrás do gol e comandos PK também nas faltas da partida. No teclado cl
 
 ## Controles mobile (touchscreen)
 
-O jogo oferece layout touch **inspirado no FIFA 14**: analógico circular à esquerda, corrida e troca de atleta em botões **ampliados no canto inferior direito**, e chute, passe, lançamento e drible distribuídos logo acima. Os rótulos dos botões acompanham as ações de ataque e defesa. Os controles multitoque aceitam direcional + corrida + ação simultaneamente.
+O jogo identifica telas com toque e mostra controles durante as partidas,
+sem alterar a experiência de teclado/gamepad no desktop. O direcional
+aceita diagonais e gesto de arrastar. A interface aceita vários dedos
+pressionados simultaneamente (ex.: mover + correr + chutar).
 
-- **CORRER**: segure, botão inferior direito, ou duplo toque no analógico para arrancar.
-- **TROCAR**: botão grande à esquerda de CORRER; troca manual temporariamente prioritária.
-- **CHUTE**: chute ou bote defensivo; segure/solte para ajustar força.
-- **PASSE**: passe ou carrinho; segure/solte para ajustar força.
-- **LANÇAR / 2º DEF**: lançamento longo com posse; sem posse, segure para pressionar com um segundo defensor.
-- **DRIBLE / DESARME**: drible contextual com bola ou desarme sem bola.
-- **PAUSA**: superior direito.
+- **A / PASSE**: passe curto ou carrinho; segure para carregar, solte para executar.
+- **B / CHUTE**: chute ou bote; segure e solte para regular a força.
+- **C / LANÇAR**: lançamento longo; segure e solte para regular a força.
+- **R / CORRER**: mantenha pressionado para correr. Dois toques rápidos na direção acionam a arrancada.
+- **L / TROCAR**: muda o jogador controlado.
+- **Y / DRIBLE**: drible/ação contextual, finta ou defesa conforme a posse.
+- **Ⅱ / PAUSA**: pausa a partida. Use os botões da interface para escalação, reinício ou saída.
+- **DIRECIONAL**: arraste sobre a cruz para as oito direções.
 
-**Seleção assistida:** na partida, o cursor segue automaticamente o atleta de linha mais próximo da bola, com estabilidade para não mudar a cada frame; em posse de seu time, acompanha o dono da bola. O goleiro defende por IA, sem cursor, exceto para reposição no tiro de meta ou após agarrar a bola; nesse caso, ainda é capaz de distribuir automaticamente.
+Nas penalidades: direcional mira e escolhe a altura; A é fraco, B é médio,
+C é forte, Y + direcional é finta, e B ou C + direcional aciona o goleiro.
 
-Leia [`docs/MOBILE.md`](docs/MOBILE.md) para instruções sobre tela cheia, cenas e cobranças de falta e pênalti. Execute `npm test` para validar todo o motor, incluindo `tests/mobile-selection.test.js`.
+O canvas preserva os 480×270 pixels originais (16:9), sem distorção.
+Em retrato o controle aparece abaixo do campo; em paisagem, sem cobrir
+o placar principal, os comandos ficam sobrepostos nas bordas do campo.
+O HTML continua estático e pode ser aberto offline pelo `index.html`.
+
+Para conferir a lógica: `npm test` executa também `tests/touch.test.js`.
 
 ## Faltas no campo de ataque
 
