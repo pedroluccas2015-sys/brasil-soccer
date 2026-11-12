@@ -40,3 +40,7 @@
 @keyframes club-reveal{from{opacity:.25;transform:translateX(-12px);}to{opacity:1;transform:none;}}
 @media(max-width:760px){.club-selection .panels,.club-selection .competition-panels{grid-template-columns:1fr;}.club-selection .versus{display:none;}.club-selection .crest-grid{max-height:180px;grid-template-columns:repeat(auto-fill,minmax(57px,1fr));}.club-selection .panel{padding:14px;}.club-selection .screen-head{gap:8px;}.broadcast-club .crest-badge{width:82px;height:91px;}.club-selection .settings-grid{grid-template-columns:1fr 1fr;}.club-selection .screen-head button{padding:10px;}.club-selection .broadcast-club{min-height:110px;}}
 @media(prefers-reduced-motion:reduce){#screen.club-selection:before,.broadcast-club{animation:none;}.crest-choice,.league-rail button{transition:none;}}
+
+.club-rating .star-empty{color:#628095}.club-rating-block{display:flex;flex-direction:column;gap:4px}.club-rating-block small{font:9px/1.5 monospace;color:#a7bece}.grid-stars{color:#c6f66c;font-size:8px!important;letter-spacing:1px!important}.club-selection .crest-choice{min-height:98px}.rating-legend{font-size:10px;line-height:1.6;color:#afc7d4}
+
+.competition-stars{display:inline-block;white-space:nowrap}.competition-stars .club-rating{font-size:10px;letter-spacing:0;margin:0 0 0 3px}.competition-stars .star-empty{display:none}

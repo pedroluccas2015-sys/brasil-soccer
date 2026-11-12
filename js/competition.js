@@ -52,8 +52,19 @@
    this.resolveGame(g,false);if(g.needsTiebreak){this.save();return true;}this.completeRound();return true;
   }
   aggregate(g){const c=this.current,t=c.ties?.find(t=>t.id===g.tie);if(!t)return g.result;const first=t.legs===2?c.rounds[0].find(x=>x.tie===g.tie):null;return t.legs===2&&g.leg===2?[g.result[0]+first.result[1],g.result[1]+first.result[0]]:[...g.result];}
-  resolveGame(g,simulated){const c=this.current;if(c.phase==='groups')return;const t=c.ties.find(t=>t.id===g.tie);if(g.leg!==t.legs)return;let [a,b]=this.aggregate(g);if(a!==b)g.winner=a>b?g.home:g.away;else if(t.advantage)g.winner=t.advantage;else if(!g.winner){if(simulated){g.winner=this.random()<.5?g.home:g.away;g.decidingPenalties=g.winner===g.home?[5,4]:[4,5];}else g.needsTiebreak=true;}}
-  simulate(g){const c=this.current;g.result=c.penaltyOnly?[3+Math.floor(this.random()*3),3+Math.floor(this.random()*3)]:[Math.floor(this.random()*4),Math.floor(this.random()*4)];if(c.penaltyOnly&&g.result[0]===g.result[1])g.result[this.random()<.5?0:1]++;if(c.penaltyOnly)g.penalties=[...g.result];g.cards=c.penaltyOnly?[{yellow:0,red:0},{yellow:0,red:0}]:[{yellow:Math.floor(this.random()*4),red:this.random()<.05?1:0},{yellow:Math.floor(this.random()*4),red:this.random()<.05?1:0}];this.resolveGame(g,true);}
+  strength(id){return B.clubRating(id,this.data).strength;}
+  poisson(mean){let product=1,k=0,limit=Math.exp(-mean);do{product*=this.random();k++;}while(product>limit&&k<16);return k-1;}
+  shootout(home,away){
+   const diff=(this.strength(home)-this.strength(away))/100,prob=[B.clamp(.76+diff*.16,.58,.9),B.clamp(.76-diff*.16,.58,.9)],scores=[0,0],kicks=[0,0];
+   for(let round=0;round<30;round++)for(let side=0;side<2;side++){
+    kicks[side]++;if(this.random()<prob[side])scores[side]++;
+    if(round<5){if(scores[0]>scores[1]+Math.max(0,5-kicks[1]))return {scores,winner:0};if(scores[1]>scores[0]+Math.max(0,5-kicks[0]))return {scores,winner:1};}
+    if(kicks[0]===kicks[1]&&kicks[0]>=5&&scores[0]!==scores[1])return {scores,winner:scores[0]>scores[1]?0:1};
+   }
+   const winner=this.random()<1/(1+Math.exp(-diff*1.8))?0:1;scores[winner]++;return {scores,winner};
+  }
+  resolveGame(g,simulated){const c=this.current;if(c.phase==='groups')return;const t=c.ties.find(t=>t.id===g.tie);if(g.leg!==t.legs)return;let [a,b]=this.aggregate(g);if(a!==b)g.winner=a>b?g.home:g.away;else if(t.advantage)g.winner=t.advantage;else if(!g.winner){if(simulated){const pens=this.shootout(g.home,g.away);g.winner=pens.winner===0?g.home:g.away;g.decidingPenalties=pens.scores;}else g.needsTiebreak=true;}}
+  simulate(g){const c=this.current;if(c.penaltyOnly){const pens=this.shootout(g.home,g.away);g.result=[...pens.scores];g.penalties=[...pens.scores];}else{const diff=this.strength(g.home)-this.strength(g.away);g.result=[this.poisson(B.clamp(1.4*Math.exp(diff/40),.15,4.5)),this.poisson(B.clamp(1.18*Math.exp(-diff/40),.15,4.2))];}g.cards=c.penaltyOnly?[{yellow:0,red:0},{yellow:0,red:0}]:[{yellow:Math.floor(this.random()*4),red:this.random()<.05?1:0},{yellow:Math.floor(this.random()*4),red:this.random()<.05?1:0}];this.resolveGame(g,true);}
   completeRound(){const c=this.current;if(!c||c.complete)return false;const games=c.rounds[c.round];if(games.some(g=>g.needsTiebreak))return false;for(const g of games){if(!g.result)this.simulate(g);for(const [i,id] of [g.home,g.away].entries()){let total=c.totalTable.find(r=>r.id===id);if(!total){total=row(id);c.totalTable.push(total);}const targets=[total,...(c.phase==='groups'?[c.table.find(r=>r.id===id)]:[])];for(const r of targets){B.CompetitionManager.points(r,g.result[i],g.result[1-i]);r.red+=g.cards?.[i]?.red||0;r.yellow+=g.cards?.[i]?.yellow||0;}}}c.history.push({stage:c.stage,label:c.stageName,round:c.round,games:copy(games)});c.round++;if(c.round>=c.rounds.length)this.advanceStage();this.save();return true;}
   orderedPairs(ids){return Array.from({length:ids.length/2},(_,i)=>[ids[2*i],ids[2*i+1]]);}
   homeByPerformance(pairs){const c=this.current,order=c.format==='c'?[...c.totalTable].sort((a,b)=>b.p-a.p||b.v-a.v||(b.gp-b.gc)-(a.gp-a.gc)||c.seedOrder.indexOf(a.id)-c.seedOrder.indexOf(b.id)).map(r=>r.id):this.totalRank(pairs.flat());return pairs.map(([a,b])=>order.indexOf(a)<order.indexOf(b)?[b,a]:[a,b]);}

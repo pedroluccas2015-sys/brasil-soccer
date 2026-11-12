@@ -802,5 +802,2707 @@
     "tm-22352",
     "tm-16837"
   ],
-  "cbfRankingSource": "https://stcbfsiteprdimgbrs.blob.core.windows.net/img-site/cdn/RNC_Ranking_Nacional_dos_Clubes_2026_27e24418e7.pdf"
+  "cbfRankingSource": "https://stcbfsiteprdimgbrs.blob.core.windows.net/img-site/cdn/RNC_Ranking_Nacional_dos_Clubes_2026_27e24418e7.pdf",
+  "clubRatings": {
+    "version": 1,
+    "edition": 2026,
+    "checkedAt": "2026-11-12",
+    "sources": {
+      "cbf": "https://stcbfsiteprdimgbrs.blob.core.windows.net/img-site/cdn/RNC_Ranking_Nacional_dos_Clubes_2026_27e24418e7.pdf",
+      "conmebol": "https://cdn.conmebol.com/wp-content/uploads/2025/12/Ranking-de-Clubes-CONMEBOL-2026-1.pdf"
+    },
+    "method": "CBF e CONMEBOL normalizados: 20 + 80 * sqrt(pontos/líder). Brasileiros: 75% CBF + 25% CONMEBOL quando ambos disponíveis; estrangeiros: CONMEBOL. Ausência de ranking: força 20, sem posição oficial. Estrelas em faixas de 16 pontos.",
+    "clubs": {
+      "flamengo": {
+        "strength": 99.46,
+        "stars": 5,
+        "country": "Brasil",
+        "cbf": {
+          "position": 1,
+          "points": 16314,
+          "name": "Flamengo",
+          "federation": "RJ"
+        },
+        "conmebol": {
+          "position": 2,
+          "points": 9303.1,
+          "name": "Flamengo"
+        },
+        "status": "ranked"
+      },
+      "palmeiras": {
+        "strength": 95.3,
+        "stars": 5,
+        "country": "Brasil",
+        "cbf": {
+          "position": 3,
+          "points": 13860,
+          "name": "Palmeiras",
+          "federation": "SP"
+        },
+        "conmebol": {
+          "position": 1,
+          "points": 9828.6,
+          "name": "Palmeiras"
+        },
+        "status": "ranked"
+      },
+      "corinthians": {
+        "strength": 89.38,
+        "stars": 5,
+        "country": "Brasil",
+        "cbf": {
+          "position": 2,
+          "points": 14930,
+          "name": "Corinthians",
+          "federation": "SP"
+        },
+        "conmebol": {
+          "position": 22,
+          "points": 3525.7,
+          "name": "Corinthians"
+        },
+        "status": "ranked"
+      },
+      "sao-paulo": {
+        "strength": 89.83,
+        "stars": 5,
+        "country": "Brasil",
+        "cbf": {
+          "position": 5,
+          "points": 13556,
+          "name": "São Paulo",
+          "federation": "SP"
+        },
+        "conmebol": {
+          "position": 7,
+          "points": 5631.5,
+          "name": "São Paulo"
+        },
+        "status": "ranked"
+      },
+      "santos": {
+        "strength": 75.68,
+        "stars": 4,
+        "country": "Brasil",
+        "cbf": {
+          "position": 16,
+          "points": 8852,
+          "name": "Santos",
+          "federation": "SP"
+        },
+        "conmebol": {
+          "position": 27,
+          "points": 3238.2,
+          "name": "Santos"
+        },
+        "status": "ranked"
+      },
+      "fluminense": {
+        "strength": 87.79,
+        "stars": 5,
+        "country": "Brasil",
+        "cbf": {
+          "position": 6,
+          "points": 13006,
+          "name": "Fluminense",
+          "federation": "RJ"
+        },
+        "conmebol": {
+          "position": 11,
+          "points": 4968.5,
+          "name": "Fluminense"
+        },
+        "status": "ranked"
+      },
+      "botafogo": {
+        "strength": 85.52,
+        "stars": 5,
+        "country": "Brasil",
+        "cbf": {
+          "position": 7,
+          "points": 12834,
+          "name": "Botafogo",
+          "federation": "RJ"
+        },
+        "conmebol": {
+          "position": 19,
+          "points": 3716.6,
+          "name": "Botafogo"
+        },
+        "status": "ranked"
+      },
+      "vasco": {
+        "strength": 76,
+        "stars": 4,
+        "country": "Brasil",
+        "cbf": {
+          "position": 10,
+          "points": 11330,
+          "name": "Vasco da Gama",
+          "federation": "RJ"
+        },
+        "conmebol": {
+          "position": 61,
+          "points": 885.1,
+          "name": "Vasco da Gama"
+        },
+        "status": "ranked"
+      },
+      "gremio": {
+        "strength": 81.71,
+        "stars": 4,
+        "country": "Brasil",
+        "cbf": {
+          "position": 12,
+          "points": 10636,
+          "name": "Grêmio",
+          "federation": "RS"
+        },
+        "conmebol": {
+          "position": 14,
+          "points": 4320.6,
+          "name": "Grêmio"
+        },
+        "status": "ranked"
+      },
+      "internacional": {
+        "strength": 80.4,
+        "stars": 4,
+        "country": "Brasil",
+        "cbf": {
+          "position": 14,
+          "points": 10014,
+          "name": "Internacional",
+          "federation": "RS"
+        },
+        "conmebol": {
+          "position": 13,
+          "points": 4408.1,
+          "name": "Internacional"
+        },
+        "status": "ranked"
+      },
+      "cruzeiro": {
+        "strength": 80.25,
+        "stars": 4,
+        "country": "Brasil",
+        "cbf": {
+          "position": 11,
+          "points": 11010,
+          "name": "Cruzeiro",
+          "federation": "MG"
+        },
+        "conmebol": {
+          "position": 29,
+          "points": 2951,
+          "name": "Cruzeiro"
+        },
+        "status": "ranked"
+      },
+      "atletico-mg": {
+        "strength": 90.54,
+        "stars": 5,
+        "country": "Brasil",
+        "cbf": {
+          "position": 4,
+          "points": 13696,
+          "name": "Atlético",
+          "federation": "MG"
+        },
+        "conmebol": {
+          "position": 6,
+          "points": 5949.2,
+          "name": "Atlético Mineiro"
+        },
+        "status": "ranked"
+      },
+      "bahia": {
+        "strength": 78.62,
+        "stars": 4,
+        "country": "Brasil",
+        "cbf": {
+          "position": 9,
+          "points": 12632,
+          "name": "Bahia",
+          "federation": "BA"
+        },
+        "conmebol": {
+          "position": 63,
+          "points": 831.8,
+          "name": "Bahia"
+        },
+        "status": "ranked"
+      },
+      "vitoria": {
+        "strength": 62.63,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 20,
+          "points": 7205,
+          "name": "Vitória",
+          "federation": "BA"
+        },
+        "conmebol": {
+          "position": 132,
+          "points": 186.3,
+          "name": "Vitória"
+        },
+        "status": "ranked"
+      },
+      "athletico": {
+        "strength": 86.41,
+        "stars": 5,
+        "country": "Brasil",
+        "cbf": {
+          "position": 8,
+          "points": 12656,
+          "name": "Athletico",
+          "federation": "PR"
+        },
+        "conmebol": {
+          "position": 12,
+          "points": 4517.1,
+          "name": "Athletico Paranaense"
+        },
+        "status": "ranked"
+      },
+      "coritiba": {
+        "strength": 59.31,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 24,
+          "points": 6381,
+          "name": "Coritiba",
+          "federation": "PR"
+        },
+        "conmebol": {
+          "position": 178,
+          "points": 78.7,
+          "name": "Coritiba"
+        },
+        "status": "ranked"
+      },
+      "bragantino": {
+        "strength": 74.69,
+        "stars": 4,
+        "country": "Brasil",
+        "cbf": {
+          "position": 15,
+          "points": 9802,
+          "name": "Red Bull Bragantino",
+          "federation": "SP"
+        },
+        "conmebol": {
+          "position": 43,
+          "points": 1646.9,
+          "name": "Red Bull Bragantino"
+        },
+        "status": "ranked"
+      },
+      "mirassol": {
+        "strength": 66.61,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 28,
+          "points": 5537,
+          "name": "Mirassol",
+          "federation": "SP"
+        },
+        "conmebol": {
+          "position": null,
+          "points": 0,
+          "name": "Mirassol"
+        },
+        "status": "ranked"
+      },
+      "chapecoense": {
+        "strength": 53.68,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 33,
+          "points": 4277,
+          "name": "Chapecoense",
+          "federation": "SC"
+        },
+        "conmebol": {
+          "position": 125,
+          "points": 214.8,
+          "name": "Chapecoense"
+        },
+        "status": "ranked"
+      },
+      "remo": {
+        "strength": 58.43,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 37,
+          "points": 3764,
+          "name": "Remo",
+          "federation": "PA"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-62794": {
+        "strength": 44.86,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 65,
+          "points": 1575,
+          "name": "Altos",
+          "federation": "PI"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-25209": {
+        "strength": 48.64,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 55,
+          "points": 2091,
+          "name": "Aparecidense",
+          "federation": "GO"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-308": {
+        "strength": 40.49,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 79,
+          "points": 1070,
+          "name": "Inter de Limeira",
+          "federation": "SP"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-103697": {
+        "strength": 20,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": null,
+        "conmebol": null,
+        "status": "unranked"
+      },
+      "tm-52517": {
+        "strength": 32.51,
+        "stars": 1,
+        "country": "Venezuela",
+        "cbf": null,
+        "conmebol": {
+          "position": 121,
+          "points": 240.5,
+          "name": "Portuguesa FC (Venezuela)"
+        },
+        "status": "ranked"
+      },
+      "tm-7209": {
+        "strength": 54.35,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 46,
+          "points": 3008,
+          "name": "ABC",
+          "federation": "RN"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-115027": {
+        "strength": 20,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": null,
+        "conmebol": null,
+        "status": "unranked"
+      },
+      "tm-45193": {
+        "strength": 33.07,
+        "stars": 1,
+        "country": "Venezuela",
+        "cbf": null,
+        "conmebol": {
+          "position": 116,
+          "points": 262.5,
+          "name": "Puerto Cabello"
+        },
+        "status": "ranked"
+      },
+      "tm-3280": {
+        "strength": 50.45,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 53,
+          "points": 2363,
+          "name": "Confiança",
+          "federation": "SE"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-39555": {
+        "strength": 39.06,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 91,
+          "points": 926,
+          "name": "Iguatu",
+          "federation": "CE"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-32037": {
+        "strength": 20,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": null,
+        "conmebol": null,
+        "status": "unranked"
+      },
+      "tm-20092": {
+        "strength": 42.05,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 74,
+          "points": 1239,
+          "name": "ASA",
+          "federation": "AL"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-27642": {
+        "strength": 43.74,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 67,
+          "points": 1437,
+          "name": "Águia de Marabá",
+          "federation": "PA"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-25229": {
+        "strength": 33.37,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 123,
+          "points": 456,
+          "name": "Atlético",
+          "federation": "BA"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-17479": {
+        "strength": 21.25,
+        "stars": 1,
+        "country": "Perú",
+        "cbf": null,
+        "conmebol": {
+          "position": 283,
+          "points": 2.4,
+          "name": "Alianza Atlético"
+        },
+        "status": "ranked"
+      },
+      "tm-87727": {
+        "strength": 56.54,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 40,
+          "points": 3403,
+          "name": "Amazonas",
+          "federation": "AM"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-1751": {
+        "strength": 46.71,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 62,
+          "points": 1818,
+          "name": "América",
+          "federation": "RN"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-9138": {
+        "strength": 20,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": null,
+        "conmebol": null,
+        "status": "unranked"
+      },
+      "tm-2863": {
+        "strength": 65.21,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 19,
+          "points": 7429,
+          "name": "América",
+          "federation": "MG"
+        },
+        "conmebol": {
+          "position": 78,
+          "points": 546.7,
+          "name": "América Mineiro"
+        },
+        "status": "ranked"
+      },
+      "tm-17568": {
+        "strength": 43.47,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 69,
+          "points": 1404,
+          "name": "Anápolis",
+          "federation": "GO"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-32639": {
+        "strength": 20,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": null,
+        "conmebol": null,
+        "status": "unranked"
+      },
+      "tm-1134": {
+        "strength": 50.7,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 38,
+          "points": 3743,
+          "name": "Ponte Preta",
+          "federation": "SP"
+        },
+        "conmebol": {
+          "position": 170,
+          "points": 94.2,
+          "name": "Ponte Preta"
+        },
+        "status": "ranked"
+      },
+      "tm-8547": {
+        "strength": 39.92,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 84,
+          "points": 1011,
+          "name": "Itabaiana",
+          "federation": "SE"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-64918": {
+        "strength": 51.75,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 51,
+          "points": 2570,
+          "name": "Athletic",
+          "federation": "MG"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-15172": {
+        "strength": 66.09,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 18,
+          "points": 7476,
+          "name": "Atlético",
+          "federation": "GO"
+        },
+        "conmebol": {
+          "position": 66,
+          "points": 735.6,
+          "name": "Atlético Goianiense"
+        },
+        "status": "ranked"
+      },
+      "tm-6363": {
+        "strength": 35.36,
+        "stars": 1,
+        "country": "Chile",
+        "cbf": null,
+        "conmebol": {
+          "position": 100,
+          "points": 362.3,
+          "name": "Audax Italiano"
+        },
+        "status": "ranked"
+      },
+      "tm-2035": {
+        "strength": 52.02,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 31,
+          "points": 4491,
+          "name": "Avaí",
+          "federation": "SC"
+        },
+        "conmebol": {
+          "position": 263,
+          "points": 7.2,
+          "name": "Avaí"
+        },
+        "status": "ranked"
+      },
+      "tm-85931": {
+        "strength": 34.81,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 111,
+          "points": 559,
+          "name": "Azuriz",
+          "federation": "PR"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-3523": {
+        "strength": 65.48,
+        "stars": 3,
+        "country": "Ecuador",
+        "cbf": null,
+        "conmebol": {
+          "position": 28,
+          "points": 3176.6,
+          "name": "Barcelona de Guayaquil"
+        },
+        "status": "ranked"
+      },
+      "tm-52519": {
+        "strength": 36.62,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 99,
+          "points": 704,
+          "name": "Barra",
+          "federation": "SC"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-98702": {
+        "strength": 20,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": null,
+        "conmebol": null,
+        "status": "unranked"
+      },
+      "tm-8056": {
+        "strength": 33.69,
+        "stars": 1,
+        "country": "Bolivia",
+        "cbf": null,
+        "conmebol": {
+          "position": 110,
+          "points": 287.7,
+          "name": "Blooming"
+        },
+        "status": "ranked"
+      },
+      "tm-66492": {
+        "strength": 20,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": null,
+        "conmebol": null,
+        "status": "unranked"
+      },
+      "tm-6878": {
+        "strength": 67.51,
+        "stars": 3,
+        "country": "Bolivia",
+        "cbf": null,
+        "conmebol": {
+          "position": 23,
+          "points": 3466.6,
+          "name": "Bolívar"
+        },
+        "status": "ranked"
+      },
+      "tm-9030": {
+        "strength": 59.79,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 34,
+          "points": 4036,
+          "name": "Botafogo",
+          "federation": "SP"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-17964": {
+        "strength": 51.5,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 52,
+          "points": 2529,
+          "name": "Botafogo",
+          "federation": "PB"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-3973": {
+        "strength": 42.07,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 73,
+          "points": 1242,
+          "name": "Brasiliense",
+          "federation": "DF"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-14390": {
+        "strength": 58.65,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 36,
+          "points": 3807,
+          "name": "Brusque",
+          "federation": "SC"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-25184": {
+        "strength": 20,
+        "stars": 1,
+        "country": "Argentina",
+        "cbf": null,
+        "conmebol": {
+          "position": null,
+          "points": 0,
+          "name": "Barracas Central"
+        },
+        "status": "unranked"
+      },
+      "tm-189": {
+        "strength": 89.23,
+        "stars": 5,
+        "country": "Argentina",
+        "cbf": null,
+        "conmebol": {
+          "position": 4,
+          "points": 7360,
+          "name": "Boca Juniors"
+        },
+        "status": "ranked"
+      },
+      "tm-18074": {
+        "strength": 32.3,
+        "stars": 1,
+        "country": "Uruguay",
+        "cbf": null,
+        "conmebol": {
+          "position": 123,
+          "points": 232.5,
+          "name": "Boston River"
+        },
+        "status": "ranked"
+      },
+      "tm-17428": {
+        "strength": 20,
+        "stars": 1,
+        "country": "Uruguay",
+        "cbf": null,
+        "conmebol": {
+          "position": 287,
+          "points": 0,
+          "name": "Juventud de Las Piedras"
+        },
+        "status": "ranked"
+      },
+      "tm-333": {
+        "strength": 68.81,
+        "stars": 4,
+        "country": "Argentina",
+        "cbf": null,
+        "conmebol": {
+          "position": 21,
+          "points": 3658.9,
+          "name": "Lanús"
+        },
+        "status": "ranked"
+      },
+      "tm-861": {
+        "strength": 82.66,
+        "stars": 4,
+        "country": "Uruguay",
+        "cbf": null,
+        "conmebol": {
+          "position": 5,
+          "points": 6029.4,
+          "name": "Peñarol"
+        },
+        "status": "ranked"
+      },
+      "tm-209": {
+        "strength": 95.54,
+        "stars": 5,
+        "country": "Argentina",
+        "cbf": null,
+        "conmebol": {
+          "position": 3,
+          "points": 8762.8,
+          "name": "River Plate"
+        },
+        "status": "ranked"
+      },
+      "tm-1418": {
+        "strength": 49.54,
+        "stars": 2,
+        "country": "Argentina",
+        "cbf": null,
+        "conmebol": {
+          "position": 48,
+          "points": 1339.7,
+          "name": "Rosario Central"
+        },
+        "status": "ranked"
+      },
+      "tm-1775": {
+        "strength": 57.58,
+        "stars": 3,
+        "country": "Argentina",
+        "cbf": null,
+        "conmebol": {
+          "position": 37,
+          "points": 2168.6,
+          "name": "San Lorenzo"
+        },
+        "status": "ranked"
+      },
+      "tm-38023": {
+        "strength": 37.21,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 95,
+          "points": 755,
+          "name": "Capital",
+          "federation": "DF"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-14682": {
+        "strength": 31.37,
+        "stars": 1,
+        "country": "Venezuela",
+        "cbf": null,
+        "conmebol": {
+          "position": 128,
+          "points": 198.5,
+          "name": "Carabobo"
+        },
+        "status": "ranked"
+      },
+      "tm-531": {
+        "strength": 46.34,
+        "stars": 2,
+        "country": "Venezuela",
+        "cbf": null,
+        "conmebol": {
+          "position": 56,
+          "points": 1065.1,
+          "name": "Caracas FC"
+        },
+        "status": "ranked"
+      },
+      "tm-20799": {
+        "strength": 29.58,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 170,
+          "points": 234,
+          "name": "Castanhal",
+          "federation": "PA"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-2352": {
+        "strength": 57.65,
+        "stars": 3,
+        "country": "Colombia",
+        "cbf": null,
+        "conmebol": {
+          "position": 36,
+          "points": 2177.3,
+          "name": "América de Cali"
+        },
+        "status": "ranked"
+      },
+      "tm-17426": {
+        "strength": 24.77,
+        "stars": 1,
+        "country": "Ecuador",
+        "cbf": null,
+        "conmebol": {
+          "position": 211,
+          "points": 35,
+          "name": "Macará"
+        },
+        "status": "ranked"
+      },
+      "tm-11470": {
+        "strength": 28.63,
+        "stars": 1,
+        "country": "Chile",
+        "cbf": null,
+        "conmebol": {
+          "position": 166,
+          "points": 114.5,
+          "name": "O'Higgins"
+        },
+        "status": "ranked"
+      },
+      "tm-6536": {
+        "strength": 48.61,
+        "stars": 2,
+        "country": "Chile",
+        "cbf": null,
+        "conmebol": {
+          "position": 52,
+          "points": 1257.1,
+          "name": "Palestino"
+        },
+        "status": "ranked"
+      },
+      "tm-3277": {
+        "strength": 57.74,
+        "stars": 3,
+        "country": "Chile",
+        "cbf": null,
+        "conmebol": {
+          "position": 35,
+          "points": 2187.3,
+          "name": "Universidad Católica"
+        },
+        "status": "ranked"
+      },
+      "tm-60520": {
+        "strength": 36.18,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 102,
+          "points": 667,
+          "name": "Operário",
+          "federation": "MT"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-2029": {
+        "strength": 64.61,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 21,
+          "points": 7122,
+          "name": "Ceará",
+          "federation": "CE"
+        },
+        "conmebol": {
+          "position": 73,
+          "points": 607.2,
+          "name": "Ceará"
+        },
+        "status": "ranked"
+      },
+      "tm-94170": {
+        "strength": 20,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": null,
+        "conmebol": null,
+        "status": "unranked"
+      },
+      "tm-12279": {
+        "strength": 41.06,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 77,
+          "points": 1131,
+          "name": "Ceilândia",
+          "federation": "DF"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-21409": {
+        "strength": 31.73,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 141,
+          "points": 351,
+          "name": "Central",
+          "federation": "PE"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-18545": {
+        "strength": 58.28,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 39,
+          "points": 3736,
+          "name": "CSA",
+          "federation": "AL"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-16837": {
+        "strength": 39.2,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 90,
+          "points": 940,
+          "name": "Cianorte",
+          "federation": "PR"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-42208": {
+        "strength": 43.04,
+        "stars": 2,
+        "country": "Bolivia",
+        "cbf": null,
+        "conmebol": {
+          "position": 64,
+          "points": 815,
+          "name": "Always Ready"
+        },
+        "status": "ranked"
+      },
+      "tm-928": {
+        "strength": 24.03,
+        "stars": 1,
+        "country": "Argentina",
+        "cbf": null,
+        "conmebol": {
+          "position": 223,
+          "points": 25,
+          "name": "Platense"
+        },
+        "status": "ranked"
+      },
+      "tm-11831": {
+        "strength": 36.08,
+        "stars": 2,
+        "country": "Argentina",
+        "cbf": null,
+        "conmebol": {
+          "position": 97,
+          "points": 397.2,
+          "name": "Tigre"
+        },
+        "status": "ranked"
+      },
+      "tm-1214": {
+        "strength": 69.14,
+        "stars": 4,
+        "country": "Paraguay",
+        "cbf": null,
+        "conmebol": {
+          "position": 20,
+          "points": 3708.7,
+          "name": "Cerro Porteño"
+        },
+        "status": "ranked"
+      },
+      "tm-2729": {
+        "strength": 38.99,
+        "stars": 2,
+        "country": "Perú",
+        "cbf": null,
+        "conmebol": {
+          "position": 76,
+          "points": 553.9,
+          "name": "Cienciano"
+        },
+        "status": "ranked"
+      },
+      "tm-19775": {
+        "strength": 20,
+        "stars": 1,
+        "country": "Argentina",
+        "cbf": null,
+        "conmebol": {
+          "position": null,
+          "points": 0,
+          "name": "Deportivo Riestra"
+        },
+        "status": "unranked"
+      },
+      "tm-288": {
+        "strength": 70.43,
+        "stars": 4,
+        "country": "Argentina",
+        "cbf": null,
+        "conmebol": {
+          "position": 18,
+          "points": 3905.4,
+          "name": "Estudiantes de La Plata"
+        },
+        "status": "ranked"
+      },
+      "tm-30854": {
+        "strength": 29.13,
+        "stars": 1,
+        "country": "Bolivia",
+        "cbf": null,
+        "conmebol": {
+          "position": 159,
+          "points": 128,
+          "name": "Independiente Petrolero"
+        },
+        "status": "ranked"
+      },
+      "tm-9875": {
+        "strength": 71.09,
+        "stars": 4,
+        "country": "Paraguay",
+        "cbf": null,
+        "conmebol": {
+          "position": 17,
+          "points": 4007.8,
+          "name": "Libertad"
+        },
+        "status": "ranked"
+      },
+      "tm-866": {
+        "strength": 79.96,
+        "stars": 4,
+        "country": "Uruguay",
+        "cbf": null,
+        "conmebol": {
+          "position": 8,
+          "points": 5521,
+          "name": "Nacional"
+        },
+        "status": "ranked"
+      },
+      "tm-629": {
+        "strength": 72.87,
+        "stars": 4,
+        "country": "Paraguay",
+        "cbf": null,
+        "conmebol": {
+          "position": 15,
+          "points": 4292.4,
+          "name": "Olimpia"
+        },
+        "status": "ranked"
+      },
+      "tm-1450": {
+        "strength": 56.66,
+        "stars": 3,
+        "country": "Perú",
+        "cbf": null,
+        "conmebol": {
+          "position": 38,
+          "points": 2064.1,
+          "name": "Sporting Cristal"
+        },
+        "status": "ranked"
+      },
+      "tm-11449": {
+        "strength": 69.12,
+        "stars": 4,
+        "country": "Brasil",
+        "cbf": {
+          "position": 26,
+          "points": 6150,
+          "name": "CRB",
+          "federation": "AL"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-108000": {
+        "strength": 20,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": null,
+        "conmebol": null,
+        "status": "unranked"
+      },
+      "tm-2646": {
+        "strength": 47.38,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 44,
+          "points": 3200,
+          "name": "Náutico",
+          "federation": "PE"
+        },
+        "conmebol": {
+          "position": 241,
+          "points": 16,
+          "name": "Náutico"
+        },
+        "status": "ranked"
+      },
+      "tm-4759": {
+        "strength": 36.07,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 105,
+          "points": 658,
+          "name": "Marcílio Dias",
+          "federation": "SC"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-12602": {
+        "strength": 31.9,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 138,
+          "points": 361,
+          "name": "CRAC",
+          "federation": "GO"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-52513": {
+        "strength": 33,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 128,
+          "points": 431,
+          "name": "CSE",
+          "federation": "AL"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-11004": {
+        "strength": 37.59,
+        "stars": 2,
+        "country": "Chile",
+        "cbf": null,
+        "conmebol": {
+          "position": 82,
+          "points": 475.4,
+          "name": "Coquimbo Unido"
+        },
+        "status": "ranked"
+      },
+      "tm-7178": {
+        "strength": 58.17,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 27,
+          "points": 6090,
+          "name": "Criciúma",
+          "federation": "SC"
+        },
+        "conmebol": {
+          "position": 194,
+          "points": 56,
+          "name": "Criciúma"
+        },
+        "status": "ranked"
+      },
+      "tm-12179": {
+        "strength": 20,
+        "stars": 1,
+        "country": "Argentina",
+        "cbf": null,
+        "conmebol": {
+          "position": null,
+          "points": 0,
+          "name": "Independiente Rivadavia"
+        },
+        "status": "unranked"
+      },
+      "tm-7816": {
+        "strength": 40.25,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 82,
+          "points": 1045,
+          "name": "Sergipe",
+          "federation": "SE"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-28022": {
+        "strength": 62.79,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 22,
+          "points": 6746,
+          "name": "Cuiabá",
+          "federation": "MT"
+        },
+        "conmebol": {
+          "position": 89,
+          "points": 434.7,
+          "name": "Cuiabá"
+        },
+        "status": "ranked"
+      },
+      "tm-28999": {
+        "strength": 30.46,
+        "stars": 1,
+        "country": "Perú",
+        "cbf": null,
+        "conmebol": {
+          "position": 142,
+          "points": 168,
+          "name": "Cusco"
+        },
+        "status": "ranked"
+      },
+      "tm-10503": {
+        "strength": 46.24,
+        "stars": 2,
+        "country": "Colombia",
+        "cbf": null,
+        "conmebol": {
+          "position": 57,
+          "points": 1057.7,
+          "name": "Deportes Tolima"
+        },
+        "status": "ranked"
+      },
+      "tm-8781": {
+        "strength": 30.67,
+        "stars": 1,
+        "country": "Ecuador",
+        "cbf": null,
+        "conmebol": {
+          "position": 137,
+          "points": 175,
+          "name": "Deportivo Cuenca"
+        },
+        "status": "ranked"
+      },
+      "tm-26468": {
+        "strength": 33.32,
+        "stars": 1,
+        "country": "Venezuela",
+        "cbf": null,
+        "conmebol": {
+          "position": 114,
+          "points": 272.3,
+          "name": "Deportivo La Guaira"
+        },
+        "status": "ranked"
+      },
+      "tm-45176": {
+        "strength": 36.08,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 104,
+          "points": 659,
+          "name": "Água Santa",
+          "federation": "SP"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-3364": {
+        "strength": 29.58,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 170,
+          "points": 234,
+          "name": "Democrata GV",
+          "federation": "MG"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-27355": {
+        "strength": 36.65,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 98,
+          "points": 707,
+          "name": "São Luiz",
+          "federation": "RS"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-55335": {
+        "strength": 27.75,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 189,
+          "points": 153,
+          "name": "XV de Piracicaba",
+          "federation": "SP"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-33050": {
+        "strength": 37.22,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 94,
+          "points": 756,
+          "name": "Jacuipense",
+          "federation": "BA"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-10492": {
+        "strength": 64.02,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 17,
+          "points": 8426,
+          "name": "Juventude",
+          "federation": "RS"
+        },
+        "conmebol": {
+          "position": 232,
+          "points": 20,
+          "name": "Juventude"
+        },
+        "status": "ranked"
+      },
+      "tm-15047": {
+        "strength": 20,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": null,
+        "conmebol": null,
+        "status": "unranked"
+      },
+      "tm-7535": {
+        "strength": 46.13,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 63,
+          "points": 1741,
+          "name": "São José",
+          "federation": "RS"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-27837": {
+        "strength": 36.32,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 101,
+          "points": 679,
+          "name": "Atlético",
+          "federation": "CE"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-28621": {
+        "strength": 42.33,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 72,
+          "points": 1271,
+          "name": "FC Cascavel",
+          "federation": "PR"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-15882": {
+        "strength": 49.38,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 54,
+          "points": 2201,
+          "name": "Ferroviária",
+          "federation": "SP"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-11931": {
+        "strength": 47.42,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 60,
+          "points": 1916,
+          "name": "Ferroviário",
+          "federation": "CE"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-4064": {
+        "strength": 41.17,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 59,
+          "points": 1983,
+          "name": "Figueirense",
+          "federation": "SC"
+        },
+        "conmebol": {
+          "position": 286,
+          "points": 1.5,
+          "name": "Figueirense"
+        },
+        "status": "ranked"
+      },
+      "tm-65477": {
+        "strength": 46.85,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 61,
+          "points": 1838,
+          "name": "Floresta",
+          "federation": "CE"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-87817": {
+        "strength": 36.97,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 97,
+          "points": 734,
+          "name": "Fluminense",
+          "federation": "PI"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-10870": {
+        "strength": 77.59,
+        "stars": 4,
+        "country": "Brasil",
+        "cbf": {
+          "position": 13,
+          "points": 10382,
+          "name": "Fortaleza",
+          "federation": "CE"
+        },
+        "conmebol": {
+          "position": 31,
+          "points": 2325.9,
+          "name": "Fortaleza EC"
+        },
+        "status": "ranked"
+      },
+      "tm-87822": {
+        "strength": 34.43,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 113,
+          "points": 531,
+          "name": "GAS",
+          "federation": "RR"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-69424": {
+        "strength": 25.46,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 217,
+          "points": 76,
+          "name": "Galvez",
+          "federation": "AC"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-3197": {
+        "strength": 61.79,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 23,
+          "points": 6463,
+          "name": "Goiás",
+          "federation": "GO"
+        },
+        "conmebol": {
+          "position": 96,
+          "points": 397.9,
+          "name": "Goiás"
+        },
+        "status": "ranked"
+      },
+      "tm-8567": {
+        "strength": 31.38,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 146,
+          "points": 330,
+          "name": "Goiatuba",
+          "federation": "GO"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-10560": {
+        "strength": 43.72,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 68,
+          "points": 1434,
+          "name": "Brasil",
+          "federation": "RS"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-37474": {
+        "strength": 61.72,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 32,
+          "points": 4436,
+          "name": "Novorizontino",
+          "federation": "SP"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-87821": {
+        "strength": 20,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": null,
+        "conmebol": null,
+        "status": "unranked"
+      },
+      "tm-1755": {
+        "strength": 48.89,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 45,
+          "points": 3186,
+          "name": "Guarani",
+          "federation": "SP"
+        },
+        "conmebol": {
+          "position": 152,
+          "points": 138,
+          "name": "Guarani FC"
+        },
+        "status": "ranked"
+      },
+      "tm-24903": {
+        "strength": 34.08,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 116,
+          "points": 505,
+          "name": "Guarany de Bagé",
+          "federation": "RS"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-87160": {
+        "strength": 20,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": null,
+        "conmebol": null,
+        "status": "unranked"
+      },
+      "tm-80647": {
+        "strength": 27.75,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 189,
+          "points": 153,
+          "name": "Sãojoseense",
+          "federation": "PR"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-32612": {
+        "strength": 32.21,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 132,
+          "points": 380,
+          "name": "Independência",
+          "federation": "AC"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-19309": {
+        "strength": 71.85,
+        "stars": 4,
+        "country": "Ecuador",
+        "cbf": null,
+        "conmebol": {
+          "position": 16,
+          "points": 4128.4,
+          "name": "Independiente del Valle"
+        },
+        "status": "ranked"
+      },
+      "tm-10093": {
+        "strength": 51.32,
+        "stars": 2,
+        "country": "Colombia",
+        "cbf": null,
+        "conmebol": {
+          "position": 45,
+          "points": 1506.8,
+          "name": "Independiente Medellín"
+        },
+        "status": "ranked"
+      },
+      "tm-11648": {
+        "strength": 47.67,
+        "stars": 2,
+        "country": "Colombia",
+        "cbf": null,
+        "conmebol": {
+          "position": 53,
+          "points": 1175.6,
+          "name": "Independiente Santa Fe"
+        },
+        "status": "ranked"
+      },
+      "tm-25296": {
+        "strength": 20,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": null,
+        "conmebol": null,
+        "status": "unranked"
+      },
+      "tm-4773": {
+        "strength": 56.41,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 41,
+          "points": 3380,
+          "name": "Ituano",
+          "federation": "SP"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-36962": {
+        "strength": 20,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": null,
+        "conmebol": null,
+        "status": "unranked"
+      },
+      "tm-3330": {
+        "strength": 32.05,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 136,
+          "points": 370,
+          "name": "Joinville",
+          "federation": "SC"
+        },
+        "conmebol": {
+          "position": 287,
+          "points": 0,
+          "name": "Joinville"
+        },
+        "status": "ranked"
+      },
+      "tm-11854": {
+        "strength": 57.93,
+        "stars": 3,
+        "country": "Colombia",
+        "cbf": null,
+        "conmebol": {
+          "position": 34,
+          "points": 2209,
+          "name": "Junior"
+        },
+        "status": "ranked"
+      },
+      "tm-56341": {
+        "strength": 33.06,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 127,
+          "points": 435,
+          "name": "Lagarto",
+          "federation": "SE"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-9855": {
+        "strength": 78.01,
+        "stars": 4,
+        "country": "Ecuador",
+        "cbf": null,
+        "conmebol": {
+          "position": 10,
+          "points": 5168,
+          "name": "LDU Quito"
+        },
+        "status": "ranked"
+      },
+      "tm-1693": {
+        "strength": 53.53,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 48,
+          "points": 2865,
+          "name": "Londrina",
+          "federation": "PR"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-21599": {
+        "strength": 31.12,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 151,
+          "points": 315,
+          "name": "Luverdense",
+          "federation": "MT"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-4907": {
+        "strength": 25.46,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 217,
+          "points": 76,
+          "name": "Madureira",
+          "federation": "RJ"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-94182": {
+        "strength": 36.15,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 103,
+          "points": 665,
+          "name": "Manauara",
+          "federation": "AM"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-46022": {
+        "strength": 45.8,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 64,
+          "points": 1697,
+          "name": "Manaus",
+          "federation": "AM"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-22352": {
+        "strength": 39.4,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 89,
+          "points": 959,
+          "name": "Maracanã",
+          "federation": "CE"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-34293": {
+        "strength": 39.82,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 85,
+          "points": 1001,
+          "name": "Maranhão",
+          "federation": "MA"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-63296": {
+        "strength": 30.94,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 153,
+          "points": 305,
+          "name": "Maricá",
+          "federation": "RJ"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-33003": {
+        "strength": 48.61,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 56,
+          "points": 2086,
+          "name": "Maringá",
+          "federation": "PR"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-2350": {
+        "strength": 47.15,
+        "stars": 2,
+        "country": "Colombia",
+        "cbf": null,
+        "conmebol": {
+          "position": 54,
+          "points": 1132.1,
+          "name": "Millonarios"
+        },
+        "status": "ranked"
+      },
+      "tm-11900": {
+        "strength": 33.92,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 119,
+          "points": 494,
+          "name": "Mixto",
+          "federation": "MT"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-119625": {
+        "strength": 20,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": null,
+        "conmebol": null,
+        "status": "unranked"
+      },
+      "tm-37535": {
+        "strength": 30.76,
+        "stars": 1,
+        "country": "Uruguay",
+        "cbf": null,
+        "conmebol": {
+          "position": 135,
+          "points": 177.7,
+          "name": "Montevideo City Torque"
+        },
+        "status": "ranked"
+      },
+      "tm-12009": {
+        "strength": 35.53,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 106,
+          "points": 615,
+          "name": "Moto Club",
+          "federation": "MA"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-22782": {
+        "strength": 28.75,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 185,
+          "points": 195,
+          "name": "Nacional",
+          "federation": "AM"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-16108": {
+        "strength": 44.79,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 66,
+          "points": 1566,
+          "name": "Nova Iguaçu",
+          "federation": "RJ"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-32386": {
+        "strength": 37.53,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 93,
+          "points": 783,
+          "name": "Operário",
+          "federation": "MS"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-27214": {
+        "strength": 62.13,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 30,
+          "points": 4525,
+          "name": "Operário",
+          "federation": "PR"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-53471": {
+        "strength": 27,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 198,
+          "points": 125,
+          "name": "Oratório",
+          "federation": "AP"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-41872": {
+        "strength": 35.44,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 107,
+          "points": 608,
+          "name": "Parnahyba",
+          "federation": "PI"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-6347": {
+        "strength": 51.22,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 35,
+          "points": 4030,
+          "name": "Paysandu",
+          "federation": "PA"
+        },
+        "conmebol": {
+          "position": 202,
+          "points": 48,
+          "name": "Paysandu"
+        },
+        "status": "ranked"
+      },
+      "tm-64925": {
+        "strength": 20,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": null,
+        "conmebol": null,
+        "status": "unranked"
+      },
+      "tm-121518": {
+        "strength": 20,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": null,
+        "conmebol": null,
+        "status": "unranked"
+      },
+      "tm-72477": {
+        "strength": 41.56,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 75,
+          "points": 1185,
+          "name": "Porto Velho",
+          "federation": "RO"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-10247": {
+        "strength": 32.51,
+        "stars": 1,
+        "country": "Venezuela",
+        "cbf": null,
+        "conmebol": {
+          "position": 121,
+          "points": 240.5,
+          "name": "Portuguesa FC (Venezuela)"
+        },
+        "status": "ranked"
+      },
+      "tm-73407": {
+        "strength": 41.41,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 76,
+          "points": 1168,
+          "name": "Pouso Alegre",
+          "federation": "MG"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-98845": {
+        "strength": 20,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": null,
+        "conmebol": null,
+        "status": "unranked"
+      },
+      "tm-1444": {
+        "strength": 78.82,
+        "stars": 4,
+        "country": "Argentina",
+        "cbf": null,
+        "conmebol": {
+          "position": 9,
+          "points": 5312.7,
+          "name": "Racing Club"
+        },
+        "status": "ranked"
+      },
+      "tm-36478": {
+        "strength": 37.2,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 96,
+          "points": 754,
+          "name": "Real Noroeste",
+          "federation": "ES"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-14545": {
+        "strength": 20,
+        "stars": 1,
+        "country": "Paraguay",
+        "cbf": null,
+        "conmebol": {
+          "position": null,
+          "points": 0,
+          "name": "Recoleta"
+        },
+        "status": "unranked"
+      },
+      "tm-76156": {
+        "strength": 52.59,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 49,
+          "points": 2707,
+          "name": "Retrô",
+          "federation": "PE"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-30489": {
+        "strength": 34.5,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 112,
+          "points": 536,
+          "name": "Rio Branco",
+          "federation": "ES"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-3319": {
+        "strength": 53.78,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 47,
+          "points": 2908,
+          "name": "Sampaio Corrêa",
+          "federation": "MA"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-40120": {
+        "strength": 53.78,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 47,
+          "points": 2908,
+          "name": "Sampaio Corrêa",
+          "federation": "MA"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-36963": {
+        "strength": 20,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": null,
+        "conmebol": null,
+        "status": "unranked"
+      },
+      "tm-1785": {
+        "strength": 35.41,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 86,
+          "points": 979,
+          "name": "Santa Cruz",
+          "federation": "PE"
+        },
+        "conmebol": {
+          "position": 250,
+          "points": 12.3,
+          "name": "Santa Cruz"
+        },
+        "status": "ranked"
+      },
+      "tm-16439": {
+        "strength": 48.43,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 57,
+          "points": 2061,
+          "name": "São Bernardo FC",
+          "federation": "SP"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-73574": {
+        "strength": 39.46,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 88,
+          "points": 965,
+          "name": "São Raimundo",
+          "federation": "RR"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-60741": {
+        "strength": 40.43,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 80,
+          "points": 1064,
+          "name": "Humaitá",
+          "federation": "AC"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-32991": {
+        "strength": 39.96,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 83,
+          "points": 1016,
+          "name": "Juazeirense",
+          "federation": "BA"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-76155": {
+        "strength": 20,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": null,
+        "conmebol": null,
+        "status": "unranked"
+      },
+      "tm-9141": {
+        "strength": 48.37,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 58,
+          "points": 2051,
+          "name": "Caxias",
+          "federation": "RS"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-65479": {
+        "strength": 20,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": null,
+        "conmebol": null,
+        "status": "unranked"
+      },
+      "tm-7014": {
+        "strength": 25.46,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 217,
+          "points": 76,
+          "name": "Gama",
+          "federation": "DF"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-23778": {
+        "strength": 31.65,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 144,
+          "points": 346,
+          "name": "Imperatriz",
+          "federation": "MA"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-18236": {
+        "strength": 43.39,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 70,
+          "points": 1394,
+          "name": "Sousa",
+          "federation": "PB"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-8718": {
+        "strength": 59.63,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 25,
+          "points": 6340,
+          "name": "Sport",
+          "federation": "PE"
+        },
+        "conmebol": {
+          "position": 161,
+          "points": 121.3,
+          "name": "Sport"
+        },
+        "status": "ranked"
+      },
+      "tm-27242": {
+        "strength": 42.56,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 71,
+          "points": 1297,
+          "name": "Tocantinópolis",
+          "federation": "TO"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-3234": {
+        "strength": 55.65,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 42,
+          "points": 3240,
+          "name": "Tombense",
+          "federation": "MG"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-36012": {
+        "strength": 40.43,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 80,
+          "points": 1064,
+          "name": "Trem",
+          "federation": "AP"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-11086": {
+        "strength": 36.61,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 100,
+          "points": 703,
+          "name": "Treze",
+          "federation": "PB"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-20803": {
+        "strength": 39.59,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 87,
+          "points": 978,
+          "name": "Tuna Luso",
+          "federation": "PA"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-8825": {
+        "strength": 31.67,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 143,
+          "points": 347,
+          "name": "Uberlândia",
+          "federation": "MG"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-28199": {
+        "strength": 37.64,
+        "stars": 2,
+        "country": "Brasil",
+        "cbf": {
+          "position": 92,
+          "points": 793,
+          "name": "União",
+          "federation": "MT"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-43146": {
+        "strength": 26.99,
+        "stars": 1,
+        "country": "Venezuela",
+        "cbf": null,
+        "conmebol": {
+          "position": 179,
+          "points": 75,
+          "name": "Universidad Central"
+        },
+        "status": "ranked"
+      },
+      "tm-6593": {
+        "strength": 58.25,
+        "stars": 3,
+        "country": "Perú",
+        "cbf": null,
+        "conmebol": {
+          "position": 32,
+          "points": 2247,
+          "name": "Universitario de Deportes"
+        },
+        "status": "ranked"
+      },
+      "tm-5677": {
+        "strength": 63.17,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 29,
+          "points": 4750,
+          "name": "Vila Nova",
+          "federation": "GO"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-32934": {
+        "strength": 29.46,
+        "stars": 1,
+        "country": "Brasil",
+        "cbf": {
+          "position": 173,
+          "points": 228,
+          "name": "Vitória",
+          "federation": "ES"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-4176": {
+        "strength": 55.49,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 43,
+          "points": 3210,
+          "name": "Volta Redonda",
+          "federation": "RJ"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      },
+      "tm-16869": {
+        "strength": 52.46,
+        "stars": 3,
+        "country": "Brasil",
+        "cbf": {
+          "position": 50,
+          "points": 2686,
+          "name": "Ypiranga",
+          "federation": "RS"
+        },
+        "conmebol": null,
+        "status": "ranked"
+      }
+    }
+  }
 }
