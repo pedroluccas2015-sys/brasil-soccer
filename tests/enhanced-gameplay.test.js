@@ -17,7 +17,7 @@ test('mesma carga: chute é mais veloz que cruzamento e passe, com força progre
 test('passe e cruzamento chegam ao companheiro, com altura controlável e sem teletransporte',()=>{
  for(const type of ['pass','long'])for(const distance of (type==='pass'?[100,180,280]:[100,220,340]))for(const hz of [30,60,120]){
   const {m,p,q}=setup(distance);m.pass(p,type,.65,{x:1,y:0},q);let closest=Infinity,atHeight=999;
-  for(let i=0;i<hz*4;i++){const x=m.ball.x;m.ball.update(1/hz);assert.ok(Math.abs(m.ball.x-x)<15);const gap=B.dist(m.ball,q);if(gap<closest){closest=gap;atHeight=m.ball.z;}}
+  for(let i=0;i<hz*4;i++){const x=m.ball.x;m.ball.update(1/hz);assert.ok(Math.abs(m.ball.x-x)<B.KickModel.shotSpeed(.65)/hz+1);const gap=B.dist(m.ball,q);if(gap<closest){closest=gap;atHeight=m.ball.z;}}
   assert.ok(closest<13,`${type} ${distance} ${hz}: distância ${closest}`);assert.ok(atHeight<18,`${type} ${distance}: altura ${atHeight}`);
  }
 });

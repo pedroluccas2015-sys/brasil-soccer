@@ -16,3 +16,5 @@ window.BSS = window.BSS || {};
   start(){if(this.running)return;this.running=true;const frame=t=>{if(!this.running)return;const delta=this.last ? Math.min((t-this.last)/1000,.1):0;this.last=t;this.fps=B.lerp(this.fps,1/Math.max(delta,.001),.03);this.acc+=delta;while(this.acc>=1/60){this.update(1/60);this.acc-=1/60;}this.render(this.acc*60);requestAnimationFrame(frame);};requestAnimationFrame(frame);}
  };
 })();
+
+window.BSS.clubCode=function(team){const normalized=String(team.name||team.shortName||'CLU').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase().replace(/^(?:(?:AA|AD|AC|CA|CD|CE|CF|CS|EC|FC|SC|CLUB|CLUBE|CLUBES|ASSOCIACAO|ATLETICA)\s+)+/,'').replace(/[^A-Z]/g,'');return (normalized+'CLU').slice(0,3);};

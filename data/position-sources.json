@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-11-12",
+  "source": "https://tmapi.transfermarkt.technology/players",
+  "lookup": "Numeric externalId matched exactly; positionGroup supplies GK/DF/MF/FW; position ID supplies detailed role; alternate positions are preserved.",
+  "verifiedIdentifiers": 5797,
+  "correctedRecords": 1719,
+  "retainedOtherSources": 110,
+  "unavailableIdentifiers": [
+    "1150629"
+  ],
+  "seasonAdditions": {
+    "teamId": "tm-3234",
+    "players": [
+      "1082731",
+      "1159113",
+      "978131"
+    ],
+    "source": "https://www.cbf.com.br/futebol-brasileiro/times/campeonato-brasileiro/serie-d/2026/34027?tab=atletas",
+    "note": "Participants registered in the 2026 season complement a list with only eight outfield athletes; this does not assert current transfer status."
+  }
+}

@@ -221,3 +221,14 @@ O carrinho tem pose própria nas oito direções, com a perna estendida à frent
 CPU e companheiros do usuário usam o mesmo bloco defensivo: um jogador pressiona, outro cobre o caminho ao gol e os demais fecham corredores e acompanham adversários perigosos. A linha se ajusta à bola e às opções táticas, com espaçamento entre marcadores. Trocas de posse, controle e expulsões recalculam as funções. O jogador controlado continua manual; segurar o comando de lançamento na defesa chama o segundo defensor.
 
 Para conferir poses e cenários dos dois lados, abra `tests/slide-defense.html` no servidor local. Os testes em `tests/slide-defense.test.js` verificam direção, recuperação, grama, replay, cobertura, marcação, controle manual e transições.
+
+
+## Passes, bolas paradas e atletas em 16 bits
+
+Passes rasteiros agora saem entre aproximadamente 365 e 645 unidades/s conforme a carga; cruzamentos usam 310 a 540 unidades/s, sempre abaixo do chute de mesma carga. A assistência dá preferência a corredores livres, antecipa o deslocamento do receptor e permite dominar passes curtos sem o bloqueio antigo de 0,23 s.
+
+A câmera dos escanteios termina no toque na bola e retorna imediatamente ao enquadramento normal. Nas faltas, cinco atacantes ocupam a área, com opções de passe curto e rebote. Na fase de mira, o botão de lançamento (C no teclado clássico) inicia um cruzamento; o chute mantém a cobrança direta.
+
+Os sprites originais têm sombras, volumes, membros articulados, oito direções e 16 fases de corrida. As escalações usam posições principais e secundárias, respeitam o esquema e agrupam titulares e reservas por função. Os 208 clubes exibem siglas de três letras abaixo do escudo.
+
+Verificação visual reproduzível: `tests/passes-16bit.html`. As posições foram revisadas por identificador público; veja os detalhes e limites em `data/sources.md`.

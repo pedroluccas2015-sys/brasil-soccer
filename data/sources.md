@@ -1,6 +1,6 @@
 # Fontes e limites
 
-Elencos e cores coletados em 09/10/2026; revisão final do programa em 10/10/2026. São 208 clubes e 5931 registros de atletas. A data de consulta não garante a atualização editorial da fonte nem a inscrição oficial no torneio.
+Elencos e cores coletados em 09/10/2026; revisão final do programa em 10/10/2026. São 208 clubes e 5934 registros de atletas. A data de consulta não garante a atualização editorial da fonte nem a inscrição oficial no torneio.
 
 ## Competições
 
@@ -239,3 +239,12 @@ Não são importadas avaliações comerciais: atributos são estimativas determi
 | Vitória FC | [Fonte](https://www.transfermarkt.com/vitoria-futebol-clube-es-/kader/verein/32934) | [Fonte](https://www.transfermarkt.com/vitoria-futebol-clube-es-/datenfakten/verein/32934) | Lista publicada na coleta |
 | Volta Redonda Futebol Clube (RJ) | [Fonte](https://www.transfermarkt.com/volta-redonda-futebol-clube-rj-/kader/verein/4176) | [Fonte](https://www.transfermarkt.com/volta-redonda-futebol-clube-rj-/datenfakten/verein/4176) | Lista publicada na coleta |
 | Ypiranga FC | [Fonte](https://www.transfermarkt.com/ypiranga-futebol-clube-rs-/kader/verein/16869) | [Fonte](https://www.transfermarkt.com/ypiranga-futebol-clube-rs-/datenfakten/verein/16869) | Lista publicada na coleta |
+
+
+## Revisão de posições — 12/11/2026
+
+Foram corrigidas 1.719 classificações de posição, em especial meio-campistas que constavam como atacantes. A revisão cruzou o externalId numérico com a resposta pública de `https://tmapi.transfermarkt.technology/players?ids[]=ID`. O grupo informa GK/DF/MF/FW, e o ID detalhado informa goleiro, zagueiro, lateral, volante, meia, ponta ou centroavante. As posições secundárias foram preservadas para montar formações sem improvisações. A montagem não usa avaliações comerciais ou overall.
+
+Foram localizados 5.797 identificadores distintos. Os 110 registros de outras fontes foram preservados; Kent Sánchez (1150629), sem resposta, conserva a posição da coleta anterior. A fonte primária e o resumo da revisão estão em `position-sources.json`. As posições são dados da consulta; isso não certifica inscrições ou transferências atuais.
+
+O Tombense tinha apenas oito atletas de linha na lista anterior. Júlio Henrique, Dyego e Keliton foram incluídos como participantes registrados na temporada 2026, conforme a [lista da CBF](https://www.cbf.com.br/futebol-brasileiro/times/campeonato-brasileiro/serie-d/2026/34027?tab=atletas), com posições consultadas na mesma fonte pública acima. O complemento não afirma que os três continuem vinculados ao clube na data de consulta.
