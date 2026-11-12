@@ -1,7 +1,7 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
 global.window=global;global.localStorage={getItem:()=>null,setItem(){}};
-for(const f of ['data/bundle.js',...['engine','formations','physics','data-loader','player','ball','team','ai','penalty','free-kick','match'].map(n=>'js/'+n+'.js')])vm.runInThisContext(fs.readFileSync(path.join(__dirname,'..',f),'utf8'),{filename:f});
+for(const f of ['data/bundle.js',...['engine','formations','physics','kick-model','data-loader','player','ball','team','ai','penalty','free-kick','match'].map(n=>'js/'+n+'.js')])vm.runInThisContext(fs.readFileSync(path.join(__dirname,'..',f),'utf8'),{filename:f});
 const B=BSS,F=B.FIELD,d=new B.DataManager();d.raw=BSS_DATA;d.hydrate();
 const make=(opts={})=>new B.Match(d.teams[0],d.teams[1],{seed:36,...opts});
 const input=(pressed={},axis={x:0,y:0},state={})=>({pressed,axis,state,released:{}});

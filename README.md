@@ -1,3 +1,7 @@
+## Atualização de jogabilidade e apresentação
+
+Campo ampliado, passes e cruzamentos assistidos com carga de força, IA com corridas de apoio, novas animações e cenas, seleção de ligas/clubes com 208 escudos locais. Mata-mata da Copa de Pênaltis em jogo único; torneios normais mantêm as regras próprias de cada fase. Veja [detalhes, controles e fontes dos assets](docs/ATUALIZACAO-JOGABILIDADE.md).
+
 # Brasil Super Soccer 2026
 
 Build arcade jogável de futebol 2D para navegador, com arte e áudio originais. JavaScript ES6, Canvas 2D, Web Audio, Gamepad API e localStorage. Sem framework, backend, instalação ou conexão obrigatória.

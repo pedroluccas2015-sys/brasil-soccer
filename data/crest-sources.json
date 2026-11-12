@@ -1,0 +1,1046 @@
+{
+  "repository": "https://github.com/JoseArroyave/football-logos",
+  "commit": "5ab11fed47427b3003f4b276554491fe683387b1",
+  "crests": {
+    "flamengo": {
+      "file": "assets/crests/flamengo.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Flamengo.svg",
+      "upstream": "logos/brazil/Flamengo.svg"
+    },
+    "palmeiras": {
+      "file": "assets/crests/palmeiras.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Palmeiras.svg",
+      "upstream": "logos/brazil/Palmeiras.svg"
+    },
+    "corinthians": {
+      "file": "assets/crests/corinthians.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Corinthians.svg",
+      "upstream": "logos/brazil/Corinthians.svg"
+    },
+    "sao-paulo": {
+      "file": "assets/crests/sao-paulo.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/S%C3%A3o_Paulo.svg",
+      "upstream": "logos/brazil/São_Paulo.svg"
+    },
+    "santos": {
+      "file": "assets/crests/santos.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Santos_FC.svg",
+      "upstream": "logos/brazil/Santos_FC.svg"
+    },
+    "vasco": {
+      "file": "assets/crests/vasco.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Vasco_da_Gama.svg",
+      "upstream": "logos/brazil/Vasco_da_Gama.svg"
+    },
+    "gremio": {
+      "file": "assets/crests/gremio.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Gr%C3%AAmio.svg",
+      "upstream": "logos/brazil/Grêmio.svg"
+    },
+    "internacional": {
+      "file": "assets/crests/internacional.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Internacional.svg",
+      "upstream": "logos/brazil/Internacional.svg"
+    },
+    "cruzeiro": {
+      "file": "assets/crests/cruzeiro.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Cruzeiro.svg",
+      "upstream": "logos/brazil/Cruzeiro.svg"
+    },
+    "bahia": {
+      "file": "assets/crests/bahia.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Bahia.svg",
+      "upstream": "logos/brazil/Bahia.svg"
+    },
+    "vitoria": {
+      "file": "assets/crests/vitoria.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Vit%C3%B3ria.svg",
+      "upstream": "logos/brazil/Vitória.svg"
+    },
+    "coritiba": {
+      "file": "assets/crests/coritiba.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Coritiba.svg",
+      "upstream": "logos/brazil/Coritiba.svg"
+    },
+    "mirassol": {
+      "file": "assets/crests/mirassol.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Mirassol.svg",
+      "upstream": "logos/brazil/Mirassol.svg"
+    },
+    "chapecoense": {
+      "file": "assets/crests/chapecoense.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Chapecoense.svg",
+      "upstream": "logos/brazil/Chapecoense.svg"
+    },
+    "remo": {
+      "file": "assets/crests/remo.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Clube_do_Remo.svg",
+      "upstream": "logos/brazil/Clube_do_Remo.svg"
+    },
+    "tm-52517": {
+      "file": "assets/crests/tm-52517.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/venezuela/Portuguesa_FC.svg",
+      "upstream": "logos/venezuela/Portuguesa_FC.svg"
+    },
+    "tm-7209": {
+      "file": "assets/crests/tm-7209.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/ABC_Futebol_Clube.svg",
+      "upstream": "logos/brazil/ABC_Futebol_Clube.svg"
+    },
+    "tm-115027": {
+      "file": "assets/crests/tm-115027.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/ABECAT_Ouvidorense.svg",
+      "upstream": "logos/brazil/ABECAT_Ouvidorense.svg"
+    },
+    "tm-45193": {
+      "file": "assets/crests/tm-45193.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/venezuela/Academia_Puerto_Cabello.svg",
+      "upstream": "logos/venezuela/Academia_Puerto_Cabello.svg"
+    },
+    "tm-3280": {
+      "file": "assets/crests/tm-3280.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Confian%C3%A7a.svg",
+      "upstream": "logos/brazil/Confiança.svg"
+    },
+    "tm-39555": {
+      "file": "assets/crests/tm-39555.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Associa%C3%A7%C3%A3o_Desportiva_Iguatu.svg",
+      "upstream": "logos/brazil/Associação_Desportiva_Iguatu.svg"
+    },
+    "tm-27642": {
+      "file": "assets/crests/tm-27642.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/%C3%81guia_de_Marab%C3%A1_Futebol_Clube.svg",
+      "upstream": "logos/brazil/Águia_de_Marabá_Futebol_Clube.svg"
+    },
+    "tm-87727": {
+      "file": "assets/crests/tm-87727.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Amazonas.svg",
+      "upstream": "logos/brazil/Amazonas.svg"
+    },
+    "tm-1751": {
+      "file": "assets/crests/tm-1751.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/America_Football_Club_(RJ).svg",
+      "upstream": "logos/brazil/America_Football_Club_(RJ).svg"
+    },
+    "tm-9138": {
+      "file": "assets/crests/tm-9138.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/America_Football_Club_(RJ).svg",
+      "upstream": "logos/brazil/America_Football_Club_(RJ).svg"
+    },
+    "tm-2863": {
+      "file": "assets/crests/tm-2863.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/America_Football_Club_(RJ).svg",
+      "upstream": "logos/brazil/America_Football_Club_(RJ).svg"
+    },
+    "tm-17568": {
+      "file": "assets/crests/tm-17568.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/An%C3%A1polis.svg",
+      "upstream": "logos/brazil/Anápolis.svg"
+    },
+    "tm-64918": {
+      "file": "assets/crests/tm-64918.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Athletic.svg",
+      "upstream": "logos/brazil/Athletic.svg"
+    },
+    "tm-15172": {
+      "file": "assets/crests/tm-15172.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Atl%C3%A9tico_Goianiense.svg",
+      "upstream": "logos/brazil/Atlético_Goianiense.svg"
+    },
+    "tm-6363": {
+      "file": "assets/crests/tm-6363.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/chile/Audax_Italiano.svg",
+      "upstream": "logos/chile/Audax_Italiano.svg"
+    },
+    "tm-2035": {
+      "file": "assets/crests/tm-2035.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Avai.svg",
+      "upstream": "logos/brazil/Avai.svg"
+    },
+    "tm-85931": {
+      "file": "assets/crests/tm-85931.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Azuriz_FC.svg",
+      "upstream": "logos/brazil/Azuriz_FC.svg"
+    },
+    "tm-52519": {
+      "file": "assets/crests/tm-52519.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Barra.svg",
+      "upstream": "logos/brazil/Barra.svg"
+    },
+    "tm-98702": {
+      "file": "assets/crests/tm-98702.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Betim_Futebol.svg",
+      "upstream": "logos/brazil/Betim_Futebol.svg"
+    },
+    "tm-66492": {
+      "file": "assets/crests/tm-66492.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Blumenau_Esporte_Clube.svg",
+      "upstream": "logos/brazil/Blumenau_Esporte_Clube.svg"
+    },
+    "tm-3973": {
+      "file": "assets/crests/tm-3973.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Brasiliense_Futebol_Clube.svg",
+      "upstream": "logos/brazil/Brasiliense_Futebol_Clube.svg"
+    },
+    "tm-14390": {
+      "file": "assets/crests/tm-14390.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Brusque.svg",
+      "upstream": "logos/brazil/Brusque.svg"
+    },
+    "tm-25184": {
+      "file": "assets/crests/tm-25184.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/argentina/Barracas_Central.svg",
+      "upstream": "logos/argentina/Barracas_Central.svg"
+    },
+    "tm-189": {
+      "file": "assets/crests/tm-189.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/argentina/Boca_Juniors.svg",
+      "upstream": "logos/argentina/Boca_Juniors.svg"
+    },
+    "tm-18074": {
+      "file": "assets/crests/tm-18074.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/uruguay/Boston_River.svg",
+      "upstream": "logos/uruguay/Boston_River.svg"
+    },
+    "tm-17428": {
+      "file": "assets/crests/tm-17428.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/uruguay/Juventud.svg",
+      "upstream": "logos/uruguay/Juventud.svg"
+    },
+    "tm-333": {
+      "file": "assets/crests/tm-333.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/argentina/Lan%C3%BAs.svg",
+      "upstream": "logos/argentina/Lanús.svg"
+    },
+    "tm-861": {
+      "file": "assets/crests/tm-861.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/uruguay/Pe%C3%B1arol.svg",
+      "upstream": "logos/uruguay/Peñarol.svg"
+    },
+    "tm-1418": {
+      "file": "assets/crests/tm-1418.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/argentina/Rosario_Central.svg",
+      "upstream": "logos/argentina/Rosario_Central.svg"
+    },
+    "tm-1775": {
+      "file": "assets/crests/tm-1775.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/argentina/San_Lorenzo_de_Almagro.svg",
+      "upstream": "logos/argentina/San_Lorenzo_de_Almagro.svg"
+    },
+    "tm-14682": {
+      "file": "assets/crests/tm-14682.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/venezuela/Carabobo_FC.svg",
+      "upstream": "logos/venezuela/Carabobo_FC.svg"
+    },
+    "tm-531": {
+      "file": "assets/crests/tm-531.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/venezuela/Caracas.svg",
+      "upstream": "logos/venezuela/Caracas.svg"
+    },
+    "tm-2352": {
+      "file": "assets/crests/tm-2352.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/colombia/Am%C3%A9rica_de_Cali.svg",
+      "upstream": "logos/colombia/América_de_Cali.svg"
+    },
+    "tm-17426": {
+      "file": "assets/crests/tm-17426.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/ecuador/Macar%C3%A1.svg",
+      "upstream": "logos/ecuador/Macará.svg"
+    },
+    "tm-11470": {
+      "file": "assets/crests/tm-11470.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/chile/O'Higgins.svg",
+      "upstream": "logos/chile/O'Higgins.svg"
+    },
+    "tm-6536": {
+      "file": "assets/crests/tm-6536.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/chile/Palestino.svg",
+      "upstream": "logos/chile/Palestino.svg"
+    },
+    "tm-60520": {
+      "file": "assets/crests/tm-60520.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Oper%C3%A1rio_V%C3%A1rzea-Grandense.svg",
+      "upstream": "logos/brazil/Operário_Várzea-Grandense.svg"
+    },
+    "tm-2029": {
+      "file": "assets/crests/tm-2029.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Cear%C3%A1.svg",
+      "upstream": "logos/brazil/Ceará.svg"
+    },
+    "tm-12279": {
+      "file": "assets/crests/tm-12279.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Ceil%C3%A2ndia_Esporte_Clube.svg",
+      "upstream": "logos/brazil/Ceilândia_Esporte_Clube.svg"
+    },
+    "tm-21409": {
+      "file": "assets/crests/tm-21409.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Central_Sport_Club.svg",
+      "upstream": "logos/brazil/Central_Sport_Club.svg"
+    },
+    "tm-16837": {
+      "file": "assets/crests/tm-16837.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Cianorte_FC.svg",
+      "upstream": "logos/brazil/Cianorte_FC.svg"
+    },
+    "tm-42208": {
+      "file": "assets/crests/tm-42208.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/bolivia/Always_Ready.svg",
+      "upstream": "logos/bolivia/Always_Ready.svg"
+    },
+    "tm-928": {
+      "file": "assets/crests/tm-928.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/argentina/Platense.svg",
+      "upstream": "logos/argentina/Platense.svg"
+    },
+    "tm-11831": {
+      "file": "assets/crests/tm-11831.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/argentina/Tigre.svg",
+      "upstream": "logos/argentina/Tigre.svg"
+    },
+    "tm-1214": {
+      "file": "assets/crests/tm-1214.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/paraguay/Cerro_Porte%C3%B1o.svg",
+      "upstream": "logos/paraguay/Cerro_Porteño.svg"
+    },
+    "tm-19775": {
+      "file": "assets/crests/tm-19775.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/argentina/Deportivo_Riestra.svg",
+      "upstream": "logos/argentina/Deportivo_Riestra.svg"
+    },
+    "tm-288": {
+      "file": "assets/crests/tm-288.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/argentina/Estudiantes_de_La_Plata.svg",
+      "upstream": "logos/argentina/Estudiantes_de_La_Plata.svg"
+    },
+    "tm-30854": {
+      "file": "assets/crests/tm-30854.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/bolivia/Independiente_Petrolero.svg",
+      "upstream": "logos/bolivia/Independiente_Petrolero.svg"
+    },
+    "tm-629": {
+      "file": "assets/crests/tm-629.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/paraguay/Olimpia.svg",
+      "upstream": "logos/paraguay/Olimpia.svg"
+    },
+    "tm-1450": {
+      "file": "assets/crests/tm-1450.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/peru/Sporting_Cristal.svg",
+      "upstream": "logos/peru/Sporting_Cristal.svg"
+    },
+    "tm-11449": {
+      "file": "assets/crests/tm-11449.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Clube_de_Regatas_Brasil.svg",
+      "upstream": "logos/brazil/Clube_de_Regatas_Brasil.svg"
+    },
+    "tm-11004": {
+      "file": "assets/crests/tm-11004.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/chile/Coquimbo_Unido.svg",
+      "upstream": "logos/chile/Coquimbo_Unido.svg"
+    },
+    "tm-7178": {
+      "file": "assets/crests/tm-7178.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Crici%C3%BAma.svg",
+      "upstream": "logos/brazil/Criciúma.svg"
+    },
+    "tm-12179": {
+      "file": "assets/crests/tm-12179.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/argentina/Independiente_Rivadavia.svg",
+      "upstream": "logos/argentina/Independiente_Rivadavia.svg"
+    },
+    "tm-28022": {
+      "file": "assets/crests/tm-28022.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Cuiab%C3%A1.svg",
+      "upstream": "logos/brazil/Cuiabá.svg"
+    },
+    "tm-28999": {
+      "file": "assets/crests/tm-28999.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/peru/Cusco_FC.svg",
+      "upstream": "logos/peru/Cusco_FC.svg"
+    },
+    "tm-10503": {
+      "file": "assets/crests/tm-10503.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/colombia/Deportes_Tolima.svg",
+      "upstream": "logos/colombia/Deportes_Tolima.svg"
+    },
+    "tm-8781": {
+      "file": "assets/crests/tm-8781.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/ecuador/Deportivo_Cuenca.svg",
+      "upstream": "logos/ecuador/Deportivo_Cuenca.svg"
+    },
+    "tm-26468": {
+      "file": "assets/crests/tm-26468.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/venezuela/Deportivo_La_Guaira.svg",
+      "upstream": "logos/venezuela/Deportivo_La_Guaira.svg"
+    },
+    "tm-45176": {
+      "file": "assets/crests/tm-45176.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Esporte_Clube_%C3%81gua_Santa.svg",
+      "upstream": "logos/brazil/Esporte_Clube_Água_Santa.svg"
+    },
+    "tm-27355": {
+      "file": "assets/crests/tm-27355.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/EC_S%C3%A3o_Luiz.svg",
+      "upstream": "logos/brazil/EC_São_Luiz.svg"
+    },
+    "tm-55335": {
+      "file": "assets/crests/tm-55335.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/XV_de_Piracicaba.svg",
+      "upstream": "logos/brazil/XV_de_Piracicaba.svg"
+    },
+    "tm-33050": {
+      "file": "assets/crests/tm-33050.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/EC_Jacuipense.svg",
+      "upstream": "logos/brazil/EC_Jacuipense.svg"
+    },
+    "tm-10492": {
+      "file": "assets/crests/tm-10492.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Juventude.svg",
+      "upstream": "logos/brazil/Juventude.svg"
+    },
+    "tm-15047": {
+      "file": "assets/crests/tm-15047.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Noroeste.svg",
+      "upstream": "logos/brazil/Noroeste.svg"
+    },
+    "tm-27837": {
+      "file": "assets/crests/tm-27837.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Futebol_Clube_Atl%C3%A9tico_Cearense.svg",
+      "upstream": "logos/brazil/Futebol_Clube_Atlético_Cearense.svg"
+    },
+    "tm-28621": {
+      "file": "assets/crests/tm-28621.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/FC_Cascavel.svg",
+      "upstream": "logos/brazil/FC_Cascavel.svg"
+    },
+    "tm-15882": {
+      "file": "assets/crests/tm-15882.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Ferroviaria.svg",
+      "upstream": "logos/brazil/Ferroviaria.svg"
+    },
+    "tm-4064": {
+      "file": "assets/crests/tm-4064.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Figueirense.svg",
+      "upstream": "logos/brazil/Figueirense.svg"
+    },
+    "tm-65477": {
+      "file": "assets/crests/tm-65477.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Floresta.svg",
+      "upstream": "logos/brazil/Floresta.svg"
+    },
+    "tm-10870": {
+      "file": "assets/crests/tm-10870.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Fortaleza.svg",
+      "upstream": "logos/brazil/Fortaleza.svg"
+    },
+    "tm-69424": {
+      "file": "assets/crests/tm-69424.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Galvez_Esporte_Clube.svg",
+      "upstream": "logos/brazil/Galvez_Esporte_Clube.svg"
+    },
+    "tm-3197": {
+      "file": "assets/crests/tm-3197.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Goi%C3%A1s.svg",
+      "upstream": "logos/brazil/Goiás.svg"
+    },
+    "tm-8567": {
+      "file": "assets/crests/tm-8567.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Goiatuba_Esporte_Clube.svg",
+      "upstream": "logos/brazil/Goiatuba_Esporte_Clube.svg"
+    },
+    "tm-37474": {
+      "file": "assets/crests/tm-37474.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Gr%C3%AAmio_Novorizontino.svg",
+      "upstream": "logos/brazil/Grêmio_Novorizontino.svg"
+    },
+    "tm-87821": {
+      "file": "assets/crests/tm-87821.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Guapor%C3%A9_Futebol_Clube.svg",
+      "upstream": "logos/brazil/Guaporé_Futebol_Clube.svg"
+    },
+    "tm-24903": {
+      "file": "assets/crests/tm-24903.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Guarany_de_Bag%C3%A9.svg",
+      "upstream": "logos/brazil/Guarany_de_Bagé.svg"
+    },
+    "tm-32612": {
+      "file": "assets/crests/tm-32612.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Independ%C3%AAncia_Futebol_Clube.svg",
+      "upstream": "logos/brazil/Independência_Futebol_Clube.svg"
+    },
+    "tm-19309": {
+      "file": "assets/crests/tm-19309.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/ecuador/Independiente_del_Valle.svg",
+      "upstream": "logos/ecuador/Independiente_del_Valle.svg"
+    },
+    "tm-10093": {
+      "file": "assets/crests/tm-10093.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/colombia/Independiente_Medell%C3%ADn.svg",
+      "upstream": "logos/colombia/Independiente_Medellín.svg"
+    },
+    "tm-11648": {
+      "file": "assets/crests/tm-11648.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/colombia/Independiente_Santa_Fe.svg",
+      "upstream": "logos/colombia/Independiente_Santa_Fe.svg"
+    },
+    "tm-25296": {
+      "file": "assets/crests/tm-25296.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Inhumas_Esporte_Clube.svg",
+      "upstream": "logos/brazil/Inhumas_Esporte_Clube.svg"
+    },
+    "tm-4773": {
+      "file": "assets/crests/tm-4773.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Ituano.svg",
+      "upstream": "logos/brazil/Ituano.svg"
+    },
+    "tm-36962": {
+      "file": "assets/crests/tm-36962.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Ivinhema_Futebol_Clube.svg",
+      "upstream": "logos/brazil/Ivinhema_Futebol_Clube.svg"
+    },
+    "tm-3330": {
+      "file": "assets/crests/tm-3330.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Joinville_Esporte_Clube.svg",
+      "upstream": "logos/brazil/Joinville_Esporte_Clube.svg"
+    },
+    "tm-11854": {
+      "file": "assets/crests/tm-11854.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/colombia/Atl%C3%A9tico_Junior.svg",
+      "upstream": "logos/colombia/Atlético_Junior.svg"
+    },
+    "tm-56341": {
+      "file": "assets/crests/tm-56341.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Lagarto_FC.svg",
+      "upstream": "logos/brazil/Lagarto_FC.svg"
+    },
+    "tm-1693": {
+      "file": "assets/crests/tm-1693.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Londrina.svg",
+      "upstream": "logos/brazil/Londrina.svg"
+    },
+    "tm-21599": {
+      "file": "assets/crests/tm-21599.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Luverdense_Esporte_Clube.svg",
+      "upstream": "logos/brazil/Luverdense_Esporte_Clube.svg"
+    },
+    "tm-4907": {
+      "file": "assets/crests/tm-4907.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Madureira_Esporte_Clube.svg",
+      "upstream": "logos/brazil/Madureira_Esporte_Clube.svg"
+    },
+    "tm-94182": {
+      "file": "assets/crests/tm-94182.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Manauara_Esporte_Clube.svg",
+      "upstream": "logos/brazil/Manauara_Esporte_Clube.svg"
+    },
+    "tm-46022": {
+      "file": "assets/crests/tm-46022.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Manaus_Futebol_Clube.svg",
+      "upstream": "logos/brazil/Manaus_Futebol_Clube.svg"
+    },
+    "tm-22352": {
+      "file": "assets/crests/tm-22352.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Maracan%C3%A3_Esporte_Clube.svg",
+      "upstream": "logos/brazil/Maracanã_Esporte_Clube.svg"
+    },
+    "tm-63296": {
+      "file": "assets/crests/tm-63296.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Maric%C3%A1_FC.svg",
+      "upstream": "logos/brazil/Maricá_FC.svg"
+    },
+    "tm-33003": {
+      "file": "assets/crests/tm-33003.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Maring%C3%A1.svg",
+      "upstream": "logos/brazil/Maringá.svg"
+    },
+    "tm-2350": {
+      "file": "assets/crests/tm-2350.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/colombia/Millonarios.svg",
+      "upstream": "logos/colombia/Millonarios.svg"
+    },
+    "tm-11900": {
+      "file": "assets/crests/tm-11900.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Mixto_Esporte_Clube.svg",
+      "upstream": "logos/brazil/Mixto_Esporte_Clube.svg"
+    },
+    "tm-119625": {
+      "file": "assets/crests/tm-119625.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Monte_Roraima.svg",
+      "upstream": "logos/brazil/Monte_Roraima.svg"
+    },
+    "tm-37535": {
+      "file": "assets/crests/tm-37535.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/uruguay/Montevideo_City_Torque.svg",
+      "upstream": "logos/uruguay/Montevideo_City_Torque.svg"
+    },
+    "tm-16108": {
+      "file": "assets/crests/tm-16108.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Nova_Igua%C3%A7u_FC.svg",
+      "upstream": "logos/brazil/Nova_Iguaçu_FC.svg"
+    },
+    "tm-27214": {
+      "file": "assets/crests/tm-27214.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Oper%C3%A1rio_Ferrovi%C3%A1rio.svg",
+      "upstream": "logos/brazil/Operário_Ferroviário.svg"
+    },
+    "tm-41872": {
+      "file": "assets/crests/tm-41872.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Parnahyba_Sport_Club.svg",
+      "upstream": "logos/brazil/Parnahyba_Sport_Club.svg"
+    },
+    "tm-64925": {
+      "file": "assets/crests/tm-64925.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Piau%C3%AD_Esporte_Clube.svg",
+      "upstream": "logos/brazil/Piauí_Esporte_Clube.svg"
+    },
+    "tm-72477": {
+      "file": "assets/crests/tm-72477.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Porto_Velho_Esporte_Clube.svg",
+      "upstream": "logos/brazil/Porto_Velho_Esporte_Clube.svg"
+    },
+    "tm-10247": {
+      "file": "assets/crests/tm-10247.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/venezuela/Portuguesa_FC.svg",
+      "upstream": "logos/venezuela/Portuguesa_FC.svg"
+    },
+    "tm-73407": {
+      "file": "assets/crests/tm-73407.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Pouso_Alegre_Futebol_Clube.svg",
+      "upstream": "logos/brazil/Pouso_Alegre_Futebol_Clube.svg"
+    },
+    "tm-3319": {
+      "file": "assets/crests/tm-3319.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Sampaio_Corr%C3%AAa_Futebol_Clube.svg",
+      "upstream": "logos/brazil/Sampaio_Corrêa_Futebol_Clube.svg"
+    },
+    "tm-36963": {
+      "file": "assets/crests/tm-36963.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Santa_Catarina_Clube.svg",
+      "upstream": "logos/brazil/Santa_Catarina_Clube.svg"
+    },
+    "tm-1785": {
+      "file": "assets/crests/tm-1785.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Santa_Cruz.svg",
+      "upstream": "logos/brazil/Santa_Cruz.svg"
+    },
+    "tm-60741": {
+      "file": "assets/crests/tm-60741.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Sport_Clube_Humait%C3%A1.svg",
+      "upstream": "logos/brazil/Sport_Clube_Humaitá.svg"
+    },
+    "tm-65479": {
+      "file": "assets/crests/tm-65479.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Serra_Branca_EC.svg",
+      "upstream": "logos/brazil/Serra_Branca_EC.svg"
+    },
+    "tm-7014": {
+      "file": "assets/crests/tm-7014.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Sociedade_Esportiva_do_Gama.svg",
+      "upstream": "logos/brazil/Sociedade_Esportiva_do_Gama.svg"
+    },
+    "tm-23778": {
+      "file": "assets/crests/tm-23778.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Sociedade_Imperatriz_de_Desportos.svg",
+      "upstream": "logos/brazil/Sociedade_Imperatriz_de_Desportos.svg"
+    },
+    "tm-18236": {
+      "file": "assets/crests/tm-18236.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Sousa_Esporte_Clube.svg",
+      "upstream": "logos/brazil/Sousa_Esporte_Clube.svg"
+    },
+    "tm-8718": {
+      "file": "assets/crests/tm-8718.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Sport_Recife.svg",
+      "upstream": "logos/brazil/Sport_Recife.svg"
+    },
+    "tm-27242": {
+      "file": "assets/crests/tm-27242.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Tocantin%C3%B3polis_Esporte_Clube.svg",
+      "upstream": "logos/brazil/Tocantinópolis_Esporte_Clube.svg"
+    },
+    "tm-3234": {
+      "file": "assets/crests/tm-3234.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Tombense_FC.svg",
+      "upstream": "logos/brazil/Tombense_FC.svg"
+    },
+    "tm-11086": {
+      "file": "assets/crests/tm-11086.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Treze_FC.svg",
+      "upstream": "logos/brazil/Treze_FC.svg"
+    },
+    "tm-20803": {
+      "file": "assets/crests/tm-20803.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Tuna_Luso_Brasileira.svg",
+      "upstream": "logos/brazil/Tuna_Luso_Brasileira.svg"
+    },
+    "tm-8825": {
+      "file": "assets/crests/tm-8825.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Uberl%C3%A2ndia_Esporte_Clube.svg",
+      "upstream": "logos/brazil/Uberlândia_Esporte_Clube.svg"
+    },
+    "tm-6593": {
+      "file": "assets/crests/tm-6593.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/peru/Universitario_de_Deportes.svg",
+      "upstream": "logos/peru/Universitario_de_Deportes.svg"
+    },
+    "tm-5677": {
+      "file": "assets/crests/tm-5677.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Vila_Nova.svg",
+      "upstream": "logos/brazil/Vila_Nova.svg"
+    },
+    "tm-32934": {
+      "file": "assets/crests/tm-32934.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Vit%C3%B3ria.svg",
+      "upstream": "logos/brazil/Vitória.svg"
+    },
+    "tm-4176": {
+      "file": "assets/crests/tm-4176.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Volta_Redonda.svg",
+      "upstream": "logos/brazil/Volta_Redonda.svg"
+    },
+    "tm-16869": {
+      "file": "assets/crests/tm-16869.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Ypiranga.svg",
+      "upstream": "logos/brazil/Ypiranga.svg"
+    },
+    "fluminense": {
+      "file": "assets/crests/fluminense.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Fluminense.svg",
+      "upstream": "logos/brazil/Fluminense.svg"
+    },
+    "botafogo": {
+      "file": "assets/crests/botafogo.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Botafogo_FR.svg",
+      "upstream": "logos/brazil/Botafogo_FR.svg"
+    },
+    "atletico-mg": {
+      "file": "assets/crests/atletico-mg.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Atl%C3%A9tico_Mineiro.svg",
+      "upstream": "logos/brazil/Atlético_Mineiro.svg"
+    },
+    "athletico": {
+      "file": "assets/crests/athletico.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Athletico_Paranaense.svg",
+      "upstream": "logos/brazil/Athletico_Paranaense.svg"
+    },
+    "bragantino": {
+      "file": "assets/crests/bragantino.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/RB_Bragantino.svg",
+      "upstream": "logos/brazil/RB_Bragantino.svg"
+    },
+    "tm-62794": {
+      "file": "assets/crests/tm-62794.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Associa%C3%A7%C3%A3o_Atl%C3%A9tica_de_Altos.svg",
+      "upstream": "logos/brazil/Associação_Atlética_de_Altos.svg"
+    },
+    "tm-25209": {
+      "file": "assets/crests/tm-25209.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Associa%C3%A7%C3%A3o_Atl%C3%A9tica_Aparecidense.svg",
+      "upstream": "logos/brazil/Associação_Atlética_Aparecidense.svg"
+    },
+    "tm-308": {
+      "file": "assets/crests/tm-308.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Inter_de_Limeira.svg",
+      "upstream": "logos/brazil/Inter_de_Limeira.svg"
+    },
+    "tm-103697": {
+      "file": "assets/crests/tm-103697.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Associa%C3%A7%C3%A3o_Atl%C3%A9tica_Maguary.svg",
+      "upstream": "logos/brazil/Associação_Atlética_Maguary.svg"
+    },
+    "tm-32037": {
+      "file": "assets/crests/tm-32037.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Velo_Clube.svg",
+      "upstream": "logos/brazil/Velo_Clube.svg"
+    },
+    "tm-20092": {
+      "file": "assets/crests/tm-20092.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/ASA_de_Arapiraca.svg",
+      "upstream": "logos/brazil/ASA_de_Arapiraca.svg"
+    },
+    "tm-25229": {
+      "file": "assets/crests/tm-25229.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Atl%C3%A9tico_de_Alagoinhas.svg",
+      "upstream": "logos/brazil/Atlético_de_Alagoinhas.svg"
+    },
+    "tm-32639": {
+      "file": "assets/crests/tm-32639.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Aragua%C3%ADna_Futebol_e_Regatas.svg",
+      "upstream": "logos/brazil/Araguaína_Futebol_e_Regatas.svg"
+    },
+    "tm-1134": {
+      "file": "assets/crests/tm-1134.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Ponte_Preta.svg",
+      "upstream": "logos/brazil/Ponte_Preta.svg"
+    },
+    "tm-8547": {
+      "file": "assets/crests/tm-8547.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Itabaiana.svg",
+      "upstream": "logos/brazil/Itabaiana.svg"
+    },
+    "tm-9030": {
+      "file": "assets/crests/tm-9030.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Botafogo_SP.svg",
+      "upstream": "logos/brazil/Botafogo_SP.svg"
+    },
+    "tm-17964": {
+      "file": "assets/crests/tm-17964.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Botafogo_PB.svg",
+      "upstream": "logos/brazil/Botafogo_PB.svg"
+    },
+    "tm-38023": {
+      "file": "assets/crests/tm-38023.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Capital_Clube_de_Futebol.svg",
+      "upstream": "logos/brazil/Capital_Clube_de_Futebol.svg"
+    },
+    "tm-94170": {
+      "file": "assets/crests/tm-94170.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Centro_de_Forma%C3%A7%C3%A3o_de_Atletas_Tirol.svg",
+      "upstream": "logos/brazil/Centro_de_Formação_de_Atletas_Tirol.svg"
+    },
+    "tm-18545": {
+      "file": "assets/crests/tm-18545.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/CSA.svg",
+      "upstream": "logos/brazil/CSA.svg"
+    },
+    "tm-108000": {
+      "file": "assets/crests/tm-108000.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Clube_Laguna_SAF.svg",
+      "upstream": "logos/brazil/Clube_Laguna_SAF.svg"
+    },
+    "tm-2646": {
+      "file": "assets/crests/tm-2646.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/N%C3%A1utico.svg",
+      "upstream": "logos/brazil/Náutico.svg"
+    },
+    "tm-4759": {
+      "file": "assets/crests/tm-4759.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Marc%C3%ADlio_Dias.svg",
+      "upstream": "logos/brazil/Marcílio_Dias.svg"
+    },
+    "tm-12602": {
+      "file": "assets/crests/tm-12602.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/CRAC.svg",
+      "upstream": "logos/brazil/CRAC.svg"
+    },
+    "tm-52513": {
+      "file": "assets/crests/tm-52513.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/CSE.svg",
+      "upstream": "logos/brazil/CSE.svg"
+    },
+    "tm-7816": {
+      "file": "assets/crests/tm-7816.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Club_Sportivo_Sergipe.svg",
+      "upstream": "logos/brazil/Club_Sportivo_Sergipe.svg"
+    },
+    "tm-3364": {
+      "file": "assets/crests/tm-3364.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Democrata-GV.svg",
+      "upstream": "logos/brazil/Democrata-GV.svg"
+    },
+    "tm-7535": {
+      "file": "assets/crests/tm-7535.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/EC_S%C3%A3o_Jos%C3%A9.svg",
+      "upstream": "logos/brazil/EC_São_José.svg"
+    },
+    "tm-11931": {
+      "file": "assets/crests/tm-11931.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Ferrovi%C3%A1rio_Atl%C3%A9tico_Clube.svg",
+      "upstream": "logos/brazil/Ferroviário_Atlético_Clube.svg"
+    },
+    "tm-87817": {
+      "file": "assets/crests/tm-87817.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Fluminense_Esporte_Clube.svg",
+      "upstream": "logos/brazil/Fluminense_Esporte_Clube.svg"
+    },
+    "tm-87822": {
+      "file": "assets/crests/tm-87822.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Gr%C3%AAmio_Atl%C3%A9tico_Sampaio_(GAS).svg",
+      "upstream": "logos/brazil/Grêmio_Atlético_Sampaio_(GAS).svg"
+    },
+    "tm-10560": {
+      "file": "assets/crests/tm-10560.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Brasil_de_Pelotas.svg",
+      "upstream": "logos/brazil/Brasil_de_Pelotas.svg"
+    },
+    "tm-1755": {
+      "file": "assets/crests/tm-1755.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Guarani.svg",
+      "upstream": "logos/brazil/Guarani.svg"
+    },
+    "tm-87160": {
+      "file": "assets/crests/tm-87160.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Instituto_de_Administra%C3%A7%C3%A3o_de_Projetos_Educacionais_Futebol_Clube.svg",
+      "upstream": "logos/brazil/Instituto_de_Administração_de_Projetos_Educacionais_Futebol_Clube.svg"
+    },
+    "tm-80647": {
+      "file": "assets/crests/tm-80647.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/S%C3%A3o_Joseense.svg",
+      "upstream": "logos/brazil/São_Joseense.svg"
+    },
+    "tm-34293": {
+      "file": "assets/crests/tm-34293.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Maranh%C3%A3o.svg",
+      "upstream": "logos/brazil/Maranhão.svg"
+    },
+    "tm-12009": {
+      "file": "assets/crests/tm-12009.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Moto_Club_de_S%C3%A3o_Lu%C3%ADs.svg",
+      "upstream": "logos/brazil/Moto_Club_de_São_Luís.svg"
+    },
+    "tm-22782": {
+      "file": "assets/crests/tm-22782.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Nacional_Futebol_Clube.svg",
+      "upstream": "logos/brazil/Nacional_Futebol_Clube.svg"
+    },
+    "tm-32386": {
+      "file": "assets/crests/tm-32386.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Oper%C3%A1rio-MS.svg",
+      "upstream": "logos/brazil/Operário-MS.svg"
+    },
+    "tm-53471": {
+      "file": "assets/crests/tm-53471.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Orat%C3%B3rio_Recreativo_Clube.svg",
+      "upstream": "logos/brazil/Oratório_Recreativo_Clube.svg"
+    },
+    "tm-6347": {
+      "file": "assets/crests/tm-6347.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Paysandu.svg",
+      "upstream": "logos/brazil/Paysandu.svg"
+    },
+    "tm-121518": {
+      "file": "assets/crests/tm-121518.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Porto-BA.svg",
+      "upstream": "logos/brazil/Porto-BA.svg"
+    },
+    "tm-98845": {
+      "file": "assets/crests/tm-98845.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Primavera_Atl%C3%A9tico_Clube.svg",
+      "upstream": "logos/brazil/Primavera_Atlético_Clube.svg"
+    },
+    "tm-36478": {
+      "file": "assets/crests/tm-36478.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Real_Noroeste.svg",
+      "upstream": "logos/brazil/Real_Noroeste.svg"
+    },
+    "tm-76156": {
+      "file": "assets/crests/tm-76156.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Retr%C3%B4_FC.svg",
+      "upstream": "logos/brazil/Retrô_FC.svg"
+    },
+    "tm-30489": {
+      "file": "assets/crests/tm-30489.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Rio_Branco-ES.svg",
+      "upstream": "logos/brazil/Rio_Branco-ES.svg"
+    },
+    "tm-40120": {
+      "file": "assets/crests/tm-40120.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Sampaio_Corr%C3%AAa-RJ.svg",
+      "upstream": "logos/brazil/Sampaio_Corrêa-RJ.svg"
+    },
+    "tm-16439": {
+      "file": "assets/crests/tm-16439.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/S%C3%A3o_Bernardo.svg",
+      "upstream": "logos/brazil/São_Bernardo.svg"
+    },
+    "tm-73574": {
+      "file": "assets/crests/tm-73574.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/S%C3%A3o_Raimundo-RR.svg",
+      "upstream": "logos/brazil/São_Raimundo-RR.svg"
+    },
+    "tm-32991": {
+      "file": "assets/crests/tm-32991.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Juazeirense.svg",
+      "upstream": "logos/brazil/Juazeirense.svg"
+    },
+    "tm-76155": {
+      "file": "assets/crests/tm-76155.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Decis%C3%A3o_Goiana_FC.svg",
+      "upstream": "logos/brazil/Decisão_Goiana_FC.svg"
+    },
+    "tm-9141": {
+      "file": "assets/crests/tm-9141.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Caxias.svg",
+      "upstream": "logos/brazil/Caxias.svg"
+    },
+    "tm-36012": {
+      "file": "assets/crests/tm-36012.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Trem_Desportivo_Clube.svg",
+      "upstream": "logos/brazil/Trem_Desportivo_Clube.svg"
+    },
+    "tm-28199": {
+      "file": "assets/crests/tm-28199.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/brazil/Uni%C3%A3o_Esporte_Clube.svg",
+      "upstream": "logos/brazil/União_Esporte_Clube.svg"
+    },
+    "tm-209": {
+      "file": "assets/crests/tm-209.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/argentina/River_Plate.svg",
+      "upstream": "logos/argentina/River_Plate.svg"
+    },
+    "tm-1444": {
+      "file": "assets/crests/tm-1444.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/argentina/Racing_Club.svg",
+      "upstream": "logos/argentina/Racing_Club.svg"
+    },
+    "tm-8056": {
+      "file": "assets/crests/tm-8056.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/bolivia/Blooming.svg",
+      "upstream": "logos/bolivia/Blooming.svg"
+    },
+    "tm-6878": {
+      "file": "assets/crests/tm-6878.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/bolivia/Bol%C3%ADvar.svg",
+      "upstream": "logos/bolivia/Bolívar.svg"
+    },
+    "tm-3277": {
+      "file": "assets/crests/tm-3277.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/chile/Universidad_Cat%C3%B3lica.svg",
+      "upstream": "logos/chile/Universidad_Católica.svg"
+    },
+    "tm-3523": {
+      "file": "assets/crests/tm-3523.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/ecuador/Barcelona_SC.svg",
+      "upstream": "logos/ecuador/Barcelona_SC.svg"
+    },
+    "tm-9855": {
+      "file": "assets/crests/tm-9855.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/ecuador/Liga_de_Quito.svg",
+      "upstream": "logos/ecuador/Liga_de_Quito.svg"
+    },
+    "tm-9875": {
+      "file": "assets/crests/tm-9875.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/paraguay/Libertad.svg",
+      "upstream": "logos/paraguay/Libertad.svg"
+    },
+    "tm-14545": {
+      "file": "assets/crests/tm-14545.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/paraguay/Club_Deportivo_Recoleta.svg",
+      "upstream": "logos/paraguay/Club_Deportivo_Recoleta.svg"
+    },
+    "tm-17479": {
+      "file": "assets/crests/tm-17479.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/peru/Alianza_Atl%C3%A9tico.svg",
+      "upstream": "logos/peru/Alianza_Atlético.svg"
+    },
+    "tm-866": {
+      "file": "assets/crests/tm-866.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/uruguay/Nacional.svg",
+      "upstream": "logos/uruguay/Nacional.svg"
+    },
+    "tm-43146": {
+      "file": "assets/crests/tm-43146.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/venezuela/Universidad_Central.svg",
+      "upstream": "logos/venezuela/Universidad_Central.svg"
+    },
+    "tm-2729": {
+      "file": "assets/crests/tm-2729.svg",
+      "source": "https://raw.githubusercontent.com/JoseArroyave/football-logos/5ab11fed47427b3003f4b276554491fe683387b1/logos/peru/Cienciano_del_Cusco.svg",
+      "upstream": "logos/peru/Cienciano_del_Cusco.svg"
+    },
+    "tm-20799": {
+      "file": "assets/crests/tm-20799.png",
+      "source": "https://tmssl.akamaized.net/images/wappen/head/20799.png"
+    }
+  },
+  "missing": []
+}

@@ -2,7 +2,7 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
 global.window=global;global.localStorage={getItem:()=>null,setItem(){}};
 const root=path.join(__dirname,'..');
-for(const f of ['data/bundle.js',...['engine','formations','physics','data-loader','player','ball','team','ai','penalty','free-kick','match'].map(n=>'js/'+n+'.js')])
+for(const f of ['data/bundle.js',...['engine','formations','physics','kick-model','data-loader','player','ball','team','ai','penalty','free-kick','match'].map(n=>'js/'+n+'.js')])
  vm.runInThisContext(fs.readFileSync(path.join(root,f),'utf8'),{filename:f});
 const B=BSS,manager=new B.DataManager();manager.raw=BSS_DATA;manager.hydrate();
 const match=()=>{const m=new B.Match(manager.teams[0],manager.teams[1],{seed:26,human:0});m.state='play';m.restart=null;m.ball.owner=null;return m;};

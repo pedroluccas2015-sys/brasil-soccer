@@ -32,7 +32,7 @@
    return team.players.filter(q=>q!==p&&!q.red&&q.role!=='GK'&&B.dist(q,p)>35&&B.dist(q,p)<cfg.vision&&!B.Physics.isOffside(q,m.ball,line,team.dir)).map(q=>{
     const distance=B.dist(q,p),space=Math.min(...opps.map(o=>B.dist(o,q)));
     const blocked=opps.some(o=>B.Physics.lineDistance(o,p,q)<18&&B.dist(o,p)>18);
-    const score=(q.x-p.x)*team.dir*.35+Math.min(space,85)-(blocked?105:0)-Math.abs(distance-150)*.12;
+    const score=(q.x-p.x)*team.dir*.55+Math.min(space,85)-(blocked?105:0)-Math.abs(distance-190)*.12;
     return {player:q,score,blocked,distance};
    }).sort((a,c)=>c.score-a.score)[0];
   }
@@ -45,11 +45,11 @@
   update(dt){
    const m=this.m,b=m.ball;
    for(const team of m.teams){
-    const cfg=this.profile(team),plan=this.plan(team,dt),own=b.owner?.team===team,dir=team.dir;
+    const cfg=this.profile(team),plan=this.plan(team,dt),own=b.owner?.team===team||!b.owner&&b.pass?.from.team===team,dir=team.dir;
     const rivals=m.teams[1-team.side].players.filter(p=>!p.red),line=B.Physics.offsideLine(rivals,dir);
     for(const p of team.players){
      if(m.state!=='play')return;
-     if(p.red||p===m.controlled&&!m.autoplay||m.freeKick?.holdsWall(p))continue;
+     if(p.red||p===m.controlled&&!m.autoplay&&p.role!=='GK'||m.freeKick?.holdsWall(p))continue;
      const corner=m.freeKick;
      if(corner?.corner&&corner.phase==='flight'&&corner.flightTime<1.55&&corner.cornerPositions?.has(p)){
       const spot=corner.cornerPositions.get(p),target=corner.cornerTarget();
@@ -65,22 +65,22 @@
       if(closest&&B.dist(closest,p)<75&&dir*(closest.x-p.x)>0)ty+=p.y>closest.y?65:-65;
       if(p.decision<=0&&p.touchDelay===0){
        p.decision=cfg.decision;const pass=this.bestPass(p),keeper=rivals.find(q=>q.role==='GK');
-       if(goalDist<225&&Math.abs(p.y-(F.cy))<125&&(goalDist<145||!pass||pass.score<75)){
+       if(goalDist<310&&Math.abs(p.y-(F.cy))<175&&(goalDist<210||!pass||pass.score<105)){
         p.state='SHOOT';const corner=keeper&&keeper.y>=(F.cy)?-.7:.7;m.shoot(p,.4+m.random()*.35,{x:dir,y:corner});
-       }else if(pass&&!pass.blocked&&(pressure||p.heldTime>1.8||pass.score>100)){
+       }else if(pass&&!pass.blocked&&p.heldTime>.3&&(pressure||p.heldTime>1.8||pass.score>130)){
         p.state='PASS';m.pass(p,pass.distance>245?'long':'pass',.45,{x:pass.player.x-p.x,y:pass.player.y-p.y},pass.player);p.heldTime=0;
        }
       }
      }else if(b.pass?.target===p){
-      p.state='RECEIVE';const target=this.intercept(p,cfg);tx=target.x;ty=target.y;sprint=near>50;
+      p.state='RECEIVE';const target=m.receiverTarget(p);tx=target.x;ty=target.y;sprint=near>50;
      }else if(p===plan.chaser&&!own){
       p.state=b.owner?'PRESS':'CHASE';const target=this.intercept(p,cfg);tx=target.x;ty=target.y;sprint=near>30;
       if(b.owner&&b.owner.team!==team&&near<23&&p.actionCooldown===0){
        const toward=B.norm(b.x-p.x,b.y-p.y),facing=p.facing.x*toward.x+p.facing.y*toward.y;
        if(facing>.25&&m.random()<1-Math.exp(-dt*cfg.tackle))m.tackle(p,false);
       }
-     }else if(p===plan.cover&&!own&&(team.tactics.pressure==='Alta'||cfg.mark>.6)){
-      p.state='COVER';tx=b.x-dir*55;ty=b.y+(p.home.y>(F.cy)?48:-48);
+     }else if(p===plan.cover&&!own&&(team.tactics.pressure==='Alta'||cfg.mark>.6||m.secondPress&&team.side===m.human)){
+      p.state=m.secondPress&&team.side===m.human?'SECOND_PRESS':'COVER';tx=b.x-dir*(p.state==='SECOND_PRESS'?12:55);ty=b.y+(p.home.y>(F.cy)?1:-1)*(p.state==='SECOND_PRESS'?20:48);sprint=p.state==='SECOND_PRESS';
      }else{
       const mental=team.tactics.mentality==='Ofensiva'?55:team.tactics.mentality==='Defensiva'?-55:0;
       const lineShift=team.tactics.line==='Alta'?65:team.tactics.line==='Baixa'?-65:0;
@@ -88,6 +88,7 @@
       if(own){
        p.state=p.role==='FW'?'RUN_FORWARD':'SUPPORT';ty=(F.cy)+(ty-(F.cy))*1.15;
        if(team.tactics.attack==='Contra-ataque'&&p.role==='FW')tx+=dir*80;
+       if(p.runAfterPass>0){tx+=dir*95;ty+=(p.home.y>F.cy?1:-1)*35;p.state='GIVE_AND_GO';sprint=true;}
        if(team.tactics.attack==='Posse')tx-=dir*25;
        const limit=dir>0?Math.max((F.cx),line,b.x)-8:Math.min((F.cx),line,b.x)+8;
        tx=dir>0?Math.min(tx,limit):Math.max(tx,limit);

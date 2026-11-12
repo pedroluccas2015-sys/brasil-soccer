@@ -709,7 +709,7 @@
     ]
   },
   "dataNote": "Consulta em 09/10/2026. Elencos são os publicados pelas fontes; não equivalem à lista oficial de inscritos por competição. Uniformes são aproximações arcade das cores; não são reproduções verificadas dos modelos 2026.",
-  "penaltyRules": "Adaptação arcade: em cada jogo, uma disputa de pênaltis. Nos grupos, vencedor recebe 3 pontos; gols cobrados formam o saldo. Em ida e volta, somam-se os placares das disputas; igualdade é resolvida com uma disputa adicional.",
+  "penaltyRules": "Fase de grupos por pontos. No mata-mata, cada confronto é uma única disputa de pênaltis, inclusive a final. Sem ida e volta, agregado ou vantagem de empate.",
   "cbfRanking": [
     "flamengo",
     "corinthians",

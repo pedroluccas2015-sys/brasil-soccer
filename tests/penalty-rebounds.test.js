@@ -2,7 +2,7 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
 global.window=global;global.localStorage={getItem:()=>null,setItem(){}};
 const root=path.resolve(__dirname,'..');
-for(const f of ['data/bundle.js',...['engine','formations','physics','data-loader','player','ball','team','ai','penalty','free-kick','match'].map(n=>'js/'+n+'.js')])vm.runInThisContext(fs.readFileSync(path.join(root,f),'utf8'),{filename:f});
+for(const f of ['data/bundle.js',...['engine','formations','physics','kick-model','data-loader','player','ball','team','ai','penalty','free-kick','match'].map(n=>'js/'+n+'.js')])vm.runInThisContext(fs.readFileSync(path.join(root,f),'utf8'),{filename:f});
 const B=BSS,F=B.FIELD,data=new B.DataManager();data.raw=BSS_DATA;data.hydrate();
 const input={axis:{x:0,y:0},state:{},pressed:{},released:{}};
 function create(side=0,period=1,shootout=false){
