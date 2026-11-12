@@ -18,3 +18,16 @@ window.BSS = window.BSS || {};
 })();
 
 window.BSS.clubCode=function(team){const normalized=String(team.name||team.shortName||'CLU').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase().replace(/^(?:(?:AA|AD|AC|CA|CD|CE|CF|CS|EC|FC|SC|CLUB|CLUBE|CLUBES|ASSOCIACAO|ATLETICA)\s+)+/,'').replace(/[^A-Z]/g,'');return (normalized+'CLU').slice(0,3);};
+
+// Markings use the match's metre scale and the actual goalposts, in every view.
+window.BSS.PITCH=Object.freeze({goalAreaDepth:55,penaltyDepth:165,penaltySpot:110,arcRadius:91.5,cornerRadius:10,keeperClearance:45,
+ goalAreaHalfWidth:(window.BSS.FIELD.goalBottom-window.BSS.FIELD.goalTop)/2+55,
+ penaltyHalfWidth:(window.BSS.FIELD.goalBottom-window.BSS.FIELD.goalTop)/2+165});
+window.BSS.pitchMarkings=function(goalX,dir,centerY=window.BSS.FIELD.cy,halfGoal=(window.BSS.FIELD.goalBottom-window.BSS.FIELD.goalTop)/2,height=window.BSS.FIELD.h){
+ const P=window.BSS.PITCH,lines=[],boxes=[{depth:P.penaltyDepth,half:halfGoal+P.penaltyDepth},{depth:P.goalAreaDepth,half:halfGoal+P.goalAreaDepth}];
+ for(const box of boxes){const front=goalX-dir*box.depth,lo=centerY-box.half,hi=centerY+box.half;lines.push([{x:goalX,y:lo},{x:front,y:lo},{x:front,y:hi},{x:goalX,y:hi}]);}
+ const angle=Math.acos((P.penaltyDepth-P.penaltySpot)/P.arcRadius),arc=[];
+ for(let i=0;i<=40;i++){const a=-angle+i/40*2*angle;arc.push({x:goalX-dir*(P.penaltySpot+P.arcRadius*Math.cos(a)),y:centerY+P.arcRadius*Math.sin(a)});}lines.push(arc);
+ for(const side of [0,1]){const corner=[];for(let i=0;i<=18;i++){const a=i/18*Math.PI/2;corner.push({x:goalX-dir*P.cornerRadius*Math.cos(a),y:side?height-P.cornerRadius*Math.sin(a):P.cornerRadius*Math.sin(a)});}lines.push(corner);}
+ return {boxes,lines,spot:{x:goalX-dir*P.penaltySpot,y:centerY}};
+};

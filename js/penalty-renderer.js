@@ -10,41 +10,18 @@
    const top=point(x,340).y,bottom=point(x+25,340).y;
    this.rect(-48,top,480,bottom-top+1,i%2?'#32874b':'#2d7e46');
   }
-  // PK uses its own arcade coordinates: goal x=1050, spot x=940 (11 m).
-  // Both boxes end on the goal line; the spot is outside the six-yard box.
-  for(const [front,halfWidth] of [[885,200],[995,105]]){
-   this.poly([point(front,340-halfWidth),point(front,340+halfWidth),
-    point(1050,340+halfWidth),point(1050,340-halfWidth)],null,line);
-  }
-  const left=point(1050,0),right=point(1050,680);
-  g.strokeStyle=line;g.lineWidth=1;g.beginPath();g.moveTo(left.x,left.y);g.lineTo(right.x,right.y);g.stroke();
-  // Only the part of the 9.15 m arc outside the penalty area is marked.
-  const angle=Math.acos(55/91.5);
-  g.beginPath();
-  for(let i=0;i<=40;i++){
-   const a=-angle+2*angle*i/40,q=point(940-91.5*Math.cos(a),340+91.5*Math.sin(a));
-   if(i===0)g.moveTo(q.x,q.y);else g.lineTo(q.x,q.y);
-  }
-  g.stroke();
-  const spot=point(940,340);g.fillStyle='#e8e7c2';g.beginPath();g.ellipse(spot.x,spot.y,2,1,0,0,Math.PI*2);g.fill();
+  // This scene has its own 1050/940 coordinates but shares the same markings.
+  const markings=B.pitchMarkings(1050,1,340,59,680);g.strokeStyle=line;g.lineWidth=1;
+  for(const points of markings.lines){g.beginPath();points.forEach((q,i)=>{const p=point(q.x,q.y);i?g.lineTo(p.x,p.y):g.moveTo(p.x,p.y);});g.stroke();}
+  const left=point(1050,0),right=point(1050,680);g.beginPath();g.moveTo(left.x,left.y);g.lineTo(right.x,right.y);g.stroke();
+  const spot=point(markings.spot.x,markings.spot.y);g.fillStyle='#e8e7c2';g.beginPath();g.ellipse(spot.x,spot.y,2,1,0,0,Math.PI*2);g.fill();
+
  };
  R.penaltyPerson=function(player,x,y,scale,rear=false,lean=0,arms=0){
-  const g=this.ctx,kit=player.role==='GK'?player.team.data.kit.goalkeeper:player.team.kit;
-  const skin=['#edbc8c','#ca8b5e','#935c3d','#603d2f'][B.hash(player.id)%4];
-  g.save();g.translate(Math.round(x),Math.round(y));g.scale(scale,scale*(rear&&arms<0?.7:1));g.rotate(lean);
-  this.rect(-7,-11,5,10,kit.socksColor);this.rect(3,-11,5,10,kit.socksColor);
-  this.rect(-9,-2,7,3,'#17252a');this.rect(3,-2,8,3,'#17252a');
-  this.rect(-8,-17,17,8,kit.shortsColor);this.rect(-9,-31,19,16,kit.shirtBaseColor);
-  if(kit.pattern==='STRIPES_HORIZONTAL'){this.rect(-9,-27,19,3,kit.shirtSecondaryColor);this.rect(-9,-21,19,3,kit.shirtSecondaryColor);}
-  else if(kit.pattern==='STRIPES_VERTICAL'){this.rect(-5,-31,3,16,kit.shirtSecondaryColor);this.rect(3,-31,3,16,kit.shirtSecondaryColor);}
-  else this.rect(-9,-30,19,3,kit.shirtSecondaryColor);
-  const ay=-27-arms*8;
-  this.rect(-14,ay,5,12,kit.shirtBaseColor);this.rect(10,ay,5,12,kit.shirtBaseColor);
-  this.rect(-15,ay+10,6,5,player.role==='GK'?'#e7e8ce':skin);this.rect(10,ay+10,6,5,player.role==='GK'?'#e7e8ce':skin);
-  this.rect(-5,-41,11,11,skin);this.rect(-6,-42,12,4,'#24282c');
-  if(rear){this.rect(-6,-39,12,5,'#24282c');this.text(String(player.shirtNumber||1),0,-20,'#fff3d1',7,'center');}
-  else{this.rect(-3,-36,2,2,'#17252a');this.rect(3,-36,2,2,'#17252a');}
-  g.restore();
+  const g=this.ctx,pose=rear?(arms>0?'header':arms<0?'receive':player.anim==='hold'?'hold':'idle'):player.anim;
+  const sprite=this.sprite({...player,anim:pose,facing:{x:0,y:rear?-1:1},animTime:rear&&arms>0?.22:player.animTime}),size=scale*42/sprite.height;
+  g.save();g.translate(Math.round(x),Math.round(y));g.rotate(lean);if(rear&&arms<0)g.scale(1,.72);
+  g.drawImage(sprite,Math.round(-(sprite.anchorX??14)*size),Math.round(-(sprite.anchorY??27)*size),Math.round(sprite.width*size),Math.round(sprite.height*size));g.restore();
  };
  R.penaltyScene=function(m){
   const p=m.penalty,g=this.ctx,shooting=p.side===m.human;
@@ -58,7 +35,7 @@
   this.penaltyPerson(p.keeper,keeper.x,keeper.y-lift,1,true,d?d.x*Math.min(1,d.time/.25)*1.1*(1-recovery):0,d?((d.height<.2&&d.x===0)?-1:1+d.height*1.8)*(1-recovery):0);
   const b=m.ball;this.drawLiveBall(b,this.penaltyPoint.bind(this),6+B.clamp((b.x-940)/110,0,1)*4);
   // Transparent net is drawn last; the ball and keeper remain legible through it.
-  const top=92,bottom=163,left=91,right=293;
+  const goalLeft=this.penaltyPoint(1050,281,40),goalRight=this.penaltyPoint(1050,399),top=goalLeft.y,bottom=goalRight.y,left=goalLeft.x,right=goalRight.x;
   g.lineWidth=1;g.strokeStyle='#d7e5c04d';g.beginPath();
   for(let i=0;i<=16;i++){const x=left+(right-left)*i/16,wave=(b.net?.ripple||0)*Math.sin(i*.9-p.elapsed*25)*4;g.moveTo(x,top);g.quadraticCurveTo(x+wave,143,71+242*i/16,191);}
   for(let i=0;i<=11;i++){const t=i/11;g.moveTo(B.lerp(left,71,t),B.lerp(top,191,t));g.lineTo(B.lerp(right,313,t),B.lerp(top,191,t));}g.stroke();

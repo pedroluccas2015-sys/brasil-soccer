@@ -1,44 +1,47 @@
 'use strict';
 (() => {
  const B=window.BSS,F=B.FIELD,R=B.Renderer.prototype;
+ B.SetPieceCamera=class {
+  constructor(f){this.goalX=f.goal.x;this.dir=f.dir;this.goalY=70;const ballDepth=Math.max(6,this.dir*(this.goalX-f.origin.x));this.maxDepth=f.corner?420:Math.max(360,ballDepth+90);this.distance=this.maxDepth+480;
+   const lateral=Math.max(224,Math.abs(f.origin.y-F.cy)+28),atBall=1-ballDepth/this.distance;this.base=Math.min(f.corner?.43:.78,205*atBall/lateral);
+   const focusDepth=f.corner?300:Math.max(155,ballDepth+24),scale=this.base/(1-focusDepth/this.distance);this.vertical=(178-this.goalY)/(focusDepth*scale);
+  }
+  project(x,y,z=0){const depth=this.dir*(this.goalX-x),scale=this.base/Math.max(.18,1-depth/this.distance);return {x:192+(y-F.cy)*this.dir*scale,y:this.goalY+depth*scale*this.vertical-z*scale,scale,depth};}
+  facing(n){return {x:n.y*this.dir,y:-n.x*this.dir};}
+  visible(x,y){const depth=this.dir*(this.goalX-x);return depth>=-35&&depth<=this.maxDepth&&y>=-35&&y<=F.h+35;}
+ };
+ R.freeKickCamera=function(f){return new B.SetPieceCamera(f);};
  R.freeKickScene=function(m){
-  const f=m.freeKick,g=this.ctx,o=f.origin,fw=f.forward,rt=f.right;
-  const project=(x,y,z=0)=>{
-   const dx=x-o.x,dy=y-o.y,depth=dx*fw.x+dy*fw.y,lateral=dx*rt.x+dy*rt.y;
-   const scale=1.8/(1+Math.max(-40,depth)/175);
-   return {x:192+lateral*scale,y:181-depth/(Math.max(-40,depth)+175)*170-z*scale,scale,depth};
-  };
-  const line=(a,b,color='#d5dfb2')=>{g.strokeStyle=color;g.lineWidth=1;g.beginPath();g.moveTo(a.x,a.y);g.lineTo(b.x,b.y);g.stroke();};
-  this.rect(-48,-15,480,270,'#163032');this.rect(-48,10,480,35,'#334941');
-  for(let i=0;i<96;i++)this.rect(-48+i*5,19+i%3*5,2,3,['#b9c08b','#7d9990','#e4bf82'][i%3]);
-  this.rect(-48,43,480,212,'#367e4a');
-  for(let depth=0;depth<600;depth+=45){const a=project(o.x+fw.x*depth-rt.x*600,o.y+fw.y*depth-rt.y*600),b=project(o.x+fw.x*(depth+22)-rt.x*600,o.y+fw.y*(depth+22)-rt.y*600),c=project(o.x+fw.x*(depth+22)+rt.x*600,o.y+fw.y*(depth+22)+rt.y*600),d=project(o.x+fw.x*depth+rt.x*600,o.y+fw.y*depth+rt.y*600);this.poly([a,b,c,d],'#39874e');}
-  const gx=f.goal.x,dir=f.dir;
-  line(project(gx,0),project(gx,(F.h)));
-  for(const y of [(F.cy-200),(F.cy+200)])line(project(gx,y),project(gx-dir*165,y));line(project(gx-dir*165,(F.cy-200)),project(gx-dir*165,(F.cy+200)));
-  for(const y of [(F.cy-95),(F.cy+95)])line(project(gx,y),project(gx-dir*55,y));line(project(gx-dir*55,(F.cy-95)),project(gx-dir*55,(F.cy+95)));
-  const a=project(gx,(F.goalTop),40),b=project(gx,(F.goalBottom),40),c=project(gx,(F.goalBottom)),d=project(gx,(F.goalTop)),back1=project(gx+dir*23,(F.goalTop)),back2=project(gx+dir*23,(F.goalBottom));
-  this.poly([a,b,back2,back1],'#ccdcca25');
-  for(let i=0;i<=8;i++){const t=i/8;line({x:B.lerp(a.x,b.x,t),y:B.lerp(a.y,b.y,t)},{x:B.lerp(back1.x,back2.x,t),y:B.lerp(back1.y,back2.y,t)},'#b6c6a670');}
-  for(let i=1;i<=4;i++){const t=i/4;line({x:B.lerp(a.x,back1.x,t),y:B.lerp(a.y,back1.y,t)},{x:B.lerp(b.x,back2.x,t),y:B.lerp(b.y,back2.y,t)},'#b6c6a670');}
-  g.lineWidth=2;line(a,b,'#fff3cf');line(a,d,'#fff3cf');line(b,c,'#fff3cf');
-  for(const bit of m.turf||[])this.turf(bit,project,B.clamp(project(bit.x,bit.y).scale*.72,.6,1.5));
-  const figures=m.players.map(p=>({p,...project(p.x,p.y)})).filter(v=>!v.p.red&&v.depth>-35&&v.x>-80&&v.x<465).sort((a,b)=>b.depth-a.depth);
-  for(const v of figures){
-   const p=v.p,jump=f.wall.includes(p)?f.jump():0,scale=B.clamp(v.scale*.72,.6,1.5),point=project(p.x,p.y,jump);
-   g.fillStyle='#173e3970';g.beginPath();g.ellipse(v.x,v.y,7*scale,2*scale,0,0,Math.PI*2);g.fill();
-   // Convert world facing to the behind-the-ball camera without mutating the player.
-   const view=n=>({x:n.x*rt.x+n.y*rt.y,y:-(n.x*fw.x+n.y*fw.y)}),facing=view(p.facing),slideDirection=p.slideDirection?view(p.slideDirection):null;
-   const sprite=this.sprite({...p,facing,slideDirection}),modelScale=scale*(sprite.modelScale??1);g.drawImage(sprite,Math.round(point.x-(sprite.anchorX??14)*modelScale),Math.round(point.y-(sprite.anchorY??27)*modelScale),Math.round(sprite.width*modelScale),Math.round(sprite.height*modelScale));
+  const f=m.freeKick,g=this.ctx,view=this.freeKickCamera(f),project=view.project.bind(view),gx=f.goal.x,dir=f.dir;
+  const stroke=(points,color='#dde4c2',width=1)=>{if(points.length<2)return;g.strokeStyle=color;g.lineWidth=width;g.beginPath();points.forEach((q,i)=>i?g.lineTo(q.x,q.y):g.moveTo(q.x,q.y));g.stroke();g.lineWidth=1;};
+  const line=(a,b,color='#dde4c2')=>stroke([a,b],color),ground=(depth,y,z=0)=>project(gx-dir*depth,y,z);
+  this.rect(-48,-15,480,270,'#1a3031');this.rect(-48,15,480,29,'#344746');
+  for(let i=0;i<96;i++)this.rect(-48+i*5,22+i%3*5,2,3,['#c4c393','#799893','#ddbb81'][i%3]);
+  this.poly([ground(-35,0),ground(-35,F.h),ground(view.maxDepth,F.h),ground(view.maxDepth,0)],'#2d7347');
+  for(let depth=0,i=0;depth<view.maxDepth;depth+=35,i++)this.poly([ground(depth,0),ground(depth,F.h),ground(Math.min(depth+35,view.maxDepth),F.h),ground(Math.min(depth+35,view.maxDepth),0)],i%2?'#39884e':'#337e48');
+  // Goal line stays horizontal, centered on the posts, even at either corner flag.
+  line(ground(0,0),ground(0,F.h));line(ground(0,0),ground(view.maxDepth,0));line(ground(0,F.h),ground(view.maxDepth,F.h));
+  const markings=B.pitchMarkings(gx,dir);for(const points of markings.lines)stroke(points.map(q=>project(q.x,q.y)));
+  const spot=project(markings.spot.x,markings.spot.y);g.fillStyle='#ecedcf';g.beginPath();g.ellipse(spot.x,spot.y,Math.max(1,view.base*2),Math.max(.7,view.base),0,0,Math.PI*2);g.fill();
+  // A proper net cage is behind the goal line; the playing area is in front of it.
+  const left=F.goalTop,right=F.goalBottom,h=F.goalHeight,a=ground(0,left,h),b=ground(0,right,h),c=ground(0,right),d=ground(0,left),e=ground(-27,left,h),j=ground(-27,right,h),k=ground(-27,right),l=ground(-27,left);
+  this.poly([a,b,j,e],'#d6e1cc1a');this.poly([e,j,k,l],'#d6e1cc12');this.poly([a,e,l,d],'#d6e1cc12');this.poly([b,j,k,c],'#d6e1cc12');
+  for(let i=0;i<=10;i++){const y=B.lerp(left,right,i/10);stroke([ground(0,y,h),ground(-27,y,h),ground(-27,y)],'#cbd9be65');}
+  for(let i=0;i<=5;i++){const z=h*i/5;line(ground(-27,left,z),ground(-27,right,z),'#cbd9be65');line(ground(0,left,z),ground(-27,left,z),'#cbd9be65');line(ground(0,right,z),ground(-27,right,z),'#cbd9be65');}
+  for(const y of [0,F.h]){const flag=ground(0,y);this.rect(flag.x,flag.y-12,1,12,'#ece7c7');this.rect(flag.x+1,flag.y-12,5,3,'#e8d35a');}
+  for(const bit of m.turf||[])if(view.visible(bit.x,bit.y))this.turf(bit,project,project(bit.x,bit.y).scale);
+  const figures=m.players.filter(p=>!p.red&&view.visible(p.x,p.y)).map(p=>({p,...project(p.x,p.y)})).filter(v=>v.x>-80&&v.x<465).sort((a,b)=>a.depth-b.depth);
+  for(const v of figures){const p=v.p,jump=f.wall.includes(p)?f.jump():0,point=project(p.x,p.y,jump),scale=B.clamp(v.scale,.25,1.7);
+   g.fillStyle='#173e3970';g.beginPath();g.ellipse(point.x,point.y,7*scale,2.5*scale,0,0,Math.PI*2);g.fill();
+   const facing=view.facing(p.facing),slideDirection=p.slideDirection?view.facing(p.slideDirection):null,sprite=this.sprite({...p,facing,slideDirection}),modelScale=scale*(sprite.modelScale??1);
+   g.drawImage(sprite,Math.round(point.x-(sprite.anchorX??14)*modelScale),Math.round(point.y-(sprite.anchorY??27)*modelScale),Math.round(sprite.width*modelScale),Math.round(sprite.height*modelScale));
   }
   if(['aim','power','curve'].includes(f.phase)){
-   // Short initial trajectory conveys bend without promising an automatic goal.
-   const shot=f.trajectory(),ghost={x:o.x,y:o.y,z:1,...shot};
-   for(let i=0;i<15;i++){B.Physics.ball(ghost,.025);ghost.z-=(shot.gravity-175)*.5*.025*.025;ghost.vz-=(shot.gravity-175)*.025;if(i%2===0){const pt=project(ghost.x,ghost.y,ghost.z);this.rect(pt.x-1,pt.y-1,2,2,'#e8d97d');}}
-   const aim=f.corner?project(f.cornerTarget().x,f.cornerTarget().y,9+f.height*25):project(gx,(F.cy)+f.aim*65*dir,3+f.height*38);g.strokeStyle='#fff0a1';g.lineWidth=1;g.beginPath();g.arc(aim.x,aim.y,5,0,Math.PI*2);g.stroke();line({x:aim.x-8,y:aim.y},{x:aim.x+8,y:aim.y},'#fff0a1');line({x:aim.x,y:aim.y-8},{x:aim.x,y:aim.y+8},'#fff0a1');
+   const shot=f.trajectory(),o=f.origin,ghost={x:o.x,y:o.y,z:1,...shot};for(let i=0;i<15;i++){B.Physics.ball(ghost,.025);ghost.z-=(shot.gravity-175)*.5*.025*.025;ghost.vz-=(shot.gravity-175)*.025;if(i%2===0){const pt=project(ghost.x,ghost.y,ghost.z);this.rect(pt.x-1,pt.y-1,2,2,'#efdc8f');}}
+   const aim=f.corner||f.deliveryMode==='cross'?project(f.cornerTarget().x,f.cornerTarget().y,9+f.height*25):project(gx,F.cy+f.aim*65*dir,3+f.height*38);g.strokeStyle='#fff0a1';g.lineWidth=1;g.beginPath();g.arc(aim.x,aim.y,5,0,Math.PI*2);g.stroke();line({x:aim.x-8,y:aim.y},{x:aim.x+8,y:aim.y},'#fff0a1');line({x:aim.x,y:aim.y-8},{x:aim.x,y:aim.y+8},'#fff0a1');
   }
-  const ball=m.ball,bp=project(ball.x,ball.y,ball.z),ground=project(ball.x,ball.y),size=B.clamp(bp.scale*6,4,14);
-  g.fillStyle='#183a3870';g.beginPath();g.ellipse(ground.x,ground.y,size*.55,size*.2,0,0,Math.PI*2);g.fill();g.drawImage(this.ballFrame(ball.roll),Math.round(bp.x-size/2),Math.round(bp.y-size),Math.round(size),Math.round(size));
+  const ball=m.ball,bp=project(ball.x,ball.y,ball.z),shadow=project(ball.x,ball.y),size=B.clamp(bp.scale*6,3,12);g.fillStyle='#183a3870';g.beginPath();g.ellipse(shadow.x,shadow.y,size*.55,size*.2,0,0,Math.PI*2);g.fill();g.drawImage(this.ballFrame(ball.roll),Math.round(bp.x-size/2),Math.round(bp.y-size),Math.round(size),Math.round(size));
+  stroke([d,a,b,c],'#fff2d5',2);
   this.rect(-36,-7,456,22,'#10272aee');this.text(f.corner?'ESCANTEIO':f.deliveryMode==='cross'?'FALTA · CRUZAR':'FALTA DIRETA',-27,7,'#f2dd83',9);this.text(m.teams[0].data.shortName+' '+m.teams[0].score+' : '+m.teams[1].score+' '+m.teams[1].data.shortName,192,7,'#f2efd8',8,'center');this.text(f.corner?'5 x 5 NA ÁREA':Math.round(f.distance/10)+' m  |  ESC',409,7,'#cad9b8',7,'right');
   const compact=this.canvas.getBoundingClientRect().height<500,start=compact?84:-20,gap=compact?74:145,width=compact?62:129;
   this.rect(compact?76:-30,196,compact?232:444,52,'#10272af5');

@@ -48,7 +48,7 @@
    if(Math.abs(this.targetY)<59&&this.targetZ<40)this.taker.team.stats.onTarget++;
   }
   update(match,dt,input){
-   this.time+=dt;this.elapsed+=dt;this.fake=Math.max(0,this.fake-dt);this.fakeCooldown=Math.max(0,this.fakeCooldown-dt);
+   this.time+=dt;this.elapsed+=dt;this.taker.animTime=Math.max(0,this.taker.animTime-dt);if(this.taker.anim==='setpiece'&&this.taker.animTime===0)this.taker.anim='idle';this.fake=Math.max(0,this.fake-dt);this.fakeCooldown=Math.max(0,this.fakeCooldown-dt);
    const humanShot=this.side===match.human&&!match.autoplay;
    const humanKeeper=this.side!==match.human&&!match.autoplay;
    const axis=input?.axis||{x:0,y:0},pressed=input?.pressed||{};
@@ -78,9 +78,9 @@
     return;
    }
    if(this.phase==='runup'){
-    this.taker.x=B.lerp(920,931,B.clamp(this.time/.34,0,1));this.taker.anim='run';this.taker.runTime+=dt*12;
+    this.taker.x=B.lerp(920,931,B.clamp(this.time/.34,0,1));if(this.time<.18){this.taker.anim='run';this.taker.animTime=0;this.taker.runTime+=dt*12;}else{this.taker.anim='setpiece';this.taker.animTime=.46*(1-B.clamp((this.time-.18)/.16,0,1)*.48);}
     if(this.time>=.34){
-     this.phase='flight';this.time=0;this.taker.anim='kick';
+     this.phase='flight';this.time=0;this.taker.anim='setpiece';this.taker.animTime=.46*(1-.48);
      const b=match.ball,T=this.duration,drag=.13,travel=(1-Math.exp(-drag*T))/drag;
      b.vx=115/travel;b.vy=this.targetY/travel;b.vz=Math.max(0,this.targetZ)/T+87.5*T;
      b.owner=null;b.spin=0;b.impact('kick',this.power);match.sound.play('kick');

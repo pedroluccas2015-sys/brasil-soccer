@@ -24,8 +24,8 @@
    for(let row=0;row<3;row++){this.line(-80,-50-row*25,(F.w+80),-50-row*25,'#152c30');this.line(-80,(F.h+50)+row*25,(F.w+80),(F.h+50)+row*25,'#152c30');}
    this.worldRect(-55,-30,(F.w+110),20,'#e2d99b');this.worldRect(-55,(F.h+13),(F.w+110),20,'#e2d99b');for(let x=-30;x<(F.w+50);x+=155){const a=this.camera.project(x,-15),b=this.camera.project(x,(F.h+27));this.text(x%310?'JOGA BONITO':'SUPER SOCCER',a.x,a.y,'#243a32',6);this.text('BRASIL 2026',b.x,b.y,'#243a32',6);}
    this.worldRect(-35,-8,(F.w+70),(F.h+16),night?'#23623f':'#31824d');for(let i=0;i<14;i++)this.worldRect(i*F.w/14,0,F.w/14,F.h,i%2?(night?'#2b7348':'#398d52'):(night?'#286b43':'#32834b'));
-   const line='#acd093';this.worldRect(0,0,(F.w),(F.h),null,line);this.line((F.cx),0,(F.cx),(F.h),line);this.ellipse((F.cx),(F.cy),91,91,line);this.ellipse((F.cx),(F.cy),2,2,line,true);
-   for(const x of [0,(F.w)]){const d=x===0?1:-1;this.worldRect(x,F.cy-202,d*165,404,null,line);this.worldRect(x,F.cy-92,d*55,184,null,line);this.ellipse(x+d*110,(F.cy),2,2,line,true);const g=this.ctx,p=this.camera.project.bind(this.camera);g.strokeStyle=line;g.beginPath();for(let k=0;k<=24;k++){const angle=-.95+k/24*1.9,pt=p(x+d*(110+Math.cos(angle)*91),(F.cy)+Math.sin(angle)*91);if(k===0)g.moveTo(pt.x,pt.y);else g.lineTo(pt.x,pt.y);}g.stroke();}
+   const line='#acd093';this.worldRect(0,0,(F.w),(F.h),null,line);this.line((F.cx),0,(F.cx),(F.h),line);this.ellipse(F.cx,F.cy,B.PITCH.arcRadius,B.PITCH.arcRadius,line);this.ellipse((F.cx),(F.cy),2,2,line,true);
+   for(const x of [0,F.w]){const markings=B.pitchMarkings(x,x===0?-1:1),project=this.camera.project.bind(this.camera);g.strokeStyle=line;g.lineWidth=1;for(const points of markings.lines){g.beginPath();points.forEach((q,i)=>{const pt=project(q.x,q.y);i?g.lineTo(pt.x,pt.y):g.moveTo(pt.x,pt.y);});g.stroke();}this.ellipse(markings.spot.x,markings.spot.y,2,2,line,true);}
    for(const x of [0,(F.w)])for(const y of [0,(F.h)]){const p=this.camera.project(x,y);this.rect(p.x,p.y-8,1,8,'#eeeecc');this.rect(p.x+1,p.y-8,4,3,'#e8d54c');}
    // Sideline assets share world coordinates with the expanded pitch.
    for(const [side,x] of [[0,F.cx-175],[1,F.cx+85]]){this.worldRect(x,F.h+40,90,23,'#172a3c','#64818b');for(let i=0;i<5;i++){const q=this.camera.project(x+10+i*16,F.h+57);this.rect(q.x-2,q.y-5,4,5,m.teams[side].data.primaryColor);this.rect(q.x-1,q.y-8,3,3,'#d2a078');}}
@@ -62,19 +62,19 @@
   sprite(p){
    if(p.anim==='slide'&&p.animTime>0)return this.slideSprite(p);
    const kit=p.role==='GK'?p.team.data.kit.goalkeeper:p.team.kit,running=p.anim==='run'||p.anim==='sprint',direction=(Math.round(Math.atan2(p.facing.y,p.facing.x)/(Math.PI/4))+8)%8;
-   const duration={fall:.7,dive:.6,receive:.16,dribble:.25,tackle:.22,catch:.45,long:.38}[p.anim]||.42,phase=running?Math.floor(p.runTime*1.25)%16:p.anim==='celebrate'?Math.floor(p.runTime)%8:p.animTime>0?Math.min(7,Math.floor(B.clamp(1-p.animTime/duration,0,1)*8)):0;
+   const duration={fall:.7,dive:.6,receive:.16,dribble:.25,tackle:.22,catch:.45,long:.38,setpiece:.46}[p.anim]||.42,phase=running?Math.floor(p.runTime*1.25)%16:p.anim==='celebrate'?Math.floor(p.runTime)%8:p.animTime>0?Math.min(7,Math.floor(B.clamp(1-p.animTime/duration,0,1)*8)):0;
    const skin=['#e8b58a','#c88c62','#965f42','#654333'][B.hash(p.id)%4],hair=['#25262a','#45352b','#302522'][B.hash(p.id+':hair')%3];
    const key=['snes',...Object.values(kit),skin,hair,p.anim,phase,direction].join('|');if(this.sprites.has(key))return this.sprites.get(key);
    const c=document.createElement('canvas');c.width=40;c.height=44;c.anchorX=20;c.anchorY=40;c.modelScale=.84;const g=c.getContext('2d');g.imageSmoothingEnabled=false;
    const n={x:Math.cos(direction*Math.PI/4),y:Math.sin(direction*Math.PI/4)},cycle=phase/16*Math.PI*2,stride=running?Math.sin(cycle)*(p.anim==='sprint'?7:5):0,bob=running?Math.abs(Math.sin(cycle))*1.3:0;
-   const action=['kick','pass','long','volley','placed','tackle','bicycle'].includes(p.anim),swing=action?Math.sin(phase/7*Math.PI):0,jump=p.anim==='header'?Math.sin(phase/7*Math.PI)*5:0,lean=running?2:action?-swing:0;
+   const action=['kick','pass','long','volley','placed','tackle','bicycle','setpiece'].includes(p.anim),swing=action?Math.sin(phase/7*Math.PI):0,jump=p.anim==='header'?Math.sin(phase/7*Math.PI)*5:0,kickPose=action?B.Player.kickPose(phase/7):null,lean=running?2:kickPose?.lean||0;
    const point=(u,v,z)=>({x:Math.round(20+u*n.x-v*n.y),y:Math.round(40+(u*n.y+v*n.x)*.45-z-bob-jump)}),rect=(x,y,w,h,color)=>{g.fillStyle=color;g.fillRect(Math.round(x),Math.round(y),w,h);};
    const line=(a,b,width,color)=>{const steps=Math.max(1,Math.ceil(Math.hypot(b.x-a.x,b.y-a.y)));for(let i=0;i<=steps;i++)rect(B.lerp(a.x,b.x,i/steps)-width/2,B.lerp(a.y,b.y,i/steps)-width/2,width,width,color);};
    const limb=(a,b,width,color)=>{line(a,b,width+2,this.shade(color,-48));line(a,b,width,color);line({x:a.x-1,y:a.y},{x:b.x-1,y:b.y},1,this.shade(color,20));};
-   const raised=['header','catch','celebrate'].includes(p.anim),hip=point(0,0,13),shoulder=point(lean,0,24),head=point(lean+.5,0,31),back=direction>=5&&direction<=7;
+   const raised=['header','celebrate'].includes(p.anim),hip=point(0,0,13),shoulder=point(lean,0,24),head=point(lean+.5,0,31),back=direction>=5&&direction<=7;
    g.save();if(['fall','dive','bicycle'].includes(p.anim)){g.translate(20,29);g.rotate((n.x<0?-1:1)*(p.anim==='bicycle'?-.4-phase*.19:p.anim==='dive'?1.2:.95));g.translate(-20,-29);}
-   const arm=(side,behind)=>{const a=point(lean,side*5,23),b=point(lean-side*stride*.5,side*6,raised?28:18),hand=point(lean-side*stride*.85,side*6,raised?34+(phase%2):14);limb(a,b,3,kit.shirtBaseColor);limb(b,hand,2,p.role==='GK'?'#e1e8cf':skin);};
-   const leg=side=>{const u=side*stride,kick=side===1?swing:0,a=point(0,side*2.5,13),knee=point(u*.45+kick*6,side*2.5,7+kick*3),foot=point(u+kick*14,side*3,Math.max(0,-side*stride)*.55+kick*7);
+   const arm=(side,behind)=>{const holding=['hold','catch'].includes(p.anim),a=point(lean,side*5,23),b=point(lean-side*stride*.5,side*(holding?4:6),raised?28:18),hand=point(holding?4:lean-side*stride*.85-(kickPose?.arm||0),side*(holding?2.5:6),raised?34+(phase%2):holding?17:14);limb(a,b,3,kit.shirtBaseColor);limb(b,hand,2,p.role==='GK'?'#e1e8cf':skin);};
+   const leg=side=>{const u=side*stride,kick=side===1&&kickPose?kickPose:null,a=point(0,side*2.5,13),knee=point(u*.45+(kick?.knee||0),side*2.5,7+(kick?kick.z*.35:0)),foot=point(u+(kick?.u||0),side*3,Math.max(0,-side*stride)*.55+(kick?.z||0));
     limb(a,knee,3,skin);limb(knee,foot,3,kit.socksColor);line(a,{x:B.lerp(a.x,knee.x,.45),y:B.lerp(a.y,knee.y,.45)},5,kit.shortsColor);line(foot,{x:foot.x+n.x*3,y:foot.y+n.y*1.5},3,'#13232c');rect(foot.x-1,foot.y-1,2,1,'#c6d4c5');};
    arm(-1,true);leg(-1);leg(1);
    const halfWidth=3+2*Math.abs(n.y),corners=[{x:shoulder.x-halfWidth,y:shoulder.y},{x:shoulder.x+halfWidth,y:shoulder.y},{x:hip.x+halfWidth-1,y:hip.y},{x:hip.x-halfWidth+1,y:hip.y}];g.beginPath();corners.forEach((q,i)=>i?g.lineTo(q.x,q.y):g.moveTo(q.x,q.y));g.closePath();g.fillStyle=this.shade(kit.shirtBaseColor,-35);g.fill();

@@ -232,3 +232,14 @@ A câmera dos escanteios termina no toque na bola e retorna imediatamente ao enq
 Os sprites originais têm sombras, volumes, membros articulados, oito direções e 16 fases de corrida. As escalações usam posições principais e secundárias, respeitam o esquema e agrupam titulares e reservas por função. Os 208 clubes exibem siglas de três letras abaixo do escudo.
 
 Verificação visual reproduzível: `tests/passes-16bit.html`. As posições foram revisadas por identificador público; veja os detalhes e limites em `data/sources.md`.
+
+
+## Câmeras de cobrança e proteção do goleiro
+
+Pênaltis, faltas e escanteios usam os mesmos sprites dos atletas de campo. O chute tem preparação da perna, contato e finalização; nas bolas paradas a bola sai no quadro de contato.
+
+As câmeras de faltas e escanteios mantêm a linha do gol horizontal e centralizam os postes, com menos gramado atrás da rede. Grande área, pequena área, marca do pênalti, meia-lua e arcos de escanteio usam a mesma geometria do campo normal, inclusive no modo pênaltis. As medidas partem dos postes reais do jogo, com referência ao [desenho da Lei 1 da IFAB](https://www.theifab.com/laws/latest/the-field-of-play/). A área desenhada também é usada para decidir pênaltis por desarme.
+
+Com a bola nas mãos do goleiro, uma distância mínima de 45 unidades impede aproximação, carrinhos, botes ou retirada da posse. A proteção se encerra imediatamente na reposição e não afeta espalmadas, traves ou bolas soltas. O goleiro continua repondo automaticamente.
+
+Cenários reproduzíveis: `tests/setpiece-cameras.html`. Testes de geometria, projeção, animação e proteção: `tests/setpiece-keeper.test.js`.

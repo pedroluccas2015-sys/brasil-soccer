@@ -67,7 +67,7 @@
   update(m,dt,input){
    this.elapsed+=dt;this.time+=dt;
    if(this.phase==='runup'){
-    const t=B.clamp(this.time/.42,0,1);this.taker.x=B.clamp(this.origin.x-this.forward.x*(24-15*t)-this.right.x*14*(1-t),3,(F.w-3));this.taker.y=B.clamp(this.origin.y-this.forward.y*(24-15*t)-this.right.y*14*(1-t),3,(F.h-3));this.taker.anim='run';this.taker.runTime+=dt*12;
+    const t=B.clamp(this.time/.42,0,1);this.taker.x=B.clamp(this.origin.x-this.forward.x*(24-15*t)-this.right.x*14*(1-t),3,(F.w-3));this.taker.y=B.clamp(this.origin.y-this.forward.y*(24-15*t)-this.right.y*14*(1-t),3,(F.h-3));if(this.time<.24){this.taker.anim='run';this.taker.animTime=0;this.taker.runTime+=dt*12;}else{this.taker.anim='setpiece';this.taker.animTime=.46*(1-B.clamp((this.time-.24)/.18,0,1)*.48);}
     if(t===1)this.launch(m);return;
    }
    const cpu=this.side!==m.human||m.autoplay;
@@ -114,7 +114,7 @@
    m.exemptPass=this.corner;m.snapshotOffside(p);
    b.owner=null;b.net=null;b.trail=[];b.x=b.px=this.origin.x;b.y=b.py=this.origin.y;b.z=b.pz=1;
    Object.assign(b,{vx:shot.vx,vy:shot.vy,vz:shot.vz,spin:shot.spin},{lock:.18,lastTouch:p,pass:this.corner||this.deliveryMode==='cross'?{from:p,target:null}:null,shot:this.corner||this.deliveryMode==='cross'?null:{team:this.side,onTarget:Math.abs(this.aim)<.9}});b.impact('kick',this.power);
-   p.touchDelay=.35;p.anim='kick';p.animTime=.4;
+   p.touchDelay=.35;p.anim='setpiece';p.animTime=.46*(1-.48);
    if(this.corner||this.deliveryMode==='cross')p.team.stats.passes++;else{p.team.stats.shots++;if(b.shot.onTarget)p.team.stats.onTarget++;}
    this.phase='flight';this.flightTime=0;this.dipping=true;if(this.corner||this.deliveryMode==='cross')m.cameraCut=(m.cameraCut||0)+1;m.state='play';m.restart=null;m.charges={};m.ai.plans.clear();m.sound.play('kick');m.bannerTime=0;
    if((this.corner||this.deliveryMode==='cross')&&this.side===m.human&&!m.autoplay){
