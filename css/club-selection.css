@@ -1,0 +1,42 @@
+/* Original broadcast interface, inspired by the football menus of the 2010s. */
+#screen.club-selection{isolation:isolate;background:linear-gradient(115deg,#081a32ed,#102b4ce6 52%,#051323ec),url('../assets/ui/stadium.svg') center/cover fixed;}
+#screen.club-selection:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:repeating-linear-gradient(125deg,transparent 0 145px,#6dc9f607 146px 148px,transparent 149px 280px);background-size:180% 180%;animation:broadcast-pan 24s linear infinite;}
+.club-selection .screen-head{border-bottom:2px solid #9de72c;padding-bottom:12px;margin-bottom:20px;}
+.club-selection .screen-head h2{font-style:italic;text-transform:uppercase;letter-spacing:-1px;font-size:clamp(23px,3vw,38px);margin:8px 0 0;}
+.club-selection .eyebrow{color:#8bd5ed;letter-spacing:3px;}
+.club-selection .panel{background:linear-gradient(135deg,#142e4be8,#08182de8);border:1px solid #577c9859;box-shadow:0 16px 35px #0003;padding:20px;min-width:0;}
+.club-selection .panels{grid-template-columns:minmax(0,1fr) 45px minmax(0,1fr);gap:15px;}
+.club-selection .competition-panels{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);}
+.club-selection .versus{font-size:28px;font-weight:900;color:#c9ff70;transform:skewY(-9deg);text-shadow:0 0 22px #a1f62070;}
+.league-rail{display:flex;gap:5px;overflow-x:auto;padding:2px 2px 12px;scrollbar-width:thin;scrollbar-color:#6d9aaf #0c233c;}
+.league-rail button{flex:0 0 auto;font-size:10px;min-height:39px;letter-spacing:.5px;padding:9px 12px;background:#17334e;border:1px solid #42617a;color:#d6ebf9;transition:background .18s,transform .18s;}
+.league-rail button[aria-pressed=true]{background:#c6f66c;border-color:#d6ff8b;color:#0d263b;transform:translateY(-1px);box-shadow:0 3px 0 #628c36;}
+.club-selection .competition-picker{max-width:none;}
+.competition-rail{margin-bottom:4px;}
+.club-browser{min-width:0;}
+.crest-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(63px,1fr));gap:5px;max-height:213px;overflow:auto;padding:5px;scrollbar-width:thin;scrollbar-color:#6591ad #0a2037;background:#0513268a;border:1px solid #50738b44;}
+.crest-choice{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:5px;min-height:83px;padding:8px 4px 6px;border-radius:1px;background:linear-gradient(160deg,#213f5a80,#122a43);border:1px solid #39516a;transition:transform .16s,background .16s,border-color .16s;}
+.crest-choice>span:last-child{font:700 9px Arial,sans-serif;letter-spacing:.5px;max-width:100%;overflow:hidden;}
+.crest-choice:hover{transform:translateY(-2px);background:#31546f;}
+.crest-choice[aria-pressed=true]{background:linear-gradient(160deg,#456f6c,#1d3e49);border:2px solid #c6f66c;box-shadow:inset 0 0 18px #b4e57325;}
+.crest-badge{position:relative;display:inline-grid;place-items:center;flex-shrink:0;width:105px;height:113px;filter:drop-shadow(0 8px 8px #0007);}
+.crest-badge img{position:absolute;width:100%;height:100%;object-fit:contain;z-index:1;}
+.crest-badge:has(img:not([hidden])) .crest-fallback{visibility:hidden;}
+.crest-fallback{display:grid;place-items:center;width:80%;height:90%;clip-path:polygon(4% 0,96% 0,88% 72%,50% 100%,12% 72%);background:var(--club-primary,#385876);color:var(--club-secondary,#fff);border-top:4px solid #e8edda;font:bold 20px monospace;}
+.crest-small{width:45px;height:48px;filter:drop-shadow(0 3px 3px #0007);}
+.crest-small .crest-fallback{font-size:11px;border-top-width:2px;}
+.broadcast-club{border-top:1px solid #52748a77;padding-top:19px;margin:17px 0 7px;min-height:135px;gap:18px;animation:club-reveal .3s ease-out both;}
+.broadcast-club h3{font-size:clamp(20px,2.3vw,30px);font-style:italic;line-height:1.05;margin:7px 0 9px;}
+.broadcast-club p{line-height:1.65;color:#a2bdcf;}
+.club-kicker{font:10px monospace;color:#c2ef77;letter-spacing:1.5px;}
+.club-rating{display:inline-block;color:#c6f66c;letter-spacing:4px;font-size:16px;margin-top:7px;}
+.club-selection select{background:#112c46;border-color:#385e7c;margin:8px 0 12px;font-size:12px;padding:10px;}
+.club-selection .primary{background:#c6f66c;color:#102739;border-color:#d9ff9f;box-shadow:4px 4px 0 #35573d;}
+.club-selection .notice{background:#1b3640;border-color:#c6f66c;color:#c8dce7;}
+.club-selection .selection-hint{font:8px/1.6 monospace;letter-spacing:.5px;color:#92b2c9;margin:8px 0;}
+.club-selection input[type=search]{width:100%;background:#0b2037;color:#e4f4fc;border:1px solid #476982;padding:10px;margin-bottom:10px;}
+.club-selection .button-row{padding-bottom:7px;}
+@keyframes broadcast-pan{to{background-position:100% 70%;}}
+@keyframes club-reveal{from{opacity:.25;transform:translateX(-12px);}to{opacity:1;transform:none;}}
+@media(max-width:760px){.club-selection .panels,.club-selection .competition-panels{grid-template-columns:1fr;}.club-selection .versus{display:none;}.club-selection .crest-grid{max-height:180px;grid-template-columns:repeat(auto-fill,minmax(57px,1fr));}.club-selection .panel{padding:14px;}.club-selection .screen-head{gap:8px;}.broadcast-club .crest-badge{width:82px;height:91px;}.club-selection .settings-grid{grid-template-columns:1fr 1fr;}.club-selection .screen-head button{padding:10px;}.club-selection .broadcast-club{min-height:110px;}}
+@media(prefers-reduced-motion:reduce){#screen.club-selection:before,.broadcast-club{animation:none;}.crest-choice,.league-rail button{transition:none;}}

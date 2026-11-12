@@ -1,0 +1,16 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Verificação visual — Brasil Super Soccer</title>
+<style>body{margin:0;background:#0b1724;color:#edf3d6;font:14px Arial}nav{display:flex;gap:8px;padding:12px;flex-wrap:wrap}button{padding:10px;background:#213c50;color:inherit;border:1px solid #89a4a0;cursor:pointer}iframe{display:block;width:100%;height:calc(100dvh - 110px);border:0}output{display:block;padding:8px 12px;color:#cbf37a}</style>
+<nav aria-label="Cenas de teste"><button data-scene="intro">Entrada</button><button data-scene="goal">Gol</button><button data-scene="hat">Hat-trick</button><button data-scene="sub">Substituição</button><button data-scene="final">Final</button><button data-scene="replay">Replay</button><button data-scene="pitch">Campo</button></nav><output id="status">Carregando o jogo…</output><iframe id="game-frame" src="../index.html" title="Prévia do jogo"></iframe>
+<script>
+const frame=document.getElementById('game-frame'),status=document.getElementById('status');
+frame.addEventListener('load',()=>{status.textContent='Pronto. Selecione uma cena para inspecionar.';});
+for(const b of document.querySelectorAll('[data-scene]'))b.onclick=()=>{
+ const B=frame.contentWindow.BSS,a=B?.app;if(!a){status.textContent='Aguarde o carregamento.';return;}
+ a.start('flamengo','palmeiras',{mode:'quick',seed:17,cutscenes:true});const m=a.match,c=m.cinema;c.queue=[];a.paused=true;m.teams[0].score=2;m.teams[1].score=1;
+ const type=b.dataset.scene;
+ if(type==='pitch'){m.state='play';m.ball.owner=m.teams[0].players[9];m.controlled=m.ball.owner;a.paused=false;}
+ else if(type==='replay'){c.capture();m.ball.x+=40;c.capture();c.replay('REPLAY DO GOL');c.active.time=.035;}
+ else{c.add(type,30,{side:0,player:m.teams[0].players[9],old:m.teams[0].players[2],penalties:false});c.active.time=1.4;}
+ status.textContent='Cena: '+b.textContent+' · sem erros de estado. Use as outras opções para comparar.';
+};
+</script></html>

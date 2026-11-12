@@ -4,7 +4,19 @@
  const row=id=>({id,p:0,j:0,v:0,e:0,d:0,gp:0,gc:0,red:0,yellow:0});
  const pair=(home,away)=>({home,away,result:null});
  B.CompetitionManager=class {
-  constructor(data=window.BSS_DATA?.competitions){this.data=data;this.current=B.safeStorage.get('competition-v2');if(this.current?.version!==2)this.current=null;}
+  constructor(data=window.BSS_DATA?.competitions){this.data=data;this.current=B.safeStorage.get('competition-v2');if(this.current?.version!==2)this.current=null;this.migratePenaltyCup();}
+  migratePenaltyCup(){
+   const c=this.current;if(!c||c.complete||!c.penaltyOnly||c.phase!=='knockout'||!c.ties?.some(t=>t.legs===2))return;
+   c.ties.forEach(t=>{t.legs=1;t.advantage=null;});c.rounds=[c.rounds[0]];c.round=0;c.extraTime=false;
+   // Keep completed shootouts, remove the obsolete return leg, and rebuild totals
+   // so the first leg cannot be counted twice when an older save resumes.
+   c.history=c.history.filter(h=>h.stage!==c.stage);c.totalTable=c.totalTable.map(r=>row(r.id));
+   for(const h of c.history)for(const g of h.games)for(const [i,id] of [g.home,g.away].entries()){
+    const r=c.totalTable.find(r=>r.id===id);if(!r)continue;B.CompetitionManager.points(r,g.result[i],g.result[1-i]);r.red+=g.cards?.[i]?.red||0;r.yellow+=g.cards?.[i]?.yellow||0;
+   }
+   for(const g of c.rounds[0])if(g.result){g.needsTiebreak=false;delete g.winner;this.resolveGame(g,false);}
+   if(c.rounds[0].every(g=>g.result&&!g.needsTiebreak))this.completeRound();else this.save();
+  }
   definitions(kind){return this.data.definitions.filter(d=>!kind||d.kind===kind);}
   definition(id){return this.data.definitions.find(d=>d.id===id);}
   static schedule(ids,double=true){const ring=[...ids],rounds=[];if(ring.length%2)ring.push(null);for(let r=0;r<ring.length-1;r++){const games=[];for(let i=0;i<ring.length/2;i++){let a=ring[i],b=ring[ring.length-1-i];if(r%2)[a,b]=[b,a];if(a&&b)games.push(pair(a,b));}rounds.push(games);ring.splice(1,0,ring.pop());}return double?[...rounds,...rounds.map(r=>r.map(g=>pair(g.away,g.home)))]:rounds;}
@@ -21,7 +33,7 @@
   archiveStage(){const c=this.current;if(c.stage)c.stages.push({id:c.stage,name:c.stageName,groups:copy(c.groups||[]),table:copy(c.table||[]),rounds:copy(c.rounds)});}
   groupStage(stage,name,groups,double=true){const c=this.current;this.archiveStage();c.stage=stage;c.stageName=name;c.phase='groups';c.groups=copy(groups);c.table=groups.flat().map(row);c.round=0;const schedules=groups.map(g=>B.CompetitionManager.schedule(g,double));c.rounds=schedules[0].map((_,i)=>schedules.flatMap((s,k)=>s[i].map(g=>({...g,group:k}))));if(c.format==='c'&&stage==='groups')this.balanceMandates(groups[0].slice(0,10));}
   balanceMandates(extra){const c=this.current,desired=new Set(extra),ids=c.groups[0],games=c.rounds.flat(),counts=Object.fromEntries(ids.map(id=>[id,games.filter(g=>g.home===id).length]));for(let guard=0;guard<100;guard++){const over=ids.find(id=>counts[id]>(desired.has(id)?10:9)),under=ids.find(id=>counts[id]<(desired.has(id)?10:9));if(!over||!under)break;const paths=[[over,[]]],seen=new Set([over]);let route;while(paths.length){const [at,edges]=paths.shift();if(at===under){route=edges;break;}for(const g of games.filter(g=>g.home===at&&!seen.has(g.away))){seen.add(g.away);paths.push([g.away,[...edges,g]]);}}if(!route)throw Error('Calendário inválido');for(const g of route){counts[g.home]--;counts[g.away]++;[g.home,g.away]=[g.away,g.home];}}}
-  knockout(stage,name,pairs,legs=2,opts={}){const c=this.current;this.archiveStage();c.stage=stage;c.stageName=name;c.phase='knockout';c.groups=[];c.table=[];c.round=0;c.ties=pairs.map(([a,b],i)=>({id:stage+'-'+i,a,b,legs,advantage:opts.advantage?b:null,purpose:opts.purposes?.[i]||'advance'}));c.rounds=[c.ties.map(t=>({...pair(t.a,t.b),tie:t.id,leg:1}))];if(legs===2)c.rounds.push(c.ties.map(t=>({...pair(t.b,t.a),tie:t.id,leg:2})));c.extraTime=!!opts.extraTime;}
+  knockout(stage,name,pairs,legs=2,opts={}){const c=this.current;legs=c.penaltyOnly?1:legs;this.archiveStage();c.stage=stage;c.stageName=name;c.phase='knockout';c.groups=[];c.table=[];c.round=0;c.ties=pairs.map(([a,b],i)=>({id:stage+'-'+i,a,b,legs,advantage:!c.penaltyOnly&&opts.advantage?b:null,purpose:opts.purposes?.[i]||'advance'}));c.rounds=[c.ties.map(t=>({...pair(t.a,t.b),tie:t.id,leg:1}))];if(legs===2)c.rounds.push(c.ties.map(t=>({...pair(t.b,t.a),tie:t.id,leg:2})));c.extraTime=!c.penaltyOnly&&!!opts.extraTime;}
   static points(r,gf,ga){r.j++;r.gp+=gf;r.gc+=ga;if(gf>ga){r.v++;r.p+=3;}else if(gf===ga){r.e++;r.p++;}else r.d++;}
   rank(rows,games=[],continental=false,h2h=true){
    const c=this.current,base=(a,b)=>b.p-a.p||(!continental?b.v-a.v:0)||(b.gp-b.gc)-(a.gp-a.gc)||b.gp-a.gp;

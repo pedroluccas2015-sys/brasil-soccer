@@ -23,6 +23,6 @@ window.BSS.Player=class {
   this.runTime+=Math.hypot(this.x-this.px,this.y-this.py)*.14;
   this.animTime=Math.max(0,this.animTime-dt);
   if(!this.animTime){this.anim=Math.hypot(this.vx,this.vy)>8?(running?'sprint':'run'):'idle';this.slideDirection=null;}
-  this.touchDelay=Math.max(0,this.touchDelay-dt);this.actionCooldown=Math.max(0,this.actionCooldown-dt);this.decision-=dt;this.dash=Math.max(0,this.dash-dt);
+  this.touchDelay=Math.max(0,this.touchDelay-dt);this.actionCooldown=Math.max(0,this.actionCooldown-dt);this.decision-=dt;this.dash=Math.max(0,this.dash-dt);this.runAfterPass=Math.max(0,(this.runAfterPass||0)-dt);
  }
 };

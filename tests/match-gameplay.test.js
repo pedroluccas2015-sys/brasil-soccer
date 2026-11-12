@@ -1,7 +1,7 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
 global.window=global;global.localStorage={getItem:()=>null,setItem(){}};
-for(const f of ['data/bundle.js',...['engine','formations','physics','data-loader','player','ball','team','ai','penalty','free-kick','match'].map(n=>'js/'+n+'.js')])vm.runInThisContext(fs.readFileSync(path.join(__dirname,'..',f),'utf8'),{filename:f});
+for(const f of ['data/bundle.js',...['engine','formations','physics','kick-model','data-loader','player','ball','team','ai','penalty','free-kick','match'].map(n=>'js/'+n+'.js')])vm.runInThisContext(fs.readFileSync(path.join(__dirname,'..',f),'utf8'),{filename:f});
 const B=BSS,d=new B.DataManager();d.raw=BSS_DATA;d.hydrate();
 const make=(opts={})=>new B.Match(d.teams[0],d.teams[1],{seed:42,...opts});
 
@@ -56,7 +56,7 @@ test('quatro dificuldades completam partidas, com ataques e coordenadas finitas'
 });
 
 test('campo ampliado: posições, limites de movimento e laterais usam a nova geometria',()=>{
- const F=B.FIELD,m=make(),p=m.controlled;assert.equal(F.w,1260);assert.equal(F.h,816);
+ const F=B.FIELD,m=make(),p=m.controlled;assert.equal(F.w,1470);assert.equal(F.h,952);
  assert.equal(m.ball.x,F.cx);assert.equal(m.ball.y,F.cy);
  for(const t of m.teams)for(const q of t.players){assert.ok(q.home.x>=0&&q.home.x<=F.w);assert.ok(q.home.y>=0&&q.home.y<=F.h);}
  p.x=F.w-10;p.y=F.h-10;for(let i=0;i<30;i++)p.move(1,1,false,1/60);

@@ -5,6 +5,6 @@ window.BSS.Game=class {
  pause(){if(!this.match||this.match.finished)return;this.paused=true;this.touch.reset();this.input.enabled=false;this.ui.pause(this.match.state==='half');}
  resume(){if(this.match?.state==='half')this.match.resumeHalf();this.paused=false;this.input.clear();this.match.charges={};this.input.enabled=true;this.ui.clear();document.getElementById('game').focus();}
  update(dt){this.input.poll(dt);if(this.input.pressed.pause&&this.match&&!this.match.finished){if(this.paused)this.resume();else this.pause();}if(this.match){if(!this.paused)this.match.update(dt,this.input);const owner=this.match.ball.owner;if(owner)document.body.classList.toggle('touch-defending',owner.team.side!==this.match.human);if(this.match.state==='penalty')document.body.classList.toggle('touch-defending',this.match.penalty.side!==this.match.human);}else{this.preview.update(dt);if(this.preview.state==='half')this.preview.resumeHalf();}this.audio.update(dt,!this.match);}
- render(){this.renderer.render(this.match||this.preview,1/60,this.debug,this.engine.fps,!this.match);}
+ render(){const now=performance.now(),dt=this.renderLast?Math.min(.1,(now-this.renderLast)/1000):1/60;this.renderLast=now;this.renderer.render(this.match||this.preview,dt,this.debug,this.engine.fps,!this.match);}
  saveSettings(){return window.BSS.safeStorage.set('settings',this.settings);}
 };

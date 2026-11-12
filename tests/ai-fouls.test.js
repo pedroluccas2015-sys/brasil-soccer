@@ -2,7 +2,7 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
 const root=path.resolve(__dirname,'..');
 global.window=global;global.localStorage={getItem:()=>null,setItem(){}};
-for(const f of ['data/bundle.js',...['engine','formations','physics','data-loader','player','ball','team','ai','penalty','free-kick','match'].map(n=>'js/'+n+'.js')])vm.runInThisContext(fs.readFileSync(path.join(root,f),'utf8'),{filename:f});
+for(const f of ['data/bundle.js',...['engine','formations','physics','kick-model','data-loader','player','ball','team','ai','penalty','free-kick','match'].map(n=>'js/'+n+'.js')])vm.runInThisContext(fs.readFileSync(path.join(root,f),'utf8'),{filename:f});
 const B=BSS,d=new B.DataManager();d.raw=BSS_DATA;d.hydrate();
 function scenario({x=870,side=1,autoplay=false}={}){
  const m=new B.Match(d.teams[0],d.teams[1],{seed:75,difficulty:1,autoplay});
@@ -28,7 +28,7 @@ test('CPU erra desarme e marca falta real fora da área, com cobrança normal',(
  assert.ok(m.ai.nextRiskAt[1]>=m.elapsed+20);
 });
 test('CPU comete pênalti de jogo por desarme atrasado dentro da área',()=>{
- const {m,defender,carrier,ballDistance}=scenario({x:1150});
+ const {m,defender,carrier,ballDistance}=scenario({x:B.FIELD.w-110});
  m.ai.tryRiskyTackle(defender,carrier,ballDistance,1/60);
  assert.equal(m.teams[1].stats.fouls,1);
  assert.equal(m.state,'penalty');
@@ -65,7 +65,7 @@ test('desarmes arriscados automáticos não afetam os companheiros do usuário',
  assert.equal(m.teams[0].stats.fouls,0);
 });
 test('decisão da CPU realmente chama o desarme e provoca pênalti durante update',()=>{
- const {m,defender}=scenario({x:1150});
+ const {m,defender}=scenario({x:B.FIELD.w-110});
  m.ai.update(1/60);
  assert.equal(m.state,'penalty');
  assert.equal(m.teams[1].stats.fouls,1);
