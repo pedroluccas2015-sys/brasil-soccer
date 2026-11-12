@@ -212,3 +212,12 @@ Para conferir a lógica: `npm test` executa também `tests/touch.test.js`.
 As faltas em todo o campo de ataque usam uma câmera atrás do cobrador, barreira e três etapas de direção, força e efeito. O botão de chute confirma cada etapa; o passe continua disponível para cobrança curta. Veja [como cobrar e o escopo da alteração](docs/faltas-magical-kicks.md).
 
 O campo da partida normal foi ampliado de 1050 × 680 para 1260 × 816 unidades (20% em cada dimensão), com câmera mais aberta e posições de jogadores ajustadas. A regra da cobrança especial vale igualmente para usuário e CPU; no campo de defesa a reposição continua no formato anterior.
+
+
+## Carrinhos e organização defensiva
+
+O carrinho tem pose própria nas oito direções, com a perna estendida à frente, recuperação para levantar e fragmentos de grama/terra durante o deslize. A direção fica travada até a recuperação; os efeitos são limitados e os replays usam cópias independentes, sem alterar a aleatoriedade da partida.
+
+CPU e companheiros do usuário usam o mesmo bloco defensivo: um jogador pressiona, outro cobre o caminho ao gol e os demais fecham corredores e acompanham adversários perigosos. A linha se ajusta à bola e às opções táticas, com espaçamento entre marcadores. Trocas de posse, controle e expulsões recalculam as funções. O jogador controlado continua manual; segurar o comando de lançamento na defesa chama o segundo defensor.
+
+Para conferir poses e cenários dos dois lados, abra `tests/slide-defense.html` no servidor local. Os testes em `tests/slide-defense.test.js` verificam direção, recuperação, grama, replay, cobertura, marcação, controle manual e transições.

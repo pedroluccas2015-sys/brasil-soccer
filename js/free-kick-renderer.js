@@ -22,13 +22,14 @@
   for(let i=0;i<=8;i++){const t=i/8;line({x:B.lerp(a.x,b.x,t),y:B.lerp(a.y,b.y,t)},{x:B.lerp(back1.x,back2.x,t),y:B.lerp(back1.y,back2.y,t)},'#b6c6a670');}
   for(let i=1;i<=4;i++){const t=i/4;line({x:B.lerp(a.x,back1.x,t),y:B.lerp(a.y,back1.y,t)},{x:B.lerp(b.x,back2.x,t),y:B.lerp(b.y,back2.y,t)},'#b6c6a670');}
   g.lineWidth=2;line(a,b,'#fff3cf');line(a,d,'#fff3cf');line(b,c,'#fff3cf');
+  for(const bit of m.turf||[])this.turf(bit,project,B.clamp(project(bit.x,bit.y).scale*.72,.6,1.5));
   const figures=m.players.map(p=>({p,...project(p.x,p.y)})).filter(v=>!v.p.red&&v.depth>-35&&v.x>-80&&v.x<465).sort((a,b)=>b.depth-a.depth);
   for(const v of figures){
    const p=v.p,jump=f.wall.includes(p)?f.jump():0,scale=B.clamp(v.scale*.72,.6,1.5),point=project(p.x,p.y,jump);
    g.fillStyle='#173e3970';g.beginPath();g.ellipse(v.x,v.y,7*scale,2*scale,0,0,Math.PI*2);g.fill();
    // Convert world facing to the behind-the-ball camera without mutating the player.
-   const facing={x:p.facing.x*rt.x+p.facing.y*rt.y,y:-(p.facing.x*fw.x+p.facing.y*fw.y)};
-   g.drawImage(this.sprite({...p,facing}),Math.round(point.x-14*scale),Math.round(point.y-27*scale),Math.round(28*scale),Math.round(30*scale));
+   const view=n=>({x:n.x*rt.x+n.y*rt.y,y:-(n.x*fw.x+n.y*fw.y)}),facing=view(p.facing),slideDirection=p.slideDirection?view(p.slideDirection):null;
+   const sprite=this.sprite({...p,facing,slideDirection});g.drawImage(sprite,Math.round(point.x-(sprite.anchorX??14)*scale),Math.round(point.y-(sprite.anchorY??27)*scale),Math.round(sprite.width*scale),Math.round(sprite.height*scale));
   }
   if(['aim','power','curve'].includes(f.phase)){
    // Short initial trajectory conveys bend without promising an automatic goal.
