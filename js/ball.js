@@ -13,7 +13,7 @@ window.BSS.Ball=class {
  enterNet(line,field=null){this.owner=null;this.net={line,dir:line===0?-1:1,age:0,ripple:0,...(field?{top:field.goalTop+4,bottom:field.goalBottom-4}:{})};}
  update(dt){
   if(this.owner?.role==='GK'){
-   this.px=this.x;this.py=this.y;this.pz=this.z;this.x=this.owner.x+this.owner.facing.x*5;this.y=this.owner.y;this.z=12;this.vx=this.vy=this.vz=0;this.lock=Math.max(0,this.lock-dt);this.animate(dt);return;
+   this.px=this.x;this.py=this.y;this.pz=this.z;this.x=this.owner.x+this.owner.facing.x*5;this.y=this.owner.y;this.z=16;this.vx=this.vy=this.vz=0;this.lock=Math.max(0,this.lock-dt);this.animate(dt);return;
   }
   this.lock=Math.max(0,this.lock-dt);window.BSS.Physics.ball(this,dt);
   if(this.net){

@@ -76,6 +76,7 @@
    }).sort((a,c)=>c.score-a.score)[0];
   }
   moveTo(p,tx,ty,sprint,dt){
+   const keeper=this.m.protectedKeeper();if(keeper&&keeper!==p&&B.dist({x:tx,y:ty},keeper)<B.PITCH.keeperClearance+18){const n=B.dist(p,keeper)>.01?B.norm(p.x-keeper.x,p.y-keeper.y):{x:p.team.dir,y:0};tx=keeper.x+n.x*(B.PITCH.keeperClearance+18);ty=keeper.y+n.y*(B.PITCH.keeperClearance+18);p.state='RETREAT';}
    const dx=tx-p.x,dy=ty-p.y,d=Math.hypot(dx,dy);
    // Hysteresis lets a player settle instead of circling a formation target.
    if(p.arrived?d<10:d<5){p.arrived=true;p.move(0,0,false,dt);}
@@ -183,7 +184,7 @@
   }
   keeper(p,dt){
    const m=this.m,b=m.ball,t=p.team,cfg=this.profile(t),dir=t.dir,gx=dir>0?18:(F.w-18),danger=Math.abs(b.x-gx)<235;
-   if(b.owner===p){p.state='CATCH';p.heldTime+=dt;p.move(0,0,false,dt);if(p.heldTime>1.1){const pass=this.bestPass(p);p.state=pass&&!pass.blocked?'THROW':'KICK';m.pass(p,p.state==='THROW'?'pass':'long',.75,{x:dir,y:0},pass?.player);p.heldTime=0;}return;}
+   if(b.owner===p){p.state='CATCH';p.heldTime+=dt;p.move(0,0,false,dt);p.anim='hold';p.animTime=.12;if(p.heldTime>1.1){const pass=this.bestPass(p);p.state=pass&&!pass.blocked?'THROW':'KICK';m.pass(p,p.state==='THROW'?'pass':'long',.75,{x:dir,y:0},pass?.player);p.heldTime=0;}return;}
    let tx=gx+dir*B.clamp(Math.abs(b.x-gx)*.055,0,35),ty=B.clamp((F.cy)+(b.y-(F.cy))*.27,(F.cy-54),(F.cy+54));p.state=danger?'TRACK_BALL':'POSITION';
    const incoming=!b.owner&&b.vx*dir< -60&&Math.abs(b.x-gx)<220;
    if(danger&&!b.owner&&!incoming&&b.z<24&&Math.abs(b.x-gx)<100&&Math.abs(b.y-(F.cy))<140){p.state='COME_OUT';tx=b.x;ty=b.y;}
