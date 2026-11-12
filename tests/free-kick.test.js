@@ -13,7 +13,7 @@ test('faltas: limite do campo de ataque, ambos os times, controle humano e dois 
  for(const type of ['LATERAL','IMPEDIMENTO','TIRO DE META']){const m=make();m.setRestart(type,0,900,60);assert.equal(m.state,'restart');assert.equal(m.freeKick,null);}
 });
 test('faltas: fora da faixa mantém cobrança normal por passe',()=>{
- for(const x of [100,F.cx-1,F.cx-100,F.cx-.01]){const m=make();m.setRestart('FALTA',0,x,340);m.timer=0;m.pass(m.restart.taker,'pass',.5,{x:1,y:0});assert.equal(m.state,'play');assert.ok(m.ball.pass);}
+ for(const x of [100,F.cx-1,F.cx-100,F.cx-.01]){const m=make();m.setRestart('FALTA',0,x,340);m.timer=0;m.pass(m.restart.taker,'pass',.5,{x:1,y:0});assert.equal(m.state,'restart');for(let i=0;i<60&&m.state==='restart';i++)m.update(1/120,input());assert.equal(m.state,'play');assert.ok(m.ball.pass);}
 });
 test('faltas: falta real ativa o mecanismo; grande área continua sendo pênalti',()=>{
  for(const x of [F.w-250,F.w-140]){const m=make(),p=m.teams[1].players[1],q=m.teams[0].players[9];m.state='play';p.x=x;p.y=F.cy;q.x=x+18;q.y=F.cy;m.ball.reset(200,100);m.tackle(p,true);assert.equal(m.state,x===F.w-250?'freeKick':'penalty');}
