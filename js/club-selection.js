@@ -17,7 +17,7 @@
   const competition=root.querySelector('#competition-id');
   if(competition){
    const rail=document.createElement('nav');rail.className='league-rail competition-rail';rail.setAttribute('aria-label','Selecionar competição');
-   for(const option of competition.options){const b=document.createElement('button');b.type='button';b.textContent=option.text.replace(/ 2026$/,'');b.setAttribute('aria-pressed',String(option.selected));b.onclick=()=>{competition.value=option.value;competition.onchange({target:competition});};rail.append(b);}
+   for(const option of competition.options){const b=document.createElement('button');b.type='button';b.textContent=option.text.replace(/ 2026$/,'');b.setAttribute('aria-pressed',String(option.selected));b.onclick=()=>{this.navigationSound('confirm');competition.value=option.value;competition.onchange({target:competition});};rail.append(b);}
    competition.before(rail);
   }
   for(const id of ['home-team','away-team']){
@@ -32,12 +32,12 @@
    const paint=()=>{
     const ids=competition?Array.from(select.options).filter(o=>!o.hidden).map(o=>o.value):groups.find(g=>g.id===group).ids;
     grid.innerHTML=ids.map(tid=>this.app.data.get(tid)).filter(Boolean).map(t=>`<button type="button" class="crest-choice" data-club="${esc(t.id)}" aria-pressed="${t.id===select.value}" aria-label="${esc(t.name)}" title="${esc(t.name)}">${this.crest(t,true)}<span>${esc(t.shortName)}</span><span class="grid-stars" aria-hidden="true">${'★'.repeat(B.clubRating(t.id,this.app.data.raw.competitions).stars)}</span></button>`).join('');
-    grid.querySelectorAll('[data-club]').forEach(b=>{b.onclick=()=>{this.app.audio.start();this.app.audio.play('menu');select.value=b.dataset.club;select.onchange({target:select});};b.onkeydown=e=>{const buttons=[...grid.querySelectorAll('button')],index=buttons.indexOf(b),columns=getComputedStyle(grid).gridTemplateColumns.split(' ').length,delta={ArrowRight:1,ArrowLeft:-1,ArrowDown:columns,ArrowUp:-columns}[e.key];if(delta){e.preventDefault();buttons[B.clamp(index+delta,0,buttons.length-1)]?.focus();}};});
+    grid.querySelectorAll('[data-club]').forEach(b=>{b.onclick=()=>{this.navigationSound('confirm');select.value=b.dataset.club;select.onchange({target:select});};b.onkeydown=e=>{const buttons=[...grid.querySelectorAll('button')],index=buttons.indexOf(b),columns=getComputedStyle(grid).gridTemplateColumns.split(' ').length,delta={ArrowRight:1,ArrowLeft:-1,ArrowDown:columns,ArrowUp:-columns}[e.key];if(delta){e.preventDefault();const next=buttons[B.clamp(index+delta,0,buttons.length-1)];if(next&&next!==b){this.navigationSound('move');next.focus();}}};});
     rail.querySelectorAll('[data-league]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.league===group)));this.bindCrests();
    };
    select.onchange=e=>{oldChange?.(e);if(!competition&&!groups.find(g=>g.id===group).ids.includes(select.value)){group=groups.find(g=>g.ids.includes(select.value))?.id||'all';this.clubLeagues[id]=group;}if(root.contains(grid))paint();this.bindCrests();};
    const search=competition&&root.querySelector('#club-search');if(search){const oldSearch=search.oninput;search.oninput=e=>{oldSearch?.(e);paint();};}
-   if(!competition){for(const g of groups){const b=document.createElement('button');b.type='button';b.textContent=g.name;b.dataset.league=g.id;b.onclick=()=>{group=g.id;this.clubLeagues[id]=group;if(!g.ids.includes(select.value)){select.value=g.ids[0];select.onchange({target:select});}paint();};rail.append(b);}host.append(rail);}
+   if(!competition){for(const g of groups){const b=document.createElement('button');b.type='button';b.textContent=g.name;b.dataset.league=g.id;b.onclick=()=>{this.navigationSound('confirm');group=g.id;this.clubLeagues[id]=group;if(!g.ids.includes(select.value)){select.value=g.ids[0];select.onchange({target:select});}paint();};rail.append(b);}host.append(rail);}
    host.append(grid);paint();
    const hint=document.createElement('p');hint.className='selection-hint';hint.textContent='ESCOLHA O ESCUDO · SETAS PARA NAVEGAR · ENTER PARA CONFIRMAR';host.after(hint);
   }
