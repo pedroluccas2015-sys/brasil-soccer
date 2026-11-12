@@ -1,3 +1,7 @@
+## Ratings dos clubes
+
+Clubes com 1 a 5 estrelas baseadas nos rankings oficiais CBF/CONMEBOL de 2026. Ausentes recebem 1 estrela. O overall individual dos atletas foi removido; a força coletiva influencia a partida e os placares simulados dos torneios. Veja a [metodologia, fontes e testes](docs/RATINGS-DOS-CLUBES.md).
+
 ## Atualização de jogabilidade e apresentação
 
 Campo ampliado, passes e cruzamentos assistidos com carga de força, IA com corridas de apoio, novas animações e cenas, seleção de ligas/clubes com 208 escudos locais. Mata-mata da Copa de Pênaltis em jogo único; torneios normais mantêm as regras próprias de cada fase. Veja [detalhes, controles e fontes dos assets](docs/ATUALIZACAO-JOGABILIDADE.md).

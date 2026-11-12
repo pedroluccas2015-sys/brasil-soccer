@@ -10,7 +10,7 @@
  ].map(Object.freeze));
  B.AIController=class {
   constructor(match){this.m=match;this.plans=new Map();this.nextRiskAt=[6,6];this.riskyRandom=B.rng(B.hash('foul:'+String(match.options.seed??Date.now())));}
-  profile(team){return B.MATCH_DIFFICULTIES[team.side===this.m.human?1:B.clamp(Math.round(this.m.difficulty)||0,0,3)];}
+  profile(team){const base=B.MATCH_DIFFICULTIES[team.side===this.m.human?1:B.clamp(Math.round(this.m.difficulty)||0,0,3)],strength=B.clamp((team.rating?.strength??60)/100,.2,1);return {...base,reaction:base.reaction*B.lerp(1.28,.82,strength),decision:base.decision*B.lerp(1.2,.88,strength),precision:base.precision*B.lerp(1.4,.75,strength),vision:base.vision*B.lerp(.82,1.1,strength)};}
   intercept(p,profile){const b=this.m.ball,t=B.clamp(B.dist(p,b)/150,0,profile.anticipation);return {x:B.clamp(b.x+b.vx*t,8,(F.w-8)),y:B.clamp(b.y+b.vy*t,8,(F.h-8))};}
   plan(team,dt){
    const m=this.m,b=m.ball,cfg=this.profile(team);let plan=this.plans.get(team);

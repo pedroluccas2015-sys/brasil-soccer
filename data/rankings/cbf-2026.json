@@ -1,0 +1,1417 @@
+{
+  "edition": 2026,
+  "publishedAt": "2025-12-23",
+  "source": "https://stcbfsiteprdimgbrs.blob.core.windows.net/img-site/cdn/RNC_Ranking_Nacional_dos_Clubes_2026_27e24418e7.pdf",
+  "entries": [
+    {
+      "position": 1,
+      "name": "Flamengo",
+      "federation": "RJ",
+      "points": 16314
+    },
+    {
+      "position": 2,
+      "name": "Corinthians",
+      "federation": "SP",
+      "points": 14930
+    },
+    {
+      "position": 3,
+      "name": "Palmeiras",
+      "federation": "SP",
+      "points": 13860
+    },
+    {
+      "position": 4,
+      "name": "Atlético",
+      "federation": "MG",
+      "points": 13696
+    },
+    {
+      "position": 5,
+      "name": "São Paulo",
+      "federation": "SP",
+      "points": 13556
+    },
+    {
+      "position": 6,
+      "name": "Fluminense",
+      "federation": "RJ",
+      "points": 13006
+    },
+    {
+      "position": 7,
+      "name": "Botafogo",
+      "federation": "RJ",
+      "points": 12834
+    },
+    {
+      "position": 8,
+      "name": "Athletico",
+      "federation": "PR",
+      "points": 12656
+    },
+    {
+      "position": 9,
+      "name": "Bahia",
+      "federation": "BA",
+      "points": 12632
+    },
+    {
+      "position": 10,
+      "name": "Vasco da Gama",
+      "federation": "RJ",
+      "points": 11330
+    },
+    {
+      "position": 11,
+      "name": "Cruzeiro",
+      "federation": "MG",
+      "points": 11010
+    },
+    {
+      "position": 12,
+      "name": "Grêmio",
+      "federation": "RS",
+      "points": 10636
+    },
+    {
+      "position": 13,
+      "name": "Fortaleza",
+      "federation": "CE",
+      "points": 10382
+    },
+    {
+      "position": 14,
+      "name": "Internacional",
+      "federation": "RS",
+      "points": 10014
+    },
+    {
+      "position": 15,
+      "name": "Red Bull Bragantino",
+      "federation": "SP",
+      "points": 9802
+    },
+    {
+      "position": 16,
+      "name": "Santos",
+      "federation": "SP",
+      "points": 8852
+    },
+    {
+      "position": 17,
+      "name": "Juventude",
+      "federation": "RS",
+      "points": 8426
+    },
+    {
+      "position": 18,
+      "name": "Atlético",
+      "federation": "GO",
+      "points": 7476
+    },
+    {
+      "position": 19,
+      "name": "América",
+      "federation": "MG",
+      "points": 7429
+    },
+    {
+      "position": 20,
+      "name": "Vitória",
+      "federation": "BA",
+      "points": 7205
+    },
+    {
+      "position": 21,
+      "name": "Ceará",
+      "federation": "CE",
+      "points": 7122
+    },
+    {
+      "position": 22,
+      "name": "Cuiabá",
+      "federation": "MT",
+      "points": 6746
+    },
+    {
+      "position": 23,
+      "name": "Goiás",
+      "federation": "GO",
+      "points": 6463
+    },
+    {
+      "position": 24,
+      "name": "Coritiba",
+      "federation": "PR",
+      "points": 6381
+    },
+    {
+      "position": 25,
+      "name": "Sport",
+      "federation": "PE",
+      "points": 6340
+    },
+    {
+      "position": 26,
+      "name": "CRB",
+      "federation": "AL",
+      "points": 6150
+    },
+    {
+      "position": 27,
+      "name": "Criciúma",
+      "federation": "SC",
+      "points": 6090
+    },
+    {
+      "position": 28,
+      "name": "Mirassol",
+      "federation": "SP",
+      "points": 5537
+    },
+    {
+      "position": 29,
+      "name": "Vila Nova",
+      "federation": "GO",
+      "points": 4750
+    },
+    {
+      "position": 30,
+      "name": "Operário",
+      "federation": "PR",
+      "points": 4525
+    },
+    {
+      "position": 31,
+      "name": "Avaí",
+      "federation": "SC",
+      "points": 4491
+    },
+    {
+      "position": 32,
+      "name": "Novorizontino",
+      "federation": "SP",
+      "points": 4436
+    },
+    {
+      "position": 33,
+      "name": "Chapecoense",
+      "federation": "SC",
+      "points": 4277
+    },
+    {
+      "position": 34,
+      "name": "Botafogo",
+      "federation": "SP",
+      "points": 4036
+    },
+    {
+      "position": 35,
+      "name": "Paysandu",
+      "federation": "PA",
+      "points": 4030
+    },
+    {
+      "position": 36,
+      "name": "Brusque",
+      "federation": "SC",
+      "points": 3807
+    },
+    {
+      "position": 37,
+      "name": "Remo",
+      "federation": "PA",
+      "points": 3764
+    },
+    {
+      "position": 38,
+      "name": "Ponte Preta",
+      "federation": "SP",
+      "points": 3743
+    },
+    {
+      "position": 39,
+      "name": "CSA",
+      "federation": "AL",
+      "points": 3736
+    },
+    {
+      "position": 40,
+      "name": "Amazonas",
+      "federation": "AM",
+      "points": 3403
+    },
+    {
+      "position": 41,
+      "name": "Ituano",
+      "federation": "SP",
+      "points": 3380
+    },
+    {
+      "position": 42,
+      "name": "Tombense",
+      "federation": "MG",
+      "points": 3240
+    },
+    {
+      "position": 43,
+      "name": "Volta Redonda",
+      "federation": "RJ",
+      "points": 3210
+    },
+    {
+      "position": 44,
+      "name": "Náutico",
+      "federation": "PE",
+      "points": 3200
+    },
+    {
+      "position": 45,
+      "name": "Guarani",
+      "federation": "SP",
+      "points": 3186
+    },
+    {
+      "position": 46,
+      "name": "ABC",
+      "federation": "RN",
+      "points": 3008
+    },
+    {
+      "position": 47,
+      "name": "Sampaio Corrêa",
+      "federation": "MA",
+      "points": 2908
+    },
+    {
+      "position": 48,
+      "name": "Londrina",
+      "federation": "PR",
+      "points": 2865
+    },
+    {
+      "position": 49,
+      "name": "Retrô",
+      "federation": "PE",
+      "points": 2707
+    },
+    {
+      "position": 50,
+      "name": "Ypiranga",
+      "federation": "RS",
+      "points": 2686
+    },
+    {
+      "position": 51,
+      "name": "Athletic",
+      "federation": "MG",
+      "points": 2570
+    },
+    {
+      "position": 52,
+      "name": "Botafogo",
+      "federation": "PB",
+      "points": 2529
+    },
+    {
+      "position": 53,
+      "name": "Confiança",
+      "federation": "SE",
+      "points": 2363
+    },
+    {
+      "position": 54,
+      "name": "Ferroviária",
+      "federation": "SP",
+      "points": 2201
+    },
+    {
+      "position": 55,
+      "name": "Aparecidense",
+      "federation": "GO",
+      "points": 2091
+    },
+    {
+      "position": 56,
+      "name": "Maringá",
+      "federation": "PR",
+      "points": 2086
+    },
+    {
+      "position": 57,
+      "name": "São Bernardo FC",
+      "federation": "SP",
+      "points": 2061
+    },
+    {
+      "position": 58,
+      "name": "Caxias",
+      "federation": "RS",
+      "points": 2051
+    },
+    {
+      "position": 59,
+      "name": "Figueirense",
+      "federation": "SC",
+      "points": 1983
+    },
+    {
+      "position": 60,
+      "name": "Ferroviário",
+      "federation": "CE",
+      "points": 1916
+    },
+    {
+      "position": 61,
+      "name": "Floresta",
+      "federation": "CE",
+      "points": 1838
+    },
+    {
+      "position": 62,
+      "name": "América",
+      "federation": "RN",
+      "points": 1818
+    },
+    {
+      "position": 63,
+      "name": "São José",
+      "federation": "RS",
+      "points": 1741
+    },
+    {
+      "position": 64,
+      "name": "Manaus",
+      "federation": "AM",
+      "points": 1697
+    },
+    {
+      "position": 65,
+      "name": "Altos",
+      "federation": "PI",
+      "points": 1575
+    },
+    {
+      "position": 66,
+      "name": "Nova Iguaçu",
+      "federation": "RJ",
+      "points": 1566
+    },
+    {
+      "position": 67,
+      "name": "Águia de Marabá",
+      "federation": "PA",
+      "points": 1437
+    },
+    {
+      "position": 68,
+      "name": "Brasil",
+      "federation": "RS",
+      "points": 1434
+    },
+    {
+      "position": 69,
+      "name": "Anápolis",
+      "federation": "GO",
+      "points": 1404
+    },
+    {
+      "position": 70,
+      "name": "Sousa",
+      "federation": "PB",
+      "points": 1394
+    },
+    {
+      "position": 71,
+      "name": "Tocantinópolis",
+      "federation": "TO",
+      "points": 1297
+    },
+    {
+      "position": 72,
+      "name": "FC Cascavel",
+      "federation": "PR",
+      "points": 1271
+    },
+    {
+      "position": 73,
+      "name": "Brasiliense",
+      "federation": "DF",
+      "points": 1242
+    },
+    {
+      "position": 74,
+      "name": "ASA",
+      "federation": "AL",
+      "points": 1239
+    },
+    {
+      "position": 75,
+      "name": "Porto Velho",
+      "federation": "RO",
+      "points": 1185
+    },
+    {
+      "position": 76,
+      "name": "Pouso Alegre",
+      "federation": "MG",
+      "points": 1168
+    },
+    {
+      "position": 77,
+      "name": "Ceilândia",
+      "federation": "DF",
+      "points": 1131
+    },
+    {
+      "position": 78,
+      "name": "Portuguesa",
+      "federation": "RJ",
+      "points": 1101
+    },
+    {
+      "position": 79,
+      "name": "Inter de Limeira",
+      "federation": "SP",
+      "points": 1070
+    },
+    {
+      "position": 80,
+      "name": "Humaitá",
+      "federation": "AC",
+      "points": 1064
+    },
+    {
+      "position": 80,
+      "name": "Trem",
+      "federation": "AP",
+      "points": 1064
+    },
+    {
+      "position": 82,
+      "name": "Sergipe",
+      "federation": "SE",
+      "points": 1045
+    },
+    {
+      "position": 83,
+      "name": "Juazeirense",
+      "federation": "BA",
+      "points": 1016
+    },
+    {
+      "position": 84,
+      "name": "Itabaiana",
+      "federation": "SE",
+      "points": 1011
+    },
+    {
+      "position": 85,
+      "name": "Maranhão",
+      "federation": "MA",
+      "points": 1001
+    },
+    {
+      "position": 86,
+      "name": "Santa Cruz",
+      "federation": "PE",
+      "points": 979
+    },
+    {
+      "position": 87,
+      "name": "Tuna Luso",
+      "federation": "PA",
+      "points": 978
+    },
+    {
+      "position": 88,
+      "name": "São Raimundo",
+      "federation": "RR",
+      "points": 965
+    },
+    {
+      "position": 89,
+      "name": "Maracanã",
+      "federation": "CE",
+      "points": 959
+    },
+    {
+      "position": 90,
+      "name": "Cianorte",
+      "federation": "PR",
+      "points": 940
+    },
+    {
+      "position": 91,
+      "name": "Iguatu",
+      "federation": "CE",
+      "points": 926
+    },
+    {
+      "position": 92,
+      "name": "União",
+      "federation": "MT",
+      "points": 793
+    },
+    {
+      "position": 93,
+      "name": "Operário",
+      "federation": "MS",
+      "points": 783
+    },
+    {
+      "position": 94,
+      "name": "Jacuipense",
+      "federation": "BA",
+      "points": 756
+    },
+    {
+      "position": 95,
+      "name": "Capital",
+      "federation": "DF",
+      "points": 755
+    },
+    {
+      "position": 96,
+      "name": "Real Noroeste",
+      "federation": "ES",
+      "points": 754
+    },
+    {
+      "position": 97,
+      "name": "Fluminense",
+      "federation": "PI",
+      "points": 734
+    },
+    {
+      "position": 98,
+      "name": "São Luiz",
+      "federation": "RS",
+      "points": 707
+    },
+    {
+      "position": 99,
+      "name": "Barra",
+      "federation": "SC",
+      "points": 704
+    },
+    {
+      "position": 100,
+      "name": "Treze",
+      "federation": "PB",
+      "points": 703
+    },
+    {
+      "position": 101,
+      "name": "Atlético",
+      "federation": "CE",
+      "points": 679
+    },
+    {
+      "position": 102,
+      "name": "Operário",
+      "federation": "MT",
+      "points": 667
+    },
+    {
+      "position": 103,
+      "name": "Manauara",
+      "federation": "AM",
+      "points": 665
+    },
+    {
+      "position": 104,
+      "name": "Água Santa",
+      "federation": "SP",
+      "points": 659
+    },
+    {
+      "position": 105,
+      "name": "Marcílio Dias",
+      "federation": "SC",
+      "points": 658
+    },
+    {
+      "position": 106,
+      "name": "Moto Club",
+      "federation": "MA",
+      "points": 615
+    },
+    {
+      "position": 107,
+      "name": "Parnahyba",
+      "federation": "PI",
+      "points": 608
+    },
+    {
+      "position": 108,
+      "name": "Concórdia",
+      "federation": "SC",
+      "points": 607
+    },
+    {
+      "position": 109,
+      "name": "Campinense",
+      "federation": "PB",
+      "points": 599
+    },
+    {
+      "position": 110,
+      "name": "Santa Cruz",
+      "federation": "RN",
+      "points": 584
+    },
+    {
+      "position": 111,
+      "name": "Azuriz",
+      "federation": "PR",
+      "points": 559
+    },
+    {
+      "position": 112,
+      "name": "Rio Branco",
+      "federation": "ES",
+      "points": 536
+    },
+    {
+      "position": 113,
+      "name": "Boavista",
+      "federation": "RJ",
+      "points": 531
+    },
+    {
+      "position": 113,
+      "name": "GAS",
+      "federation": "RR",
+      "points": 531
+    },
+    {
+      "position": 115,
+      "name": "Santo André",
+      "federation": "SP",
+      "points": 510
+    },
+    {
+      "position": 116,
+      "name": "Guarany de Bagé",
+      "federation": "RS",
+      "points": 505
+    },
+    {
+      "position": 116,
+      "name": "União",
+      "federation": "TO",
+      "points": 505
+    },
+    {
+      "position": 118,
+      "name": "Bahia de Feira",
+      "federation": "BA",
+      "points": 501
+    },
+    {
+      "position": 119,
+      "name": "Mixto",
+      "federation": "MT",
+      "points": 494
+    },
+    {
+      "position": 120,
+      "name": "Rio Branco",
+      "federation": "AC",
+      "points": 482
+    },
+    {
+      "position": 121,
+      "name": "Portuguesa",
+      "federation": "SP",
+      "points": 461
+    },
+    {
+      "position": 122,
+      "name": "Iporá",
+      "federation": "GO",
+      "points": 459
+    },
+    {
+      "position": 123,
+      "name": "Atlético",
+      "federation": "BA",
+      "points": 456
+    },
+    {
+      "position": 123,
+      "name": "Costa Rica",
+      "federation": "MS",
+      "points": 456
+    },
+    {
+      "position": 125,
+      "name": "Princesa do Solimões",
+      "federation": "AM",
+      "points": 448
+    },
+    {
+      "position": 126,
+      "name": "Patrocinense",
+      "federation": "MG",
+      "points": 438
+    },
+    {
+      "position": 127,
+      "name": "Lagarto",
+      "federation": "SE",
+      "points": 435
+    },
+    {
+      "position": 128,
+      "name": "CSE",
+      "federation": "AL",
+      "points": 431
+    },
+    {
+      "position": 129,
+      "name": "Real Brasília",
+      "federation": "DF",
+      "points": 429
+    },
+    {
+      "position": 130,
+      "name": "Petrolina",
+      "federation": "PE",
+      "points": 404
+    },
+    {
+      "position": 130,
+      "name": "Capital",
+      "federation": "TO",
+      "points": 404
+    },
+    {
+      "position": 132,
+      "name": "Barcelona",
+      "federation": "BA",
+      "points": 380
+    },
+    {
+      "position": 132,
+      "name": "Jequié",
+      "federation": "BA",
+      "points": 380
+    },
+    {
+      "position": 132,
+      "name": "Independência",
+      "federation": "AC",
+      "points": 380
+    },
+    {
+      "position": 135,
+      "name": "Hercílio Luz",
+      "federation": "SC",
+      "points": 372
+    },
+    {
+      "position": 136,
+      "name": "Joinville",
+      "federation": "SC",
+      "points": 370
+    },
+    {
+      "position": 137,
+      "name": "Potiguar",
+      "federation": "RN",
+      "points": 366
+    },
+    {
+      "position": 138,
+      "name": "CRAC",
+      "federation": "GO",
+      "points": 361
+    },
+    {
+      "position": 139,
+      "name": "Novo Hamburgo",
+      "federation": "RS",
+      "points": 357
+    },
+    {
+      "position": 140,
+      "name": "Globo",
+      "federation": "RN",
+      "points": 355
+    },
+    {
+      "position": 141,
+      "name": "Central",
+      "federation": "PE",
+      "points": 351
+    },
+    {
+      "position": 142,
+      "name": "Olaria",
+      "federation": "RJ",
+      "points": 350
+    },
+    {
+      "position": 143,
+      "name": "Uberlândia",
+      "federation": "MG",
+      "points": 347
+    },
+    {
+      "position": 144,
+      "name": "Imperatriz",
+      "federation": "MA",
+      "points": 346
+    },
+    {
+      "position": 145,
+      "name": "Goianésia",
+      "federation": "GO",
+      "points": 331
+    },
+    {
+      "position": 146,
+      "name": "Goiatuba",
+      "federation": "GO",
+      "points": 330
+    },
+    {
+      "position": 147,
+      "name": "Rio Branco VN",
+      "federation": "ES",
+      "points": 326
+    },
+    {
+      "position": 148,
+      "name": "Camboriú",
+      "federation": "SC",
+      "points": 324
+    },
+    {
+      "position": 149,
+      "name": "Nova Venécia",
+      "federation": "ES",
+      "points": 320
+    },
+    {
+      "position": 150,
+      "name": "Itabuna",
+      "federation": "BA",
+      "points": 316
+    },
+    {
+      "position": 151,
+      "name": "Luverdense",
+      "federation": "MT",
+      "points": 315
+    },
+    {
+      "position": 152,
+      "name": "Aimoré",
+      "federation": "RS",
+      "points": 314
+    },
+    {
+      "position": 153,
+      "name": "Maricá",
+      "federation": "RJ",
+      "points": 305
+    },
+    {
+      "position": 153,
+      "name": "Paraná",
+      "federation": "PR",
+      "points": 305
+    },
+    {
+      "position": 155,
+      "name": "Audax Rio",
+      "federation": "RJ",
+      "points": 304
+    },
+    {
+      "position": 155,
+      "name": "River",
+      "federation": "PI",
+      "points": 304
+    },
+    {
+      "position": 157,
+      "name": "Caucaia",
+      "federation": "CE",
+      "points": 279
+    },
+    {
+      "position": 158,
+      "name": "Murici",
+      "federation": "AL",
+      "points": 276
+    },
+    {
+      "position": 159,
+      "name": "Quatro de Julho",
+      "federation": "PI",
+      "points": 264
+    },
+    {
+      "position": 160,
+      "name": "Oeste",
+      "federation": "SP",
+      "points": 260
+    },
+    {
+      "position": 161,
+      "name": "Monte Azul",
+      "federation": "SP",
+      "points": 255
+    },
+    {
+      "position": 161,
+      "name": "Itabirito",
+      "federation": "MG",
+      "points": 255
+    },
+    {
+      "position": 161,
+      "name": "Horizonte",
+      "federation": "CE",
+      "points": 255
+    },
+    {
+      "position": 161,
+      "name": "Pacajus",
+      "federation": "CE",
+      "points": 255
+    },
+    {
+      "position": 161,
+      "name": "Goiânia",
+      "federation": "GO",
+      "points": 255
+    },
+    {
+      "position": 161,
+      "name": "Penedense",
+      "federation": "AL",
+      "points": 255
+    },
+    {
+      "position": 161,
+      "name": "Porto Vitória",
+      "federation": "ES",
+      "points": 255
+    },
+    {
+      "position": 168,
+      "name": "Caldense",
+      "federation": "MG",
+      "points": 253
+    },
+    {
+      "position": 169,
+      "name": "Real Ariquemes",
+      "federation": "RO",
+      "points": 238
+    },
+    {
+      "position": 170,
+      "name": "Democrata GV",
+      "federation": "MG",
+      "points": 234
+    },
+    {
+      "position": 170,
+      "name": "Castanhal",
+      "federation": "PA",
+      "points": 234
+    },
+    {
+      "position": 172,
+      "name": "Nova Mutum",
+      "federation": "MT",
+      "points": 229
+    },
+    {
+      "position": 173,
+      "name": "Resende",
+      "federation": "RJ",
+      "points": 228
+    },
+    {
+      "position": 173,
+      "name": "Cordino",
+      "federation": "MA",
+      "points": 228
+    },
+    {
+      "position": 173,
+      "name": "Falcon",
+      "federation": "SE",
+      "points": 228
+    },
+    {
+      "position": 173,
+      "name": "Vitória",
+      "federation": "ES",
+      "points": 228
+    },
+    {
+      "position": 173,
+      "name": "São Francisco",
+      "federation": "AC",
+      "points": 228
+    },
+    {
+      "position": 178,
+      "name": "São José",
+      "federation": "SP",
+      "points": 204
+    },
+    {
+      "position": 178,
+      "name": "Democrata SL",
+      "federation": "MG",
+      "points": 204
+    },
+    {
+      "position": 178,
+      "name": "ipatinga",
+      "federation": "MG",
+      "points": 204
+    },
+    {
+      "position": 178,
+      "name": "Avenida",
+      "federation": "RS",
+      "points": 204
+    },
+    {
+      "position": 178,
+      "name": "Cametá",
+      "federation": "PA",
+      "points": 204
+    },
+    {
+      "position": 178,
+      "name": "Serra",
+      "federation": "ES",
+      "points": 204
+    },
+    {
+      "position": 184,
+      "name": "Villa Nova",
+      "federation": "MG",
+      "points": 200
+    },
+    {
+      "position": 185,
+      "name": "Nacional",
+      "federation": "AM",
+      "points": 195
+    },
+    {
+      "position": 186,
+      "name": "Nacional",
+      "federation": "PB",
+      "points": 180
+    },
+    {
+      "position": 187,
+      "name": "Juventude",
+      "federation": "MA",
+      "points": 178
+    },
+    {
+      "position": 188,
+      "name": "Tuntum",
+      "federation": "MA",
+      "points": 175
+    },
+    {
+      "position": 189,
+      "name": "XV de Piracicaba",
+      "federation": "SP",
+      "points": 153
+    },
+    {
+      "position": 189,
+      "name": "Sãojoseense",
+      "federation": "PR",
+      "points": 153
+    },
+    {
+      "position": 189,
+      "name": "Juventus",
+      "federation": "SC",
+      "points": 153
+    },
+    {
+      "position": 189,
+      "name": "Cruzeiro",
+      "federation": "AL",
+      "points": 153
+    },
+    {
+      "position": 189,
+      "name": "Interporto",
+      "federation": "TO",
+      "points": 153
+    },
+    {
+      "position": 194,
+      "name": "URT",
+      "federation": "MG",
+      "points": 152
+    },
+    {
+      "position": 194,
+      "name": "Icasa",
+      "federation": "CE",
+      "points": 152
+    },
+    {
+      "position": 194,
+      "name": "Grêmio Anápolis",
+      "federation": "GO",
+      "points": 152
+    },
+    {
+      "position": 194,
+      "name": "São Raimundo",
+      "federation": "AM",
+      "points": 152
+    },
+    {
+      "position": 198,
+      "name": "Votuporanguense",
+      "federation": "SP",
+      "points": 125
+    },
+    {
+      "position": 198,
+      "name": "Barcelona",
+      "federation": "RO",
+      "points": 125
+    },
+    {
+      "position": 198,
+      "name": "Dourados",
+      "federation": "MS",
+      "points": 125
+    },
+    {
+      "position": 198,
+      "name": "Oratório",
+      "federation": "AP",
+      "points": 125
+    },
+    {
+      "position": 202,
+      "name": "Pérolas Negras",
+      "federation": "RJ",
+      "points": 102
+    },
+    {
+      "position": 202,
+      "name": "Crato",
+      "federation": "CE",
+      "points": 102
+    },
+    {
+      "position": 202,
+      "name": "Próspera",
+      "federation": "SC",
+      "points": 102
+    },
+    {
+      "position": 202,
+      "name": "Afogados",
+      "federation": "PE",
+      "points": 102
+    },
+    {
+      "position": 202,
+      "name": "Ação",
+      "federation": "MT",
+      "points": 102
+    },
+    {
+      "position": 202,
+      "name": "São Paulo Crystal",
+      "federation": "PB",
+      "points": 102
+    },
+    {
+      "position": 202,
+      "name": "Náutico",
+      "federation": "RR",
+      "points": 102
+    },
+    {
+      "position": 209,
+      "name": "Portuguesa Santista",
+      "federation": "SP",
+      "points": 100
+    },
+    {
+      "position": 209,
+      "name": "Marília",
+      "federation": "SP",
+      "points": 100
+    },
+    {
+      "position": 209,
+      "name": "Glória",
+      "federation": "RS",
+      "points": 100
+    },
+    {
+      "position": 209,
+      "name": "Ji-Paraná",
+      "federation": "RO",
+      "points": 100
+    },
+    {
+      "position": 209,
+      "name": "Independente",
+      "federation": "AP",
+      "points": 100
+    },
+    {
+      "position": 214,
+      "name": "Guarany de Sobral",
+      "federation": "CE",
+      "points": 89
+    },
+    {
+      "position": 215,
+      "name": "Esportivo",
+      "federation": "RS",
+      "points": 83
+    },
+    {
+      "position": 216,
+      "name": "Penarol",
+      "federation": "AM",
+      "points": 77
+    },
+    {
+      "position": 217,
+      "name": "Madureira",
+      "federation": "RJ",
+      "points": 76
+    },
+    {
+      "position": 217,
+      "name": "Jaraguá",
+      "federation": "GO",
+      "points": 76
+    },
+    {
+      "position": 217,
+      "name": "Gama",
+      "federation": "DF",
+      "points": 76
+    },
+    {
+      "position": 217,
+      "name": "Palmas",
+      "federation": "TO",
+      "points": 76
+    },
+    {
+      "position": 217,
+      "name": "Atlético",
+      "federation": "AC",
+      "points": 76
+    },
+    {
+      "position": 217,
+      "name": "Galvez",
+      "federation": "AC",
+      "points": 76
+    },
+    {
+      "position": 217,
+      "name": "Águia Negra",
+      "federation": "MS",
+      "points": 76
+    },
+    {
+      "position": 217,
+      "name": "Ypiranga",
+      "federation": "AP",
+      "points": 76
+    },
+    {
+      "position": 225,
+      "name": "Salgueiro",
+      "federation": "PE",
+      "points": 75
+    },
+    {
+      "position": 226,
+      "name": "Paragominas",
+      "federation": "PA",
+      "points": 63
+    },
+    {
+      "position": 227,
+      "name": "Picos",
+      "federation": "PI",
+      "points": 60
+    },
+    {
+      "position": 228,
+      "name": "São Bento",
+      "federation": "SP",
+      "points": 51
+    },
+    {
+      "position": 228,
+      "name": "Bangu",
+      "federation": "RJ",
+      "points": 51
+    },
+    {
+      "position": 228,
+      "name": "Boa Esporte",
+      "federation": "MG",
+      "points": 51
+    },
+    {
+      "position": 228,
+      "name": "Rio Branco",
+      "federation": "PR",
+      "points": 51
+    },
+    {
+      "position": 228,
+      "name": "Fast Clube",
+      "federation": "AM",
+      "points": 51
+    },
+    {
+      "position": 233,
+      "name": "Santa Cruz",
+      "federation": "RS",
+      "points": 25
+    },
+    {
+      "position": 234,
+      "name": "Aquidauanense",
+      "federation": "MS",
+      "points": 10
+    },
+    {
+      "position": 234,
+      "name": "Santana",
+      "federation": "AP",
+      "points": 10
+    }
+  ]
+}

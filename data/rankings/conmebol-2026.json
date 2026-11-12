@@ -1,0 +1,1855 @@
+{
+  "edition": 2026,
+  "publishedAt": "2025-12-15",
+  "source": "https://cdn.conmebol.com/wp-content/uploads/2025/12/Ranking-de-Clubes-CONMEBOL-2026-1.pdf",
+  "entries": [
+    {
+      "position": 1,
+      "name": "Palmeiras",
+      "country": "Brasil",
+      "points": 9828.6
+    },
+    {
+      "position": 2,
+      "name": "Flamengo",
+      "country": "Brasil",
+      "points": 9303.1
+    },
+    {
+      "position": 3,
+      "name": "River Plate",
+      "country": "Argentina",
+      "points": 8762.8
+    },
+    {
+      "position": 4,
+      "name": "Boca Juniors",
+      "country": "Argentina",
+      "points": 7360.0
+    },
+    {
+      "position": 5,
+      "name": "Peñarol",
+      "country": "Uruguay",
+      "points": 6029.4
+    },
+    {
+      "position": 6,
+      "name": "Atlético Mineiro",
+      "country": "Brasil",
+      "points": 5949.2
+    },
+    {
+      "position": 7,
+      "name": "São Paulo",
+      "country": "Brasil",
+      "points": 5631.5
+    },
+    {
+      "position": 8,
+      "name": "Nacional",
+      "country": "Uruguay",
+      "points": 5521.0
+    },
+    {
+      "position": 9,
+      "name": "Racing Club",
+      "country": "Argentina",
+      "points": 5312.7
+    },
+    {
+      "position": 10,
+      "name": "LDU Quito",
+      "country": "Ecuador",
+      "points": 5168.0
+    },
+    {
+      "position": 11,
+      "name": "Fluminense",
+      "country": "Brasil",
+      "points": 4968.5
+    },
+    {
+      "position": 12,
+      "name": "Athletico Paranaense",
+      "country": "Brasil",
+      "points": 4517.1
+    },
+    {
+      "position": 13,
+      "name": "Internacional",
+      "country": "Brasil",
+      "points": 4408.1
+    },
+    {
+      "position": 14,
+      "name": "Grêmio",
+      "country": "Brasil",
+      "points": 4320.6
+    },
+    {
+      "position": 15,
+      "name": "Olimpia",
+      "country": "Paraguay",
+      "points": 4292.4
+    },
+    {
+      "position": 16,
+      "name": "Independiente del Valle",
+      "country": "Ecuador",
+      "points": 4128.4
+    },
+    {
+      "position": 17,
+      "name": "Libertad",
+      "country": "Paraguay",
+      "points": 4007.8
+    },
+    {
+      "position": 18,
+      "name": "Estudiantes de La Plata",
+      "country": "Argentina",
+      "points": 3905.4
+    },
+    {
+      "position": 19,
+      "name": "Botafogo",
+      "country": "Brasil",
+      "points": 3716.6
+    },
+    {
+      "position": 20,
+      "name": "Cerro Porteño",
+      "country": "Paraguay",
+      "points": 3708.7
+    },
+    {
+      "position": 21,
+      "name": "Lanús",
+      "country": "Argentina",
+      "points": 3658.9
+    },
+    {
+      "position": 22,
+      "name": "Corinthians",
+      "country": "Brasil",
+      "points": 3525.7
+    },
+    {
+      "position": 23,
+      "name": "Bolívar",
+      "country": "Bolivia",
+      "points": 3466.6
+    },
+    {
+      "position": 24,
+      "name": "Independiente",
+      "country": "Argentina",
+      "points": 3404.4
+    },
+    {
+      "position": 25,
+      "name": "Colo-Colo",
+      "country": "Chile",
+      "points": 3366.5
+    },
+    {
+      "position": 26,
+      "name": "Vélez Sarsfield",
+      "country": "Argentina",
+      "points": 3261.3
+    },
+    {
+      "position": 27,
+      "name": "Santos",
+      "country": "Brasil",
+      "points": 3238.2
+    },
+    {
+      "position": 28,
+      "name": "Barcelona de Guayaquil",
+      "country": "Ecuador",
+      "points": 3176.6
+    },
+    {
+      "position": 29,
+      "name": "Cruzeiro",
+      "country": "Brasil",
+      "points": 2951.0
+    },
+    {
+      "position": 30,
+      "name": "Atlético Nacional",
+      "country": "Colombia",
+      "points": 2855.4
+    },
+    {
+      "position": 31,
+      "name": "Fortaleza EC",
+      "country": "Brasil",
+      "points": 2325.9
+    },
+    {
+      "position": 32,
+      "name": "Universitario de Deportes",
+      "country": "Perú",
+      "points": 2247.0
+    },
+    {
+      "position": 33,
+      "name": "Defensa y Justicia",
+      "country": "Argentina",
+      "points": 2223.4
+    },
+    {
+      "position": 34,
+      "name": "Junior",
+      "country": "Colombia",
+      "points": 2209.0
+    },
+    {
+      "position": 35,
+      "name": "Universidad Católica",
+      "country": "Chile",
+      "points": 2187.3
+    },
+    {
+      "position": 36,
+      "name": "América de Cali",
+      "country": "Colombia",
+      "points": 2177.3
+    },
+    {
+      "position": 37,
+      "name": "San Lorenzo",
+      "country": "Argentina",
+      "points": 2168.6
+    },
+    {
+      "position": 38,
+      "name": "Sporting Cristal",
+      "country": "Perú",
+      "points": 2064.1
+    },
+    {
+      "position": 39,
+      "name": "Universidad de Chile",
+      "country": "Chile",
+      "points": 1885.6
+    },
+    {
+      "position": 40,
+      "name": "Alianza Lima",
+      "country": "Perú",
+      "points": 1879.8
+    },
+    {
+      "position": 41,
+      "name": "The Strongest",
+      "country": "Bolivia",
+      "points": 1865.3
+    },
+    {
+      "position": 42,
+      "name": "Emelec",
+      "country": "Ecuador",
+      "points": 1849.2
+    },
+    {
+      "position": 43,
+      "name": "Red Bull Bragantino",
+      "country": "Brasil",
+      "points": 1646.9
+    },
+    {
+      "position": 44,
+      "name": "Club Guaraní",
+      "country": "Paraguay",
+      "points": 1524.8
+    },
+    {
+      "position": 45,
+      "name": "Independiente Medellín",
+      "country": "Colombia",
+      "points": 1506.8
+    },
+    {
+      "position": 46,
+      "name": "Talleres de Córdoba",
+      "country": "Argentina",
+      "points": 1460.4
+    },
+    {
+      "position": 47,
+      "name": "Argentinos Juniors",
+      "country": "Argentina",
+      "points": 1343.1
+    },
+    {
+      "position": 48,
+      "name": "Rosario Central",
+      "country": "Argentina",
+      "points": 1339.7
+    },
+    {
+      "position": 49,
+      "name": "Melgar",
+      "country": "Perú",
+      "points": 1309.2
+    },
+    {
+      "position": 50,
+      "name": "Deportivo Táchira",
+      "country": "Venezuela",
+      "points": 1298.0
+    },
+    {
+      "position": 51,
+      "name": "Deportivo Cali",
+      "country": "Colombia",
+      "points": 1293.4
+    },
+    {
+      "position": 52,
+      "name": "Palestino",
+      "country": "Chile",
+      "points": 1257.1
+    },
+    {
+      "position": 53,
+      "name": "Independiente Santa Fe",
+      "country": "Colombia",
+      "points": 1175.6
+    },
+    {
+      "position": 54,
+      "name": "Millonarios",
+      "country": "Colombia",
+      "points": 1132.1
+    },
+    {
+      "position": 55,
+      "name": "Jorge Wilstermann",
+      "country": "Bolivia",
+      "points": 1069.7
+    },
+    {
+      "position": 56,
+      "name": "Caracas FC",
+      "country": "Venezuela",
+      "points": 1065.1
+    },
+    {
+      "position": 57,
+      "name": "Deportes Tolima",
+      "country": "Colombia",
+      "points": 1057.7
+    },
+    {
+      "position": 58,
+      "name": "Once Caldas",
+      "country": "Colombia",
+      "points": 1047.0
+    },
+    {
+      "position": 59,
+      "name": "Newell's Old Boys",
+      "country": "Argentina",
+      "points": 974.5
+    },
+    {
+      "position": 60,
+      "name": "Universidad Católica (Ecuador)",
+      "country": "Ecuador",
+      "points": 953.8
+    },
+    {
+      "position": 61,
+      "name": "Vasco da Gama",
+      "country": "Brasil",
+      "points": 885.1
+    },
+    {
+      "position": 62,
+      "name": "Huracán",
+      "country": "Argentina",
+      "points": 838.2
+    },
+    {
+      "position": 63,
+      "name": "Bahia",
+      "country": "Brasil",
+      "points": 831.8
+    },
+    {
+      "position": 64,
+      "name": "Always Ready",
+      "country": "Bolivia",
+      "points": 815.0
+    },
+    {
+      "position": 65,
+      "name": "Colón Santa Fe",
+      "country": "Argentina",
+      "points": 749.3
+    },
+    {
+      "position": 66,
+      "name": "Atlético Goianiense",
+      "country": "Brasil",
+      "points": 735.6
+    },
+    {
+      "position": 67,
+      "name": "Godoy Cruz",
+      "country": "Argentina",
+      "points": 711.3
+    },
+    {
+      "position": 68,
+      "name": "Deportivo Pereira",
+      "country": "Colombia",
+      "points": 657.5
+    },
+    {
+      "position": 69,
+      "name": "Unión Española",
+      "country": "Chile",
+      "points": 652.4
+    },
+    {
+      "position": 70,
+      "name": "El Nacional",
+      "country": "Ecuador",
+      "points": 639.3
+    },
+    {
+      "position": 71,
+      "name": "Huachipato",
+      "country": "Chile",
+      "points": 630.1
+    },
+    {
+      "position": 72,
+      "name": "Cobreloa",
+      "country": "Chile",
+      "points": 626.0
+    },
+    {
+      "position": 73,
+      "name": "Ceará",
+      "country": "Brasil",
+      "points": 607.2
+    },
+    {
+      "position": 74,
+      "name": "Central Córdoba",
+      "country": "Argentina",
+      "points": 600.0
+    },
+    {
+      "position": 75,
+      "name": "América",
+      "country": "Mexico",
+      "points": 581.7
+    },
+    {
+      "position": 76,
+      "name": "Cienciano",
+      "country": "Perú",
+      "points": 553.9
+    },
+    {
+      "position": 77,
+      "name": "Danubio",
+      "country": "Uruguay",
+      "points": 547.6
+    },
+    {
+      "position": 78,
+      "name": "América Mineiro",
+      "country": "Brasil",
+      "points": 546.7
+    },
+    {
+      "position": 79,
+      "name": "Delfín",
+      "country": "Ecuador",
+      "points": 539.6
+    },
+    {
+      "position": 80,
+      "name": "Defensor Sporting Club",
+      "country": "Uruguay",
+      "points": 538.6
+    },
+    {
+      "position": 81,
+      "name": "Unión La Calera",
+      "country": "Chile",
+      "points": 494.7
+    },
+    {
+      "position": 82,
+      "name": "Coquimbo Unido",
+      "country": "Chile",
+      "points": 475.4
+    },
+    {
+      "position": 83,
+      "name": "Mushuc Runa",
+      "country": "Ecuador",
+      "points": 463.5
+    },
+    {
+      "position": 84,
+      "name": "Racing Club (Montevideo)",
+      "country": "Uruguay",
+      "points": 460.5
+    },
+    {
+      "position": 85,
+      "name": "Liverpool FC (Montevideo)",
+      "country": "Uruguay",
+      "points": 456.0
+    },
+    {
+      "position": 86,
+      "name": "Bucaramanga",
+      "country": "Colombia",
+      "points": 450.5
+    },
+    {
+      "position": 87,
+      "name": "Oriente Petrolero",
+      "country": "Bolivia",
+      "points": 439.0
+    },
+    {
+      "position": 88,
+      "name": "Arsenal de Sarandí",
+      "country": "Argentina",
+      "points": 436.2
+    },
+    {
+      "position": 89,
+      "name": "Cuiabá",
+      "country": "Brasil",
+      "points": 434.7
+    },
+    {
+      "position": 90,
+      "name": "Nacional (Asunción)",
+      "country": "Paraguay",
+      "points": 430.8
+    },
+    {
+      "position": 91,
+      "name": "Unión Santa Fe",
+      "country": "Argentina",
+      "points": 422.7
+    },
+    {
+      "position": 92,
+      "name": "Nacional Potosí",
+      "country": "Bolivia",
+      "points": 420.5
+    },
+    {
+      "position": 93,
+      "name": "Metropolitanos",
+      "country": "Venezuela",
+      "points": 410.2
+    },
+    {
+      "position": 94,
+      "name": "Guadalajara",
+      "country": "Mexico",
+      "points": 408.6
+    },
+    {
+      "position": 95,
+      "name": "Montevideo Wanderers",
+      "country": "Uruguay",
+      "points": 403.6
+    },
+    {
+      "position": 96,
+      "name": "Goiás",
+      "country": "Brasil",
+      "points": 397.9
+    },
+    {
+      "position": 97,
+      "name": "Tigre",
+      "country": "Argentina",
+      "points": 397.2
+    },
+    {
+      "position": 98,
+      "name": "Ñublense",
+      "country": "Chile",
+      "points": 387.5
+    },
+    {
+      "position": 99,
+      "name": "Sportivo Ameliano",
+      "country": "Paraguay",
+      "points": 386.1
+    },
+    {
+      "position": 100,
+      "name": "Audax Italiano",
+      "country": "Chile",
+      "points": 362.3
+    },
+    {
+      "position": 101,
+      "name": "Aucas",
+      "country": "Ecuador",
+      "points": 360.1
+    },
+    {
+      "position": 102,
+      "name": "Estudiantes de Mérida",
+      "country": "Venezuela",
+      "points": 344.9
+    },
+    {
+      "position": 103,
+      "name": "Atlético Tucumán",
+      "country": "Argentina",
+      "points": 337.6
+    },
+    {
+      "position": 104,
+      "name": "Cerro Largo",
+      "country": "Uruguay",
+      "points": 324.5
+    },
+    {
+      "position": 105,
+      "name": "Monagas",
+      "country": "Venezuela",
+      "points": 320.5
+    },
+    {
+      "position": 106,
+      "name": "San Antonio Bulo Bulo",
+      "country": "Bolivia",
+      "points": 320.0
+    },
+    {
+      "position": 107,
+      "name": "Belgrano",
+      "country": "Argentina",
+      "points": 314.7
+    },
+    {
+      "position": 108,
+      "name": "Sportivo Luqueño",
+      "country": "Paraguay",
+      "points": 303.4
+    },
+    {
+      "position": 109,
+      "name": "Universidad César Vallejo",
+      "country": "Perú",
+      "points": 289.7
+    },
+    {
+      "position": 110,
+      "name": "Blooming",
+      "country": "Bolivia",
+      "points": 287.7
+    },
+    {
+      "position": 111,
+      "name": "Tigres",
+      "country": "Mexico",
+      "points": 281.5
+    },
+    {
+      "position": 112,
+      "name": "Patronato",
+      "country": "Argentina",
+      "points": 275.2
+    },
+    {
+      "position": 113,
+      "name": "Everton de Viña del Mar",
+      "country": "Chile",
+      "points": 273.9
+    },
+    {
+      "position": 114,
+      "name": "Deportivo La Guaira",
+      "country": "Venezuela",
+      "points": 272.3
+    },
+    {
+      "position": 115,
+      "name": "Banfield",
+      "country": "Argentina",
+      "points": 271.1
+    },
+    {
+      "position": 116,
+      "name": "Puerto Cabello",
+      "country": "Venezuela",
+      "points": 262.5
+    },
+    {
+      "position": 117,
+      "name": "River Plate (Montevideo)",
+      "country": "Uruguay",
+      "points": 258.5
+    },
+    {
+      "position": 118,
+      "name": "Deportes Iquique",
+      "country": "Chile",
+      "points": 244.0
+    },
+    {
+      "position": 119,
+      "name": "La Equidad",
+      "country": "Colombia",
+      "points": 243.9
+    },
+    {
+      "position": 120,
+      "name": "Cruz Azul",
+      "country": "Mexico",
+      "points": 243.0
+    },
+    {
+      "position": 121,
+      "name": "Portuguesa FC (Venezuela)",
+      "country": "Venezuela",
+      "points": 240.5
+    },
+    {
+      "position": 122,
+      "name": "Deportivo Lara",
+      "country": "Venezuela",
+      "points": 234.0
+    },
+    {
+      "position": 123,
+      "name": "Boston River",
+      "country": "Uruguay",
+      "points": 232.5
+    },
+    {
+      "position": 124,
+      "name": "São Caetano",
+      "country": "Brasil",
+      "points": 228.0
+    },
+    {
+      "position": 125,
+      "name": "Chapecoense",
+      "country": "Brasil",
+      "points": 214.8
+    },
+    {
+      "position": 126,
+      "name": "Toluca",
+      "country": "Mexico",
+      "points": 210.4
+    },
+    {
+      "position": 127,
+      "name": "Club San José",
+      "country": "Bolivia",
+      "points": 201.3
+    },
+    {
+      "position": 128,
+      "name": "Carabobo",
+      "country": "Venezuela",
+      "points": 198.5
+    },
+    {
+      "position": 129,
+      "name": "Pumas UNAM",
+      "country": "Mexico",
+      "points": 197.6
+    },
+    {
+      "position": 130,
+      "name": "Guaireña",
+      "country": "Paraguay",
+      "points": 195.9
+    },
+    {
+      "position": 131,
+      "name": "Cobresal",
+      "country": "Chile",
+      "points": 193.0
+    },
+    {
+      "position": 132,
+      "name": "Vitória",
+      "country": "Brasil",
+      "points": 186.3
+    },
+    {
+      "position": 133,
+      "name": "Deportivo Quito",
+      "country": "Ecuador",
+      "points": 180.8
+    },
+    {
+      "position": 134,
+      "name": "Atlético Grau",
+      "country": "Perú",
+      "points": 178.5
+    },
+    {
+      "position": 135,
+      "name": "Montevideo City Torque",
+      "country": "Uruguay",
+      "points": 177.7
+    },
+    {
+      "position": 136,
+      "name": "Deportivo Garcilaso",
+      "country": "Perú",
+      "points": 175.5
+    },
+    {
+      "position": 137,
+      "name": "Deportivo Cuenca",
+      "country": "Ecuador",
+      "points": 175.0
+    },
+    {
+      "position": 138,
+      "name": "Sol de América",
+      "country": "Paraguay",
+      "points": 173.4
+    },
+    {
+      "position": 139,
+      "name": "Zamora FC",
+      "country": "Venezuela",
+      "points": 169.5
+    },
+    {
+      "position": 140,
+      "name": "Gimnasia La Plata",
+      "country": "Argentina",
+      "points": 168.6
+    },
+    {
+      "position": 141,
+      "name": "Zulia",
+      "country": "Venezuela",
+      "points": 168.4
+    },
+    {
+      "position": 142,
+      "name": "Cusco",
+      "country": "Perú",
+      "points": 168.0
+    },
+    {
+      "position": 143,
+      "name": "Magallanes",
+      "country": "Chile",
+      "points": 164.8
+    },
+    {
+      "position": 144,
+      "name": "Pachuca",
+      "country": "Mexico",
+      "points": 163.6
+    },
+    {
+      "position": 145,
+      "name": "Sport Huancayo",
+      "country": "Perú",
+      "points": 157.4
+    },
+    {
+      "position": 146,
+      "name": "Alianza",
+      "country": "Colombia",
+      "points": 153.9
+    },
+    {
+      "position": 147,
+      "name": "River Plate (Asunción)",
+      "country": "Paraguay",
+      "points": 153.3
+    },
+    {
+      "position": 148,
+      "name": "12 de Octubre",
+      "country": "Paraguay",
+      "points": 149.0
+    },
+    {
+      "position": 149,
+      "name": "Gualberto Villarroel SJ",
+      "country": "Bolivia",
+      "points": 147.0
+    },
+    {
+      "position": 150,
+      "name": "Deportivo Petare",
+      "country": "Venezuela",
+      "points": 144.0
+    },
+    {
+      "position": 151,
+      "name": "Universidad de Concepción",
+      "country": "Chile",
+      "points": 139.4
+    },
+    {
+      "position": 152,
+      "name": "Guarani FC",
+      "country": "Brasil",
+      "points": 138.0
+    },
+    {
+      "position": 153,
+      "name": "Tacuary",
+      "country": "Paraguay",
+      "points": 136.8
+    },
+    {
+      "position": 154,
+      "name": "Atlas",
+      "country": "Mexico",
+      "points": 136.5
+    },
+    {
+      "position": 155,
+      "name": "Bella Vista",
+      "country": "Uruguay",
+      "points": 136.0
+    },
+    {
+      "position": 156,
+      "name": "9 de Octubre",
+      "country": "Ecuador",
+      "points": 134.9
+    },
+    {
+      "position": 157,
+      "name": "Antofagasta",
+      "country": "Chile",
+      "points": 134.7
+    },
+    {
+      "position": 158,
+      "name": "Rentistas",
+      "country": "Uruguay",
+      "points": 132.0
+    },
+    {
+      "position": 159,
+      "name": "Independiente Petrolero",
+      "country": "Bolivia",
+      "points": 128.0
+    },
+    {
+      "position": 159,
+      "name": "Deportivo Binacional",
+      "country": "Perú",
+      "points": 128.0
+    },
+    {
+      "position": 161,
+      "name": "Sport",
+      "country": "Brasil",
+      "points": 121.3
+    },
+    {
+      "position": 162,
+      "name": "Trinidense",
+      "country": "Paraguay",
+      "points": 119.7
+    },
+    {
+      "position": 163,
+      "name": "Cúcuta",
+      "country": "Colombia",
+      "points": 118.0
+    },
+    {
+      "position": 164,
+      "name": "Ayacucho",
+      "country": "Perú",
+      "points": 117.9
+    },
+    {
+      "position": 165,
+      "name": "General Caballero",
+      "country": "Paraguay",
+      "points": 114.9
+    },
+    {
+      "position": 166,
+      "name": "O'Higgins",
+      "country": "Chile",
+      "points": 114.5
+    },
+    {
+      "position": 167,
+      "name": "Deportivo Galicia",
+      "country": "Venezuela",
+      "points": 100.0
+    },
+    {
+      "position": 167,
+      "name": "Minervén",
+      "country": "Venezuela",
+      "points": 100.0
+    },
+    {
+      "position": 169,
+      "name": "Guabirá",
+      "country": "Bolivia",
+      "points": 98.0
+    },
+    {
+      "position": 170,
+      "name": "Ponte Preta",
+      "country": "Brasil",
+      "points": 94.2
+    },
+    {
+      "position": 171,
+      "name": "Universidad Los Andes Mérida",
+      "country": "Venezuela",
+      "points": 90.0
+    },
+    {
+      "position": 172,
+      "name": "Real Tomayapo",
+      "country": "Bolivia",
+      "points": 89.1
+    },
+    {
+      "position": 172,
+      "name": "Rayo Zuliano",
+      "country": "Venezuela",
+      "points": 89.1
+    },
+    {
+      "position": 174,
+      "name": "Santos Laguna",
+      "country": "Mexico",
+      "points": 87.5
+    },
+    {
+      "position": 175,
+      "name": "Santiago Wanderers",
+      "country": "Chile",
+      "points": 84.3
+    },
+    {
+      "position": 176,
+      "name": "Fénix",
+      "country": "Uruguay",
+      "points": 80.0
+    },
+    {
+      "position": 177,
+      "name": "Juan Aurich",
+      "country": "Perú",
+      "points": 79.0
+    },
+    {
+      "position": 178,
+      "name": "Coritiba",
+      "country": "Brasil",
+      "points": 78.7
+    },
+    {
+      "position": 179,
+      "name": "Universidad Central",
+      "country": "Venezuela",
+      "points": 75.0
+    },
+    {
+      "position": 180,
+      "name": "Progreso",
+      "country": "Uruguay",
+      "points": 72.5
+    },
+    {
+      "position": 181,
+      "name": "Monarcas Morelia",
+      "country": "Mexico",
+      "points": 72.0
+    },
+    {
+      "position": 182,
+      "name": "Aragua FC",
+      "country": "Venezuela",
+      "points": 66.9
+    },
+    {
+      "position": 183,
+      "name": "Defensor Lima",
+      "country": "Perú",
+      "points": 66.0
+    },
+    {
+      "position": 183,
+      "name": "Atlético San Cristóbal",
+      "country": "Venezuela",
+      "points": 66.0
+    },
+    {
+      "position": 185,
+      "name": "Unión Atlético Maracaibo",
+      "country": "Venezuela",
+      "points": 64.0
+    },
+    {
+      "position": 185,
+      "name": "Unión Huaral",
+      "country": "Perú",
+      "points": 64.0
+    },
+    {
+      "position": 185,
+      "name": "Marítimo",
+      "country": "Venezuela",
+      "points": 64.0
+    },
+    {
+      "position": 188,
+      "name": "Mineros de Guayana",
+      "country": "Venezuela",
+      "points": 63.0
+    },
+    {
+      "position": 189,
+      "name": "Sport Boys",
+      "country": "Perú",
+      "points": 62.5
+    },
+    {
+      "position": 190,
+      "name": "León",
+      "country": "Mexico",
+      "points": 61.0
+    },
+    {
+      "position": 191,
+      "name": "Deportivo Municipal (Bolivia)",
+      "country": "Bolivia",
+      "points": 60.0
+    },
+    {
+      "position": 191,
+      "name": "Olmedo",
+      "country": "Ecuador",
+      "points": 60.0
+    },
+    {
+      "position": 193,
+      "name": "Águilas Doradas",
+      "country": "Colombia",
+      "points": 57.9
+    },
+    {
+      "position": 194,
+      "name": "Criciúma",
+      "country": "Brasil",
+      "points": 56.0
+    },
+    {
+      "position": 194,
+      "name": "Universidad San Martín de Porres",
+      "country": "Perú",
+      "points": 56.0
+    },
+    {
+      "position": 194,
+      "name": "Ferro Carril Oeste",
+      "country": "Argentina",
+      "points": 56.0
+    },
+    {
+      "position": 194,
+      "name": "Club Tijuana",
+      "country": "Mexico",
+      "points": 56.0
+    },
+    {
+      "position": 198,
+      "name": "Royal Pari",
+      "country": "Bolivia",
+      "points": 55.5
+    },
+    {
+      "position": 199,
+      "name": "Real Potosí",
+      "country": "Bolivia",
+      "points": 53.5
+    },
+    {
+      "position": 200,
+      "name": "Cerro",
+      "country": "Uruguay",
+      "points": 51.5
+    },
+    {
+      "position": 201,
+      "name": "Monterrey",
+      "country": "Mexico",
+      "points": 50.0
+    },
+    {
+      "position": 202,
+      "name": "Deportes Concepción",
+      "country": "Chile",
+      "points": 48.0
+    },
+    {
+      "position": 202,
+      "name": "Atlético Colegiales",
+      "country": "Paraguay",
+      "points": 48.0
+    },
+    {
+      "position": 202,
+      "name": "Paysandu",
+      "country": "Brasil",
+      "points": 48.0
+    },
+    {
+      "position": 205,
+      "name": "Club Aurora",
+      "country": "Bolivia",
+      "points": 46.3
+    },
+    {
+      "position": 206,
+      "name": "Universitario de Sucre",
+      "country": "Bolivia",
+      "points": 45.0
+    },
+    {
+      "position": 207,
+      "name": "San Luis",
+      "country": "Mexico",
+      "points": 44.8
+    },
+    {
+      "position": 208,
+      "name": "América de Quito",
+      "country": "Ecuador",
+      "points": 40.0
+    },
+    {
+      "position": 209,
+      "name": "Sport Boys Warnes",
+      "country": "Bolivia",
+      "points": 36.0
+    },
+    {
+      "position": 209,
+      "name": "Chiapas F.C.",
+      "country": "Mexico",
+      "points": 36.0
+    },
+    {
+      "position": 211,
+      "name": "Macará",
+      "country": "Ecuador",
+      "points": 35.0
+    },
+    {
+      "position": 212,
+      "name": "Club Deportivo Portugués",
+      "country": "Venezuela",
+      "points": 32.0
+    },
+    {
+      "position": 212,
+      "name": "Valencia Fútbol Club",
+      "country": "Venezuela",
+      "points": 32.0
+    },
+    {
+      "position": 212,
+      "name": "Valdéz",
+      "country": "Ecuador",
+      "points": 32.0
+    },
+    {
+      "position": 212,
+      "name": "Necaxa",
+      "country": "Mexico",
+      "points": 32.0
+    },
+    {
+      "position": 216,
+      "name": "UTC Cajamarca",
+      "country": "Perú",
+      "points": 31.5
+    },
+    {
+      "position": 217,
+      "name": "Técnico Universitario",
+      "country": "Ecuador",
+      "points": 29.5
+    },
+    {
+      "position": 218,
+      "name": "ADT",
+      "country": "Perú",
+      "points": 28.5
+    },
+    {
+      "position": 218,
+      "name": "Universitario de Vinto",
+      "country": "Bolivia",
+      "points": 28.5
+    },
+    {
+      "position": 220,
+      "name": "Paraná",
+      "country": "Brasil",
+      "points": 28.0
+    },
+    {
+      "position": 221,
+      "name": "Plaza Colonia",
+      "country": "Uruguay",
+      "points": 26.5
+    },
+    {
+      "position": 222,
+      "name": "Trujillanos",
+      "country": "Venezuela",
+      "points": 26.0
+    },
+    {
+      "position": 223,
+      "name": "Platense",
+      "country": "Argentina",
+      "points": 25.0
+    },
+    {
+      "position": 224,
+      "name": "Alfonso Ugarte",
+      "country": "Perú",
+      "points": 24.0
+    },
+    {
+      "position": 224,
+      "name": "Quilmes",
+      "country": "Argentina",
+      "points": 24.0
+    },
+    {
+      "position": 224,
+      "name": "Pepeganga",
+      "country": "Venezuela",
+      "points": 24.0
+    },
+    {
+      "position": 224,
+      "name": "Santo André",
+      "country": "Brasil",
+      "points": 24.0
+    },
+    {
+      "position": 224,
+      "name": "Boyacá Chicó",
+      "country": "Colombia",
+      "points": 24.0
+    },
+    {
+      "position": 229,
+      "name": "Deportivo Pasto",
+      "country": "Colombia",
+      "points": 21.3
+    },
+    {
+      "position": 230,
+      "name": "Atlético Palmaflor",
+      "country": "Bolivia",
+      "points": 21.0
+    },
+    {
+      "position": 231,
+      "name": "Unión San Felipe",
+      "country": "Chile",
+      "points": 20.8
+    },
+    {
+      "position": 232,
+      "name": "Juventude",
+      "country": "Brasil",
+      "points": 20.0
+    },
+    {
+      "position": 232,
+      "name": "31 de Octubre",
+      "country": "Bolivia",
+      "points": 20.0
+    },
+    {
+      "position": 232,
+      "name": "Unión Magdalena",
+      "country": "Colombia",
+      "points": 20.0
+    },
+    {
+      "position": 232,
+      "name": "Defensor Arica",
+      "country": "Perú",
+      "points": 20.0
+    },
+    {
+      "position": 232,
+      "name": "Chaco Petrolero",
+      "country": "Bolivia",
+      "points": 20.0
+    },
+    {
+      "position": 232,
+      "name": "Paulista",
+      "country": "Brasil",
+      "points": 20.0
+    },
+    {
+      "position": 232,
+      "name": "Curicó Unido",
+      "country": "Chile",
+      "points": 20.0
+    },
+    {
+      "position": 232,
+      "name": "Deportivo Maldonado",
+      "country": "Uruguay",
+      "points": 20.0
+    },
+    {
+      "position": 240,
+      "name": "Deportivo Anzoátegui",
+      "country": "Venezuela",
+      "points": 16.5
+    },
+    {
+      "position": 241,
+      "name": "Náutico",
+      "country": "Brasil",
+      "points": 16.0
+    },
+    {
+      "position": 241,
+      "name": "Lara FC",
+      "country": "Venezuela",
+      "points": 16.0
+    },
+    {
+      "position": 241,
+      "name": "Deportivo Canarias",
+      "country": "Venezuela",
+      "points": 16.0
+    },
+    {
+      "position": 241,
+      "name": "Espoli",
+      "country": "Ecuador",
+      "points": 16.0
+    },
+    {
+      "position": 241,
+      "name": "Rocha FC",
+      "country": "Uruguay",
+      "points": 16.0
+    },
+    {
+      "position": 241,
+      "name": "León de Huánuco",
+      "country": "Perú",
+      "points": 16.0
+    },
+    {
+      "position": 247,
+      "name": "Orense",
+      "country": "Ecuador",
+      "points": 15.0
+    },
+    {
+      "position": 247,
+      "name": "2 de Mayo",
+      "country": "Paraguay",
+      "points": 15.0
+    },
+    {
+      "position": 249,
+      "name": "Deportivo Municipal",
+      "country": "Perú",
+      "points": 12.5
+    },
+    {
+      "position": 250,
+      "name": "Santa Cruz",
+      "country": "Brasil",
+      "points": 12.3
+    },
+    {
+      "position": 251,
+      "name": "Rangers de Talca",
+      "country": "Chile",
+      "points": 12.0
+    },
+    {
+      "position": 251,
+      "name": "Colegio San Agustín",
+      "country": "Perú",
+      "points": 12.0
+    },
+    {
+      "position": 253,
+      "name": "Hermanos Colmenárez",
+      "country": "Venezuela",
+      "points": 10.5
+    },
+    {
+      "position": 254,
+      "name": "Deportivo Capiatá",
+      "country": "Paraguay",
+      "points": 9.8
+    },
+    {
+      "position": 255,
+      "name": "LDU Loja",
+      "country": "Ecuador",
+      "points": 9.6
+    },
+    {
+      "position": 256,
+      "name": "Guayaquil City",
+      "country": "Ecuador",
+      "points": 9.0
+    },
+    {
+      "position": 256,
+      "name": "Carlos A. Mannucci",
+      "country": "Perú",
+      "points": 9.0
+    },
+    {
+      "position": 258,
+      "name": "Coronel Bolognesi",
+      "country": "Perú",
+      "points": 8.0
+    },
+    {
+      "position": 258,
+      "name": "Universitario de La Paz",
+      "country": "Bolivia",
+      "points": 8.0
+    },
+    {
+      "position": 258,
+      "name": "Bangu",
+      "country": "Brasil",
+      "points": 8.0
+    },
+    {
+      "position": 258,
+      "name": "Cortuluá",
+      "country": "Colombia",
+      "points": 8.0
+    },
+    {
+      "position": 262,
+      "name": "Llaneros de Guanare",
+      "country": "Venezuela",
+      "points": 7.5
+    },
+    {
+      "position": 263,
+      "name": "Avaí",
+      "country": "Brasil",
+      "points": 7.2
+    },
+    {
+      "position": 263,
+      "name": "D.C. United",
+      "country": "United States",
+      "points": 7.2
+    },
+    {
+      "position": 265,
+      "name": "Deportivo Santaní",
+      "country": "Paraguay",
+      "points": 6.0
+    },
+    {
+      "position": 265,
+      "name": "Independiente FBC",
+      "country": "Paraguay",
+      "points": 6.0
+    },
+    {
+      "position": 267,
+      "name": "Club General Díaz",
+      "country": "Paraguay",
+      "points": 4.5
+    },
+    {
+      "position": 267,
+      "name": "Rampla Juniors",
+      "country": "Uruguay",
+      "points": 4.5
+    },
+    {
+      "position": 267,
+      "name": "Sport Rosario",
+      "country": "Perú",
+      "points": 4.5
+    },
+    {
+      "position": 267,
+      "name": "Jaguares de Córdoba",
+      "country": "Colombia",
+      "points": 4.5
+    },
+    {
+      "position": 267,
+      "name": "Deportes Temuco",
+      "country": "Chile",
+      "points": 4.5
+    },
+    {
+      "position": 272,
+      "name": "Litoral",
+      "country": "Bolivia",
+      "points": 4.0
+    },
+    {
+      "position": 272,
+      "name": "Atlético Chalaco",
+      "country": "Perú",
+      "points": 4.0
+    },
+    {
+      "position": 272,
+      "name": "Atlético Torino",
+      "country": "Perú",
+      "points": 4.0
+    },
+    {
+      "position": 272,
+      "name": "Deportivo Filanbanco",
+      "country": "Ecuador",
+      "points": 4.0
+    },
+    {
+      "position": 276,
+      "name": "Fuerza Amarilla",
+      "country": "Ecuador",
+      "points": 3.0
+    },
+    {
+      "position": 276,
+      "name": "Patriotas Boyacá",
+      "country": "Colombia",
+      "points": 3.0
+    },
+    {
+      "position": 276,
+      "name": "Comerciantes Unidos",
+      "country": "Perú",
+      "points": 3.0
+    },
+    {
+      "position": 276,
+      "name": "Atlético Venezuela",
+      "country": "Venezuela",
+      "points": 3.0
+    },
+    {
+      "position": 276,
+      "name": "Club Petrolero",
+      "country": "Bolivia",
+      "points": 3.0
+    },
+    {
+      "position": 276,
+      "name": "Estudiantes de Caracas",
+      "country": "Venezuela",
+      "points": 3.0
+    },
+    {
+      "position": 282,
+      "name": "Puebla",
+      "country": "Mexico",
+      "points": 2.5
+    },
+    {
+      "position": 283,
+      "name": "Brasília",
+      "country": "Brasil",
+      "points": 2.4
+    },
+    {
+      "position": 283,
+      "name": "Alianza Atlético",
+      "country": "Perú",
+      "points": 2.4
+    },
+    {
+      "position": 283,
+      "name": "Sport Ancash",
+      "country": "Perú",
+      "points": 2.4
+    },
+    {
+      "position": 286,
+      "name": "Figueirense",
+      "country": "Brasil",
+      "points": 1.5
+    },
+    {
+      "position": 287,
+      "name": "Juventud de Las Piedras",
+      "country": "Uruguay",
+      "points": 0.0
+    },
+    {
+      "position": 287,
+      "name": "Grêmio Barueri",
+      "country": "Brasil",
+      "points": 0.0
+    },
+    {
+      "position": 287,
+      "name": "Atlético Huila",
+      "country": "Colombia",
+      "points": 0.0
+    },
+    {
+      "position": 287,
+      "name": "Envigado",
+      "country": "Colombia",
+      "points": 0.0
+    },
+    {
+      "position": 287,
+      "name": "Portuguesa",
+      "country": "Brasil",
+      "points": 0.0
+    },
+    {
+      "position": 287,
+      "name": "Everest Guayaquil",
+      "country": "Ecuador",
+      "points": 0.0
+    },
+    {
+      "position": 287,
+      "name": "La Paz FC",
+      "country": "Bolivia",
+      "points": 0.0
+    },
+    {
+      "position": 287,
+      "name": "Estudiantes Tecos",
+      "country": "Mexico",
+      "points": 0.0
+    },
+    {
+      "position": 287,
+      "name": "Provincial Osorno",
+      "country": "Chile",
+      "points": 0.0
+    },
+    {
+      "position": 287,
+      "name": "Central Español",
+      "country": "Uruguay",
+      "points": 0.0
+    },
+    {
+      "position": 287,
+      "name": "Alajuelense",
+      "country": "Costa Rica",
+      "points": 0.0
+    },
+    {
+      "position": 287,
+      "name": "Motagua",
+      "country": "Honduras",
+      "points": 0.0
+    },
+    {
+      "position": 287,
+      "name": "Yaracuyanos",
+      "country": "Venezuela",
+      "points": 0.0
+    },
+    {
+      "position": 287,
+      "name": "Unión Comercio",
+      "country": "Perú",
+      "points": 0.0
+    },
+    {
+      "position": 287,
+      "name": "El Tanque Sisley",
+      "country": "Uruguay",
+      "points": 0.0
+    },
+    {
+      "position": 287,
+      "name": "Joinville",
+      "country": "Brasil",
+      "points": 0.0
+    },
+    {
+      "position": null,
+      "name": "Independiente Rivadavia",
+      "country": "Argentina",
+      "points": 0.0
+    },
+    {
+      "position": null,
+      "name": "Deportivo Riestra",
+      "country": "Argentina",
+      "points": 0.0
+    },
+    {
+      "position": null,
+      "name": "Barracas Central",
+      "country": "Argentina",
+      "points": 0.0
+    },
+    {
+      "position": null,
+      "name": "Mirassol",
+      "country": "Brasil",
+      "points": 0.0
+    },
+    {
+      "position": null,
+      "name": "Libertad",
+      "country": "Ecuador",
+      "points": 0.0
+    },
+    {
+      "position": null,
+      "name": "Recoleta",
+      "country": "Paraguay",
+      "points": 0.0
+    }
+  ]
+}
