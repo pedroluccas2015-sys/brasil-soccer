@@ -95,6 +95,9 @@
       p.state='BOX_RUN';this.moveTo(p,B.lerp(spot.x,target.x,.13),B.lerp(spot.y,target.y,.16),false,dt);
       continue;
      }
+     if(corner&&!corner.corner&&corner.phase==='flight'&&corner.flightTime<1.3&&corner.boxPositions?.has(p)){
+      const spot=corner.boxPositions.get(p);p.state='BOX_RUN';this.moveTo(p,B.lerp(spot.x,b.x,.10),B.lerp(spot.y,b.y,.08),false,dt);continue;
+     }
      if(p.role==='GK'){this.keeper(p,dt);continue;}
      let tx=p.home.x,ty=p.home.y,sprint=false;const near=B.dist(p,b);
      if(b.owner===p){

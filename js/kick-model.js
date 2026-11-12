@@ -14,14 +14,14 @@
   },
   delivery(distance,power,loft){
    power=B.clamp(power,0,1);
-   const desired=loft?225+power*195:170+power*230;
+   const desired=loft?310+power*230:365+power*280;
    let lo=.12,hi=loft?3:4.5;
    for(let i=0;i<14;i++){
     const t=(lo+hi)/2,lift=loft?175*t/2:0;
     if(desired*this.travel(t,lift)<Math.max(8,distance-12))lo=t;else hi=t;
    }
    const time=(lo+hi)/2,lift=loft?175*time/2:0;
-   return {time,lift,speed:B.clamp((distance-12)/this.travel(time,lift),80,420)};
+   return {time,lift,speed:B.clamp((distance-12)/this.travel(time,lift),120,loft?540:645)};
   },
   shotSpeed(power){return 430+B.clamp(power,0,1)*300;}
  });

@@ -44,3 +44,5 @@
 .club-rating .star-empty{color:#628095}.club-rating-block{display:flex;flex-direction:column;gap:4px}.club-rating-block small{font:9px/1.5 monospace;color:#a7bece}.grid-stars{color:#c6f66c;font-size:8px!important;letter-spacing:1px!important}.club-selection .crest-choice{min-height:98px}.rating-legend{font-size:10px;line-height:1.6;color:#afc7d4}
 
 .competition-stars{display:inline-block;white-space:nowrap}.competition-stars .club-rating{font-size:10px;letter-spacing:0;margin:0 0 0 3px}.competition-stars .star-empty{display:none}
+
+.crest-choice .crest-code{display:block;min-height:14px;font:800 12px/14px monospace;letter-spacing:1.5px;color:#f2f4db;text-align:center}.roster-position{padding:9px 8px 4px;font:700 10px monospace;color:#cfec8b;letter-spacing:1px;border-bottom:1px solid #56736a55}

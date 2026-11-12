@@ -29,7 +29,7 @@
    g.fillStyle='#173e3970';g.beginPath();g.ellipse(v.x,v.y,7*scale,2*scale,0,0,Math.PI*2);g.fill();
    // Convert world facing to the behind-the-ball camera without mutating the player.
    const view=n=>({x:n.x*rt.x+n.y*rt.y,y:-(n.x*fw.x+n.y*fw.y)}),facing=view(p.facing),slideDirection=p.slideDirection?view(p.slideDirection):null;
-   const sprite=this.sprite({...p,facing,slideDirection});g.drawImage(sprite,Math.round(point.x-(sprite.anchorX??14)*scale),Math.round(point.y-(sprite.anchorY??27)*scale),Math.round(sprite.width*scale),Math.round(sprite.height*scale));
+   const sprite=this.sprite({...p,facing,slideDirection}),modelScale=scale*(sprite.modelScale??1);g.drawImage(sprite,Math.round(point.x-(sprite.anchorX??14)*modelScale),Math.round(point.y-(sprite.anchorY??27)*modelScale),Math.round(sprite.width*modelScale),Math.round(sprite.height*modelScale));
   }
   if(['aim','power','curve'].includes(f.phase)){
    // Short initial trajectory conveys bend without promising an automatic goal.
@@ -39,7 +39,7 @@
   }
   const ball=m.ball,bp=project(ball.x,ball.y,ball.z),ground=project(ball.x,ball.y),size=B.clamp(bp.scale*6,4,14);
   g.fillStyle='#183a3870';g.beginPath();g.ellipse(ground.x,ground.y,size*.55,size*.2,0,0,Math.PI*2);g.fill();g.drawImage(this.ballFrame(ball.roll),Math.round(bp.x-size/2),Math.round(bp.y-size),Math.round(size),Math.round(size));
-  this.rect(-36,-7,456,22,'#10272aee');this.text(f.corner?'ESCANTEIO':'FALTA DIRETA',-27,7,'#f2dd83',9);this.text(m.teams[0].data.shortName+' '+m.teams[0].score+' : '+m.teams[1].score+' '+m.teams[1].data.shortName,192,7,'#f2efd8',8,'center');this.text(f.corner?'5 x 5 NA ÁREA':Math.round(f.distance/10)+' m  |  ESC',409,7,'#cad9b8',7,'right');
+  this.rect(-36,-7,456,22,'#10272aee');this.text(f.corner?'ESCANTEIO':f.deliveryMode==='cross'?'FALTA · CRUZAR':'FALTA DIRETA',-27,7,'#f2dd83',9);this.text(m.teams[0].data.shortName+' '+m.teams[0].score+' : '+m.teams[1].score+' '+m.teams[1].data.shortName,192,7,'#f2efd8',8,'center');this.text(f.corner?'5 x 5 NA ÁREA':Math.round(f.distance/10)+' m  |  ESC',409,7,'#cad9b8',7,'right');
   const compact=this.canvas.getBoundingClientRect().height<500,start=compact?84:-20,gap=compact?74:145,width=compact?62:129;
   this.rect(compact?76:-30,196,compact?232:444,52,'#10272af5');
   const labels=['1 MIRA','2 FORÇA '+Math.round(f.power*100)+'%','3 EFEITO'],active=['aim','power','curve'].indexOf(f.phase);
@@ -48,7 +48,7 @@
   this.rect(start+gap,215,width*f.power,4,f.power>.85?'#ed9b66':'#edda76');
   this.rect(start+gap*2+(f.curve+1)*(width-4)/2,214,4,6,'#a3d8d2');
   const cpu=f.side!==m.human||m.autoplay;
-  const help=f.phase==='flight'?'BOLA EM JOGO — DISPUTE O REBOTE':f.phase==='runup'?'COBRANÇA...':cpu?'ADVERSÁRIO PREPARANDO A COBRANÇA':f.phase==='aim'?'DIRECIONAL: MIRA / ALTURA · CHUTE: CONFIRMA · PASSE: CURTA':f.phase==='power'?'CHUTE: TRAVA A FORÇA NO MOMENTO CERTO':'CHUTE: TRAVA O EFEITO E COBRA';
+  const help=f.phase==='flight'?'BOLA EM JOGO — DISPUTE O REBOTE':f.phase==='runup'?'COBRANÇA...':cpu?'ADVERSÁRIO PREPARANDO A COBRANÇA':f.phase==='aim'?'DIREÇÃO: MIRA · CHUTE: DIRETO · C: CRUZAR · PASSE: CURTA':f.phase==='power'?'CHUTE: TRAVA A FORÇA NO MOMENTO CERTO':'CHUTE: TRAVA O EFEITO E COBRA';
   if(compact&&!cpu&&active>=0){
    this.text(active===0?'DIRECIONAL: MIRA / ALTURA':active===1?'CHUTE: TRAVA A FORÇA':'CHUTE: TRAVA O EFEITO',192,231,'#e5ebd1',6,'center');
    this.text(active===0?'CHUTE: CONFIRMA · PASSE: CURTA':active===1?'CONFIRME NO MOMENTO CERTO':'E EXECUTA A COBRANÇA',192,242,'#e5ebd1',6,'center');
