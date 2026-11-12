@@ -87,7 +87,7 @@
    this.time=0;m.sound.play('pass');
   }
   shortPass(m,axis){
-   m.freeKick=null;m.state='restart';m.timer=0;
+   m.freeKick=null;m.state='restart';m.timer=0;m.setPieceContest={team:this.side,dir:this.dir,expires:m.elapsed+7};m.clearanceRequest=null;
    this.taker.x=this.origin.x-this.dir*9;this.taker.y=this.origin.y;m.ball.owner=this.taker;
    const outlet=this.corner?this.cornerOutlet:this.shortOutlet,aim=Math.hypot(axis.x,axis.y)>.1?axis:outlet?{x:outlet.x-this.taker.x,y:outlet.y-this.taker.y}:this.forward;
    m.pass(this.taker,'pass',.4,aim,outlet);
@@ -111,6 +111,7 @@
   launch(m){
    if(this.phase==='flight')return;
    const shot=this.trajectory(),p=this.taker,b=m.ball;this.extraGravity=shot.gravity-175;this.flightDuration=Math.max(1.8,shot.flight+.7);
+   m.setPieceContest={team:this.side,dir:this.dir,expires:m.elapsed+7};m.clearanceRequest=null;
    m.exemptPass=this.corner;m.snapshotOffside(p);
    b.owner=null;b.net=null;b.trail=[];b.x=b.px=this.origin.x;b.y=b.py=this.origin.y;b.z=b.pz=1;
    Object.assign(b,{vx:shot.vx,vy:shot.vy,vz:shot.vz,spin:shot.spin},{lock:.18,lastTouch:p,pass:this.corner||this.deliveryMode==='cross'?{from:p,target:null}:null,shot:this.corner||this.deliveryMode==='cross'?null:{team:this.side,onTarget:Math.abs(this.aim)<.9}});b.impact('kick',this.power);

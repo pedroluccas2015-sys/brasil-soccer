@@ -1,6 +1,7 @@
 'use strict';
 window.BSS.SLIDE=Object.freeze({duration:.60,recovery:.18});
 window.BSS.Player=class {
+ static throwPose(progress){const B=window.BSS,t=B.clamp(progress,0,1),keys=[{t:0,u:-2,z:32},{t:.35,u:-5,z:35},{t:.72,u:8,z:28},{t:1,u:12,z:18}];let i=0;while(i<keys.length-2&&t>keys[i+1].t)i++;const a=keys[i],b=keys[i+1],k=(t-a.t)/(b.t-a.t);return {u:B.lerp(a.u,b.u,k),z:B.lerp(a.z,b.z,k)};}
  static kickPose(progress){const B=window.BSS,t=B.clamp(progress,0,1),keys=[{t:0,u:-4,z:0,knee:-2,lean:1,arm:0},{t:.30,u:-8,z:5,knee:-4,lean:-1,arm:2},{t:.48,u:10,z:1,knee:5,lean:-2,arm:3},{t:.72,u:15,z:11,knee:8,lean:2,arm:2},{t:1,u:2,z:0,knee:0,lean:0,arm:0}];let i=0;while(i<keys.length-2&&t>keys[i+1].t)i++;const a=keys[i],b=keys[i+1],mix=(t-a.t)/(b.t-a.t),pose={};for(const k of ['u','z','knee','lean','arm'])pose[k]=B.lerp(a[k],b[k],mix);return pose;}
  static slidePose(p,progress=1-p.animTime/window.BSS.SLIDE.duration){
   const B=window.BSS,n=B.norm((p.slideDirection||p.facing).x,(p.slideDirection||p.facing).y),t=B.clamp(progress,0,1);
@@ -31,7 +32,7 @@ window.BSS.Player=class {
   this.x=B.clamp(this.x+vx*dt+(this.vx-vx)*blend/accel,3,F.w-3);
   this.y=B.clamp(this.y+vy*dt+(this.vy-vy)*blend/accel,3,F.h-3);
   this.vx=B.lerp(this.vx,vx,blend);this.vy=B.lerp(this.vy,vy,blend);
-  if(moving&&!slidePose&&!fallen)this.facing=n;
+  if(moving&&!slidePose&&!fallen&&!(['throwin','setpiece'].includes(this.anim)&&this.animTime>0))this.facing=n;
   this.runTime+=Math.hypot(this.x-this.px,this.y-this.py)*.14;
   this.animTime=Math.max(0,this.animTime-dt);
   if(!this.animTime){this.anim=Math.hypot(this.vx,this.vy)>8?(running?'sprint':'run'):'idle';this.slideDirection=null;}
