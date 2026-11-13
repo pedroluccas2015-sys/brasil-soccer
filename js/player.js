@@ -1,6 +1,11 @@
 'use strict';
 window.BSS.SLIDE=Object.freeze({duration:.60,recovery:.18});
 window.BSS.Player=class {
+ static aerialPose(kind,progress){
+  const B=window.BSS,t=B.clamp(progress,0,1),base={head:[0,0,28],shoulder:[0,0,18],hip:[0,0,10],knee:[1,-3,5],foot:[2,-3,0],backKnee:[-1,3,5],backFoot:[-2,3,0],hand:[0,-7,12],backHand:[0,7,12]};
+  const peak=kind==='dive'?{head:[18,0,16],shoulder:[8,0,12],hip:[-3,0,10],knee:[-10,-3,6],foot:[-15,-3,2],backKnee:[-9,3,11],backFoot:[-16,3,8],hand:[19,-4,18],backHand:[20,3,14]}:kind==='fall'?{head:[-11,0,8],shoulder:[-6,0,6],hip:[2,0,5],knee:[8,-3,3],foot:[13,-3,0],backKnee:[4,3,4],backFoot:[9,3,0],hand:[-11,-7,2],backHand:[-10,7,3]}:kind==='bicycle'?{head:[-11,0,11],shoulder:[-5,0,15],hip:[2,0,23],knee:[12,-3,29],foot:[18,-3,36],backKnee:[-3,3,29],backFoot:[-8,3,27],hand:[-12,-7,16],backHand:[-11,7,15]}:kind==='volley'?{head:[-5,0,30],shoulder:[-3,0,20],hip:[0,0,12],knee:[9,-3,18],foot:[18,-3,25],backKnee:[-2,3,6],backFoot:[-3,3,0],hand:[-8,-8,18],backHand:[-5,8,16]}:{head:[8,0,34],shoulder:[3,0,24],hip:[-2,0,16],knee:[-5,-3,11],foot:[-8,-3,7],backKnee:[-4,3,10],backFoot:[-8,3,5],hand:[0,-8,24],backHand:[0,8,24]};
+  const blend=t<.48?t/.48:1-(t-.48)/.52,joints={};for(const key of Object.keys(base))joints[key]=base[key].map((v,i)=>B.lerp(v,peak[key][i],Math.sin(B.clamp(blend,0,1)*Math.PI/2)));return {joints,progress:t};
+ }
  static throwPose(progress){const B=window.BSS,t=B.clamp(progress,0,1),keys=[{t:0,u:-2,z:32},{t:.35,u:-5,z:35},{t:.72,u:8,z:28},{t:1,u:12,z:18}];let i=0;while(i<keys.length-2&&t>keys[i+1].t)i++;const a=keys[i],b=keys[i+1],k=(t-a.t)/(b.t-a.t);return {u:B.lerp(a.u,b.u,k),z:B.lerp(a.z,b.z,k)};}
  static kickPose(progress){const B=window.BSS,t=B.clamp(progress,0,1),keys=[{t:0,u:-4,z:0,knee:-2,lean:1,arm:0},{t:.30,u:-8,z:5,knee:-4,lean:-1,arm:2},{t:.48,u:10,z:1,knee:5,lean:-2,arm:3},{t:.72,u:15,z:11,knee:8,lean:2,arm:2},{t:1,u:2,z:0,knee:0,lean:0,arm:0}];let i=0;while(i<keys.length-2&&t>keys[i+1].t)i++;const a=keys[i],b=keys[i+1],mix=(t-a.t)/(b.t-a.t),pose={};for(const k of ['u','z','knee','lean','arm'])pose[k]=B.lerp(a[k],b[k],mix);return pose;}
  static slidePose(p,progress=1-p.animTime/window.BSS.SLIDE.duration){
@@ -16,7 +21,7 @@ window.BSS.Player=class {
  move(dx,dy,sprint,dt){
   const B=window.BSS,F=B.FIELD;this.px=this.x;this.py=this.y;if(this.red)return;
   const moving=Math.hypot(dx,dy)>.08,n=B.norm(dx,dy),slidePose=this.anim==='slide'&&this.animTime>0,
-  sliding=slidePose&&this.animTime>B.SLIDE.recovery,recovering=slidePose&&!sliding,fallen=this.anim==='fall'&&this.animTime>0;
+  sliding=slidePose&&this.animTime>B.SLIDE.recovery,recovering=slidePose&&!sliding,fallen=(this.anim==='fall'||this.anim==='bicycle')&&this.animTime>0;
   const running=moving&&sprint&&this.energy>.08&&!fallen;
   let speed=(70+this.attributes.pace*.43)*(running?1.38:1);
   this.energy=B.clamp(this.energy+dt*(running?-(.023+(100-this.attributes.stamina)*.00018):.014),0,1);
@@ -32,7 +37,7 @@ window.BSS.Player=class {
   this.x=B.clamp(this.x+vx*dt+(this.vx-vx)*blend/accel,3,F.w-3);
   this.y=B.clamp(this.y+vy*dt+(this.vy-vy)*blend/accel,3,F.h-3);
   this.vx=B.lerp(this.vx,vx,blend);this.vy=B.lerp(this.vy,vy,blend);
-  if(moving&&!slidePose&&!fallen&&!(['throwin','setpiece'].includes(this.anim)&&this.animTime>0))this.facing=n;
+  if(moving&&!slidePose&&!fallen&&!(['throwin','setpiece','header','volley','bicycle'].includes(this.anim)&&this.animTime>0))this.facing=n;
   this.runTime+=Math.hypot(this.x-this.px,this.y-this.py)*.14;
   this.animTime=Math.max(0,this.animTime-dt);
   if(!this.animTime){this.anim=Math.hypot(this.vx,this.vy)>8?(running?'sprint':'run'):'idle';this.slideDirection=null;}

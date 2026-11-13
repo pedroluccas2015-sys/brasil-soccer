@@ -25,7 +25,7 @@ test('grama: carrinho emite fragmentos limitados sem consumir aleatoriedade da p
  a.state='half';a.update(1);assert.equal(a.turf.length,0);
 });
 test('replay: partículas e direção do carrinho são cópias independentes',()=>{
- const m=make(),p=m.controlled;m.state='play';m.ball.reset(30,30);m.tackle(p,true);m.cinema=new B.Cinematics(m);m.cinema.capture();
+ const m=make(),p=m.controlled;m.state='play';m.ball.reset(30,30);p.facing={x:1,y:0};m.tackle(p,true);m.cinema=new B.Cinematics(m);m.cinema.capture();
  const a=m.cinema.frames[0];m.turf[0].age=.2;p.slideDirection.x=-1;assert.equal(a.turf[0].age,0);assert.equal(a.players.find(q=>q.id===p.id).slideDirection.x,1);
  m.cinema.capture();const frame=m.cinema.replayFrame(m.cinema.frames,.05/.75*.5);assert.equal(frame.turf[0].age,.1);assert.equal(a.turf[0].age,0);
 });

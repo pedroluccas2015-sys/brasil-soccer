@@ -6,13 +6,13 @@ const B=BSS,F=B.FIELD,d=new B.DataManager();d.raw=BSS_DATA;d.hydrate();
 const make=(opts={})=>new B.Match(d.teams[0],d.teams[1],{seed:36,...opts});
 const input=(pressed={},axis={x:0,y:0},state={})=>({pressed,axis,state,released:{}});
 const corner=(side=0,upper=true,opts={})=>{const m=make(opts),t=m.teams[side];m.setRestart('ESCANTEIO',side,t.dir>0?F.w-6:6,upper?6:F.h-6);return m;};
-test('escanteios: cinco atacantes e cinco defensores na área, ambos lados, tempos e bandeirinhas',()=>{
+test('escanteios: três atacantes na área, opção curta e cobertura, ambos lados, tempos e bandeirinhas',()=>{
  for(const human of [0,1])for(const half of [1,2])for(const side of [0,1])for(const upper of [true,false]){
   const m=make({human});if(half===2)m.resumeHalf();const dir=m.teams[side].dir;
   m.setRestart('ESCANTEIO',side,dir>0?F.w-6:6,upper?6:F.h-6);
   assert.equal(m.state,'freeKick');const f=m.freeKick;assert.equal(f.corner,true);assert.equal(f.wall.length,0);
-  assert.equal(f.cornerAttackers.length,5);assert.equal(f.cornerDefenders.length,5);assert.equal(f.cornerPositions.size,10);
-  assert.equal(new Set([...f.cornerAttackers,...f.cornerDefenders]).size,10);
+  assert.equal(f.cornerAttackers.length,3);assert.equal(f.cornerDefenders.length,5);assert.equal(f.cornerPositions.size,8);
+  assert.equal(new Set([...f.cornerAttackers,...f.cornerDefenders]).size,8);
   for(const p of f.cornerPositions.keys()){
    assert.ok(!p.red&&p.role!=='GK'&&p!==f.taker);
    assert.ok(Math.abs(p.x-f.goal.x)<=165&&Math.abs(p.y-F.cy)<200);
@@ -71,5 +71,5 @@ test('escanteios reais após desvio e expulsões não geram bloqueios',()=>{
  assert.equal(m.state,'freeKick');assert.ok(m.freeKick.corner);assert.equal(m.teams[0].stats.corners,1);
  const other=corner();other.teams[0].players[6].red=true;other.teams[1].players[7].red=true;
  other.setRestart('ESCANTEIO',0,F.w-6,F.h-6);
- assert.equal(other.freeKick.cornerAttackers.length,5);assert.equal(other.freeKick.cornerDefenders.length,5);
+ assert.equal(other.freeKick.cornerAttackers.length,2);assert.equal(other.freeKick.cornerDefenders.length,5);
 });

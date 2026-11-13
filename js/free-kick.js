@@ -10,8 +10,8 @@
    this.deliveryMode='shot';this.phase='aim';this.time=0;this.elapsed=0;this.armed=false;this.aim=0;this.height=.55;this.power=.55;this.curve=0;this.flightTime=0;
    const team=m.teams[this.side],opponents=m.teams[1-this.side];
    this.taker=team.players.filter(p=>!p.red&&p.role!=='GK').sort((a,b)=>this.corner?(b.attributes.longPassing+b.attributes.passing)-(a.attributes.longPassing+a.attributes.passing):(b.attributes.shooting+b.attributes.control)-(a.attributes.shooting+a.attributes.control))[0]||restart.taker;
-   restart.taker=this.taker;this.keeper=opponents.players.find(p=>!p.red&&p.role==='GK');
-   this.wall=this.corner?[]:opponents.players.filter(p=>!p.red&&p.role!=='GK').sort((a,b)=>B.dist(a,this.origin)-B.dist(b,this.origin)).slice(0,this.distance<200?4:3);
+   restart.taker=this.taker;this.shape=m.createSetPieceShape(this.side,this.taker);this.keeper=opponents.players.find(p=>!p.red&&p.role==='GK');
+   this.wall=this.corner?[]:opponents.players.filter(p=>!p.red&&p.role!=='GK'&&!this.shape.counters.has(p)).sort((a,b)=>B.dist(a,this.origin)-B.dist(b,this.origin)).slice(0,this.distance<200?4:3);
    // Match coordinates use 10 world units per metre; keep the wall 9.15 m away.
    const wallDistance=Math.min(91.5,this.distance*.65),center={x:this.origin.x+this.forward.x*wallDistance,y:this.origin.y+this.forward.y*wallDistance};
    for(const p of m.players){p.vx=p.vy=0;p.anim='idle';p.animTime=0;if(!this.corner&&p!==this.taker&&p!==this.keeper&&!this.wall.includes(p)&&B.dist(p,this.origin)<95){p.x=B.clamp(this.origin.x-this.forward.x*100+this.right.x*(p.index%2?40:-40),8,(F.w-8));p.y=B.clamp(this.origin.y-this.forward.y*100+this.right.y*(p.index%2?40:-40),8,(F.h-8));}}
@@ -27,35 +27,37 @@
   }
   organizeFreeKick(m){
    const attack=m.teams[this.side],defend=m.teams[1-this.side],g=this.goal.x,dir=this.dir;
-   const attackers=attack.players.filter(p=>!p.red&&p.role!=='GK'&&p!==this.taker).sort((a,b)=>(b.role==='FW'?28:0)+b.attributes.heading-((a.role==='FW'?28:0)+a.attributes.heading)).slice(0,5);
-   const defenders=defend.players.filter(p=>!p.red&&p.role!=='GK'&&!this.wall.includes(p)).sort((a,b)=>(b.role==='DF'?25:0)+b.attributes.heading-((a.role==='DF'?25:0)+a.attributes.heading)).slice(0,5);
+   const attackers=attack.players.filter(p=>!p.red&&p.role!=='GK'&&p!==this.taker&&!this.shape.backs.has(p)).sort((a,b)=>(b.role==='FW'?28:0)+b.attributes.heading-((a.role==='FW'?28:0)+a.attributes.heading)).slice(0,4);
+   const defenders=defend.players.filter(p=>!p.red&&p.role!=='GK'&&!this.wall.includes(p)&&!this.shape.counters.has(p)).sort((a,b)=>(b.role==='DF'?25:0)+b.attributes.heading-((a.role==='DF'?25:0)+a.attributes.heading)).slice(0,5);
    const spots=[{d:78,y:-75},{d:112,y:-28},{d:86,y:38},{d:148,y:94},{d:143,y:-108}];
    this.boxAttackers=attackers;this.boxDefenders=defenders;this.boxPositions=new Map();
    const place=(p,x,y)=>{p.x=B.clamp(x,12,F.w-12);p.y=B.clamp(y,12,F.h-12);p.px=p.x;p.py=p.y;p.vx=p.vy=0;p.facing={x:p.team.dir,y:0};this.boxPositions.set(p,{x:p.x,y:p.y});};
    attackers.forEach((p,i)=>{const s=spots[i];place(p,g-dir*s.d,F.cy+s.y);});
    defenders.forEach((p,i)=>{const s=spots[i];place(p,g-dir*(s.d-14),F.cy+s.y+(i%2?10:-10));});
    // A nearby outlet and an edge-of-box option keep short passes and second balls available.
-   const spare=attack.players.filter(p=>!p.red&&p.role!=='GK'&&p!==this.taker&&!attackers.includes(p));
-   spare.forEach((p,i)=>{if(i===0){p.x=B.clamp(this.origin.x-dir*25,15,F.w-15);p.y=B.clamp(this.origin.y+(this.origin.y<F.cy?68:-68),20,F.h-20);this.shortOutlet=p;}
+   const spare=attackers.slice(-1);attackers.splice(-1,1);this.boxAttackers=attackers;
+   spare.forEach((p,i)=>{if(i===0){p.x=B.clamp(this.origin.x-dir*25,15,F.w-15);p.y=B.clamp(this.origin.y+(this.origin.y<F.cy?68:-68),20,F.h-20);this.shortOutlet=p;this.boxPositions.delete(p);}
     else{p.x=g-dir*(210+i*65);p.y=F.cy+(i%2?-1:1)*125;}p.px=p.x;p.py=p.y;});
   }
   organizeCorner(m){
    const attack=m.teams[this.side],defend=m.teams[1-this.side],g=this.goal.x,dir=this.dir;
    const ranking=(a,b)=>b.attributes.heading-a.attributes.heading;
-   const attackers=attack.players.filter(p=>!p.red&&p.role!=='GK'&&p!==this.taker).sort(ranking).slice(0,5);
-   const defenders=defend.players.filter(p=>!p.red&&p.role!=='GK').sort(ranking).slice(0,5);
-   // Exactly five on each side of the contest (if eligible), with the keeper separate.
+   const attackers=attack.players.filter(p=>!p.red&&p.role!=='GK'&&p!==this.taker&&!this.shape.backs.has(p)).sort(ranking).slice(0,4);
+   const defenders=defend.players.filter(p=>!p.red&&p.role!=='GK'&&!this.shape.counters.has(p)).sort(ranking).slice(0,5);
+   // Three box runners and a short outlet; five outfield players cover the own half.
+   const outlet=attackers.pop();this.cornerOutlet=outlet;
    const spots=[{d:65,y:-72},{d:102,y:-33},{d:82,y:25},{d:141,y:70},{d:115,y:2}];
    this.cornerPositions=new Map();this.cornerAttackers=attackers;this.cornerDefenders=defenders;
    const place=(p,x,y)=>{p.x=B.clamp(x,10,F.w-10);p.y=B.clamp(y,15,F.h-15);p.vx=p.vy=0;p.facing={x:p.team.dir,y:0};p.px=p.x;p.py=p.y;};
+   if(outlet)place(outlet,this.origin.x-dir*75,this.origin.y+(this.origin.y<F.cy?60:-60));
    attackers.forEach((p,i)=>{const s=spots[i];place(p,g-dir*s.d,F.cy+s.y);this.cornerPositions.set(p,{x:p.x,y:p.y});});
    defenders.forEach((p,i)=>{const s=spots[i];place(p,g-dir*(s.d-13),F.cy+s.y+(i%2?9:-9));this.cornerPositions.set(p,{x:p.x,y:p.y});});
    // The remaining field players stay outside the penalty area for rebounds and counterattacks.
-   for(const [side,selected] of [[attack,attackers],[defend,defenders]]){
-    const spare=side.players.filter(p=>!p.red&&p.role!=='GK'&&p!==this.taker&&!selected.includes(p));
+   for(const [side,selected] of [[attack,[...attackers,outlet]],[defend,defenders]]){
+    const spare=side.players.filter(p=>!p.red&&p.role!=='GK'&&p!==this.taker&&!selected.includes(p)&&!this.shape.holds.has(p));
     spare.forEach((p,i)=>{
      if(side===attack&&i===0){
-      // One short-pass option stays by the corner, without reducing the five in the box.
+      // Preserve a short option if dismissals change the available group.
       place(p,this.origin.x-dir*75,this.origin.y+(this.origin.y<F.cy?60:-60));this.cornerOutlet=p;
      }else place(p,g-dir*(220+(i%3)*55),F.cy+(i%2?-1:1)*(135+Math.floor(i/2)*37));
     });
@@ -117,7 +119,7 @@
    Object.assign(b,{vx:shot.vx,vy:shot.vy,vz:shot.vz,spin:shot.spin},{lock:.18,lastTouch:p,pass:this.corner||this.deliveryMode==='cross'?{from:p,target:null}:null,shot:this.corner||this.deliveryMode==='cross'?null:{team:this.side,onTarget:Math.abs(this.aim)<.9}});b.impact('kick',this.power);
    p.touchDelay=.35;p.anim='setpiece';p.animTime=.46*(1-.48);
    if(this.corner||this.deliveryMode==='cross')p.team.stats.passes++;else{p.team.stats.shots++;if(b.shot.onTarget)p.team.stats.onTarget++;}
-   this.phase='flight';this.flightTime=0;this.dipping=true;if(this.corner||this.deliveryMode==='cross')m.cameraCut=(m.cameraCut||0)+1;m.state='play';m.restart=null;m.charges={};m.ai.plans.clear();m.sound.play('kick');m.bannerTime=0;
+   if(m.setPieceShape)m.setPieceShape.expires=m.elapsed+7;this.phase='flight';this.flightTime=0;this.dipping=true;if(this.corner||this.deliveryMode==='cross')m.cameraCut=(m.cameraCut||0)+1;m.state='play';m.restart=null;m.charges={};m.ai.plans.clear();m.sound.play('kick');m.bannerTime=0;
    if((this.corner||this.deliveryMode==='cross')&&this.side===m.human&&!m.autoplay){
     m.controlled=[...(this.cornerAttackers||this.boxAttackers)].sort((a,b)=>B.dist(a,this.cornerTarget())-B.dist(b,this.cornerTarget()))[0];
    }
@@ -138,7 +140,7 @@
     // Headed attempts use the existing shot model and can be defended or miss.
     m.shoot(p,.38+Math.min(.28,p.attributes.heading/320),{x:p.team.dir,y:B.clamp((F.cy-p.y)/120,-.8,.8)},true);
    }
-   p.anim='header';p.animTime=.38;m.freeKick=null;
+   if(defender){p.anim='header';p.animTime=.52;}m.freeKick=null;
    return true;
   }
   afterBall(m,dt){

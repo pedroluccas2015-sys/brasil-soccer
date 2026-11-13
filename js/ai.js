@@ -90,6 +90,7 @@
     for(const p of team.players){
      if(m.state!=='play')return;
      if(p.red||p===m.controlled&&!m.autoplay&&p.role!=='GK'||m.freeKick?.holdsWall(p))continue;
+     const guard=m.setPieceShape?.holds.get(p);if(guard){p.state=guard.half<0?'RESTART_COVER':'COUNTER_OUTLET';this.moveTo(p,guard.x,guard.y,false,dt);continue;}
      const corner=m.freeKick;
      if(corner?.corner&&corner.phase==='flight'&&corner.flightTime<1.55&&corner.cornerPositions?.has(p)){
       const spot=corner.cornerPositions.get(p),target=corner.cornerTarget();
@@ -166,7 +167,7 @@
    const attacking=carrier.vx*carrier.team.dir>35;
    if(!attacking&&goalDistance>F.w*.37)return;
    const dangerous=goalDistance<F.w*.36,insideBox=goalDistance<165&&Math.abs(carrier.y-F.cy)<200;
-   const rate=(dangerous?.75:.48)*(insideBox?1.15:1)*(m.difficulty===0?.55:1);
+   const rate=(dangerous?.16:.10)*(insideBox?1.15:1)*(m.difficulty===0?.55:1);
    const slideReach=19+p.attributes.tackling*.06;
    const fromBehind=toward.x*carrier.facing.x+toward.y*carrier.facing.y>.5;
    const tooFastFromBehind=fromBehind&&Math.hypot(p.vx,p.vy)>95;
@@ -174,13 +175,13 @@
    if(gap>=23&&(tooFastFromBehind||ballDistance<=slideReach+1))return;
    if(this.riskyRandom()>=1-Math.exp(-dt*rate))return;
    // Slides are uncommon, and never reckless high-speed tackles from behind.
-   const slide=gap>=23||ballDistance>slideReach+1&&!tooFastFromBehind&&this.riskyRandom()<.30;
-   this.nextRiskAt[p.team.side]=m.elapsed+12;
+   const slide=true;
+   this.nextRiskAt[p.team.side]=m.elapsed+30;
    m.tackle(p,slide);
   }
   onFoul(p){
    // The next risky challenge must be spaced out, even after a legal advantage.
-   this.nextRiskAt[p.team.side]=Math.max(this.nextRiskAt[p.team.side],this.m.elapsed+20);
+   this.nextRiskAt[p.team.side]=Math.max(this.nextRiskAt[p.team.side],this.m.elapsed+40);
   }
   keeper(p,dt){
    const m=this.m,b=m.ball,t=p.team,cfg=this.profile(t),dir=t.dir,gx=dir>0?18:(F.w-18),danger=Math.abs(b.x-gx)<235;
