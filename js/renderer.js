@@ -64,7 +64,7 @@
    const kit=p.role==='GK'?p.team.data.kit.goalkeeper:p.team.kit,running=['run','sprint'].includes(p.anim),direction=(Math.round(Math.atan2(p.facing.y,p.facing.x)/(Math.PI/4))+8)%8;
    const durations={fall:.7,dive:.6,receive:.16,dribble:.25,tackle:.22,catch:.45,long:.38,setpiece:.46,throwin:.64,header:.52,volley:.58,bicycle:.72},duration=durations[p.anim]||.42;
    const phase=running?Math.floor(p.runTime*1.25)%16:p.anim==='celebrate'?Math.floor(p.runTime)%8:p.animTime>0?Math.min(11,Math.floor(B.clamp(1-p.animTime/duration,0,1)*12)):0;
-   const skin=['#efbd85','#cd8d59','#a26342','#704432'][B.hash(p.id)%4],hair=['#392016','#56280d','#241c22','#713b13'][B.hash(p.id+':hair')%4],aerial=['header','volley','bicycle'].includes(p.anim);
+   const skin=['#efbd85','#cd8d59','#a26342','#704432'][B.hash(p.id)%4],hair=['#392016','#56280d','#241c22','#713b13'][B.hash(p.id+':hair')%4],aerial=['header','volley','bicycle','dive','fall'].includes(p.anim);
    const key=['pixel-cup',...Object.values(kit),skin,hair,p.anim,phase,direction].join('|');if(this.sprites.has(key))return this.sprites.get(key);
    const c=document.createElement('canvas');c.width=aerial?56:40;c.height=aerial?56:44;c.anchorX=aerial?28:20;c.anchorY=aerial?48:40;c.modelScale=.84;const g=c.getContext('2d');g.imageSmoothingEnabled=false;
    const n={x:Math.cos(direction*Math.PI/4),y:Math.sin(direction*Math.PI/4)},t=phase/11,cycle=phase/16*Math.PI*2,stride=running?Math.sin(cycle)*(p.anim==='sprint'?5:3.8):0,bob=running?Math.abs(Math.sin(cycle))*.8:0;
@@ -78,7 +78,7 @@
    const point=([u,v,z])=>({x:Math.round(c.anchorX+u*n.x-v*n.y),y:Math.round(c.anchorY+(u*n.y+v*n.x)*.45-z-bob)}),j=Object.fromEntries(Object.entries(pose).map(([k,v])=>[k,point(v)]));
    const rect=(x,y,w,h,color)=>{g.fillStyle=color;g.fillRect(Math.round(x),Math.round(y),w,h);},line=(a,b,width,color)=>{const steps=Math.max(1,Math.ceil(Math.hypot(b.x-a.x,b.y-a.y)));for(let i=0;i<=steps;i++)rect(B.lerp(a.x,b.x,i/steps)-width/2,B.lerp(a.y,b.y,i/steps)-width/2,width,width,color);};
    const limb=(a,b,width,color)=>{line(a,b,width+2,'#151d20');line(a,b,width,color);},arm=(hand,side)=>{const shoulder=point([pose.shoulder[0],side*5,pose.shoulder[2]]),elbow={x:B.lerp(shoulder.x,hand.x,.48),y:B.lerp(shoulder.y,hand.y,.48)-1};limb(shoulder,elbow,3,kit.shirtBaseColor);limb(elbow,hand,3,p.role==='GK'?'#f3e9bf':skin);};
-   g.save();if(['fall','dive'].includes(p.anim)){g.translate(c.anchorX,c.anchorY-13);g.rotate((n.x<0?-1:1)*(p.anim==='dive'?1.2:.95));g.translate(-c.anchorX,-c.anchorY+13);}
+   g.save();
    arm(j.backHand,1);
    for(const [knee,foot] of [[j.backKnee,j.backFoot],[j.knee,j.foot]]){limb(j.hip,knee,4,skin);limb(knee,foot,3,kit.socksColor);line(j.hip,{x:B.lerp(j.hip.x,knee.x,.55),y:B.lerp(j.hip.y,knee.y,.55)},5,kit.shortsColor);limb(foot,{x:foot.x+n.x*3,y:foot.y+n.y},3,'#182126');rect(foot.x-1,foot.y-1,2,1,'#faf3d4');}
    limb(j.shoulder,j.hip,11,kit.shirtBaseColor);line({x:j.shoulder.x-3,y:j.shoulder.y},{x:j.hip.x-3,y:j.hip.y-1},2,this.shade(kit.shirtBaseColor,25));
