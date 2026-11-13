@@ -1,14 +1,14 @@
 'use strict';
 window.BSS.Ball=class {
  constructor(){this.radius=3;this.reset(window.BSS.FIELD.cx,window.BSS.FIELD.cy);}
- reset(x,y){Object.assign(this,{x,y,px:x,py:y,z:0,pz:0,vx:0,vy:0,vz:0,spin:0,lastTouch:null,owner:null,lock:0,pass:null,shot:null,roll:0,impactTime:0,impactKind:'',trail:[],trailClock:0,net:null});}
+ reset(x,y){Object.assign(this,{x,y,px:x,py:y,z:0,pz:0,vx:0,vy:0,vz:0,spin:0,lastTouch:null,owner:null,lock:0,pass:null,shot:null,roll:0,rollAxis:0,impactTime:0,impactKind:'',trail:[],trailClock:0,net:null});}
  impact(kind,strength=1){this.impactKind=kind;this.impactTime=.18;this.impactStrength=Math.min(1,strength);}
  animate(dt){
-  const distance=Math.hypot(this.x-this.px,this.y-this.py,this.z-this.pz);
-  this.roll=(this.roll+distance/this.radius*.55)%(Math.PI*2);
+  const dx=this.x-this.px,dy=this.y-this.py,distance=Math.hypot(dx,dy);if(distance>.01)this.rollAxis=Math.atan2(dy,dx);
+  this.roll=(this.roll+distance/this.radius*.42)%(Math.PI*2);
   this.impactTime=Math.max(0,this.impactTime-dt);this.trailClock+=dt;
   this.trail=this.trail.filter(p=>(p.age+=dt)<.1);
-  if(this.trailClock>=1/60){this.trailClock=0;if(Math.hypot(this.vx,this.vy,this.vz)>120)this.trail.push({x:this.x,y:this.y,z:this.z,age:0});}
+  if(this.trailClock>=1/60){this.trailClock=0;if(!this.owner&&Math.hypot(this.vx,this.vy,this.vz)>180)this.trail.push({x:this.x,y:this.y,z:this.z,age:0});}
  }
  enterNet(line,field=null){this.owner=null;this.net={line,dir:line===0?-1:1,age:0,ripple:0,...(field?{top:field.goalTop+4,bottom:field.goalBottom-4}:{})};}
  update(dt){

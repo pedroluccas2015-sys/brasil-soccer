@@ -42,7 +42,7 @@
   }
   const ball=m.ball,bp=project(ball.x,ball.y,ball.z),shadow=project(ball.x,ball.y),size=B.clamp(bp.scale*6,3,12);g.fillStyle='#183a3870';g.beginPath();g.ellipse(shadow.x,shadow.y,size*.55,size*.2,0,0,Math.PI*2);g.fill();g.drawImage(this.ballFrame(ball.roll),Math.round(bp.x-size/2),Math.round(bp.y-size),Math.round(size),Math.round(size));
   stroke([d,a,b,c],'#fff2d5',2);
-  this.rect(-36,-7,456,22,'#10272aee');this.text(f.corner?'ESCANTEIO':f.deliveryMode==='cross'?'FALTA · CRUZAR':'FALTA DIRETA',-27,7,'#f2dd83',9);this.text(m.teams[0].data.shortName+' '+m.teams[0].score+' : '+m.teams[1].score+' '+m.teams[1].data.shortName,192,7,'#f2efd8',8,'center');this.text(f.corner?'5 x 5 NA ÁREA':Math.round(f.distance/10)+' m  |  ESC',409,7,'#cad9b8',7,'right');
+  this.rect(-36,-7,456,22,'#10272aee');this.text(f.corner?'ESCANTEIO':f.deliveryMode==='cross'?'FALTA · CRUZAR':'FALTA DIRETA',-27,7,'#f2dd83',9);this.text(m.teams[0].data.shortName+' '+m.teams[0].score+' : '+m.teams[1].score+' '+m.teams[1].data.shortName,192,7,'#f2efd8',8,'center');this.text(f.corner?'COBERTURA + CONTRA-ATAQUE':Math.round(f.distance/10)+' m  |  ESC',409,7,'#cad9b8',7,'right');
   const compact=this.canvas.getBoundingClientRect().height<500,start=compact?84:-20,gap=compact?74:145,width=compact?62:129;
   this.rect(compact?76:-30,196,compact?232:444,52,'#10272af5');
   const labels=['1 MIRA','2 FORÇA '+Math.round(f.power*100)+'%','3 EFEITO'],active=['aim','power','curve'].indexOf(f.phase);

@@ -33,9 +33,9 @@ test('segurar carrega, soltar executa uma vez em teclado, gamepad ou toque',()=>
   i.released={};m.handleActions(i,1/60);assert.equal(Math.hypot(m.ball.vx,m.ball.vy),speed);
  }
 });
-test('receptor controlado avança automaticamente e direção manual assume o movimento',()=>{
+test('receptor espera passe magnético e direção manual assume o movimento',()=>{
  const {m,p,q}=setup(200);m.pass(p,'pass',.5,{x:1,y:0},q);m.ball.pass.destination.y=q.y+90;const before=q.y;
- const input={axis:{x:0,y:0},state:{},pressed:{},released:{}};m.update(1/60,input);assert.ok(q.y>before);input.axis={x:0,y:-1};for(let n=0;n<15;n++)m.update(1/60,input);assert.ok(q.vy<0);
+ const input={axis:{x:0,y:0},state:{},pressed:{},released:{}};m.update(1/60,input);assert.equal(q.y,before);input.axis={x:0,y:-1};for(let n=0;n<15;n++)m.update(1/60,input);assert.ok(q.vy<0);
 });
 test('todas as copas de pênaltis têm um jogo por confronto em cada fase',()=>{
  for(const def of new B.CompetitionManager().definitions('cup')){const m=new B.CompetitionManager();m.create('penalty-cup',def.teams[0],null,def.id,{seed:98});let n=0;
